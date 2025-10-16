@@ -1,0 +1,101 @@
+.donate-section{
+	position: relative;
+	margin: -75px 0;
+	z-index: 9;
+}
+
+.donate-section .inner-container{
+	position: relative;
+	background-color: #05bca9;
+	outline: 2px solid rgba(255,255,255,.33);
+	outline-offset: -32px;
+	padding: 50px 70px;
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;  
+    text-align: center;  
+}
+
+.donate-section h3{
+	position: relative;
+	padding: 10px 0;
+    margin-top: 20px;
+	font-size: 20px;
+	line-height: 30px;
+	color: #ffffff;
+	font-weight: 400;
+	font-family: "Rubik", sans-serif;
+}
+
+.donate-section .call-btn{
+	position: relative;
+	font-size: 14px;
+	line-height: 20px;
+	color: #ffffff;
+	font-weight: 400;
+	padding: 14px 35px;
+	border: 1px solid #ffffff;
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
+}
+
+.donate-section .call-btn:hover{
+	background-color: #ffffff;
+	color: #000000;
+}
+
+/****************************************
+QR Code Pop Up 
+****************************************/
+
+/* Popup Overlay */
+.popup-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure it's above other content */
+}
+
+/* Popup Content */
+.popup-content {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popup-content h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.popup-content img {
+    width: 100%;
+    max-width: 200px; /* Adjust the size of the QR code */
+    margin-bottom: 20px;
+}
+
+.popup-content button {
+    background-color: #05bca9;
+    color: white;
+    border: none;
+    padding: 0px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #03a184;
+}
+
