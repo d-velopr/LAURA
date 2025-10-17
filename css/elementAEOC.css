@@ -6,7 +6,7 @@
 
 .donate-section .inner-container{
 	position: relative;
-	background-color: #05bca9;
+	background-color: #ed7014;
 	outline: 2px solid rgba(255,255,255,.33);
 	outline-offset: -32px;
 	padding: 50px 70px;
@@ -87,7 +87,7 @@ QR Code Pop Up
 }
 
 .popup-content button {
-    background-color: #05bca9;
+    background-color: #ed7014;
     color: white;
     border: none;
     padding: 0px 20px;

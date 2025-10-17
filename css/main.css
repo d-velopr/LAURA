@@ -302,7 +302,7 @@ ul.disc li::before {
 	width: 8px;
 	height: 8px;
 	border-radius: 50%;
-	background: #05bca9;
+	background: #ed7014;
 	position: absolute;
 	left: -17px;
 	top: 11px;
@@ -310,7 +310,7 @@ ul.disc li::before {
 }
 dt {
 	margin: 0;
-	color: #05bca9;
+	color: #ed7014;
 }
 dd {
 	margin: 0 0 0 2rem;
@@ -450,7 +450,7 @@ img.pull-left {
 	margin-left: -30px;
 	margin-top: -30px;
 	padding: 0;
-	background-color: #05bca9;
+	background-color: #ed7014;
 	border-radius: 100%;
 	-webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
 	animation: sk-scaleout 1.0s infinite ease-in-out;
@@ -581,7 +581,7 @@ label, legend {
 	display: block;
 }
 label span, legend span {
-	color: #05bca9;
+	color: #ed7014;
 }
 input[type="checkbox"], input[type="radio"] {
 	display: inline;
@@ -664,7 +664,7 @@ button.button-primary,
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
-	background: #05bca9;
+	background: #ed7014;
 	color: #FFFFFF;
 }
 
@@ -747,7 +747,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 .section-intro .with-bottom-line::after {
 	display: block;
-	background-color: #05bca9;
+	background-color: #ed7014;
 	width: 120px;
 	height: 3px;
 	content: '\0020';
@@ -848,7 +848,7 @@ header .logo a {
 }
 .sticky {
 	position: fixed;
-	background: #14171c;
+	background: #efefef;
 	top: 0;
 }
 .sticky .logo a {
@@ -926,7 +926,7 @@ a.menu-toggle {
 	-webkit-transform: translateX(-50%);
 	-ms-transform: translateX(-50%);
 	transform: translateX(-50%);
-	background-color: #05bca9;
+	background-color: #ed7014;
 	content: '\0020';
 	display: block;
 	-moz-transition: all 0.3s ease-in-out;
@@ -936,7 +936,7 @@ a.menu-toggle {
 	transition: all 0.3s ease-in-out;
 }
 .main-navigation li.highlight a {
-	color: #05bca9;
+	color: #ed7014;
 }
 .main-navigation li.with-sep a {
 	position: relative;
@@ -1082,7 +1082,7 @@ a.menu-toggle {
 		transform: rotate(-45deg);
 	}
 	.main-navigation {
-		background: #14171c;
+		background: #efefef;
 		padding: 48px 42px 54px 42px;
 		margin: 0;
 		width: 100%;
@@ -1153,8 +1153,11 @@ a.menu-toggle {
 }
 
 #intro {
+	/*
     background: #919196 url(https://wallpapercat.com/w/full/6/8/1/294088-2048x1319-desktop-hd-los-angeles-background.jpg) no-repeat center;
-    background-blend-mode: multiply;
+    */
+	background: #efefef url(../images/bg/bg1.jpg) no-repeat center;
+	background-blend-mode: multiply;
     background-size: cover;
     width: 100%;
     height: 100%;
@@ -1221,8 +1224,8 @@ a.menu-toggle {
 	letter-spacing: .4rem;
 }
 .intro-content .button:hover, .intro-content .button:focus {
-	color: #05bca9;
-	border-color: #05bca9;
+	color: #ed7014;
+	border-color: #ed7014;
 }
 
 /**
@@ -1468,7 +1471,7 @@ a.menu-toggle {
 	margin-bottom: 1.5rem;
 }
 .process-content h5 {
-	color: #05bca9;
+	color: #ed7014;
 	font-size: 1.6rem;
 	line-height: 1.875;
 	letter-spacing: .2rem;
@@ -1571,7 +1574,7 @@ a.menu-toggle {
 .features-list .h05 {
 	font-size: 1.7rem;
 	line-height: 1.765;
-	color: #05bca9;
+	color: #ed7014;
 	margin-bottom: 1.8rem;
 }
 
@@ -1711,7 +1714,7 @@ a.menu-toggle {
 	border: none;
 }
 .pricing-content .primary .top-part {
-	background: #05bca9;
+	background: #ed7014;
 }
 .pricing-content .primary .top-part::before {
 	content: attr(data-info);
@@ -1793,7 +1796,7 @@ a.menu-toggle {
 }
 #testimonials .h01::after {
 	display: block;
-	background-color: #05bca9;
+	background-color: #ed7014;
 	width: 120px;
 	height: 3px;
 	content: '\0020';
@@ -1890,11 +1893,11 @@ a.menu-toggle {
 	color: transparent;
 }
 #testimonials .flex-control-paging li a:hover {
-	border: 4px solid #05bca9;
+	border: 4px solid #ed7014;
 }
 #testimonials .flex-control-paging li a.flex-active {
-	background: #05bca9;
-	border-color: #05bca9;
+	background: #ed7014;
+	border-color: #ed7014;
 	cursor: default;
 }
 
@@ -1939,7 +1942,7 @@ a.menu-toggle {
 }
 #testimonials .flex-direction-nav li a.flex-next:hover::after,
 #testimonials .flex-direction-nav li a.flex-prev:hover::before {
-	background: #05bca9;
+	background: #ed7014;
 	color: #FFFFFF;
 }
 #testimonials .flex-direction-nav li.flex-nav-prev {
@@ -2056,7 +2059,7 @@ a.menu-toggle {
 	color: #0087cc;
 }
 .section-ads .button {
-	background: #05bca9;
+	background: #ed7014;
 	color: #FFFFFF;
 }
 .section-ads .button:hover, .section-ads .button:focus {
@@ -2169,23 +2172,24 @@ a.menu-toggle {
  */
 
 footer {
-	padding-bottom: 3rem;
+	background-color: #efefef;
+	padding-bottom: 0rem;
 	font-size: 1.5rem;
 	line-height: 2.7rem;
 	font-family: "raleway-medium", sans-serif;
-	color: #465166;
+	color: #222222;
 }
 footer a, footer a:visited {
-	color: #05bca9;
+	color: #ed7014;
 }
 footer a:hover, footer a:focus {
-	color: #FFFFFF;
+	color: #000000;
 }
 footer h4 {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 	padding-bottom: 1.2rem;
 	margin-bottom: 1.2rem;
-	color: #FFFFFF;
+	color: #232933;
 }
 footer ul {
 	margin-left: 0;
@@ -2196,7 +2200,7 @@ footer ul li {
 .footer-main {
 	padding-top: 6.6rem;
 	padding-bottom: 4.2rem;
-	background: #171b23;
+	background: #efefef;
 }
 .footer-main ul {
 	font-size: 1.5rem;
@@ -2209,7 +2213,7 @@ footer ul li {
 	color: #465166;
 }
 .footer-main ul a:hover, .footer-main ul a:focus {
-	color: #FFFFFF;
+	color: #ed7014;
 }
 .footer-main .footer-logo {
 	width: 162px;
@@ -2228,11 +2232,11 @@ footer ul li {
 .footer-main .footer-subscribe .subscribe-form input[type="email"] {
 	padding: .6rem 2rem;
 	border-radius: 5px;
-	background: #232933;
+	background: #d6d6d6;
 	border: none;
 	width: 100%;
 	font-family: "raleway-regular", sans-serif;
-	color: #bababa;
+	color: #000000;
 	margin-bottom: 1.8rem;
 }
 .footer-main .footer-subscribe .subscribe-form input[type="submit"] {
@@ -2360,7 +2364,7 @@ footer ul li {
 	width: 60px;
 	line-height: 66px;
 	text-align: center;
-	background: #048a7c;
+	background: #ed7014;
 	color: #FFFFFF;
 	text-align: center;
 	text-transform: uppercase;
