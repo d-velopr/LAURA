@@ -1156,7 +1156,7 @@ a.menu-toggle {
 	/*
     background: #919196 url(https://wallpapercat.com/w/full/6/8/1/294088-2048x1319-desktop-hd-los-angeles-background.jpg) no-repeat center;
     */
-	background: #efefef url(../images/bg/bg1.jpg) no-repeat center;
+	background: #efefef url(../images/bg/bg0.png) no-repeat center;
 	background-blend-mode: multiply;
     background-size: cover;
     width: 100%;
@@ -2395,28 +2395,34 @@ footer ul li {
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
+  flex-direction: row;
+  gap: 10px;
   position: absolute;
   top: 100%;
   left: 0;
+  padding: 8px 12px;
   background-color: #efefefe7;
   min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1000;
-  border-radius: 4px;
-  padding: 0;
+  border-radius: 6px;
   margin: 0;
   list-style: none;
   border: #ffffff 1px solid;
   
 }
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
 
 /* Dropdown Links */
 .dropdown-content li {
-  border-bottom: 1px solid #ffffff;
+	display: inline-block;
+	border: none;
 }
 
 .dropdown-content li:last-child {
-  border-bottom: none;
+	border-bottom: none;
 }
 
 .dropdown-content a {
@@ -2425,6 +2431,7 @@ footer ul li {
   color: #ffffff;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
 
 .dropdown-content a:hover {
