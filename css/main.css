@@ -987,30 +987,42 @@ a.menu-toggle {
  * - 
  */
 
+/**
+ * mobile view - primary navigation
+ * REPLACE the existing @media only screen and (max-width:768px) section
+ * that handles mobile navigation (around line 1186 in main.css)
+ * - 
+ */
+
 @media only screen and (max-width:768px) {
 	#main-nav-wrap {
 		display: block;
 		width: 100%;
 		position: absolute;
-		top: 69px;
+		top: 60px;
 		right: 0;
+		left: 0;
+		z-index: 500;
 	}
+	
 	a.menu-toggle {
 		display: block;
-		width: 40px;
-		height: 40px;
+		width: 50px;
+		height: 50px;
 		position: absolute;
 		top: 50%;
 		right: 30px;
-		margin-top: -20px;
+		margin-top: -25px;
+		z-index: 600;
 	}
+	
 	a.menu-toggle span {
 		display: block;
 		width: 24px;
 		height: 3px;
 		margin-top: -1.5px;
 		position: absolute;
-		right: 8px;
+		right: 13px;
 		top: 50%;
 		bottom: auto;
 		left: auto;
@@ -1024,7 +1036,9 @@ a.menu-toggle {
 		text-shadow: none;
 		color: transparent;
 	}
-	a.menu-toggle span::before, a.menu-toggle span::after {
+	
+	a.menu-toggle span::before, 
+	a.menu-toggle span::after {
 		content: '';
 		width: 100%;
 		height: 100%;
@@ -1042,6 +1056,7 @@ a.menu-toggle {
 		-ms-transition-delay: 0.2s, 0s;
 		transition-delay: 0.2s, 0s;
 	}
+	
 	a.menu-toggle span::before {
 		top: -8px;
 		-moz-transition-property: top, transform;
@@ -1050,6 +1065,7 @@ a.menu-toggle {
 		-ms-transition-property: top, transform;
 		transition-property: top, transform;
 	}
+	
 	a.menu-toggle span::after {
 		bottom: -8px;
 		-moz-transition-property: bottom, transform;
@@ -1058,10 +1074,13 @@ a.menu-toggle {
 		-ms-transition-property: bottom, transform;
 		transition-property: bottom, transform;
 	}
+	
 	.menu-toggle.is-clicked span {
 		background-color: rgba(255, 255, 255, 0);
 	}
-	.menu-toggle.is-clicked span::before, .menu-toggle.is-clicked span::after {
+	
+	.menu-toggle.is-clicked span::before, 
+	.menu-toggle.is-clicked span::after {
 		background-color: white;
 		-moz-transition-delay: 0s, 0.2s;
 		-o-transition-delay: 0s, 0.2s;
@@ -1069,27 +1088,35 @@ a.menu-toggle {
 		-ms-transition-delay: 0s, 0.2s;
 		transition-delay: 0s, 0.2s;
 	}
+	
 	.menu-toggle.is-clicked span::before {
 		top: 0;
 		-webkit-transform: rotate(45deg);
 		-ms-transform: rotate(45deg);
 		transform: rotate(45deg);
 	}
+	
 	.menu-toggle.is-clicked span::after {
 		bottom: 0;
 		-webkit-transform: rotate(-45deg);
 		-ms-transform: rotate(-45deg);
 		transform: rotate(-45deg);
 	}
+	
+	/* CRITICAL FIX: Hide menu by default */
 	.main-navigation {
-		background: #efefef;
-		padding: 48px 42px 54px 42px;
+		background: #0F1215;
+		padding: 30px 30px 40px;
 		margin: 0;
 		width: 100%;
 		height: auto;
 		clear: both;
-		display: none;
+		display: none; /* Hidden by default */
+		max-height: calc(100vh - 60px);
+		overflow-y: auto;
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 	}
+	
 	.main-navigation > li {
 		display: block;
 		height: auto;
@@ -1097,33 +1124,274 @@ a.menu-toggle {
 		border-bottom: 1px dotted rgba(200, 200, 200, 0.08);
 		padding: 0;
 	}
+	
 	.main-navigation > li:first-child {
 		border-top: 1px dotted rgba(200, 200, 200, 0.08);
 	}
+	
 	.main-navigation li a {
 		display: block;
 		color: #e6e6e6;
 		width: auto;
-		padding: 18px 0;
-		line-height: 16px;
+		padding: 15px 0;
+		line-height: 20px;
 		border: none;
+		font-size: 13px;
 	}
+	
 	.main-navigation li a:hover {
 		color: #ff7b29;
 	}
+	
+	/* Fix dropdown in mobile menu */
+	.main-navigation .dropdown-content {
+		position: static;
+		display: none;
+		background-color: rgba(255, 255, 255, 0.03);
+		box-shadow: none;
+		padding: 10px 0 10px 20px;
+		margin: 5px 0;
+		border: none;
+		flex-direction: column;
+		min-width: auto;
+		border-radius: 0;
+	}
+	
+	.main-navigation .dropdown-content li {
+		display: block;
+		width: 100%;
+		border-bottom: 1px dotted rgba(200, 200, 200, 0.05);
+		height: auto;
+	}
+	
+	.main-navigation .dropdown-content li:last-child {
+		border-bottom: none;
+	}
+	
+	.main-navigation .dropdown-content a {
+		color: rgba(255, 255, 255, 0.5);
+		padding: 10px 0;
+		font-size: 12px;
+	}
+	
+	.main-navigation .dropdown-content a:hover {
+		color: #ff7b29;
+	}
+	
+	/* Add dropdown indicator */
+	.main-navigation .dropdown > a::after {
+		content: ' ▼';
+		font-size: 9px;
+		margin-left: 8px;
+		display: inline-block;
+		transition: transform 0.3s ease;
+	}
+	
+	.main-navigation .dropdown.is-open > a::after {
+		transform: rotate(180deg);
+	}
+	
 	.main-navigation li.with-sep a {
 		padding-left: 0;
 		margin-left: 0;
 	}
+	
 	.main-navigation li.with-sep a::before {
 		display: none;
 	}
+	
 	.main-navigation li.current > a {
 		background: none;
 		color: #ff7b29;
 	}
+	
 	.main-navigation li.current > a:after {
 		display: none;
+	}
+	
+	/* Header background on mobile */
+	header {
+		background: #0F1215;
+		top: 0;
+		padding: 0;
+	}
+	
+	header .row {
+		height: 60px;
+	}
+}
+
+/* ===================================================================
+ * MOBILE BUG FIXES - Add these styles to the end of main.css
+ * ================================================================ */
+
+/* Fix background image on mobile */
+@media only screen and (max-width:768px) {
+	#intro {
+		background-size: cover;
+		background-position: center center;
+		background-attachment: scroll;
+		min-height: 100vh;
+	}
+}
+
+@media only screen and (max-width:600px) {
+	#intro {
+		background-size: cover;
+		background-position: center center;
+	}
+}
+
+/* Fix mobile menu - ensure it's hidden by default */
+@media only screen and (max-width:768px) {
+	.main-navigation {
+		display: none; /* Hidden by default */
+		background: #0F1215;
+		padding: 48px 42px 54px 42px;
+		margin: 0;
+		width: 100%;
+		height: auto;
+		clear: both;
+	}
+	
+	/* Show menu when toggled */
+	.main-navigation.is-visible {
+		display: block !important;
+	}
+	
+	/* Fix dropdown in mobile */
+	.main-navigation .dropdown-content {
+		position: static;
+		display: none;
+		background-color: rgba(255, 255, 255, 0.05);
+		box-shadow: none;
+		padding: 0;
+		margin-left: 20px;
+		border: none;
+		flex-direction: column;
+		min-width: auto;
+	}
+	
+	.main-navigation .dropdown:hover .dropdown-content,
+	.main-navigation .dropdown.is-open .dropdown-content {
+		display: block;
+	}
+	
+	.main-navigation .dropdown-content li {
+		display: block;
+		width: 100%;
+		border-bottom: 1px dotted rgba(200, 200, 200, 0.08);
+	}
+	
+	.main-navigation .dropdown-content a {
+		color: rgba(255, 255, 255, 0.6);
+		padding: 12px 16px;
+	}
+	
+	.main-navigation .dropdown-content a:hover {
+		color: #ff7b29;
+	}
+	
+	/* Improve header spacing on mobile */
+	header {
+		background: #0F1215;
+	}
+	
+	header .row {
+		height: 60px;
+	}
+}
+
+/* Fix intro content spacing on mobile */
+@media only screen and (max-width:600px) {
+	.intro-content h1 {
+		font-size: 2.8rem;
+		line-height: 1.2;
+		padding: 0 20px;
+	}
+	
+	.intro-content h5 {
+		padding: 0 20px;
+		font-size: 1.3rem;
+	}
+	
+	.intro-content .button {
+		font-size: 1.2rem;
+		padding: 0 2rem !important;
+		height: 5.5rem;
+		line-height: 5rem;
+	}
+}
+
+/* Fix footer on mobile */
+@media only screen and (max-width:600px) {
+	footer {
+		overflow-x: hidden;
+	}
+	
+	.footer-main {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	
+	.footer-main .col-four,
+	.footer-main .col-two {
+		padding: 0 10px;
+		margin-bottom: 30px;
+	}
+}
+
+/* Prevent horizontal scroll */
+body {
+	overflow-x: hidden;
+}
+
+html {
+	overflow-x: hidden;
+	width: 100%;
+}
+
+/* Fix logo size on mobile */
+@media only screen and (max-width:768px) {
+	header .logo a {
+		width: 50px;
+		height: 50px;
+		background-size: 50px 50px;
+	}
+	
+	.sticky .logo a {
+		width: 45px;
+		height: 45px;
+		background-size: 45px 45px;
+	}
+}
+
+/* Improve touch targets for mobile */
+@media only screen and (max-width:768px) {
+	.main-navigation li a {
+		padding: 15px 0;
+		line-height: 24px;
+		font-size: 12px;
+	}
+	
+	a.menu-toggle {
+		width: 50px;
+		height: 50px;
+		margin-top: -25px;
+	}
+}
+
+/* Fix dropdown arrow indicator on mobile */
+@media only screen and (max-width:768px) {
+	.main-navigation .dropdown > a::after {
+		content: ' ▼';
+		font-size: 10px;
+		margin-left: 5px;
+		transition: transform 0.3s ease;
+	}
+	
+	.main-navigation .dropdown.is-open > a::after {
+		transform: rotate(180deg);
 	}
 }
 
@@ -1228,6 +1496,9 @@ a.menu-toggle {
 	border-color: #ed7014;
 }
 
+.mobile-view .main-navigation {
+  display: none !important;
+}
 /**
  * responsive:
  * intro

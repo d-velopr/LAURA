@@ -44,32 +44,101 @@
 	
 
 	/*-----------------------------------------------------*/
-  	/* Mobile Menu
+  	/* Mobile Menu - ENHANCED VERSION
    ------------------------------------------------------ */  
    var toggleButton = $('.menu-toggle'),
-       nav = $('.main-navigation');
+       nav = $('.main-navigation'),
+       body = $('body');
 
+	// Ensure menu is hidden on page load for mobile
+	if ($(window).width() <= 768) {
+		nav.hide();
+	}
+
+   // Toggle menu on button click
    toggleButton.on('click', function(event){
 		event.preventDefault();
 
 		toggleButton.toggleClass('is-clicked');
-		nav.slideToggle();
+		nav.slideToggle(300);
+		nav.toggleClass('is-visible');
+		body.toggleClass('menu-is-open');
 	});
 
-  	if (toggleButton.is(':visible')) nav.addClass('mobile');
+	// Handle dropdown clicks on mobile
+	if ($(window).width() <= 768) {
+		$('.main-navigation .dropdown > a').on('click', function(e) {
+			e.preventDefault();
+			
+			var parent = $(this).parent();
+			var dropdown = parent.find('.dropdown-content');
+			
+			// Close other dropdowns
+			$('.main-navigation .dropdown').not(parent).removeClass('is-open');
+			$('.main-navigation .dropdown-content').not(dropdown).slideUp(200);
+			
+			// Toggle current dropdown
+			parent.toggleClass('is-open');
+			dropdown.slideToggle(200);
+		});
+	}
 
+  	// Check if mobile menu button is visible
+  	if (toggleButton.is(':visible')) {
+		nav.addClass('mobile');
+	}
+
+	// Handle window resize
   	$(window).resize(function() {
-   	if (toggleButton.is(':visible')) nav.addClass('mobile');
-    	else nav.removeClass('mobile');
+		if ($(window).width() > 768) {
+			// Desktop view
+			nav.css('display', 'block');
+			nav.show();
+			toggleButton.removeClass('is-clicked');
+			body.removeClass('menu-is-open');
+			nav.removeClass('mobile');
+		} else {
+			// Mobile view
+			nav.addClass('mobile');
+			if (!nav.hasClass('is-visible')) {
+				nav.css('display', 'none');
+				nav.hide();
+			}
+		}
   	});
 
-  	$('#main-nav-wrap li a').on("click", function() {   
+	// Close menu when clicking a link on mobile
+  	$('#main-nav-wrap li a').on("click", function(e) {   
 
-   	if (nav.hasClass('mobile')) {   		
-   		toggleButton.toggleClass('is-clicked'); 
-   		nav.fadeOut();   		
-   	}     
+   		if (nav.hasClass('mobile')) {
+			// Don't close if it's a dropdown parent and we're clicking to expand
+			if ($(this).parent().hasClass('dropdown') && !$(this).parent().hasClass('is-open')) {
+				return; // Let the dropdown handler above take care of it
+			}
+			
+			// Close menu only if clicking on actual links (not dropdown parents)
+			if (!$(this).parent().hasClass('dropdown') || $(this).parent().find('.dropdown-content').length === 0) {
+				toggleButton.toggleClass('is-clicked'); 
+				nav.slideUp(300);
+				nav.removeClass('is-visible');
+				body.removeClass('menu-is-open');
+			}
+   		}     
   	});
+
+	// Close menu when clicking outside on mobile
+	$(document).on('click', function(e) {
+		if ($(window).width() <= 768) {
+			if (!$(e.target).closest('.menu-toggle, .main-navigation').length) {
+				if (nav.hasClass('is-visible')) {
+					nav.slideUp(300);
+					nav.removeClass('is-visible');
+					toggleButton.removeClass('is-clicked');
+					body.removeClass('menu-is-open');
+				}
+			}
+		}
+	});
 
 
    /*----------------------------------------------------*/
