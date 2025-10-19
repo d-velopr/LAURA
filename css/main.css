@@ -68,7 +68,7 @@ html, body {
 	height: 100%;
 }
 body {
-	background: #14181E;
+	background: #efefef;
 	font-family: "merriweather-regular", serif;
 	font-size: 1.6rem;
 	line-height: 3rem;
@@ -81,7 +81,7 @@ body {
  */
 
 a, a:visited {
-	color: #0087cc;
+	color: #ed7014;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
@@ -89,7 +89,7 @@ a, a:visited {
 	transition: all 0.3s ease-in-out;
 }
 a:hover, a:focus {
-	color: #ff7b29;
+	color: #ed7014;
 }
 
 /**
@@ -1140,7 +1140,21 @@ a.menu-toggle {
 	}
 	
 	.main-navigation li a:hover {
-		color: #ff7b29;
+		color: #ed7014;
+	}
+	.main-navigation li.with-sep a {
+		padding-left: 0;
+		margin-left: 0;
+	}
+	.main-navigation li.with-sep a::before {
+		display: none;
+	}
+	.main-navigation li.current > a {
+		background: none;
+		color: #ed7014;
+	}
+	.main-navigation li.current > a:after {
+		display: none;
 	}
 	
 	/* Fix dropdown in mobile menu */
@@ -1191,27 +1205,10 @@ a.menu-toggle {
 		transform: rotate(180deg);
 	}
 	
-	.main-navigation li.with-sep a {
-		padding-left: 0;
-		margin-left: 0;
-	}
-	
-	.main-navigation li.with-sep a::before {
-		display: none;
-	}
-	
-	.main-navigation li.current > a {
-		background: none;
-		color: #ff7b29;
-	}
-	
-	.main-navigation li.current > a:after {
-		display: none;
-	}
 	
 	/* Header background on mobile */
 	header {
-		background: #0F1215;
+		background: #efefef00;
 		top: 0;
 		padding: 0;
 	}
@@ -1221,179 +1218,7 @@ a.menu-toggle {
 	}
 }
 
-/* ===================================================================
- * MOBILE BUG FIXES - Add these styles to the end of main.css
- * ================================================================ */
 
-/* Fix background image on mobile */
-@media only screen and (max-width:768px) {
-	#intro {
-		background-size: cover;
-		background-position: center center;
-		background-attachment: scroll;
-		min-height: 100vh;
-	}
-}
-
-@media only screen and (max-width:600px) {
-	#intro {
-		background-size: cover;
-		background-position: center center;
-	}
-}
-
-/* Fix mobile menu - ensure it's hidden by default */
-@media only screen and (max-width:768px) {
-	.main-navigation {
-		display: none; /* Hidden by default */
-		background: #0F1215;
-		padding: 48px 42px 54px 42px;
-		margin: 0;
-		width: 100%;
-		height: auto;
-		clear: both;
-	}
-	
-	/* Show menu when toggled */
-	.main-navigation.is-visible {
-		display: block !important;
-	}
-	
-	/* Fix dropdown in mobile */
-	.main-navigation .dropdown-content {
-		position: static;
-		display: none;
-		background-color: rgba(255, 255, 255, 0.05);
-		box-shadow: none;
-		padding: 0;
-		margin-left: 20px;
-		border: none;
-		flex-direction: column;
-		min-width: auto;
-	}
-	
-	.main-navigation .dropdown:hover .dropdown-content,
-	.main-navigation .dropdown.is-open .dropdown-content {
-		display: block;
-	}
-	
-	.main-navigation .dropdown-content li {
-		display: block;
-		width: 100%;
-		border-bottom: 1px dotted rgba(200, 200, 200, 0.08);
-	}
-	
-	.main-navigation .dropdown-content a {
-		color: rgba(255, 255, 255, 0.6);
-		padding: 12px 16px;
-	}
-	
-	.main-navigation .dropdown-content a:hover {
-		color: #ff7b29;
-	}
-	
-	/* Improve header spacing on mobile */
-	header {
-		background: #0F1215;
-	}
-	
-	header .row {
-		height: 60px;
-	}
-}
-
-/* Fix intro content spacing on mobile */
-@media only screen and (max-width:600px) {
-	.intro-content h1 {
-		font-size: 2.8rem;
-		line-height: 1.2;
-		padding: 0 20px;
-	}
-	
-	.intro-content h5 {
-		padding: 0 20px;
-		font-size: 1.3rem;
-	}
-	
-	.intro-content .button {
-		font-size: 1.2rem;
-		padding: 0 2rem !important;
-		height: 5.5rem;
-		line-height: 5rem;
-	}
-}
-
-/* Fix footer on mobile */
-@media only screen and (max-width:600px) {
-	footer {
-		overflow-x: hidden;
-	}
-	
-	.footer-main {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-	
-	.footer-main .col-four,
-	.footer-main .col-two {
-		padding: 0 10px;
-		margin-bottom: 30px;
-	}
-}
-
-/* Prevent horizontal scroll */
-body {
-	overflow-x: hidden;
-}
-
-html {
-	overflow-x: hidden;
-	width: 100%;
-}
-
-/* Fix logo size on mobile */
-@media only screen and (max-width:768px) {
-	header .logo a {
-		width: 50px;
-		height: 50px;
-		background-size: 50px 50px;
-	}
-	
-	.sticky .logo a {
-		width: 45px;
-		height: 45px;
-		background-size: 45px 45px;
-	}
-}
-
-/* Improve touch targets for mobile */
-@media only screen and (max-width:768px) {
-	.main-navigation li a {
-		padding: 15px 0;
-		line-height: 24px;
-		font-size: 12px;
-	}
-	
-	a.menu-toggle {
-		width: 50px;
-		height: 50px;
-		margin-top: -25px;
-	}
-}
-
-/* Fix dropdown arrow indicator on mobile */
-@media only screen and (max-width:768px) {
-	.main-navigation .dropdown > a::after {
-		content: ' ▼';
-		font-size: 10px;
-		margin-left: 5px;
-		transition: transform 0.3s ease;
-	}
-	
-	.main-navigation .dropdown.is-open > a::after {
-		transform: rotate(180deg);
-	}
-}
 
 /**
  * make sure the menu is visible on larger screens
