@@ -938,6 +938,9 @@ a.menu-toggle {
 .main-navigation li.highlight a {
 	color: #ed7014;
 }
+.main-navigation li.highlight a:hover {
+	color: #ffffff;
+}
 .main-navigation li.with-sep a {
 	position: relative;
 	padding-left: 22px;
@@ -979,8 +982,180 @@ a.menu-toggle {
 	background-color: transparent !important;
 }
 .main-navigation li a:hover {
-	color: #FFFFFF;
+	color: #ed7014;
 }
+
+.about-us{
+	position: relative;
+	padding: 100px 0 80px;
+}
+
+.about-us .content-column{
+	position: relative;
+	margin-bottom: 40px;
+}
+
+.about-us .content-column h2{
+	position: relative;
+	font-size: 30px;
+	color: #36404b;
+	font-weight: 500;
+	text-transform: uppercase;
+	line-height: 1.2em;
+	top: -5px;
+	margin-bottom: 10px;
+}
+
+.about-us .content-column h4{
+	position: relative;
+	display: block;
+	font-size: 24px;
+	color: #36404b;
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
+.about-us .content-column .primary-text{
+	position: relative;
+	display: block;
+	font-size: 16px;
+	line-height: 30px;
+	color: #fb4848;
+	border-left: 1px solid #222222;
+	padding-left: 30px;
+	margin-bottom: 20px;
+}
+
+.about-us .content-column .text{
+	position: relative;
+	font-size: 14px;
+	line-height: 30px;
+	color: #666666;
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+
+.about-us .content-column .list-style-one li{
+	float: left;
+	width: 50%;
+	font-size: 14px;
+	line-height: 30px;
+	margin: 0;
+	padding-left: 35px;
+}
+
+.about-us .content-column .list-style-one li:before{
+	color: #FF4136;
+}
+
+.about-us .image-column{
+	position: relative;
+}
+
+.about-us .image-column .image-box{
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.about-us .image-column .image-box a{
+	display: block;
+}
+
+.about-us .image-column .image-box img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.about-us .image-column .column h3{
+	position: relative;
+	font-size: 24px;
+	line-height: 1.2em;
+	color: #36404b;
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
+.about-us .image-column .column h3 a{
+	color: #36404b;
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
+}
+
+.about-us .image-column .column h3 a:hover{
+	color: #fb4848;
+}
+
+.about-us .image-column .column p{
+	position: relative;
+	font-size: 14px;
+	line-height: 30px;
+	color: #666666;
+	margin-bottom: 15px;
+}
+
+.about-us .image-column .column .read-more{
+	position: relative;
+	font-size: 14px;
+	color: #fb4848;
+	font-weight: 500;
+	text-transform: capitalize;
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
+}
+
+.about-us .image-column .column .read-more:hover{
+	color: #36404b;
+}
+
+.auto-container{
+	position:static;
+	max-width:1200px;
+	padding:0px 15px;
+	margin:0 auto;
+}
+.testi-sec-two .auto-container{
+	position: relative;
+}
+.appointment-section .auto-container{
+	position: relative;
+}
+.updated-work-section .auto-container{
+	position:relative;
+}
+.updated-testimonial-section .auto-container{
+	position:relative;
+}
+
+.hover-shadow {
+  transition: all 0.3s ease;
+}
+.hover-shadow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.transition {
+  transition: all 0.3s ease;
+}
+.bubble-card {
+  background-color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bubble-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: #ffffff;
+}
+
 
 /**
  * mobile view - primary navigation
