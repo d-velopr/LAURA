@@ -5,4 +5,4 @@ Disallow: /images/
 Disallow: /js/
 Disallow: /sass/
 Disallow: /LICENSE.txt
-Disallow: /README.txt
+Disallow: /README.md
