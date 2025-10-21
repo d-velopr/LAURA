@@ -1015,7 +1015,7 @@ a.menu-toggle {
 	margin-bottom: 20px;
 }
 
-.about-us .content-column .primary-text{
+.about-us .content-column{
 	position: relative;
 	display: block;
 	font-size: 16px;
@@ -1156,6 +1156,248 @@ a.menu-toggle {
   border-color: #ffffff;
 }
 
+/* Content Column Styling */
+.content-column {
+    text-align: center;
+    padding: 40px 20px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Title Styling */
+.content-column h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.content-column h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #99c555, #2c3e50);
+    border-radius: 2px;
+}
+
+/* Signature Style for the paragraph */
+.content-column p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #99c555;
+    font-style: italic;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.content-column p::before,
+.content-column p::after {
+    content: "~";
+    color: #99c555;
+    font-size: 1.4rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.content-column p::before {
+    left: 0;
+}
+
+.content-column p::after {
+    right: 0;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-column {
+        padding: 30px 15px;
+    }
+    
+    .content-column h2 {
+        font-size: 2rem;
+    }
+    
+    .content-column p {
+        font-size: 1.1rem;
+    }
+    
+    .primary-text {
+        font-size: 1rem;
+        padding: 20px 15px;
+        text-align: left;
+        text-align-last: left;
+    }
+    
+    .primary-text::before,
+    .primary-text::after {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .content-column h2 {
+        font-size: 1.8rem;
+    }
+    
+    .content-column p {
+        font-size: 1rem;
+    }
+    
+    .primary-text {
+        font-size: 0.95rem;
+        padding: 15px 10px;
+    }
+}
+
+/* Hover effects for interactivity */
+.content-column:hover h2::after {
+    width: 120px;
+    transition: width 0.3s ease;
+}
+
+
+/* ================================
+   MAIN CONTENT SECTION
+================================ */
+
+/* Section Layout */
+#main-content {
+  padding: 80px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #efefef;
+}
+
+#main-content .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Content Column */
+.content-column {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-column h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #bf4b0a; /* matches L.A.U.R.A logo orange */
+  margin-bottom: 20px;
+}
+
+.content-column p {
+  font-weight: 500;
+  color: #2f4f2f; /* deep earthy green */
+  margin-bottom: 20px;
+}
+
+.primary-text {
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  line-height: 1.8;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.primary-text:hover {
+  transform: translateY(-5px);
+}
+
+/* Image Column */
+.image-column {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.image-box img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-box img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Mission / History Blocks */
+.image-column h3 a {
+  text-decoration: none;
+  color: #bf4b0a;
+  font-size: 1.4rem;
+}
+
+.image-column p {
+  color: #444;
+  line-height: 1.6;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 2px solid #bf4b0a;
+  color: #bf4b0a;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.read-more:hover {
+  background-color: #bf4b0a;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  #main-content {
+    padding: 60px 5%;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .content-column, .image-column {
+    flex: 1 1 100%;
+  }
+
+  .image-box img {
+    max-width: 100%;
+  }
+}
 
 /**
  * mobile view - primary navigation
