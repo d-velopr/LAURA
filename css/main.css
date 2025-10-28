@@ -1410,7 +1410,7 @@ a.menu-toggle {
   gap: 30px;
   background-color: #efefef;
   margin-bottom: 0px;
-  padding: 250px 0;
+  padding: 250px 0 20px 0;
 }
 .image-column h3 {
   font-size: 4rem;
