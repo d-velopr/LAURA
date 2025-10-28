@@ -1410,16 +1410,18 @@ a.menu-toggle {
   gap: 30px;
   background-color: #efefef;
   margin-bottom: 0px;
-  padding: 250px 0 20px 0;
+  padding: 120px 0 20px 0;
 }
 .image-column h3 {
   font-size: 4rem;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   color: #444;
+  padding-left: 20px;
+  margin-left: 45px;
 }
 .image-column h3 a {
   text-decoration: none;
@@ -1507,8 +1509,8 @@ a.menu-toggle {
 }
 .box-content{
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: end;
+	align-items: end;
 	margin-bottom: -190px;
 
 }
@@ -1549,10 +1551,20 @@ a.menu-toggle {
 /* Announcements Section*/
 #announcements{
 	margin: 30px 0 30px 0;
+	padding: 55px 0 55px 0;
+	background-color: #ffffff;
 }
 .content-block-ann{
 	display: block;
 	width: 100%;	
+}
+.content-block-ann h2{
+	font-family: 'Poppins', sans-serif;
+	font-size: 4.5rem;
+	margin-bottom: 10px;
+}
+.content-block-ann p{
+	font-family: 'Poppins', sans-serif;
 }
 .box-content-ann{
 	border: #000000 1px solid;
@@ -1568,11 +1580,17 @@ a.menu-toggle {
 }
 .box-content-ann p{
 	padding: 25px 0 0 10px;
+	color: #000;
 }
-
+.box-content-ann p strong{
+	color: #000;
+}
+.box-content-ann p i{
+	color: #737373;
+}
 /* #Community Section */
 #community{
-	margin-bottom: 35px;
+	margin-bottom: 40px;
 }
 .content-block-com{
 	text-align: center;
