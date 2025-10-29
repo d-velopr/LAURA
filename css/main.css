@@ -1301,12 +1301,11 @@ a.menu-toggle {
 .page-title{
 	display: block;
 	text-align: center;
-	margin-bottom: 30px;
-	border-radius: 9px;
-	box-shadow: #000;
+	margin-bottom: 0px;
 	width: auto;
 	height: auto;
-	padding-top: 9px;
+	margin-left: 600px;
+	padding-top: 30px;
 }
 .page-stack{
 	margin: 0;
@@ -1315,13 +1314,13 @@ a.menu-toggle {
 	min-width: 1px;
 	min-height: 1px;
 }
-.page-stack h3{
-	color: #ffffff;
-	text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.503);
-}
+
 .page-stack img{
-	width: 270px;
-	height: 270px;
+	width: 290px;
+	height: 290px;
+}
+.page-impact{
+	margin-top: -290px;
 }
 #main-content .event-title{
 	text-align: center;
@@ -1330,24 +1329,36 @@ a.menu-toggle {
 }
 
 .main-socials{
+	display: block;
+	justify-content: left;
+	align-items: left;
+}
+.main-socials h2{
+	color: #ffffff;
+	text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.503);
+	padding-left: 300px;
+	margin-bottom: -22px;
+}
+.social-fb{
 	display: flex;
-	justify-content: center;
-	align-items: center;
-
+	padding-left: 256px;
+	margin-bottom: 40px;
 }
 .main-socials i{
 	display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .main-socials .icon-section{
+	display: flex;
 	width: auto;
 	height: auto;
-	margin-bottom: 17px;
+	margin: 0px;
 	background-color: #00000000;
 	box-shadow: none;
-	margin-left: 45px;
+	margin-top: 20px;
+
+
 }
+
 
 .main-socials .icon-section .fa-facebook-f{
 	margin: 0;
@@ -1356,7 +1367,6 @@ a.menu-toggle {
 	min-width: 1px;
 	min-height: 1px;
 	color: #0866ff;
-	
 }
 .main-socials .icon-section .fa-instagram{
 	margin: 0;
@@ -1495,7 +1505,7 @@ a.menu-toggle {
   gap: 30px;
   background-color: #efefef;
   margin-bottom: 0px;
-  padding: 120px 0 20px 0;
+  padding: 10px 0 20px 0;
 }
 .image-column h3 {
   font-size: 4rem;
@@ -1507,6 +1517,7 @@ a.menu-toggle {
   color: #444;
   padding-left: 20px;
   margin-left: 45px;
+  margin-bottom: 15px;
 }
 .image-column h3 a {
   text-decoration: none;
@@ -1715,9 +1726,12 @@ a.menu-toggle {
 	text-align: center;
 
 }
-
-/* Responsive Design */
+.intro-content .col-twelve{
+	margin-top: 168px;
+}
+/* Responsive Design BEGINNING*/
 @media (max-width: 992px) {
+  
   #main-content {
     padding: 60px 5%;
   }
