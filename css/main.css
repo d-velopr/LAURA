@@ -1301,7 +1301,6 @@ a.menu-toggle {
 .page-title{
 	display: block;
 	text-align: center;
-	background-color: #ffffff00;
 	margin-bottom: 30px;
 	border-radius: 9px;
 	box-shadow: #000;
@@ -1318,6 +1317,16 @@ a.menu-toggle {
 }
 .page-stack h3{
 	color: #ffffff;
+	text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.503);
+}
+.page-stack img{
+	width: 270px;
+	height: 270px;
+}
+#main-content .event-title{
+	text-align: center;
+	color: #efefef;
+	
 }
 
 .main-socials{
@@ -1336,6 +1345,8 @@ a.menu-toggle {
 	height: auto;
 	margin-bottom: 17px;
 	background-color: #00000000;
+	box-shadow: none;
+	margin-left: 45px;
 }
 
 .main-socials .icon-section .fa-facebook-f{
