@@ -69,7 +69,7 @@ html, body {
 }
 body {
 	background: #efefef;
-	font-family: 'Poppins', sans-serif, serif;
+	font-family: 'Poppins', sans-serif, serif , 'Permanent Marker';
 	font-size: 1.6rem;
 	line-height: 3rem;
 	color: #737373;
@@ -1288,7 +1288,6 @@ a.menu-toggle {
   background-blend-mode: overlay
 
 }
-
 #main-content .row {
   display: block;
   flex-wrap: wrap;
@@ -1297,6 +1296,81 @@ a.menu-toggle {
   gap: 40px;
   margin-top: 42px;
   margin-bottom: 130px;
+}
+
+.page-title{
+	display: block;
+	text-align: center;
+	background-color: #ffffff00;
+	margin-bottom: 30px;
+	border-radius: 9px;
+	box-shadow: #000;
+	width: auto;
+	height: auto;
+	padding-top: 9px;
+}
+.page-stack{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	min-width: 1px;
+	min-height: 1px;
+}
+.page-stack h3{
+	color: #ffffff;
+}
+
+.main-socials{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+.main-socials i{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-socials .icon-section{
+	width: auto;
+	height: auto;
+	margin-bottom: 17px;
+	background-color: #00000000;
+}
+
+.main-socials .icon-section .fa-facebook-f{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	min-width: 1px;
+	min-height: 1px;
+	color: #0866ff;
+	
+}
+.main-socials .icon-section .fa-instagram{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	min-width: 1px;
+	min-height: 1px;
+	/* Instagram gradient colors */
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    
+    /* Apply gradient to text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.main-socials .icon-section .fa-tiktok{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	min-width: 1px;
+	min-height: 1px;
+	color: #000000;
+}
+.main-socials .icon-section i{
+	font-size: 42px;
 }
 .image-seventeen{
 	display: flex;
@@ -1521,7 +1595,6 @@ a.menu-toggle {
 	margin: 0 20px;
 	height: 275px;
 	width: 275px;
-
 	border-radius: 20px;
   	box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 	background-color: #ffffff;
@@ -1531,6 +1604,7 @@ a.menu-toggle {
 	color: #ed7014;
 
 }
+
 .icon-section h4{
 	font-size: 38px;
 	color: #36404b;
