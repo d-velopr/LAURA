@@ -2767,11 +2767,9 @@ a.menu-toggle {
 }
 
 /* Summer 2013 Right image */
-.image-column .page-title .image-box{
+.image-column .page-title .image-box img {
     margin-top: 90px;
     transform: translateX(275px);
-}
-.image-column .page-title .image-box img {
     border-radius: 9px;
     width: 100%;
     max-height: 725px;
@@ -2780,7 +2778,7 @@ a.menu-toggle {
 }
 
 .image-column .page-title .image-box img:hover {
-    transform: scale(1.03);
+    transform: translateX(275px) scale(1.03);
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
