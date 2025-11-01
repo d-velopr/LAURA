@@ -2395,15 +2395,19 @@ a.menu-toggle {
     display: flex;
     justify-content: end;
     align-items: end;
-    margin: 65px 0 0px 30px;
+    margin: 0px 0 0px 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .img-class img {
     max-width: 517px;
     max-height: 525px;
     border-radius: 20px;
-    transform: translateY(-250px) translateX(-40px);
+    transform: translateY(-200px) translateX(-40px);
     margin-bottom: -30px;
+    margin-bottom: 17px;
+    
 }
 
 .image-seventeen {
@@ -2800,6 +2804,7 @@ a.menu-toggle {
 
 .content-block-ann p {
     font-family: 'Poppins', sans-serif;
+    padding-left: 10px;
 }
 
 .box-content-ann {
