@@ -1968,6 +1968,7 @@ a.menu-toggle {
         margin-bottom: 0px;
         display: flex;
         justify-content: center;
+        transform: translateY(30px);
         
     }
 
@@ -2066,20 +2067,21 @@ a.menu-toggle {
         max-width: 90%;
         height: auto;
         display: block;
-        margin: 0 auto 40px auto !important;
+        margin: 100px 0 40px 0 !important;
     }
 
     .image-box-text {
-        margin-top: 0;
+        margin-top: 0px;
         padding: 0 15px;
         width: 100%;
     }
 
     .image-box-text h3 a {
         font-size: 1.8rem;
-        display: block;
+        display: flex;
         text-align: center;
         margin-bottom: 15px;
+        margin-left: -30px;
     }
 
     .image-box p {
@@ -2092,6 +2094,7 @@ a.menu-toggle {
         display: block;
         text-align: center;
         margin-bottom: 20px;
+        margin-top: 30px;
     }
 
     .icon-image-box i {
@@ -2121,11 +2124,11 @@ a.menu-toggle {
     }
 
     .img-class img {
-        max-width: 280px;
-        max-height: 280px;
+        display: none;
         transform: none !important;
         margin: 0 auto !important;
-        display: block;
+
+        border-radius: 20px;
     }
 
     /* Remove all problematic positioning */
@@ -2328,6 +2331,7 @@ a.menu-toggle {
         padding: 12px;
         font-size: 1.3rem;
     }
+    
     
     .icon-section-com {
         width: 220px;
