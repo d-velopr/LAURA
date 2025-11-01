@@ -2506,9 +2506,7 @@ a.menu-toggle {
 /* Title & Impact Section */
 .image-column {
     display: block;
-    gap: 30px;
     background-color: #efefef;
-    margin-bottom: -200px;
     padding-bottom: 0px;
 }
 
@@ -2576,6 +2574,7 @@ a.menu-toggle {
 /* Impact Section 1 & 2 */
 .page-impact {
     transform: translateY(-325px);
+    margin-bottom: -485px;
 }
 
 .logo-social img {
