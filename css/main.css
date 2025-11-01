@@ -1414,6 +1414,7 @@ a.menu-toggle {
         height: 60px;
     }
 }
+
 /**
  * ===================================================================
  * MOBILE RESPONSIVE STYLES
@@ -1928,7 +1929,237 @@ a.menu-toggle {
         font-size: 8px;
     }
     
-    /* Main content */
+    body {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Fix intro section */
+    #intro {
+        min-height: 400px;
+        height: auto;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+    }
+
+    .intro-content {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    /* Main container - stack everything */
+    .image-column {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+        padding: 20px 15px;
+    }
+
+    /* REORDER: Summer camp image comes FIRST */
+    .page-title {
+        order: 1; /* Changed from 2 to 1 */
+        width: 100%;
+        margin-bottom: 0px;
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    .page-title .image-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .page-title .image-box img {
+        max-height: 220px;
+        margin: 10px 0;
+        display: block;
+        max-width: 90%;
+        transform: none !important;
+        
+    }
+
+    /* REORDER: Logo and socials come SECOND */
+    .page-impact {
+        order: 2; /* Changed from 3 to 2 */
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Logo section - now appears after summer camp image */
+    .logo-social {
+        order: 1; /* First item inside page-impact */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+
+    .logo-social img {
+        width: 120px !important;
+        height: 120px !important;
+        margin-bottom: 20px;
+    }
+
+    .main-socials {
+        text-align: center;
+        width: 100%;
+        margin-top: 75px;
+        transform: translateX(-100px);
+    }
+
+    .main-socials h2 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+        font-family: 'Poppins' , Arial, Helvetica, sans-serif;
+        transform: translateX(-27px);
+    }
+
+    .social-fb {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 0;
+    }
+
+    .main-socials .icon-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px;
+    }
+
+    /* Content boxes come THIRD inside page-impact */
+    .page-impact .image-box:nth-child(2) {
+        order: 2; /* First content box */
+        margin-bottom: 60px;
+    }
+
+    .page-impact .image-box:nth-child(3) {
+        order: 3; /* Second content box */
+        margin-bottom: 60px;
+    }
+
+    /* Image boxes with proper spacing */
+    .image-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .image-box-img img, 
+    .img-community img {
+        max-width: 90%;
+        height: auto;
+        display: block;
+        margin: 0 auto 40px auto !important;
+    }
+
+    .image-box-text {
+        margin-top: 0;
+        padding: 0 15px;
+        width: 100%;
+    }
+
+    .image-box-text h3 a {
+        font-size: 1.8rem;
+        display: block;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .image-box p {
+        font-size: 1.4rem;
+        margin-top: 15px;
+        line-height: 1.6;
+    }
+
+    .icon-image-box {
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .icon-image-box i {
+        font-size: 45px;
+    }
+
+    .read-more {
+        padding: 10px 20px;
+        font-size: 1.4rem;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    /* Row-of-imgs comes FOURTH */
+    .row-of-imgs {
+        order: 4;
+        margin: 40px 0 !important;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .img-class {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .img-class img {
+        max-width: 280px;
+        max-height: 280px;
+        transform: none !important;
+        margin: 0 auto !important;
+        display: block;
+    }
+
+    /* Remove all problematic positioning */
+    .page-impact .image-box {
+        transform: none !important;
+        margin-top: 0 !important;
+    }
+
+    /* Ensure mobile-hide images are visible */
+    .mobile-hide {
+        display: block !important;
+    }
+
+    /* Center all content properly */
+    .row, .col-full, .col-twelve, .content-wrap, 
+    .header-content, .box-content, .box-content-com, 
+    .content-block-ann, .content-block-com, .footer-main .row {
+        display: block !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    /* Center all images */
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Rest of your CSS remains the same */
     #main-content .event-title {
         font-size: 2.2rem;
     }
@@ -1943,113 +2174,115 @@ a.menu-toggle {
         margin-bottom: 30px;
     }
     
-    .img-class img {
-        max-width: 280px;
-        max-height: 280px;
-        transform: translateY(-80px) translateX(0);
-        margin-bottom: -80px;
-    }
-    
-    .row-of-imgs {
-        margin: 30px 0 0px 0;
-    }
-    
-    /* Header content */
     .header-content {
         border-radius: 15px;
-        padding-top: 15px;
+        padding: 25px 20px !important; /* Increased padding */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        width: 100% !important; /* Force full width */
+        max-width: 100% !important; /* Remove any max-width constraints */
+        margin: 0 auto !important; /* Center but take full width */
+        box-sizing: border-box; /* Include padding in width calculation */
     }
-    
-    .header-img, .content-row {
-        padding: 0 15px;
+
+    /* Remove any width constraints from child elements */
+    .header-img {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex;
+        justify-content: center;
     }
-    
+
+    .header-img img {
+        max-width: 95% !important; /* Slightly larger image */
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .content-row {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center;
+        padding: 0 !important;
+    }
+
     .content-row h2 {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+        width: 100%;
     }
-    
+
     .content-row p {
-        font-size: 13px;
-    }
-    
-    .main-content-text strong {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
         line-height: 1.6;
+        width: 100%;
     }
-    
-    /* Image column */
-    .image-column {
-        margin-bottom: -100px;
+
+    .main-content-text {
+        width: 100% !important;
     }
-    
-    .image-column h3 {
-        font-size: 2rem;
-        margin-bottom: 10px;
-    }
-    
-    .image-column h3 a {
-        font-size: 1.8rem;
-    }
-    
-    .page-title h3 {
-        font-size: 2rem;
-        margin: 15px 0 -15px 0;
-    }
-    
-    .image-column .page-title .image-box img {
-        max-height: 300px;
-        margin-top: 30px;
-    }
-    
-    .page-impact {
-        margin-top: -100px;
-    }
-    
-    .logo-social img {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .main-socials h2 {
-        font-size: 1.2rem;
-        margin-bottom: 5px;
-    }
-    
-    .social-fb {
-        margin-bottom: 30px;
-    }
-    
-    .main-socials .icon-section i {
-        font-size: 25px;
-    }
-    
-    /* Image boxes */
-    .image-box-text {
-        margin-top: 20px;
-        padding: 0 15px;
-    }
-    
-    .image-box-text h3 a {
+
+    .main-content-text strong {
         font-size: 1.6rem;
+        line-height: 1.7;
+        display: block;
+        text-align: center;
+        width: 100%;
     }
-    
-    .image-box p {
-        font-size: 1.4rem;
-        margin-top: 15px;
+
+    /* Side-by-side layout for larger mobile screens - FULL WIDTH */
+    @media (min-width: 375px) {
+        .header-content {
+            flex-direction: row;
+            align-items: flex-start;
+            text-align: left;
+            gap: 25px;
+            padding: 30px 25px !important; /* Even more padding */
+        }
+        
+        .header-img {
+            flex: 1 !important; /* Take available space */
+            min-width: 0; /* Allow shrinking */
+        }
+        
+        .header-img img {
+            max-width: 100% !important;
+            height: auto;
+        }
+        
+        .content-row {
+            flex: 1 !important; /* Take available space */
+            min-width: 0; /* Allow shrinking */
+            text-align: left;
+        }
+        
+        .content-row h2,
+        .content-row p,
+        .main-content-text strong {
+            text-align: left;
+        }
     }
-    
-    .icon-image-box i {
-        font-size: 40px;
+
+    /* Ensure the parent container also takes full width */
+    #main-content .row {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 20px auto 80px auto !important;
+        padding: 0 15px !important;
+        box-sizing: border-box;
     }
-    
-    .read-more {
-        padding: 8px 18px;
-        font-size: 1.3rem;
+
+    /* Remove any potential max-width constraints from higher levels */
+    #main-content {
+        width: 100% !important;
+        max-width: 100% !important;
     }
-    
     /* Icon boxes */
     #icon-boxes {
-        margin-top: -30px;
+        margin-top: 30px;
     }
     
     .icon-section {
@@ -2101,50 +2334,31 @@ a.menu-toggle {
         margin: 15px 0;
     }
     
-    .icon-section-com h4 {
-        font-size: 20px;
-    }
-    
-    /* Intro section */
-    #intro {
-        min-height: 500px;
-    }
-    
-    .intro-content h1 {
-        font-size: 2.8rem;
-    }
-    
-    .intro-content h5 {
-        font-size: 1.3rem;
-    }
-    
-    .intro-content .col-twelve {
-        margin-top: 120px;
-    }
-    
-    .intro-content .button {
-        height: 5rem;
-        line-height: 4.6rem;
-        padding: 0 2rem !important;
-        font-size: 1.2rem;
-    }
-    
-    /* Footer ultra-mobile */
-    .footer-bottom .copyright span {
-        display: block;
-        margin-bottom: 5px;
-    }
-    
-    .footer-bottom .copyright span::after {
-        display: none;
-    }
-    
+    /* Footer */
     #go-top a {
         height: 50px;
         width: 50px;
         line-height: 50px;
+        margin: 0 auto;
+    }
+    .footer-icons ul {
+        display: flex;
+        text-align: center;
+        padding-left: 17px;
+    }
+
+    .footer-icons li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 30px;
+
     }
 }
+
+
+
 
 @media only screen and (max-width: 360px) {
     /* Small phone adjustments */
@@ -2691,7 +2905,7 @@ a.menu-toggle {
 
 .image-box-text {
     width: 60%;
-    padding: 0 10px;
+    padding: 0 0px;
     margin-top: 60px;
 }
 
