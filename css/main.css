@@ -3183,7 +3183,9 @@ a.menu-toggle {
     vertical-align: middle;
     margin-bottom: 1.5rem;
 }
-
+.process-content .item-three{
+    margin-bottom: -350px;
+}
 .process-content h5 {
     color: #ed7014;
     font-size: 1.6rem;
@@ -4249,7 +4251,7 @@ footer ul li {
     height: 69px;
     background: url("../images/footer-logo.png") no-repeat center;
     background-size: 262px 69px;
-    margin: 0 0px 1.1rem -.3rem;
+    margin: -15px 0px 1.1rem -.3rem;
     display: block;
 }
 .footer-main .footer-under-logo{
@@ -4258,16 +4260,17 @@ footer ul li {
 
 }
 .footer-main .footer-icons{
-    margin:0;
+    margin: -9px 0 24px 100px;
     padding: 0;
     box-sizing: border-box;
     min-width: 1px;
     min-height: 1px;
-    margin-left: 0px;
+    
 }
 .footer-main .footer-icons h4{
     font-size: 21px;
     margin-left: 5px;
+    color: #323232
 }
 .footer-main .footer-icons i{
     font-size: 32px;
@@ -4278,6 +4281,35 @@ footer ul li {
     display: flex;
     margin: -20px 0 20px 0px;
     gap: 20px;
+}
+.footer-main .footer-icons .fa-facebook-f {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-width: 1px;
+    min-height: 1px;
+    color: #0866ff;
+}
+
+.footer-main .footer-icons .fa-instagram {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-width: 1px;
+    min-height: 1px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-main .footer-icons .fa-tiktok {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-width: 1px;
+    min-height: 1px;
+    color: #000000;
 }
 
 .footer-main .footer-subscribe p {
