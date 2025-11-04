@@ -3306,6 +3306,8 @@ a.menu-toggle {
     padding-top: 12rem;
     padding-bottom: 12rem;
     color: white;
+
+
 }
 
 #features .section-intro h1 {
@@ -4145,7 +4147,7 @@ a.menu-toggle {
     padding-bottom: 9rem;
     text-align: center;
     color: #FFFFFF;
-    background: #fffdfd url(https://a.storyblok.com/f/168723/1440x820/e8b9c618b5/node-js-express.jpg) no-repeat center;
+    background: #fffdfd url(https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1740) no-repeat center;
     background-blend-mode: multiply;
     background-size: cover;
 }
@@ -4237,6 +4239,15 @@ a.menu-toggle {
     .cta-content .stores li .button {
         width: 80%;
     }
+}
+
+/*. partners */
+#partners {
+    padding-top: 7.2rem;
+    padding-bottom: 9rem;
+    text-align: center;
+    color: #393939;
+    background-color: #ffffff;
 }
 
 /**
