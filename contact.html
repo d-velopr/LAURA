@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>L.A.U.R.A | Victim Support Program</title>
+    <title>L.A.U.R.A | Contact Us</title>
     <meta name="description" content="" />
     <meta name="author" content="dvelupmint" />
     <meta name="keywords" content="" />
@@ -91,10 +91,10 @@
     </header>
     <!-- /Nav Bar -->
 
-    <!-- Main Content -->
-    <section id="features">
+    <!-- Contact Content -->
+    <section id="contact">
       <div class="row section-intro">
-        <div class="col-twelve with-bottom-line">
+        <div class="col-twelve with-bottom-line" style="margin-bottom: 33px">
           <h1>Contact Us</h1>
           <h5>LAURA Is Here To Help You With Any Questions Or Concerns</h5>
         </div>
@@ -103,86 +103,78 @@
             <div class="rounded-3 py-5 px-md-5 mb-5">
               <div class="text-center mb-5">
                 <div class="row gx-5 justify-content-center">
-                  <div class="col-lg-8 col-xl-6">
-                    <form
-                      class="form-floating-space"
-                      id="contactForm"
-                      autocomplete="off"
-                    >
-                      <!-- Full Name -->
-                      <div class="form-floating mb-3 rounded-0">
-                        <label for="name">Full name</label>
-                        <input
-                          class="form-control rounded-0"
-                          id="name"
-                          name="name"
-                          type="text"
-                          placeholder="Enter your name..."
-                          required
-                        />
-                      </div>
-                      <!-- Email Address -->
-                      <div class="form-floating mb-3 rounded-0">
-                        <label for="email">Email address</label>
-                        <input
-                          class="form-control rounded-0"
-                          id="email"
-                          name="email"
-                          type="email"
-                          placeholder="name@example.com"
-                          required
-                        />
-                      </div>
-                      <!-- Phone Number -->
-                      <div class="form-floating mb-3 rounded-0">
-                        <label for="phone">Phone number</label>
-                        <input
-                          class="form-control rounded-0"
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          placeholder="(123) 456-7890"
-                          required
-                        />
-                      </div>
-                      <!-- Message -->
-                      <div class="form-floating mb-3 rounded-0">
-                        <label for="message">Message</label>
-                        <textarea
-                          class="form-control rounded-0"
-                          id="message"
-                          name="message"
-                          placeholder="Enter your message here..."
-                          style="height: 10rem"
-                          required
-                        ></textarea>
-                      </div>
-
-                      <div
-                        class="d-none text-success text-center mb-3"
-                        id="submitSuccessMessage"
+                  <form
+                    class="form-floating-space mx-auto"
+                    id="contactForm"
+                    autocomplete="off"
+                    style="max-width: 600px"
+                  >
+                    <!-- Full Name -->
+                    <div class="form-floating mb-3 rounded-0">
+                      <label for="name" style="color: #fff">Full name</label>
+                      <input
+                        class="form-control rounded-0"
+                        id="name"
+                        name="name"
+                        type="text"
+                        placeholder="John Doe"
+                        style="width: 80%; margin-left: 60px"
+                        required
+                      />
+                    </div>
+                    <!-- Email Address -->
+                    <div class="form-floating mb-3 rounded-0">
+                      <label for="email" style="color: #fff"
+                        >Email address</label
                       >
-                        <div class="fw-bolder">Form submission successful!</div>
-                      </div>
-
-                      <div
-                        class="d-none text-danger text-center mb-3"
-                        id="submitErrorMessage"
+                      <input
+                        class="form-control rounded-0"
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="name@example.com"
+                        style="width: 80%; margin-left: 60px"
+                        required
+                      />
+                    </div>
+                    <!-- Phone Number -->
+                    <div class="form-floating mb-3 rounded-0">
+                      <label for="phone" style="color: #fff"
+                        >Phone number</label
                       >
-                        Error sending message!
-                      </div>
-
-                      <div class="d-grid">
-                        <button
-                          class="btn btn-dark btn-hov2 fw-bold fs-7 rounded-0 shadow-none border-0 px-5 py-3 text-uppercase w-100"
-                          id="submitButton"
-                          type="submit"
-                        >
-                          Submit
-                        </button>
-                      </div>
-                    </form>
-                  </div>
+                      <input
+                        class="form-control rounded-0"
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="(123) 456-7890"
+                        style="width: 80%; margin-left: 60px"
+                        required
+                      />
+                    </div>
+                    <!-- Message -->
+                    <div class="form-floating mb-3 rounded-0">
+                      <label for="message" style="color: #fff">Message</label>
+                      <textarea
+                        class="form-control rounded-0"
+                        id="message"
+                        name="message"
+                        placeholder="Enter your message here..."
+                        style="height: 10rem; width: 100%"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="d-grid">
+                      <button
+                        class="fw-bold fs-7 rounded-0 shadow-none border-0 px-5 py-3 text-uppercase w-100"
+                        id="submitButton"
+                        type="submit"
+                        style="background-color: #ed7014; color: #fff"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -190,7 +182,7 @@
         </div>
       </div>
     </section>
-    <!-- /Main Content -->
+    <!-- /Contact Content -->
 
     <!-- Footer -->
     <footer>
@@ -305,5 +297,6 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script src="js/sub.js"></script>
+    <script src="js/contact-form.js"></script>
   </body>
 </html>
