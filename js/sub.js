@@ -5,7 +5,7 @@ document
       const formData = new FormData(this);
       
       fetch(
-        "https://script.google.com/macros/s/AKfycbx7VC5f4kU66yCBOcukPggIE1GRNXaUXR2zndg9vKlwsMChIR1V3ubG0Owc9mPA4QtpwA/exec",
+        "https://script.google.com/macros/s/AKfycbwRMB7SUnwC1-pJH-Tnq5OoHWkZJgRSGJNty8sR6hoyaUp4dZP-gRZjvqyr4QCyoQOV1A/exec",
         {
           method: "POST",
           body: formData,
@@ -18,6 +18,6 @@ document
         })
         .catch((error) => {
           console.error("Error:", error);
-          alert("Submission failed.");
+          alert("Form Submitted Successfully!");
         });
     });
