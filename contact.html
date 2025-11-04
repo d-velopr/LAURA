@@ -2,9 +2,9 @@
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>L.A.U.R.A | Contact</title>
+    <title>L.A.U.R.A | Victim Support Program</title>
     <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta name="author" content="dvelupmint" />
     <meta name="keywords" content="" />
     <meta
       name="viewport"
@@ -92,21 +92,103 @@
     <!-- /Nav Bar -->
 
     <!-- Main Content -->
-    <section id="process">
+    <section id="features">
       <div class="row section-intro">
         <div class="col-twelve with-bottom-line">
           <h1>Contact Us</h1>
-          <h1></h1>
+          <h5>LAURA Is Here To Help You With Any Questions Or Concerns</h5>
+        </div>
+        <div class="py-5">
+          <div class="container px-5">
+            <div class="rounded-3 py-5 px-md-5 mb-5">
+              <div class="text-center mb-5">
+                <div class="row gx-5 justify-content-center">
+                  <div class="col-lg-8 col-xl-6">
+                    <form
+                      class="form-floating-space"
+                      id="contactForm"
+                      autocomplete="off"
+                    >
+                      <!-- Full Name -->
+                      <div class="form-floating mb-3 rounded-0">
+                        <label for="name">Full name</label>
+                        <input
+                          class="form-control rounded-0"
+                          id="name"
+                          name="name"
+                          type="text"
+                          placeholder="Enter your name..."
+                          required
+                        />
+                      </div>
+                      <!-- Email Address -->
+                      <div class="form-floating mb-3 rounded-0">
+                        <label for="email">Email address</label>
+                        <input
+                          class="form-control rounded-0"
+                          id="email"
+                          name="email"
+                          type="email"
+                          placeholder="name@example.com"
+                          required
+                        />
+                      </div>
+                      <!-- Phone Number -->
+                      <div class="form-floating mb-3 rounded-0">
+                        <label for="phone">Phone number</label>
+                        <input
+                          class="form-control rounded-0"
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          placeholder="(123) 456-7890"
+                          required
+                        />
+                      </div>
+                      <!-- Message -->
+                      <div class="form-floating mb-3 rounded-0">
+                        <label for="message">Message</label>
+                        <textarea
+                          class="form-control rounded-0"
+                          id="message"
+                          name="message"
+                          placeholder="Enter your message here..."
+                          style="height: 10rem"
+                          required
+                        ></textarea>
+                      </div>
 
-          <p class="lead">
-            L.A.U.R.A (Life After Uncivil Ruthless Acts) - Dedicated to
-            enhancing the quality of life of the residents in South Central Los
-            Angeles, CA.
-          </p>
+                      <div
+                        class="d-none text-success text-center mb-3"
+                        id="submitSuccessMessage"
+                      >
+                        <div class="fw-bolder">Form submission successful!</div>
+                      </div>
+
+                      <div
+                        class="d-none text-danger text-center mb-3"
+                        id="submitErrorMessage"
+                      >
+                        Error sending message!
+                      </div>
+
+                      <div class="d-grid">
+                        <button
+                          class="btn btn-dark btn-hov2 fw-bold fs-7 rounded-0 shadow-none border-0 px-5 py-3 text-uppercase w-100"
+                          id="submitButton"
+                          type="submit"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- /process-content -->
     </section>
     <!-- /Main Content -->
 
