@@ -2623,14 +2623,11 @@ a.menu-toggle {
     max-width: 517px;
     max-height: 525px;
     border-radius: 20px;
-    
     margin-bottom: -30px;
     margin-bottom: 17px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .img-class img:hover{
-
-
     transform: scale(1.03);
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
@@ -2815,8 +2812,8 @@ a.menu-toggle {
 
 .main-socials {
     display: block;
-    justify-content: left;
-    align-items: left;
+    justify-content: center;
+    align-items: center;
 }
 
 .main-socials h2 {
@@ -2825,28 +2822,16 @@ a.menu-toggle {
     padding-left: 267px;
     margin-bottom: -22px;
 }
-
-.social-fb {
+.social-media-container{
     display: flex;
-    padding-left: 217px;
-    margin-bottom: 40px;
+    justify-content: start;
+    align-items: start;
+    text-align: center;
+    margin: 33px 0px 33px 270px;
+    gap: 20px;
 }
 
-.main-socials i {
-    display: flex;
-}
-
-.main-socials .icon-section {
-    display: flex;
-    width: auto;
-    height: auto;
-    margin: 0px;
-    background-color: #00000000;
-    box-shadow: none;
-    margin-top: 20px;
-}
-
-.main-socials .icon-section .fa-facebook-f {
+.social-block .social-icon .fa-facebook-f {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -2855,7 +2840,7 @@ a.menu-toggle {
     color: #0866ff;
 }
 
-.main-socials .icon-section .fa-instagram {
+.social-block .social-icon .fa-instagram {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -2867,7 +2852,7 @@ a.menu-toggle {
     -webkit-text-fill-color: transparent;
 }
 
-.main-socials .icon-section .fa-tiktok {
+.social-block .social-icon .fa-tiktok {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -2876,9 +2861,17 @@ a.menu-toggle {
     color: #000000;
 }
 
-.main-socials .icon-section i {
-    font-size: 42px;
+.social-block .social-icon  i {
+    font-size: 33px;
     cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.social-block .social-icon:hover {
+    border-radius: 10px;
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 /* Contact */
 
