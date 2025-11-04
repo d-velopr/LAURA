@@ -2800,7 +2800,7 @@ a.menu-toggle {
 /* Impact Section 1 & 2 */
 .page-impact {
     transform: translateY(-325px);
-    margin-bottom: -485px;
+    margin-bottom: -185px;
 }
 
 .logo-social img {
@@ -2981,7 +2981,7 @@ a.menu-toggle {
 }
 
 .image-box .img-community {
-    transform: translateY(-60px) translateX(20px);
+    margin-top: 53px;
 }
 
 .read-more {
