@@ -175,7 +175,7 @@ em, i {
 }
 
 strong, b {
-    font-family: "merriweather-bold", serif;
+    font-family: "Poppins", serif;
 }
 
 small {
@@ -226,7 +226,7 @@ blockquote cite a, blockquote cite a:visited {
 }
 
 abbr {
-    font-family: "merriweather-bold", serif;
+    font-family: "Poppins", serif;
     font-variant: small-caps;
     text-transform: lowercase;
     letter-spacing: .05rem;
@@ -562,7 +562,7 @@ input[type="password"]:focus, textarea:focus, select:focus {
 }
 
 label, legend {
-    font-family: "merriweather-bold", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 1.4rem;
     margin-bottom: .6rem;
     color: #404040;
@@ -691,7 +691,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .section-intro h1 {
-    font-family: "merriweather-bold", serif;
+    font-family: "Poppins", serif;
     font-size: 4.8rem;
     color: #252525;
     line-height: 1.25;
@@ -1280,7 +1280,7 @@ a.menu-toggle {
 
 .intro-content h1 {
     color: #FFFFFF;
-    font-family: "merriweather-bold", serif;
+    font-family: "Poppins", serif;
     font-size: 3.5rem;
     line-height: 1.334;
     max-width: 800px;
