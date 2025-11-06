@@ -679,7 +679,7 @@ button.round, .button.round {
 }
 
 button.stroke, .button.stroke {
-    background: #00000032;
+    background: #ffffffb0;
     border: 3px solid transparent;
     line-height: 4.4rem;
     font-weight: 1000;
@@ -1312,8 +1312,8 @@ a.menu-toggle {
 
 
 .intro-content .button {
-    border-color: #FFFFFF;
-    color: #FFFFFF;
+    border-color: #ed7014;
+    color: #ed7014;
     height: 6.6rem;
     line-height: 6rem;
     padding: 0 3rem !important;
@@ -1325,8 +1325,9 @@ a.menu-toggle {
 }
 
 .intro-content .button:hover, .intro-content .button:focus {
-    color: #ed7014;
-    border-color: #ed7014;
+    color: #ffffff;
+    border-color: #ffffff;
+    background-color: #ed7014;
 }
 
 .intro-content .col-twelve {
