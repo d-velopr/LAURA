@@ -3370,7 +3370,16 @@ a.menu-toggle {
         padding: 0;
     }
 }
-
+/**
+ * youth section
+ */
+#youth {
+    margin-top: 9rem;
+}
+#youth .youth-descr img{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
 /**
  * pricing section
  */
