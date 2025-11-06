@@ -1,0 +1,194 @@
+/* Sponsors */
+#sponsors {
+    background: #FFFFFF;
+    margin-top: 0rem;
+    padding-top: 10.2rem;
+    padding-bottom: 0rem;
+    position: relative;
+    min-height: 20.4rem;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+#sponsors .h01 {
+    padding-bottom: 2.1rem;
+    margin-bottom: 3.6rem;
+    position: relative;
+    color: #252525;
+}
+
+#sponsors .h01::after {
+    display: block;
+    background-color: #ed7014;
+    width: 120px;
+    height: 3px;
+    content: '\0020';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -60px;
+}
+
+#sponsors .flex-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#sponsors-slider {
+    margin: 0 0 3rem 0;
+    position: relative;
+}
+
+#sponsors-slider p {
+    font-family: "raleway-medium", sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.8;
+    color: #8d8d8d;
+}
+
+#sponsors-slider p::before, #testimonial-slider p::after {
+    display: inline;
+    font-family: Arial, sans-serif;
+    color: #c7c7c7;
+    font-size: 6rem;
+    line-height: 0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1.2rem;
+}
+
+#sponsors-slider p::before {
+    margin-right: .5rem;
+    content: '\201C';
+}
+
+#sponsors-slider p::after {
+    margin-left: .5rem;
+    content: '\201D';
+}
+
+#sponsors-slider .testimonial-author img {
+    width: 8.2rem;
+    height: 8.2rem;
+    margin: 0 auto 1.2rem auto;
+    display: block;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 9px solid #EAEAED;
+}
+
+#testimonial-slider .testimonial-author .author-info {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-family: "raleway-heavy", sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    color: #252525;
+}
+
+#sponsors-slider .testimonial-author .author-info span {
+    display: block;
+    font-family: "raleway-semibold", sans-serif;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    letter-spacing: 0;
+    text-transform: none;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+/* control nav */
+#sponsors .flex-control-nav {
+    width: 100%;
+    text-align: center;
+    display: block;
+    position: absolute;
+    bottom: -42px;
+}
+
+#sponsors .flex-control-nav li {
+    margin: 0 6px;
+    display: inline-block;
+    zoom: 1;
+}
+
+#sponsors .flex-control-paging li a {
+    width: 15px;
+    height: 15px;
+    display: block;
+    border: 4px solid #8d8d8d;
+    cursor: pointer;
+    border-radius: 50%;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+}
+
+#sponsors .flex-control-paging li a:hover {
+    border: 4px solid #ed7014;
+}
+
+#testimonials .flex-control-paging li a.flex-active {
+    background: #ed7014;
+    border-color: #ed7014;
+    cursor: default;
+}
+
+/* direction nav */
+#sponsors .flex-direction-nav li {
+    padding: 0;
+    z-index: 500;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -57px;
+}
+
+#sponsors .flex-direction-nav li a {
+    display: block;
+    opacity: .8;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+}
+
+#sponsors .flex-direction-nav li a.flex-prev::before,
+#sponsors .flex-direction-nav li a.flex-next::after {
+    display: block;
+    background: #EAEAED;
+    color: #737373;
+    border-radius: 5px;
+    font-family: "Ionicons";
+    font-size: 18px;
+    height: 48px;
+    width: 48px;
+    line-height: 48px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+#sponsors .flex-direction-nav li a.flex-prev::before {
+    content: "\f2ca";
+}
+
+#sponsors .flex-direction-nav li a.flex-next::after {
+    content: "\f30f";
+}
+
+#sponsors .flex-direction-nav li a.flex-next:hover::after,
+#sponsors .flex-direction-nav li a.flex-prev:hover::before {
+    background: #ed7014;
+    color: #FFFFFF;
+}
+
+#sponsors .flex-direction-nav li.flex-nav-prev {
+    left: 0;
+}
+
+#sponsors .flex-direction-nav li.flex-nav-next {
+    right: 0;
+}
+/* /Sponsors*/
