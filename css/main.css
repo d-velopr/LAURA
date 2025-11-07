@@ -3844,10 +3844,11 @@ a.menu-toggle {
     gap: 30px;
     max-width: 1100px;
     margin: 0 auto;
+    margin-bottom: 12px;
     text-align: center;
     padding: 20px 0;
     border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(237, 112, 20, 0.15);
+    box-shadow: 0 4px 10px #ed6e14;
 }
 
 /* H3 bubbles  */
@@ -3865,7 +3866,7 @@ a.menu-toggle {
     text-align: center;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    box-shadow: 0 4px 10px rgba(237, 112, 20, 0.15);
+    box-shadow: 0 4px 10px #ed6e144a;
     transition: all 0.25s ease;
     cursor: default;
 }
@@ -3891,7 +3892,7 @@ a.menu-toggle {
 }
 #testimonials .community-sub ul{
     margin: 0;
-    padding: 0 0 0 4.5px;
+    padding: 0 0 0 -10px;
     color: #292929;
 }
 
