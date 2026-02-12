@@ -1,30 +1,28 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>L.A.U.R.A</title>
     <meta name="author" content="@Dvelupmint" />
     <meta
       name="description"
-      content="L.A.U.R.A is a California non-profit organization that ..."
+      content="L.A.U.R.A - Ending The Cycle of Violence Through Community Support"
     />
-    <meta name="keywords" content="" />
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
+      name="keywords"
+      content="L.A.U.R.A, non-profit, South Central LA, community support"
     />
-    <link rel="stylesheet" href="css/elementAEOC.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/vendor.css" />
-    <script src="js/modernizr.js"></script>
-    <!-- favicon -->
-    <link rel="icon" type="image/png" href="images/lauraLogo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,471 +30,724 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Custom Styles -->
+    <style>
+      :root {
+        --laura-orange: #ed7014;
+        --laura-dark: #252525;
+        --laura-light: #efefef;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      #mobile-menu {
+        transition: transform 0.3s ease;
+      }
+
+      #mobile-menu.hidden {
+        transform: translateX(-100%);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+      }
+
+      .btn-primary {
+        background-color: var(--laura-orange);
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #d86212;
+        transform: translateY(-2px);
+      }
+    </style>
   </head>
 
-  <body id="top">
-    <!-- Nav Bar -->
-    <header>
-      <div class="row">
-        <div class="logo">
-          <a href="index.html">LAURA-LOGO</a>
-        </div>
-
-        <nav id="main-nav-wrap" aria-label="Main Navigation">
-          <ul class="main-navigation">
-            <li class="dropdown">
-              <a href="about.html" class="smoothscroll">About Us</a>
-              <ul class="dropdown-content">
-                <li><a href="about.html">Mission / History</a></li>
-                <li><a href="about.html#testimonials">Our Strategy</a></li>
-                <li><a href="about.html#members">Board of Directors</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="impact.html" class="smoothscroll">Our Impact</a>
-              <ul class="dropdown-content">
-                <li>
-                  <a href="impact.html">L.A.U.R.A's Victim Support Program</a>
-                </li>
-                <li><a href="impact.html#youth">L.A.U.R.A Youth</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="index.html#announcements" class="smoothscroll">Events</a>
-              <ul class="dropdown-content">
-                <li><a href="events.html#resource-fair">Resource Fair</a></li>
-                <li><a href="events.html#gallery">Gallery</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="community.html" class="smoothscroll">Community</a>
-              <ul class="dropdown-content">
-                <li><a href="community.html#partners">Our Partners</a></li>
-                <li><a href="community.html#cta">Resources</a></li>
-                <li><a href="community.html#sponsors">Our Sponsors</a></li>
-              </ul>
-            </li>
-            <li>
-              <a
-                href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
-                target="_blank"
-                >Donate</a
-              >
-            </li>
-            <li class="highlight with-sep">
-              <a href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <a class="menu-toggle" href="#"><span>Menu</span></a>
-      </div>
-    </header>
-    <!-- /Nav Bar -->
-
-    <!-- Intro -->
-    <section id="intro">
-      <div class="shadow-overlay"></div>
-
-      <div class="intro-content">
-        <div class="row">
-          <div class="col-twelve">
-            <a class="button stroke" href="contact.html" title=""
-              >Join The Movement</a
+  <body class="bg-gray-100">
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="index.html" class="text-2xl font-bold text-gray-800"
+              >LAURA</a
             >
           </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center space-x-6">
+            <div class="dropdown relative">
+              <a
+                href="about.html"
+                class="text-gray-700 hover:text-orange-500 font-medium"
+                >About Us</a
+              >
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+              >
+                <a
+                  href="about.html"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Mission / History</a
+                >
+                <a
+                  href="about.html#our-strategy"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Our Strategy</a
+                >
+                <a
+                  href="about.html#board-members"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Board of Directors</a
+                >
+              </div>
+            </div>
+
+            <div class="dropdown relative">
+              <a
+                href="impact.html"
+                class="text-gray-700 hover:text-orange-500 font-medium"
+                >Our Impact</a
+              >
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+              >
+                <a
+                  href="impact.html"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >L.A.U.R.A's Victim Support Program</a
+                >
+                <a
+                  href="impact.html#youth"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >L.A.U.R.A Youth</a
+                >
+              </div>
+            </div>
+
+            <div class="dropdown relative">
+              <a
+                href="index.html#announcements"
+                class="text-gray-700 hover:text-orange-500 font-medium"
+                >Events</a
+              >
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+              >
+                <a
+                  href="events.html#resource-fair"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Resource Fair</a
+                >
+                <a
+                  href="events.html#gallery"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Gallery</a
+                >
+              </div>
+            </div>
+
+            <div class="dropdown relative">
+              <a
+                href="community.html"
+                class="text-gray-700 hover:text-orange-500 font-medium"
+                >Community</a
+              >
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+              >
+                <a
+                  href="community.html#partners"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Our Partners</a
+                >
+                <a
+                  href="community.html#resources"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Resources</a
+                >
+                <a
+                  href="community.html#sponsors"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Our Sponsors</a
+                >
+              </div>
+            </div>
+
+            <a
+              href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
+              target="_blank"
+              class="text-gray-700 hover:text-orange-500 font-medium"
+              >Donate</a
+            >
+
+            <a
+              href="contact.html"
+              class="bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-orange-600 transition"
+              >Contact</a
+            >
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button id="menu-toggle" class="md:hidden text-gray-700 text-xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div
+        id="mobile-menu"
+        class="md:hidden bg-white shadow-lg absolute w-full hidden transform -translate-x-full transition-transform"
+      >
+        <div class="container mx-auto px-4 py-6">
+          <a
+            href="about.html"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >About Us</a
+          >
+          <a
+            href="impact.html"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >Our Impact</a
+          >
+          <a
+            href="index.html#announcements"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >Events</a
+          >
+          <a
+            href="community.html"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >Community</a
+          >
+          <a
+            href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
+            target="_blank"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >Donate</a
+          >
+          <a
+            href="contact.html"
+            class="block py-3 text-gray-700 hover:text-orange-500"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="intro"
+      class="min-h-screen flex items-center justify-center text-center text-white bg-cover bg-center"
+      style="background-image: url(&quot;images/bg/bg0.png&quot;)"
+    >
+      <div class="absolute inset-0 bg-black opacity-5"></div>
+
+      <div
+        class="container mx-auto px-4 z-10 relative"
+        style="margin-top: 100px"
+      >
+        <!-- Logo & Social -->
+        <div class="w-full md:w-1/2 mx-auto text-center">
+          <div
+            class="mb-8 flex flex-col items-center"
+            style="margin-top: 200px"
+          >
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Follow Us!</h2>
+            <!-- Increased from text-2xl -->
+
+            <!-- Larger Social Icons -->
+            <div class="flex justify-center space-x-8">
+              <!-- Increased gap from space-x-6 -->
+              <a
+                href="https://www.facebook.com/LauraYouth"
+                class="text-blue-600 text-4xl hover:text-blue-800 transition-colors"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/laurayouthla/"
+                class="text-pink-600 text-4xl hover:text-pink-800 transition-colors"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+
+              <a
+                href="#"
+                class="text-black text-4xl hover:text-gray-800 transition-colors"
+              >
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Centered Button -->
+        <div class="text-center mt-12">
+          <a
+            href="contact.html"
+            class="btn-primary inline-block px-10 py-4 rounded-full text-xl font-semibold transition-transform hover:scale-105"
+          >
+            Join The Movement
+          </a>
         </div>
       </div>
     </section>
-    <!-- /Intro -->
+    <!-- /Hero Section -->
 
-    <!-- Title & Our Impact Content -->
-    <section id="impact-content">
-      <div class="image-column">
-        <!-- Right - Title &  Image -->
-        <div class="page-title">
-          <div
-            class="image-box"
-            style="justify-content: center; align-items: center"
-          >
-            <img
-              src="images/indexPg/hwmae.png"
-              alt="L.A.U.R.A community
-              event - Summer 2013 Camp .jpg"
-            />
-          </div>
-        </div>
-        <!-- Logo & Impact -->
-        <div class="page-impact">
-          <div class="logo-social">
-            <div class="main-socials">
-              <img src="images/logo.png" alt="Logo" class="mobile-hide" />
-              <h2>Follow Us!</h2>
+    <!-- Main Content -->
+    <main class="pt-16">
+      <!-- Impact Section -->
+      <section id="impact-content" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col md:flex-row items-center mb-12"></div>
 
-              <div class="social-media-container">
-                <div class="social-block">
-                  <a
-                    href="https://www.facebook.com/LauraYouth"
-                    class="social-link"
-                  >
-                    <div class="social-icon">
-                      <i class="fab fa-facebook-f"></i>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="social-block">
-                  <a
-                    href="https://www.instagram.com/laurayouthla/"
-                    class="social-link"
-                  >
-                    <div class="social-icon">
-                      <i class="fab fa-instagram"></i>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="social-block">
-                  <a href="#" class="social-link">
-                    <div class="social-icon">
-                      <i class="fab fa-tiktok"></i>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Row 1. -->
-          <div class="image-box">
-            <!-- Left side - Row 1 -->
-            <div class="image-box-img mobile-hide">
+          <!-- Impact Point 1 -->
+          <div class="flex flex-col md:flex-row items-center mb-16">
+            <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
               <img
-                src="http://www.laurala.org/wp-content/uploads/2013/02/545703_216669421784827_1084471537_n.jpg"
-                alt="L.A.U.R.A community
-              event"
+                src="images/indexPg/hwmae.png"
+                alt="L.A.U.R.A community event"
+                class="rounded-lg shadow-lg w-full hover-lift"
               />
             </div>
-            <!-- Right side - Row 1 -->
-            <div class="image-box-text">
-              <div class="icon-image-box">
-                <i class="fa fa-people-group"></i>
+            <div class="w-full md:w-1/2 text-center md:text-left">
+              <div class="text-orange-500 text-5xl mb-4">
+                <i class="fas fa-people-group"></i>
               </div>
-
-              <h3>
-                <a href="contact.html" class="smoothscroll"
-                  >1. We bring resources to families in need</a
-                >
+              <h3 class="text-2xl font-bold mb-4">
+                We bring resources to families in need
               </h3>
-              <p>
+              <p class="text-gray-700 mb-6">
                 Every month we host bi-weekly civic engagement and youth
                 meetings. Annually, we host job fairs, workshops on resume
                 building, and collaborate with organizations that provide free
-                medical exams, immigration<br />
-                assistance, and more!
+                medical exams, immigration assistance, and more!
               </p>
-              <a href="contact.html" class="read-more">Contact Us</a>
+              <a
+                href="contact.html"
+                class="btn-primary inline-block px-6 py-2 rounded-full"
+                >Contact Us</a
+              >
             </div>
           </div>
-          <!-- Row 2. -->
-          <div class="image-box">
-            <div class="image-box-text">
-              <div class="icon-image-box">
-                <i class="fa fa-graduation-cap"></i>
-              </div>
 
-              <h3
-                style="
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                "
-              >
-                <a href="impact.html#youth">2. We Educate The Youth!</a>
-              </h3>
-              <p>
+          <!-- Impact Point 2 -->
+          <div class="flex flex-col md:flex-row-reverse items-center">
+            <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pl-8">
+              <img
+                src="images/indexPg/community.png"
+                alt="L.A.U.R.A community event - Community"
+                class="rounded-lg shadow-lg w-full hover-lift"
+              />
+            </div>
+            <div class="w-full md:w-1/2 text-center md:text-left">
+              <div class="text-orange-500 text-5xl mb-4">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-4">We Educate The Youth!</h3>
+              <p class="text-gray-700 mb-6">
                 We educate youth on multiple subjects that will allow them to
                 thrive. From mental and emotional well-being to eating healthy
                 and understanding finances. We also teach them on what healthy
                 relationships look like. Our youth also participate in summer
-                camping trips and community gardening opportunities.We believe
+                camping trips and community gardening opportunities. We believe
                 the youth are the future and your donations will allow us to
                 maintain our current activities while allowing us to bring in
                 new workshops, speakers and additional opportunities for growth.
               </p>
-              <a href="impact.html#youth" class="read-more">Read More</a>
-            </div>
-            <div class="img-community">
-              <img
-                src="images/indexPg/community.png"
-                alt="L.A.U.R.A community
-              event - Community"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pin Board Content -->
-    <section id="main-content">
-      <div class="row clearfix">
-        <h1
-          class="event-title"
-          style="font-family: 'Poppins', sans-serif; font-size: 4.5rem"
-        >
-          <u>Our Community Event</u>
-        </h1>
-        <!-- 17th annual Image -->
-        <div class="image-seventeen">
-          <img
-            src="images/indexPg/laura17.png"
-            alt="L.A.U.R.A community
-              event"
-          />
-        </div>
-
-        <!-- We Work Together -->
-        <div class="header-content">
-          <!-- Left Side -->
-          <div class="header-img">
-            <img
-              src="http://www.laurala.org/wp-content/uploads/2013/01/Team.jpg"
-              alt="Team"
-            />
-          </div>
-          <!-- Right Side-->
-          <div class="content-row">
-            <h2><u>We Work Together</u></h2>
-            <p>We Listen, We Bring Resources, We Support</p>
-
-            <div class="main-content-text">
-              <strong
-                >Since 2003, L.A.U.R.A. has helped over 50+ families who were
-                victims of homicide with emotional support, connecting them to
-                city resources and healing. Our L.A.U.R.A. Victim Support
-                Program and L.A.U.R.A. Youth Program have contributed resources
-                to support families after traumatic events.</strong
+              <a
+                href="impact.html#youth"
+                class="btn-primary inline-block px-6 py-2 rounded-full"
+                >Read More</a
               >
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- /Pin Board Content -->
+      </section>
+      <!-- /Impact Section -->
 
-    <!-- Icon Box's Section -->
-    <section id="icon-boxes">
-      <div class="box-content">
-        <div class="icon-section">
-          <i class="fas fa-donate"></i>
-          <h4>50</h4>
-          <p>Donations</p>
-        </div>
-        <div class="icon-section">
-          <i class="fas fa-users"></i>
-          <h4>50</h4>
-          <p>Families Helped</p>
-        </div>
-        <div class="icon-section">
-          <i class="fas fa-heart"></i>
-          <h4>100</h4>
-          <p>Volunteers</p>
-        </div>
-      </div>
-    </section>
+      <!-- Community Events Section -->
+      <section
+        id="main-content"
+        class="py-12"
+        style="background-image: url(&quot;images/bg/bg0.png&quot;)"
+      >
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-8 underline">
+            Our Community Event
+          </h2>
 
-    <!-- Announcements -->
-    <section id="announcements">
-      <div class="row content-wrap">
-        <div class="col-full">
-          <div class="content-block-ann">
-            <h2>Announcements <i class="fas fa-newspaper"></i></h2>
-            <p>News & Articles</p>
+          <!-- 17th Annual Image -->
+          <div class="mb-12">
+            <img
+              src="images/indexPg/laura17.png"
+              alt="L.A.U.R.A community event"
+              class="rounded-lg shadow-lg w-full max-w-3xl mx-auto hover-lift"
+            />
+          </div>
 
-            <div class="box-content-ann">
-              <a href="about.html" alt="placeholder">
-                <p>
+          <!-- We Work Together -->
+          <div
+            class="bg-white rounded-lg shadow-lg p-6 mb-12 flex flex-col md:flex-row items-center"
+          >
+            <div class="w-full md:w-1/2 mb-6 md:mb-0 md:pr-8">
+              <img
+                src="http://www.laurala.org/wp-content/uploads/2013/01/Team.jpg"
+                alt="Team"
+                class="rounded-lg w-full hover-lift"
+              />
+            </div>
+            <div class="w-full md:w-1/2">
+              <h3 class="text-2xl font-bold mb-4 underline">
+                We Work Together
+              </h3>
+              <p class="text-gray-700 mb-4">
+                We Listen, We Bring Resources, We Support
+              </p>
+              <p class="text-gray-700">
+                Since 2003, L.A.U.R.A. has helped over 50+ families who were
+                victims of homicide with emotional support, connecting them to
+                city resources and healing. Our L.A.U.R.A. Victim Support
+                Program and L.A.U.R.A. Youth Program have contributed resources
+                to support families after traumatic events.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Community Events Section -->
+
+      <!-- Statistics Section -->
+      <section id="icon-boxes" class="py-12 bg-orange-50">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+              class="bg-white rounded-lg shadow-lg p-8 text-center hover-lift"
+            >
+              <i class="fas fa-donate text-orange-500 text-5xl mb-4"></i>
+              <h4 class="text-3xl font-bold mb-2">50+</h4>
+              <p class="text-gray-700">Donations</p>
+            </div>
+            <div
+              class="bg-white rounded-lg shadow-lg p-8 text-center hover-lift"
+            >
+              <i class="fas fa-users text-orange-500 text-5xl mb-4"></i>
+              <h4 class="text-3xl font-bold mb-2">50+</h4>
+              <p class="text-gray-700">Families Helped</p>
+            </div>
+            <div
+              class="bg-white rounded-lg shadow-lg p-8 text-center hover-lift"
+            >
+              <i class="fas fa-heart text-orange-500 text-5xl mb-4"></i>
+              <h4 class="text-3xl font-bold mb-2">100+</h4>
+              <p class="text-gray-700">Volunteers</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Statistics Section -->
+
+      <!-- Announcements Section -->
+      <section id="announcements" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold mb-2">
+              Announcements <i class="fas fa-newspaper text-orange-500"></i>
+            </h2>
+            <p class="text-gray-700">News & Articles</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div
+              class="border border-gray-300 rounded-lg p-6 hover:shadow-lg transition-shadow"
+            >
+              <a href="about.html">
+                <p class="text-gray-700">
                   <strong>Event - </strong><i>February 15, 2019: </i><br />
                   SAVE THE DATE L.A.U.R.A./ Fred Roberts 11th Annual Resource
                   Fair Peace Walk
                 </p>
               </a>
             </div>
-            <div class="box-content-ann">
-              <a href="about.html" alt="placeholder">
-                <p>
-                  <strong>Event - </strong><i>November 15, 2018: </i
-                  ><br />L.A.U.R.A.’s 10th Annual Community Thanksgiving Dinner
+            <div
+              class="border border-gray-300 rounded-lg p-6 hover:shadow-lg transition-shadow"
+            >
+              <a href="about.html">
+                <p class="text-gray-700">
+                  <strong>Event - </strong><i>November 15, 2018: </i><br />
+                  L.A.U.R.A.'s 10th Annual Community Thanksgiving Dinner
                 </p>
               </a>
             </div>
-            <div class="box-content-ann">
-              <a href="about.html" alt="placeholder">
-                <p>
-                  <strong>Event - </strong><i>September 6, 2018: </i
-                  ><br />L.A.U.R.A.’s 1st. Annual Youth Survivors Speak
-                  Conference
+            <div
+              class="border border-gray-300 rounded-lg p-6 hover:shadow-lg transition-shadow"
+            >
+              <a href="about.html">
+                <p class="text-gray-700">
+                  <strong>Event - </strong><i>September 6, 2018: </i><br />
+                  L.A.U.R.A.'s 1st. Annual Youth Survivors Speak Conference
                 </p>
               </a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <!-- /Announcements Section -->
 
-    <!-- Community -->
-    <section id="community">
-      <div class="row content-wrap">
-        <div class="col-full">
-          <div class="content-block-com">
-            <i class="fas fa-globe"></i>
-            <h2>Our Community Partners</h2>
-            <p>
+      <!-- Community Partners Section -->
+      <section id="community" class="py-12 bg-blue-600 text-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-8">
+            <i class="fas fa-globe text-orange-500 text-6xl mb-4"></i>
+            <h2 class="text-3xl font-bold mb-2">Our Community Partners</h2>
+            <p class="max-w-2xl mx-auto">
               We are proud to collaborate with various community organizations
               to enhance our impact and reach. Together, we strive to create a
               supportive network for those we serve.
             </p>
+          </div>
 
-            <div class="box-content-com">
-              <div class="icon-section-com">
-                <a href="https://prideintruth.org" target="_blank">
-                  <img src="images/com/prideTruth.png" alt="Placeholder" />
-                  <h4><u>Pride In Truth</u></h4>
-                </a>
-              </div>
-              <div class="icon-section-com">
-                <a href="https://youthjusticela.org/" target="_blank">
-                  <img src="images/com/yjc.png" alt="Placeholder" />
-                  <h4><u>Youth Justice Coalition</u></h4>
-                </a>
-              </div>
-              <div class="icon-section-com">
-                <a href="https://homeboyindustries.org/" target="_blank">
-                  <img
-                    src="images/com/homeboysIndustry.png"
-                    alt="Placeholder"
-                  />
-                  <h4><u>Homeboy Industries</u></h4>
-                </a>
-              </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+              class="bg-white text-gray-800 rounded-lg shadow-lg p-6 text-center hover-lift"
+            >
+              <a href="https://prideintruth.org" target="_blank">
+                <img
+                  src="images/com/prideTruth.png"
+                  alt="Pride In Truth"
+                  class="mx-auto mb-4 w-32 h-32 object-contain"
+                />
+                <h4 class="font-bold underline">Pride In Truth</h4>
+              </a>
+            </div>
+            <div
+              class="bg-white text-gray-800 rounded-lg shadow-lg p-6 text-center hover-lift"
+            >
+              <a href="https://youthjusticela.org/" target="_blank">
+                <img
+                  src="images/com/yjc.png"
+                  alt="Youth Justice Coalition"
+                  class="mx-auto mb-4 w-32 h-32 object-contain"
+                />
+                <h4 class="font-bold underline">Youth Justice Coalition</h4>
+              </a>
+            </div>
+            <div
+              class="bg-white text-gray-800 rounded-lg shadow-lg p-6 text-center hover-lift"
+            >
+              <a href="https://homeboyindustries.org/" target="_blank">
+                <img
+                  src="images/com/homeboysIndustry.png"
+                  alt="Homeboy Industries"
+                  class="mx-auto mb-4 w-32 h-32 object-contain"
+                />
+                <h4 class="font-bold underline">Homeboy Industries</h4>
+              </a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <!-- /Community Partners Section -->
+    </main>
+    <!-- /Main Content -->
 
     <!-- Footer -->
-    <footer>
-      <div class="footer-main">
-        <div class="row">
-          <div class="col-four tab-full mob-full footer-info">
-            <div class="footer-logo"></div>
-            <div class="footer-icons">
-              <h4>Follow Us!</h4>
-
-              <ul>
-                <li>
-                  <a href="https://www.facebook.com/LauraYouth"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/laurayouthla/"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href=""><i class="fab fa-tiktok"></i></a>
-                </li>
-              </ul>
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <!-- Logo and Social -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Follow Us!</h4>
+            <div class="flex space-x-4 mb-4">
+              <a
+                href="https://www.facebook.com/LauraYouth"
+                class="text-white hover:text-blue-400"
+              >
+                <i class="fab fa-facebook-f text-2xl"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/laurayouthla/"
+                class="text-white hover:text-pink-400"
+              >
+                <i class="fab fa-instagram text-2xl"></i>
+              </a>
+              <a href="#" class="text-white hover:text-gray-300">
+                <i class="fab fa-tiktok text-2xl"></i>
+              </a>
             </div>
-
-            <div class="footer-under-logo">
-              <p>
-                © L.A.U.R.A 501(c)(3) - 2025 . All rights reserved <br />Ending
-                The Cycle of Violence.
-              </p>
-            </div>
+            <p class="text-gray-400">
+              © L.A.U.R.A 501(c)(3) - 2025<br />All rights reserved<br />Ending
+              The Cycle of Violence.
+            </p>
           </div>
 
-          <div class="col-two tab-1-3 mob-1-2 site-links">
-            <h4>Site Links</h4>
-
-            <ul>
-              <li><a href="about.html#process">About Us</a></li>
-              <li><a href="about.html#members">Board of Directors</a></li>
+          <!-- Site Links -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Site Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="about.html#process"
+                  class="text-gray-400 hover:text-white"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html#members"
+                  class="text-gray-400 hover:text-white"
+                  >Board of Directors</a
+                >
+              </li>
               <li>
                 <a
                   href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
                   target="_blank"
+                  class="text-gray-400 hover:text-white"
                   >Donate</a
                 >
               </li>
-              <li><a href="faq.html#faq">FAQ</a></li>
-              <li><a href="terms.html">Terms</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li>
+                <a href="faq.html#faq" class="text-gray-400 hover:text-white"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a href="terms.html" class="text-gray-400 hover:text-white"
+                  >Terms</a
+                >
+              </li>
+              <li>
+                <a href="privacy.html" class="text-gray-400 hover:text-white"
+                  >Privacy Policy</a
+                >
+              </li>
             </ul>
           </div>
-          <div class="col-two tab-1-3 mob-1-2 site-links">
-            <h4>Mailing Address</h4>
-            <p>
-              P.O Box 11681 <br />
+
+          <!-- Mailing Address -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Mailing Address</h4>
+            <p class="text-gray-400">
+              P.O Box 11681<br />
               Los Angeles, CA
             </p>
           </div>
 
-          <!-- Email Subscription-->
-          <div id="sub" class="col-four tab-1-3 mob-full footer-subscribe">
-            <h4>Subscribe to our Newsletter</h4>
-            <p>Get notifications on our latest events & <br />announcements.</p>
-
-            <div class="subscribe-form">
-              <form id="subscribe-form">
-                <input
-                  type="email"
-                  name="dEmail"
-                  class="email"
-                  placeholder="Type email & hit enter"
-                  required
-                />
-                <input type="submit" value="Subscribe" />
-              </form>
-            </div>
+          <!-- Newsletter -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Subscribe to our Newsletter</h4>
+            <p class="text-gray-400 mb-4">
+              Get notifications on our latest events & announcements.
+            </p>
+            <form class="flex">
+              <input
+                type="email"
+                placeholder="Type email & hit enter"
+                class="bg-gray-700 text-white px-4 py-2 rounded-l w-full"
+              />
+              <button type="submit" class="bg-orange-500 px-4 py-2 rounded-r">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
-      </div>
 
-      <div class="footer-bottom">
-        <div class="row">
-          <div class="col-twelve">
-            <div class="copyright">
-              <span>© Copyright LAURALA.ORG 2025.</span>
-              <span
-                >Design by
-                <a href="https://github.com/d-velopr/">Dvelupmint</a></span
-              >
-            </div>
-
-            <div id="go-top" style="display: block">
-              <a class="smoothscroll" title="Back to Top" href="#top"
-                ><i class="icon ion-android-arrow-up"></i
-              ></a>
-            </div>
-          </div>
+        <div class="border-t border-gray-700 pt-8 text-center">
+          <p class="text-gray-400">
+            © Copyright LAURALA.ORG 2025. Design by
+            <a
+              href="https://github.com/d-velopr/"
+              class="text-orange-500 hover:text-orange-400"
+              >Dvelupmint</a
+            >
+          </p>
         </div>
       </div>
     </footer>
     <!-- /Footer -->
 
-    <div id="preloader">
-      <div id="loader"></div>
-    </div>
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+      // Mobile Menu Toggle
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+          menu.classList.toggle("transform");
+          menu.classList.toggle("-translate-x-full");
 
-    <script src="js/popup.js"></script>
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/sub.js"></script>
+          // Toggle icon between hamburger and X
+          const icon = this.querySelector("i");
+          if (icon.classList.contains("fa-bars")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          }
+        });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const menu = document.getElementById("mobile-menu");
+        const toggle = document.getElementById("menu-toggle");
+
+        if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+          menu.classList.add("hidden", "transform", "-translate-x-full");
+          const icon = toggle.querySelector("i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        }
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.add("hidden", "transform", "-translate-x-full");
+          const icon = document.querySelector("#menu-toggle i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>

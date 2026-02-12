@@ -1,21 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
     <title>L.A.U.R.A | Policies</title>
-    <meta name="description" content="" />
+    <meta
+      name="description"
+      content="Learn about L.A.U.R.A's policy accomplishments and initiatives in Los Angeles County"
+    />
     <meta name="author" content="" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
-    <link rel="stylesheet" href="css/elementAEOC.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/vendor.css" />
-    <script src="js/modernizr.js"></script>
-    <!-- favicon -->
-    <link rel="icon" type="image/png" href="images/lauraLogo.png" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -28,365 +26,770 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <!-- Custom Styles -->
+    <style>
+      :root {
+        --laura-orange: #ed7014;
+        --laura-dark: #252525;
+        --laura-light: #efefef;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      #mobile-menu {
+        transition: transform 0.3s ease;
+      }
+
+      #mobile-menu.hidden {
+        transform: translateX(-100%);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+      }
+
+      .btn-primary {
+        background-color: var(--laura-orange);
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #d86212;
+        transform: translateY(-2px);
+      }
+
+      .policy-card {
+        transition: all 0.3s ease;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .policy-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .policy-header {
+        background-color: rgb(32, 32, 32);
+        color: white;
+        padding: 2rem;
+      }
+
+      .stat-highlight {
+        background: linear-gradient(135deg, #ed7014 0%, #ff8c42 100%);
+        color: white;
+      }
+    </style>
   </head>
 
-  <body id="top">
-    <!-- Nav Bar -->
-    <header>
-      <div class="row">
-        <div class="logo">
-          <a href="index.html">LAURA-LOGO</a>
-        </div>
+  <body id="top" class="bg-gray-100">
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="index.html" class="text-2xl font-bold text-gray-800"
+              >LAURA</a
+            >
+          </div>
 
-        <nav id="main-nav-wrap" aria-label="Main Navigation">
-          <ul class="main-navigation">
-            <li class="dropdown">
-              <a href="about.html" class="smoothscroll">About Us</a>
-              <ul class="dropdown-content">
-                <li><a href="about.html">Mission / History</a></li>
-                <li><a href="about.html#testimonials">Our Strategy</a></li>
-                <li><a href="about.html#members">Board of Directors</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="impact.html" class="smoothscroll">Our Impact</a>
-              <ul class="dropdown-content">
-                <li>
-                  <a href="impact.html">L.A.U.R.A's Victim Support Program</a>
-                </li>
-                <li><a href="impact.html#youth">L.A.U.R.A Youth</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="index.html#announcements" class="smoothscroll">Events</a>
-              <ul class="dropdown-content">
-                <li><a href="events.html#resource-fair">Resource Fair</a></li>
-                <li><a href="events.html#gallery">Gallery</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="community.html" class="smoothscroll">Community</a>
-              <ul class="dropdown-content">
-                <li><a href="community.html#partners">Our Partners</a></li>
-                <li><a href="community.html#cta">Resources</a></li>
-                <li><a href="community.html#sponsors">Our Sponsors</a></li>
-              </ul>
-            </li>
-            <li>
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center space-x-6">
+            <div class="dropdown relative">
               <a
-                href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
-                target="_blank"
-                >Donate</a
+                href="about.html"
+                class="text-gray-700 hover:text-orange-500 font-medium"
+                >About Us</a
               >
-            </li>
-            <li class="highlight with-sep">
-              <a href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <a class="menu-toggle" href="#"><span>Menu</span></a>
-      </div>
-    </header>
-    <!-- /Nav Bar -->
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+              >
+                <a
+                  href="about.html"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Mission / History</a
+                >
+                <a
+                  href="about.html#our-strategy"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Our Strategy</a
+                >
+                <a
+                  href="about.html#board-members"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Board of Directors</a
+                >
+              </div>
+            </div>
 
-    <section id="pricing" style="background-color: #ffffffff">
-      <div class="row section-intro">
-        <div class="col-twelve with-bottom-line">
-          <h5>Policies</h5>
-          <h1>What We Have Accomplished So Far...</h1>
+            <div class="dropdown relative">
+              <a
+                href="impact.html"
+                class="text-gray-700 hover:text-orange-500 font-medium"
+                >Our Impact</a
+              >
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+              >
+                <a
+                  href="impact.html"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >L.A.U.R.A's Victim Support Program</a
+                >
+                <a
+                  href="impact.html#youth"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >L.A.U.R.A Youth</a
+                >
+              </div>
+            </div>
 
-          <p class="lead">
-            In Los Angeles County The L.A.U.R.A has provided insight on
-            equitable policies and programs related to :
-          </p>
+            <div class="dropdown relative">
+              <a
+                href="index.html#announcements"
+                class="text-gray-700 hover:text-orange-500 font-medium"
+                >Events</a
+              >
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+              >
+                <a
+                  href="events.html#resource-fair"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Resource Fair</a
+                >
+                <a
+                  href="events.html#gallery"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Gallery</a
+                >
+              </div>
+            </div>
+
+            <div class="dropdown relative">
+              <a
+                href="community.html"
+                class="text-gray-700 hover:text-orange-500 font-medium"
+                >Community</a
+              >
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+              >
+                <a
+                  href="community.html#partners"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Our Partners</a
+                >
+                <a
+                  href="community.html#resources"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Resources</a
+                >
+                <a
+                  href="community.html#sponsors"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Our Sponsors</a
+                >
+              </div>
+            </div>
+
+            <a
+              href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
+              target="_blank"
+              class="text-gray-700 hover:text-orange-500 font-medium"
+              >Donate</a
+            >
+
+            <a
+              href="contact.html"
+              class="bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-orange-600 transition"
+              >Contact</a
+            >
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button id="menu-toggle" class="md:hidden text-gray-700 text-xl">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
       </div>
 
-      <div class="row pricing-content">
-        <div class="pricing-tables block-1-4 group">
-          <div class="bgrid">
-            <div class="price-block">
-              <div class="top-part" style="background-color: rgb(32, 32, 32)">
-                <h3 class="plan-title" style="color: #ed7014">A.T.I</h3>
-                <p class="price-meta">
-                  Los Angeles County Alternatives To Incarceration (ATI)
-                  Initiatives
-                </p>
-                <p class="price-month">December, 2019 - October, 2020</p>
-              </div>
-
-              <div class="bottom-part">
-                <!--
-                <ul class="features">
-                  <li><strong>#1</strong> Fact</li>
-                  <li><strong>#2</strong> Fact</li>
-                  <li><strong>#3</strong> Fact</li>
-                </ul>
-              -->
-                <a
-                  class="button large"
-                  href="https://ceo.lacounty.gov/ati-documents-and-resources/"
-                  style="background-color: #ed7014"
-                  target="_blank"
-                  >Learn More</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="bgrid">
-            <div class="price-block">
-              <div class="top-part" style="background-color: rgb(32, 32, 32)">
-                <h3 class="plan-title" style="color: #ed7014">Measure J</h3>
-                <p class="price-meta">
-                  Implementation and Services Men's Central Jail Closure
-                  Workgroup's Community
-                </p>
-                <p class="price-month">June 22, 2021</p>
-              </div>
-
-              <div class="bottom-part">
-                <!--
-                <ul class="features">
-                  <li><strong>#1</strong> Fact</li>
-                  <li><strong>#2</strong> Fact</li>
-                  <li><strong>#3</strong> Fact</li>
-                </ul>
-              -->
-
-                <a
-                  class="button large"
-                  href="https://ceo.lacounty.gov/jcit/"
-                  style="background-color: #ed7014"
-                  target="_blank"
-                  >Learn More</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="bgrid">
-            <div class="price-block">
-              <div class="top-part" style="background-color: rgb(32, 32, 32)">
-                <h3 class="plan-title" style="color: #ed7014">E.R.E.C</h3>
-                <p class="price-meta">
-                  The Los Angeles County Engagement and Racial Equity Committee
-                </p>
-                <p class="price-month">July 21, 2020</p>
-              </div>
-
-              <div class="bottom-part">
-                <!--
-                <ul class="features">
-                  <li><strong>#1</strong> Fact</li>
-                  <li><strong>#2</strong> Fact</li>
-                  <li><strong>#3</strong> Fact</li>
-                </ul>
-              -->
-
-                <a
-                  class="button large"
-                  href="https://ceo.lacounty.gov/ardi/racial-equity-strategic-plan/"
-                  style="background-color: #ed7014"
-                  target="_blank"
-                  >Learn More</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="bgrid">
-            <div class="price-block">
-              <div class="top-part" style="background-color: rgb(32, 32, 32)">
-                <h3 class="plan-title" style="color: #ed7014">J.P.R.C</h3>
-                <p class="price-meta">
-                  The Los Angeles County Jail Population Reduction Workgroup and
-                  Council
-                </p>
-                <p class="price-month">March 30, 2021</p>
-              </div>
-
-              <div class="bottom-part">
-                <!--
-                <ul class="features">
-                  <li><strong>#1</strong> Fact</li>
-                  <li><strong>#2</strong> Fact</li>
-                  <li><strong>#3</strong> Fact</li>
-                </ul>
-              -->
-
-                <a
-                  class="button large"
-                  href="https://file.lacounty.gov/SDSInter/bos/bc/1104568_DEVELO_1.PDF"
-                  style="background-color: #ed7014"
-                  target="_blank"
-                  >Learn More</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="bgrid">
-            <div class="price-block">
-              <div class="top-part" style="background-color: rgb(32, 32, 32)">
-                <h3 class="plan-title" style="color: #ed7014">LAC-DHS</h3>
-                <p class="price-meta">
-                  The Los Angeles County Department of Health Services;
-                  programming for community reentry
-                </p>
-                <p class="price-month">Feb 10, 2024</p>
-              </div>
-
-              <div class="bottom-part">
-                <!--
-                <ul class="features">
-                  <li><strong>#1</strong> Fact</li>
-                  <li><strong>#2</strong> Fact</li>
-                  <li><strong>#3</strong> Fact</li>
-                </ul>
-              -->
-
-                <a
-                  class="button large"
-                  href="https://dhs.lacounty.gov/office-of-diversion-and-reentry/our-services/office-of-diversion-and-reentry/"
-                  style="background-color: #ed7014"
-                  target="_blank"
-                  >Learn More</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Donate Section -->
-    <section class="donate-section">
-      <div class="auto-container">
-        <div id="donate" class="inner-container clearfix">
-          <h3>
-            Your support helps us change lives — every dollar fuels hope,
-            healing, and a brighter future.
-          </h3>
-          <a href="javascript:void(0);" class="call-btn" onclick="showPopup()"
+      <!-- Mobile Navigation -->
+      <div
+        id="mobile-menu"
+        class="md:hidden bg-white shadow-lg absolute w-full hidden transform -translate-x-full transition-transform"
+      >
+        <div class="container mx-auto px-4 py-6">
+          <a
+            href="about.html"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >About Us</a
+          >
+          <a
+            href="impact.html"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >Our Impact</a
+          >
+          <a
+            href="index.html#announcements"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >Events</a
+          >
+          <a
+            href="community.html"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >Community</a
+          >
+          <a
+            href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
+            target="_blank"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
             >Donate</a
+          >
+          <a
+            href="contact.html"
+            class="block py-3 text-gray-700 hover:text-orange-500"
+            >Contact</a
           >
         </div>
       </div>
-    </section>
-    <!-- End Donate Section -->
+    </header>
+    <!-- /Navigation -->
 
-    <!-- Footer -->
-    <footer>
-      <div class="footer-main" style="margin-top: 33px">
-        <div class="row">
-          <div class="col-four tab-full mob-full footer-info">
-            <div class="footer-logo"></div>
-            <div class="footer-icons">
-              <h4>Follow Us!</h4>
+    <!-- Main Content -->
+    <main class="pt-16">
+      <!-- Hero Section -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+          <h5 class="text-xl font-semibold mb-2 text-orange-500">Policies</h5>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+            What We Have Accomplished So Far...
+          </h1>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            In Los Angeles County, L.A.U.R.A has provided insight on equitable
+            policies and programs related to community justice and support
+            services.
+          </p>
+        </div>
+      </section>
 
-              <ul>
-                <li>
-                  <a href="https://www.facebook.com/LauraYouth"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
+      <!-- Statistics Section -->
+      <section
+        class="py-16 bg-gradient-to-r from-orange-500 to-orange-600 text-white"
+      >
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="stat-highlight rounded-lg p-6">
+              <div class="text-3xl font-bold mb-2">5+</div>
+              <div class="text-lg">Major Policy Initiatives</div>
+            </div>
+            <div class="stat-highlight rounded-lg p-6">
+              <div class="text-3xl font-bold mb-2">15+</div>
+              <div class="text-lg">Years of Advocacy</div>
+            </div>
+            <div class="stat-highlight rounded-lg p-6">
+              <div class="text-3xl font-bold mb-2">50+</div>
+              <div class="text-lg">Community Meetings</div>
+            </div>
+            <div class="stat-highlight rounded-lg p-6">
+              <div class="text-3xl font-bold mb-2">1000+</div>
+              <div class="text-lg">Lives Impacted</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Policy Initiatives -->
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- ATI Initiative -->
+            <div class="policy-card bg-white rounded-lg shadow-md">
+              <div class="policy-header">
+                <h3 class="text-xl font-bold mb-2">A.T.I</h3>
+                <p class="text-white opacity-90">
+                  Los Angeles County Alternatives To Incarceration (ATI)
+                  Initiatives
+                </p>
+                <div class="mt-4">
+                  <span
+                    class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm"
+                    >December 2019 - October 2020</span
+                  >
+                </div>
+              </div>
+              <div class="p-6">
+                <p class="text-gray-700 mb-6">
+                  L.A.U.R.A played a key role in the Los Angeles County
+                  Alternatives to Incarceration initiatives, advocating for
+                  community-based solutions that prioritize healing and
+                  rehabilitation over incarceration.
+                </p>
+                <a
+                  href="https://ceo.lacounty.gov/ati-documents-and-resources/"
+                  target="_blank"
+                  class="btn-primary inline-block w-full text-center py-3 rounded-lg"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+
+            <!-- Measure J -->
+            <div class="policy-card bg-white rounded-lg shadow-md">
+              <div class="policy-header">
+                <h3 class="text-xl font-bold mb-2">Measure J</h3>
+                <p class="text-white opacity-90">
+                  Implementation and Services Men's Central Jail Closure
+                  Workgroup's Community
+                </p>
+                <div class="mt-4">
+                  <span
+                    class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm"
+                    >June 22, 2021</span
+                  >
+                </div>
+              </div>
+              <div class="p-6">
+                <p class="text-gray-700 mb-6">
+                  Our advocacy supported the implementation of Measure J,
+                  focusing on redirecting county funding toward community-based
+                  alternatives and services rather than incarceration.
+                </p>
+                <a
+                  href="https://ceo.lacounty.gov/jcit/"
+                  target="_blank"
+                  class="btn-primary inline-block w-full text-center py-3 rounded-lg"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+
+            <!-- EREC -->
+            <div class="policy-card bg-white rounded-lg shadow-md">
+              <div class="policy-header">
+                <h3 class="text-xl font-bold mb-2">E.R.E.C</h3>
+                <p class="text-white opacity-90">
+                  The Los Angeles County Engagement and Racial Equity Committee
+                </p>
+                <div class="mt-4">
+                  <span
+                    class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm"
+                    >July 21, 2020</span
+                  >
+                </div>
+              </div>
+              <div class="p-6">
+                <p class="text-gray-700 mb-6">
+                  L.A.U.R.A contributed to the County's Racial Equity Committee,
+                  ensuring that community voices were heard in developing
+                  equitable policies and programs across Los Angeles County.
+                </p>
+                <a
+                  href="https://ceo.lacounty.gov/ardi/racial-equity-strategic-plan/"
+                  target="_blank"
+                  class="btn-primary inline-block w-full text-center py-3 rounded-lg"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+
+            <!-- JPRC -->
+            <div class="policy-card bg-white rounded-lg shadow-md">
+              <div class="policy-header">
+                <h3 class="text-xl font-bold mb-2">J.P.R.C</h3>
+                <p class="text-white opacity-90">
+                  Los Angeles County Jail Population Reduction Workgroup and
+                  Council
+                </p>
+                <div class="mt-4">
+                  <span
+                    class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm"
+                    >March 30, 2021</span
+                  >
+                </div>
+              </div>
+              <div class="p-6">
+                <p class="text-gray-700 mb-6">
+                  We participated in initiatives focused on safely reducing jail
+                  populations through alternative programs and community-based
+                  support services for individuals reentering society.
+                </p>
+                <a
+                  href="https://file.lacounty.gov/SDSInter/bos/bc/1104568_DEVELO_1.PDF"
+                  target="_blank"
+                  class="btn-primary inline-block w-full text-center py-3 rounded-lg"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+
+            <!-- LAC-DHS -->
+            <div class="policy-card bg-white rounded-lg shadow-md">
+              <div class="policy-header">
+                <h3 class="text-xl font-bold mb-2">LAC-DHS</h3>
+                <p class="text-white opacity-90">
+                  Los Angeles County Department of Health Services programming
+                  for community reentry
+                </p>
+                <div class="mt-4">
+                  <span
+                    class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm"
+                    >Feb 10, 2024</span
+                  >
+                </div>
+              </div>
+              <div class="p-6">
+                <p class="text-gray-700 mb-6">
+                  Collaborated with LA County DHS to develop and implement
+                  health-focused reentry programs that address both physical and
+                  mental health needs of individuals returning to the community.
+                </p>
+                <a
+                  href="https://dhs.lacounty.gov/office-of-diversion-and-reentry/our-services/office-of-diversion-and-reentry/"
+                  target="_blank"
+                  class="btn-primary inline-block w-full text-center py-3 rounded-lg"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+
+            <!-- Additional Policy Card -->
+            <div
+              class="policy-card bg-white rounded-lg shadow-md border-2 border-dashed border-gray-300 flex items-center justify-center"
+            >
+              <div class="p-6 text-center">
+                <div class="text-orange-500 text-4xl mb-4">
+                  <i class="fas fa-plus-circle"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-800">
+                  More Initiatives
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  L.A.U.R.A continues to advocate for equitable policies
+                </p>
+                <a
+                  href="contact.html"
+                  class="btn-primary inline-block px-6 py-2 rounded-lg"
+                >
+                  Get Involved
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Impact Section -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800">
+              Our Policy Impact
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              Through our advocacy and participation in key county initiatives,
+              L.A.U.R.A has helped shape policies that prioritize community
+              wellness, racial equity, and alternatives to incarceration.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="bg-gray-50 rounded-lg p-6">
+              <div class="text-orange-500 text-3xl mb-4">
+                <i class="fas fa-balance-scale"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-800">
+                Advocacy Focus Areas
+              </h3>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                  <span>Alternatives to incarceration</span>
                 </li>
-                <li>
-                  <a href="https://www.instagram.com/laurayouthla/"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                  <span>Racial equity in justice systems</span>
                 </li>
-                <li>
-                  <a href=""><i class="fab fa-tiktok"></i></a>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                  <span>Community-based reentry programs</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                  <span>Victim support services</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                  <span>Youth empowerment initiatives</span>
                 </li>
               </ul>
             </div>
 
-            <div class="footer-under-logo">
-              <p>
-                © L.A.U.R.A 501(c)(3) - 2025 . All rights reserved <br />Ending
-                The Cycle of Violence.
-              </p>
+            <div class="bg-gray-50 rounded-lg p-6">
+              <div class="text-orange-500 text-3xl mb-4">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-800">
+                Policy Outcomes
+              </h3>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <i class="fas fa-star text-orange-500 mt-1 mr-2"></i>
+                  <span>Increased funding for community programs</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-star text-orange-500 mt-1 mr-2"></i>
+                  <span>Enhanced reentry support services</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-star text-orange-500 mt-1 mr-2"></i>
+                  <span
+                    >Greater community representation in policy decisions</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-star text-orange-500 mt-1 mr-2"></i>
+                  <span
+                    >Improved access to resources for affected families</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-star text-orange-500 mt-1 mr-2"></i>
+                  <span>Stronger collaborations with county agencies</span>
+                </li>
+              </ul>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div class="col-two tab-1-3 mob-1-2 site-links">
-            <h4>Site Links</h4>
+      <!-- Call to Action -->
+      <section
+        class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white"
+      >
+        <div class="container mx-auto px-4 text-center">
+          <h2 class="text-3xl font-bold mb-6">Support Our Policy Work</h2>
+          <p class="text-xl mb-8 max-w-2xl mx-auto">
+            Your support helps us continue advocating for policies that create
+            stronger, healthier communities.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
+              target="_blank"
+              class="bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+            >
+              Donate Now
+            </a>
+            <a
+              href="contact.html"
+              class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition"
+            >
+              Volunteer
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- /Main Content -->
 
-            <ul>
-              <li><a href="about.html#process">About Us</a></li>
-              <li><a href="about.html#members">Board of Directors</a></li>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <!-- Logo and Social -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Follow Us!</h4>
+            <div class="flex space-x-4 mb-4">
+              <a
+                href="https://www.facebook.com/LauraYouth"
+                class="text-white hover:text-blue-400"
+              >
+                <i class="fab fa-facebook-f text-2xl"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/laurayouthla/"
+                class="text-white hover:text-pink-400"
+              >
+                <i class="fab fa-instagram text-2xl"></i>
+              </a>
+              <a href="#" class="text-white hover:text-gray-300">
+                <i class="fab fa-tiktok text-2xl"></i>
+              </a>
+            </div>
+            <p class="text-gray-400">
+              © L.A.U.R.A 501(c)(3) - 2025<br />All rights reserved<br />Ending
+              The Cycle of Violence.
+            </p>
+          </div>
+
+          <!-- Site Links -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Site Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="about.html#mission"
+                  class="text-gray-400 hover:text-white"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html#board-members"
+                  class="text-gray-400 hover:text-white"
+                  >Board of Directors</a
+                >
+              </li>
               <li>
                 <a
                   href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
                   target="_blank"
+                  class="text-gray-400 hover:text-white"
                   >Donate</a
                 >
               </li>
-              <li><a href="faq.html#faq">FAQ</a></li>
-              <li><a href="terms.html">Terms</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li>
+                <a href="faq.html" class="text-gray-400 hover:text-white"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a href="terms.html" class="text-gray-400 hover:text-white"
+                  >Terms</a
+                >
+              </li>
+              <li>
+                <a href="privacy.html" class="text-gray-400 hover:text-white"
+                  >Privacy Policy</a
+                >
+              </li>
             </ul>
           </div>
-          <div class="col-two tab-1-3 mob-1-2 site-links">
-            <h4>Mailing Address</h4>
-            <p>
-              P.O Box 11681 <br />
+
+          <!-- Mailing Address -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Mailing Address</h4>
+            <p class="text-gray-400">
+              P.O Box 11681<br />
               Los Angeles, CA
             </p>
           </div>
 
-          <!-- Email Subscription-->
-          <div class="col-four tab-1-3 mob-full footer-subscribe">
-            <h4>Subscribe to our Newsletter</h4>
-            <p>Get notifications on our latest events & <br />announcements.</p>
-
-            <div class="subscribe-form">
-              <form id="subscribe-form">
-                <input
-                  type="email"
-                  name="dEmail"
-                  class="email"
-                  placeholder="Type email & hit enter"
-                  required
-                />
-                <input type="submit" value="Subscribe" />
-              </form>
-            </div>
+          <!-- Newsletter -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Subscribe to our Newsletter</h4>
+            <p class="text-gray-400 mb-4">
+              Get notifications on our latest events & announcements.
+            </p>
+            <form class="flex">
+              <input
+                type="email"
+                placeholder="Type email & hit enter"
+                class="bg-gray-700 text-white px-4 py-2 rounded-l w-full"
+              />
+              <button type="submit" class="bg-orange-500 px-4 py-2 rounded-r">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
-      </div>
 
-      <div class="footer-bottom">
-        <div class="row">
-          <div class="col-twelve">
-            <div class="copyright">
-              <span>© Copyright LAURALA.ORG 2025.</span>
-              <span
-                >Design by
-                <a href="https://github.com/d-velopr/">Dvelupmint</a></span
-              >
-            </div>
-
-            <div id="go-top" style="display: block">
-              <a class="smoothscroll" title="Back to Top" href="#top"
-                ><i class="icon ion-android-arrow-up"></i
-              ></a>
-            </div>
-          </div>
+        <div class="border-t border-gray-700 pt-8 text-center">
+          <p class="text-gray-400">
+            © Copyright LAURALA.ORG 2025. Design by
+            <a
+              href="https://github.com/d-velopr/"
+              class="text-orange-500 hover:text-orange-400"
+              >Dvelupmint</a
+            >
+          </p>
         </div>
       </div>
     </footer>
     <!-- /Footer -->
 
-    <div id="preloader">
-      <div id="loader"></div>
-    </div>
+    <!-- JavaScript for Mobile Menu and Smooth Scrolling -->
+    <script>
+      // Mobile Menu Toggle
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+          menu.classList.toggle("transform");
+          menu.classList.toggle("-translate-x-full");
 
-    <script src="js/popup.js"></script>
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/sub.js"></script>
+          // Toggle icon between hamburger and X
+          const icon = this.querySelector("i");
+          if (icon.classList.contains("fa-bars")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          }
+        });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const menu = document.getElementById("mobile-menu");
+        const toggle = document.getElementById("menu-toggle");
+
+        if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+          menu.classList.add("hidden", "transform", "-translate-x-full");
+          const icon = toggle.querySelector("i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        }
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.add("hidden", "transform", "-translate-x-full");
+          const icon = document.querySelector("#menu-toggle i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
