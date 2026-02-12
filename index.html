@@ -74,6 +74,12 @@
         background-color: #d86212;
         transform: translateY(-2px);
       }
+      header.scrolled {
+        background: white !important;
+      }
+      header.scrolled .nav-link {
+        color: #374151 !important;
+      }
     </style>
   </head>
 
@@ -747,6 +753,7 @@
       </div>
     </footer>
     <!-- /Footer -->
+    <!-- NavBar.js -->
     <script>
       // Consolidated scroll handler - only one version
       function handleScroll() {
@@ -837,13 +844,6 @@
         });
       });
     </script>
-    <style>
-      header.scrolled {
-        background: white !important;
-      }
-      header.scrolled .nav-link {
-        color: #374151 !important;
-      }
-    </style>
+    <!-- /NavBar.js -->
   </body>
 </html>
