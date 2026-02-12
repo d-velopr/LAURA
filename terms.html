@@ -88,132 +88,167 @@
 
   <body id="top" class="bg-gray-100">
     <!-- Navigation -->
-    <header class="fixed w-full bg-white shadow-md z-50">
+    <!-- Navigation -->
+    <header
+      id="main-header"
+      class="fixed w-full bg-transparent transition-all duration-300 z-50"
+    >
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center py-4">
           <!-- Logo -->
           <div class="logo">
-            <a href="index.html" class="text-2xl font-bold text-gray-800"
-              >LAURA</a
-            >
+            <a href="index.html">
+              <img
+                src="images/logo.png"
+                alt="LAURA"
+                class="h-12 w-auto logo-image"
+              />
+            </a>
           </div>
 
           <!-- Desktop Navigation -->
           <nav class="hidden md:flex items-center space-x-6">
-            <div class="dropdown relative">
-              <a
-                href="about.html"
-                class="text-gray-700 hover:text-orange-500 font-medium"
-                >About Us</a
-              >
+            <div class="dropdown relative group">
+              <div class="relative">
+                <a
+                  href="about.html"
+                  class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
+                >
+                  About Us
+                </a>
+              </div>
               <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
               >
                 <a
                   href="about.html"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >Mission / History</a
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
+                  Mission / History
+                </a>
                 <a
                   href="about.html#our-strategy"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >Our Strategy</a
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
+                  Our Strategy
+                </a>
                 <a
                   href="about.html#board-members"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >Board of Directors</a
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
+                  Board of Directors
+                </a>
               </div>
             </div>
 
-            <div class="dropdown relative">
-              <a
-                href="impact.html"
-                class="text-gray-700 hover:text-orange-500 font-medium"
-                >Our Impact</a
-              >
+            <div class="dropdown relative group">
+              <div class="relative">
+                <a
+                  href="impact.html"
+                  class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
+                >
+                  Our Impact
+                </a>
+              </div>
+
               <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
               >
                 <a
                   href="impact.html"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >L.A.U.R.A's Victim Support Program</a
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
+                  L.A.U.R.A's Victim Support Program
+                </a>
                 <a
                   href="impact.html#youth"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >L.A.U.R.A Youth</a
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
+                  L.A.U.R.A Youth
+                </a>
               </div>
             </div>
 
-            <div class="dropdown relative">
-              <a
-                href="index.html#announcements"
-                class="text-gray-700 hover:text-orange-500 font-medium"
-                >Events</a
-              >
+            <div class="dropdown relative group">
+              <div class="relative">
+                <a
+                  href="index.html#announcements"
+                  class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
+                >
+                  Events
+                </a>
+              </div>
+
               <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
               >
                 <a
                   href="events.html#resource-fair"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >Resource Fair</a
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
+                  Resource Fair
+                </a>
                 <a
                   href="events.html#gallery"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >Gallery</a
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
+                  Gallery
+                </a>
               </div>
             </div>
 
-            <div class="dropdown relative">
-              <a
-                href="community.html"
-                class="text-gray-700 hover:text-orange-500 font-medium"
-                >Community</a
-              >
+            <div class="dropdown relative group">
+              <div class="relative">
+                <a
+                  href="community.html"
+                  class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
+                >
+                  Community
+                </a>
+              </div>
+
               <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
               >
                 <a
                   href="community.html#partners"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >Our Partners</a
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
+                  Our Partners
+                </a>
                 <a
                   href="community.html#resources"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >Resources</a
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
+                  Resources
+                </a>
                 <a
                   href="community.html#sponsors"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >Our Sponsors</a
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
+                  Our Sponsors
+                </a>
               </div>
             </div>
 
             <a
-              href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
+              href="https://givebutter.com/LAURALA"
               target="_blank"
-              class="text-gray-700 hover:text-orange-500 font-medium"
-              >Donate</a
+              class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300"
             >
+              Donate
+            </a>
 
             <a
               href="contact.html"
-              class="bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-orange-600 transition"
-              >Contact</a
+              class="nav-contact bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-orange-500 transition-all duration-300"
             >
+              Contact
+            </a>
           </nav>
 
           <!-- Mobile Menu Button -->
-          <button id="menu-toggle" class="md:hidden text-gray-700 text-xl">
+          <button id="menu-toggle" class="md:hidden text-white text-xl">
             <i class="fas fa-bars"></i>
           </button>
         </div>
@@ -228,38 +263,43 @@
           <a
             href="about.html"
             class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-            >About Us</a
           >
+            About Us
+          </a>
           <a
             href="impact.html"
             class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-            >Our Impact</a
           >
+            Our Impact
+          </a>
           <a
             href="index.html#announcements"
             class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-            >Events</a
           >
+            Events
+          </a>
           <a
             href="community.html"
             class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-            >Community</a
           >
+            Community
+          </a>
           <a
-            href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
+            href="https://givebutter.com/LAURALA"
             target="_blank"
             class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-            >Donate</a
           >
+            Donate
+          </a>
           <a
             href="contact.html"
             class="block py-3 text-gray-700 hover:text-orange-500"
-            >Contact</a
           >
+            Contact
+          </a>
         </div>
       </div>
     </header>
-    <!-- /Navigation -->
 
     <!-- Main Content -->
     <main class="pt-16">
@@ -623,7 +663,7 @@
               </li>
               <li>
                 <a
-                  href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
+                  href="https://givebutter.com/LAURALA"
                   target="_blank"
                   class="text-gray-400 hover:text-white"
                   >Donate</a
@@ -689,22 +729,49 @@
     </footer>
     <!-- /Footer -->
 
-    <!-- JavaScript for Mobile Menu and Smooth Scrolling -->
+    <!-- NavBar.js -->
     <script>
-      // Mobile Menu Toggle
+      // Consolidated scroll handler - only one version
+      function handleScroll() {
+        const header = document.getElementById("main-header");
+        const scrollPosition = window.scrollY;
+
+        console.log("Scroll position:", scrollPosition); // Debug line
+
+        if (scrollPosition > 50) {
+          header.classList.add("scrolled");
+          console.log("Header is now white"); // Debug line
+        } else {
+          header.classList.remove("scrolled");
+          console.log("Header is now transparent"); // Debug line
+        }
+      }
+
+      // Add event listeners once
+      window.addEventListener("load", handleScroll);
+      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("resize", handleScroll);
+
+      // Mobile menu toggle
       document
         .getElementById("menu-toggle")
         .addEventListener("click", function () {
           const menu = document.getElementById("mobile-menu");
+          const isScrolled = document
+            .getElementById("main-header")
+            .classList.contains("scrolled");
+
           menu.classList.toggle("hidden");
           menu.classList.toggle("transform");
           menu.classList.toggle("-translate-x-full");
 
-          // Toggle icon between hamburger and X
           const icon = this.querySelector("i");
           if (icon.classList.contains("fa-bars")) {
             icon.classList.remove("fa-bars");
             icon.classList.add("fa-times");
+            if (!isScrolled) {
+              menu.style.backgroundColor = "white";
+            }
           } else {
             icon.classList.remove("fa-times");
             icon.classList.add("fa-bars");
@@ -753,5 +820,14 @@
         });
       });
     </script>
+    <style>
+      header.scrolled {
+        background: white !important;
+      }
+      header.scrolled .nav-link {
+        color: #374151 !important;
+      }
+    </style>
+    <!-- /NavBar.js -->
   </body>
 </html>
