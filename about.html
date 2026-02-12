@@ -1,22 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
     <title>L.A.U.R.A | About Us</title>
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <meta name="keywords" content="" />
+    <meta
+      name="description"
+      content="Learn about L.A.U.R.A's mission, history, and strategy for community empowerment"
+    />
+    <meta name="author" content="@Dvelupmint" />
+    <meta
+      name="keywords"
+      content="L.A.U.R.A, non-profit, South Central LA, community support"
+    />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
-    <link rel="stylesheet" href="css/elementAEOC.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/vendor.css" />
-    <script src="js/modernizr.js"></script>
-    <!-- favicon -->
-    <link rel="icon" type="image/png" href="images/lauraLogo.png" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -29,493 +30,822 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <!-- Custom Styles -->
+    <style>
+      :root {
+        --laura-orange: #ed7014;
+        --laura-dark: #252525;
+        --laura-light: #efefef;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      #mobile-menu {
+        transition: transform 0.3s ease;
+      }
+
+      #mobile-menu.hidden {
+        transform: translateX(-100%);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+      }
+
+      .btn-primary {
+        background-color: var(--laura-orange);
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #d86212;
+        transform: translateY(-2px);
+      }
+
+      /* Custom styling for process steps */
+      .step-item {
+        position: relative;
+        padding-left: 80px;
+        margin-bottom: 40px;
+      }
+
+      .step-number {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        background: #ed7014;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      /* Board member cards */
+      .board-member {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin-bottom: 30px;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .board-member:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+    </style>
   </head>
 
-  <body id="top">
-    <!-- Nav Bar -->
-    <header>
-      <div class="row">
-        <div class="logo">
-          <a href="index.html">LAURA-LOGO</a>
-        </div>
+  <body id="top" class="bg-gray-100">
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="index.html" class="text-2xl font-bold text-gray-800"
+              >LAURA</a
+            >
+          </div>
 
-        <nav id="main-nav-wrap" aria-label="Main Navigation">
-          <ul class="main-navigation">
-            <li class="dropdown">
-              <a href="about.html" class="smoothscroll">About Us</a>
-              <ul class="dropdown-content">
-                <li><a href="about.html">Mission / History</a></li>
-                <li><a href="about.html#testimonials">Our Strategy</a></li>
-                <li><a href="about.html#members">Board of Directors</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="impact.html" class="smoothscroll">Our Impact</a>
-              <ul class="dropdown-content">
-                <li>
-                  <a href="impact.html">L.A.U.R.A's Victim Support Program</a>
-                </li>
-                <li><a href="impact.html#youth">L.A.U.R.A Youth</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="index.html#announcements" class="smoothscroll">Events</a>
-              <ul class="dropdown-content">
-                <li><a href="events.html#resource-fair">Resource Fair</a></li>
-                <li><a href="events.html#gallery">Gallery</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="community.html" class="smoothscroll">Community</a>
-              <ul class="dropdown-content">
-                <li><a href="community.html#partners">Our Partners</a></li>
-                <li><a href="community.html#cta">Resources</a></li>
-                <li><a href="community.html#sponsors">Our Sponsors</a></li>
-              </ul>
-            </li>
-            <li>
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center space-x-6">
+            <div class="dropdown relative">
               <a
-                href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
-                target="_blank"
-                >Donate</a
+                href="about.html"
+                class="text-gray-700 hover:text-orange-500 font-medium"
+                >About Us</a
               >
-            </li>
-            <li class="highlight with-sep">
-              <a href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <a class="menu-toggle" href="#"><span>Menu</span></a>
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+              >
+                <a
+                  href="about.html"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Mission / History</a
+                >
+                <a
+                  href="about.html#our-strategy"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Our Strategy</a
+                >
+                <a
+                  href="about.html#board-members"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Board of Directors</a
+                >
+              </div>
+            </div>
+
+            <div class="dropdown relative">
+              <a
+                href="impact.html"
+                class="text-gray-700 hover:text-orange-500 font-medium"
+                >Our Impact</a
+              >
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+              >
+                <a
+                  href="impact.html"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >L.A.U.R.A's Victim Support Program</a
+                >
+                <a
+                  href="impact.html#youth"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >L.A.U.R.A Youth</a
+                >
+              </div>
+            </div>
+
+            <div class="dropdown relative">
+              <a
+                href="index.html#announcements"
+                class="text-gray-700 hover:text-orange-500 font-medium"
+                >Events</a
+              >
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+              >
+                <a
+                  href="events.html#resource-fair"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Resource Fair</a
+                >
+                <a
+                  href="events.html#gallery"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Gallery</a
+                >
+              </div>
+            </div>
+
+            <div class="dropdown relative">
+              <a
+                href="community.html"
+                class="text-gray-700 hover:text-orange-500 font-medium"
+                >Community</a
+              >
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+              >
+                <a
+                  href="community.html#partners"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Our Partners</a
+                >
+                <a
+                  href="community.html#cta"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Resources</a
+                >
+                <a
+                  href="community.html#sponsors"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Our Sponsors</a
+                >
+              </div>
+            </div>
+
+            <a
+              href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
+              target="_blank"
+              class="text-gray-700 hover:text-orange-500 font-medium"
+              >Donate</a
+            >
+
+            <a
+              href="contact.html"
+              class="bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-orange-600 transition"
+              >Contact</a
+            >
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button id="menu-toggle" class="md:hidden text-gray-700 text-xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div
+        id="mobile-menu"
+        class="md:hidden bg-white shadow-lg absolute w-full hidden transform -translate-x-full transition-transform"
+      >
+        <div class="container mx-auto px-4 py-6">
+          <a
+            href="about.html"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >About Us</a
+          >
+          <a
+            href="impact.html"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >Our Impact</a
+          >
+          <a
+            href="index.html#announcements"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >Events</a
+          >
+          <a
+            href="community.html"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >Community</a
+          >
+          <a
+            href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
+            target="_blank"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >Donate</a
+          >
+          <a
+            href="contact.html"
+            class="block py-3 text-gray-700 hover:text-orange-500"
+            >Contact</a
+          >
+        </div>
       </div>
     </header>
-    <!-- /Nav Bar -->
+    <!-- /Navigation -->
 
     <!-- Main Content -->
-    <section id="process">
-      <div class="row section-intro">
-        <div class="col-twelve with-bottom-line">
-          <h1>About Us</h1>
-          <h1></h1>
-
-          <p class="lead">
-            L.A.U.R.A (Life After Uncivil Ruthless Acts) - Dedicated to
-            enhancing the quality of life of the residents in South Central Los
-            Angeles, CA.
+    <main class="pt-16">
+      <!-- Hero Section -->
+      <section
+        class="bg-gradient-to-r from-orange-500 to-orange-600 py-20 text-white"
+      >
+        <div class="container mx-auto px-4 text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">About L.A.U.R.A</h1>
+          <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+            Life After Uncivil Ruthless Acts - Dedicated to enhancing the
+            quality of life of the residents in South Central Los Angeles, CA.
           </p>
         </div>
-      </div>
+      </section>
 
-      <div class="row process-content">
-        <!-- left side content -->
-        <div class="left-side">
-          <div class="item" data-item="1">
-            <h5>Mission Statement</h5>
+      <!-- Mission Section -->
+      <section id="mission" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col lg:flex-row items-center gap-12">
+            <!-- Mission Statement -->
+            <div class="lg:w-1/2">
+              <h2 class="text-3xl font-bold mb-6 text-gray-800">Our Mission</h2>
+              <div class="step-item">
+                <div class="step-number">1</div>
+                <h3 class="text-xl font-semibold mb-3">Mission Statement</h3>
+                <p class="text-gray-700">
+                  L.A.U.R.A. is a non-profit organization dedicated to enhancing
+                  the quality of life of the residents of South Central Los
+                  Angeles. We accomplish this by empowering youth,
+                  victim-survivors, and their families through civic awareness;
+                  facilitating community collaboration; and bringing a wide
+                  range of resources to the community.
+                </p>
+              </div>
+            </div>
 
-            <p>
-              L.A.U.R.A. is a non-profit organization dedicated to enhancing the
-              quality of life of the residents of South Central Los Angeles. We
-              accomplish this by empowering youth, victim-survivors, and their
-              families through civic awareness; facilitating community
-              collaboration; and bringing a wide range of resources to the
+            <!-- History -->
+            <div class="lg:w-1/2">
+              <div class="step-item">
+                <div class="step-number">2</div>
+                <h3 class="text-xl font-semibold mb-3">Our History</h3>
+                <p class="text-gray-700">
+                  "The organization 'L.A.U.R.A' was formed in memory of Laura
+                  Sanchez. Laura was murdered on March 18, 2007 while parking
+                  her family van in front of her home. She was a wonderful,
+                  beautiful, loving mother of four and friend to many. She was
+                  an only child to Irene Cruz who was murdered the same way on a
+                  Thanksgiving night while waiting for Laura and her family on
+                  her mother's front porch November 1998. Both innocent
+                  bystanders murdered by senseless 'Drive By Shootings' in less
+                  than a decade In South L.A."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vision Section -->
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Our Vision</h2>
+            <p class="text-lg text-gray-700 mb-8">
+              Our vision is to create a thriving, sustainable, safe, and clean
+              community for all the residents of South Central Los Angeles.
+              Through community collaboration, partnership development, and
+              innovative initiatives, we hope to one day have multiple youth
+              resource centers within in our community.
+            </p>
+            <div class="step-item text-left">
+              <div class="step-number">3</div>
+              <h3 class="text-xl font-semibold mb-3">About Our Founder</h3>
+              <p class="text-gray-700">
+                Adela Barajas and seven other siblings grew up in the South
+                Central Los Angeles area and attended local schools. When her
+                sister-in-law, Laura, was murdered in a drive-by shooting, she
+                was compelled to become a part of the solution. She became a
+                community advocate and is committed to finding ways to turn such
+                tragedies into positive outcomes for her family and community.
+                She has become a support system for Laura's kids and other
+                victims' survivors in her community who are dealing with the
+                cruel tragedy of losing a loved one.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Strategy Section -->
+      <section id="our-strategy" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Our Strategy</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+              Our comprehensive approach to community empowerment involves three
+              key pillars that work together to create lasting positive change.
+            </p>
+          </div>
+
+          <!-- Civic Engagement -->
+          <div class="mb-16">
+            <h3
+              class="text-2xl font-bold mb-6 text-center bg-orange-100 py-3 px-6 rounded-full inline-block"
+            >
+              Civic Engagement
+            </h3>
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h4 class="font-semibold text-lg mb-4">
+                Leads to Public Safety:
+              </h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                    <li>
+                      Continue Building Law Enforcement / Community Relations
+                    </li>
+                    <li>Growing Our Community Collaborative</li>
+                    <li>Community Beautification</li>
+                    <li>City Council Service Delivery</li>
+                  </ul>
+                </div>
+                <div>
+                  <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                    <li>Attracting New Businesses</li>
+                    <li>Improving Local Parks</li>
+                    <li>Changing Community Infrastructure</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Youth Leadership -->
+          <div class="mb-16">
+            <h3
+              class="text-2xl font-bold mb-6 text-center bg-orange-100 py-3 px-6 rounded-full inline-block"
+            >
+              Youth Leadership
+            </h3>
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h4 class="font-semibold text-lg mb-4">
+                Creating Opportunities for Youth:
+              </h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <ul class="list-disc pl-5 text-gray-700 mb-4">
+                    <li>Prevention & Intervention</li>
+                    <li>Youth Empowerment</li>
+                    <li>Youth Forums</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 class="font-semibold mb-2">Program Components:</h5>
+                  <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                    <li>Youth Employment</li>
+                    <li>College Information</li>
+                    <li>Expand Youth Horizons</li>
+                    <li>Family Reunification</li>
+                    <li>Peer-to-peer Counseling</li>
+                    <li>Group Therapy</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Safety Net -->
+          <div class="mb-8">
+            <h3
+              class="text-2xl font-bold mb-6 text-center bg-orange-100 py-3 px-6 rounded-full inline-block"
+            >
+              Safety Net for Victims of Crime & Survivors
+            </h3>
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <p class="text-lg font-semibold mb-4">
+                * Walking along side the loved ones of murder victims
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-semibold text-lg mb-3">
+                    Offer Victims of Crime Assistance & Referrals:
+                  </h4>
+                  <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                    <li>Candle Vigils, Referrals</li>
+                    <li>Funeral Assistance</li>
+                    <li>Navigating The System</li>
+                    <li>Transporting Out Of The Country</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-lg mb-3">Support Groups:</h4>
+                  <h5 class="font-semibold mb-2">Meetings:</h5>
+                  <p class="text-gray-700 mb-4">
+                    Every last Thursday of each month at 4701 S. Central Ave.
+                    Los Angeles, CA 90011 6:00 pm
+                  </p>
+
+                  <h5 class="font-semibold mb-2">Youth Meetings:</h5>
+                  <p class="text-gray-700">
+                    5:00 pm Community Civic Engagement Weekly meetings<br />
+                    6:30 pm on Thursdays at Fred Roberts Recreation Center
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Board of Directors -->
+      <section id="board-members" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Board of Directors</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+              Our dedicated board members bring diverse expertise and commitment
+              to advancing L.A.U.R.A's mission in the South Central LA
               community.
             </p>
           </div>
-        </div>
-        <!-- /left-side -->
 
-        <!-- right side content -->
-        <div class="right-side">
-          <div class="item" data-item="2">
-            <h5>History</h5>
-
-            <p>
-              “The organization “L.A.U.R.A” was formed in memory of Laura
-              Sanchez. Laura was murdered on March 18, 2007 while parking her
-              family van in front of her home. She was a wonderful, beautiful,
-              loving mother of four and friend to many. She was an only child to
-              Irene Cruz who was murdered the same way on a Thanksgiving night
-              while waiting for Laura and her family on her mother’s front porch
-              November 1998. Both innocent bystanders murdered by senseless
-              “Drive By Shootings” in less than a decade In South L.A.”
-            </p>
-          </div>
-        </div>
-        <!-- /right-side -->
-
-        <!-- center img -->
-        <div class="image-part"></div>
-        <!-- #3 Our Vision-->
-        <div class="item item-three" data-item="3">
-          <h5>Our Vision</h5>
-
-          <p>
-            Our vision is to create a thriving, sustainable, safe, and clean
-            community for all the residents of South Central Los Angeles.
-            Through community collaboration, partnership development, and
-            innovative initiatives, we hope to one day have multiple youth
-            resource centers within in our community. About Our Founder: Adela
-            Barajas and seven other siblings grew up in the South Central Los
-            Angeles area and attended local schools. When her sister-in-law,
-            Laura, was murdered in a drive-by shooting, she was compelled to
-            become a part of the solution. She became a community advocate and
-            is committed to finding ways to turn such tragedies into positive
-            outcomes for her family and community. She has become a support
-            system for Laura’s kids and other victims’ survivors in her
-            community who are dealing with the cruel tragedy of losing a loved
-            one.
-          </p>
-        </div>
-
-        <!-- Our Strategy -->
-        <section id="testimonials">
-          <div class="row">
-            <div class="col-twelve">
-              <h2 class="h01">Our Strategy</h2>
-            </div>
-          </div>
-
-          <div class="community-list">
-            <h3>Civic Engagement</h3>
-            <div class="community-sub">
-              <h4 style="font-family: Poppins">
-                <u>Leads to Public Safety</u>
-              </h4>
-              <h4 style="font-family: Poppins">
-                <u>Continue Building Law Enforcement / Community Relations</u>
-              </h4>
-              <h4 style="font-family: Poppins">
-                <u>Growing Our Community Collaborative</u>
-              </h4>
-              <h4 style="font-family: Poppins">
-                <u>Community Beautification</u>
-              </h4>
-              <h4 style="font-family: Poppins">
-                <u>City Council Service Delivery</u>
-              </h4>
-              <h4 style="font-family: Poppins">
-                <u>Attracting New Businesses</u>
-              </h4>
-              <h4 style="font-family: Poppins"><u>Improving Local Parks</u></h4>
-              <h4 style="font-family: Poppins">
-                <u>Changing Community Infrastructure</u>
-              </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Adela Barajas -->
+            <div class="board-member">
+              <div class="text-center mb-4">
+                <div
+                  class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center"
+                >
+                  <i class="fas fa-user text-5xl text-gray-500"></i>
+                </div>
+                <h3 class="text-xl font-bold">Adela Barajas</h3>
+                <p class="text-orange-500 font-semibold">
+                  Founder & Executive Director
+                </p>
+              </div>
+              <p class="text-gray-700">
+                Adela Barajas and seven other siblings grew up in the South
+                Central Los Angeles area and attended local schools. When her
+                sister-in-law, Laura, was murdered in a drive-by shooting, she
+                was compelled to become a part of the solution. She became a
+                community advocate and is committed to finding ways to turn such
+                tragedies into positive outcomes for her family and community.
+              </p>
             </div>
 
-            <h3>Youth Leadership</h3>
-            <div class="community-sub">
-              <h4 style="font-family: Poppins">
-                <u>Creating Opportunities for Youth</u>
-              </h4>
-              <h4 style="font-family: Poppins">
-                <u>Prevention & Intervention</u>
-              </h4>
-              <h4 style="font-family: Poppins"><u>Youth Empowerment</u></h4>
-              <h4 style="font-family: Poppins"><u>Youth Forums</u></h4>
-              <ul>
-                <li>Youth Employment</li>
-                <li>College Information</li>
-                <li>Expand Youth Horizons</li>
-                <li>Family Reunification</li>
-                <li>Peer-to-peer Counseling</li>
-                <li>Group Therapy</li>
-              </ul>
+            <!-- Yadira Hernandez Herrera -->
+            <div class="board-member">
+              <div class="text-center mb-4">
+                <div
+                  class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center"
+                >
+                  <i class="fas fa-user text-5xl text-gray-500"></i>
+                </div>
+                <h3 class="text-xl font-bold">Yadira Hernandez Herrera</h3>
+                <p class="text-orange-500 font-semibold">
+                  President & C.E.O.<br />Communities for a Better Environment
+                </p>
+              </div>
+              <p class="text-gray-700 italic">
+                Biography information coming soon.
+              </p>
             </div>
 
-            <h3>Safety Net for Victims of Crime & Survivors</h3>
-            <p style="color: black">
-              * Walking along side the loved ones of murder victims
-            </p>
-            <div class="community-sub">
-              <h4><u>Offer Victims of Crime Assistance & Referrals</u></h4>
-              <ul>
-                <li>- Candle Vigils, Referrals</li>
-                <li>- Funeral Assistance</li>
-                <li>- Navigating The System</li>
-                <li>- Transporting Out Of The Country</li>
-              </ul>
-
-              <h4><u>Support Groups</u></h4>
-              <ul>
-                <h5><strong>Meetings</strong></h5>
-                <li>
-                  Every last Thursday of each month at 4701 S. Central Ave. Los
-                  Angeles, CA 90011 6:00 pm
-                </li>
-
-                <h5><strong>Youth Meetings</strong></h5>
-                <li>
-                  5:00 pm Community Civic Engagement Weekly meetings <br />
-                  6:30 pm on Thursdays at Fred Roberts Recreation Center
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- /flex-container -->
-        </section>
-        <!-- /Our Strategy -->
-
-        <!-- Board of Directors Slides -->
-        <section id="members">
-          <div class="row">
-            <div class="col-twelve">
-              <h2 class="h01">Board of Directors</h2>
-            </div>
-          </div>
-
-          <div class="row flex-container">
-            <div id="testimonial-slider" class="flexslider">
-              <ul class="slides">
-                <!-- Adela -->
-                <li>
-                  <div class="testimonial-author">
-                    <img src="#" alt="profile image" />
-                    <div class="author-info">
-                      Adela Barajas
-                      <span class="position">Founder & Executive Director</span>
-                    </div>
-                  </div>
-
-                  <p>
-                    Adela Barajas and seven other siblings grew up in the South
-                    Central Los Angeles area and attended local schools. When
-                    her sister-in-law, Laura, was murdered in a drive-by
-                    shooting, she was compelled to become a part of the
-                    solution. She became a community advocate and is committed
-                    to finding ways to turn such tragedies into positive
-                    outcomes for her family and community. She has become a
-                    support system for Laura’s kids and other victims’ survivors
-                    in her community who are dealing with the cruel tragedy of
-                    losing a loved one.
-                  </p>
-                </li>
-                <!-- Yadira -->
-                <li>
-                  <div class="testimonial-author">
-                    <img src="images/.jpg" alt="profile image" />
-                    <div class="author-info">
-                      Yadira Hernandez Herrera
-                      <span class="position"
-                        >President & C.E.O. <br />Communities for a Better
-                        Environment</span
-                      >
-                    </div>
-                  </div>
-
-                  <p></p>
-                </li>
-                <!-- Mark -->
-                <li>
-                  <div class="testimonial-author">
-                    <img
-                      src="images/members/mark-wilson.png"
-                      alt="profile image"
-                      style="width: fit-content"
-                    />
-                    <div class="author-info">
-                      Mark Wilson
-                      <span class="position"
-                        >President & C.E.O. <br />
-                        Coalition for Responsible Community Development</span
-                      >
-                    </div>
-                  </div>
-
-                  <p>
-                    Mark Anthony Wilson, Jr. co-founded the Coalition for
-                    Responsible Community Development (CRCD) in 2005 and served
-                    as CRCD’s Executive Director for a decade and now serves as
-                    the agency’s President and CEO. Raised in South Los Angeles,
-                    Mark previously served as the Director of the Youth
-                    Empowerment Project with the Southern Christian Leadership
-                    Conference/Martin Luther King Legacy Association, and the
-                    Director of Community Development with the Dunbar Economic
-                    Development Corporation.
-                  </p>
-                </li>
-                <!-- Daniel -->
-                <li>
-                  <div class="testimonial-author">
-                    <img src="images/.jpg" alt="profile image" />
-                    <div class="author-info">
-                      Daniel Healy, M.P.H.
-                      <span class="position"
-                        >Treasurer Violence Prevention Coalition of Greater Los
-                        Angeles</span
-                      >
-                    </div>
-                  </div>
-
-                  <p></p>
-                </li>
-                <!-- Dominik -->
-                <li>
-                  <div class="testimonial-author">
-                    <img src="images/.jpg" alt="profile image" />
-                    <div class="author-info">
-                      Dominik Onate
-                      <span class="position"
-                        >Pepperdine University School of Law</span
-                      >
-                    </div>
-                  </div>
-
-                  <p></p>
-                </li>
-                <!-- Paul -->
-                <li>
-                  <div class="testimonial-author">
-                    <img src="images/.jpg" alt="profile image" />
-                    <div class="author-info">
-                      Paul Jacoby
-                      <span class="position"></span>
-                    </div>
-                  </div>
-
-                  <p></p>
-                </li>
-                <!-- Olivia -->
-                <li>
-                  <div class="testimonial-author">
-                    <img src="images/.jpg" alt="profile image" />
-                    <div class="author-info">
-                      Olivia E. Fulton-Palma
-                      <span class="position">People Coordinated Services </span>
-                    </div>
-                  </div>
-
-                  <p></p>
-                </li>
-              </ul>
-            </div>
-            <br />
-            <a
-              class="button full-width"
-              style="margin-top: 55px; color: black"
-              href="contact.html"
-              >Contact Us</a
-            >
-          </div>
-          <!-- /flex-container -->
-        </section>
-        <!-- Board of Directors Slides -->
-      </div>
-      <!-- /process-content -->
-    </section>
-    <!-- /Main Content -->
-
-    <!-- Footer -->
-    <footer>
-      <div class="footer-main" style="margin-top: 33px">
-        <div class="row">
-          <div class="col-four tab-full mob-full footer-info">
-            <div class="footer-logo"></div>
-            <div class="footer-icons">
-              <h4>Follow Us!</h4>
-
-              <ul>
-                <li>
-                  <a href="https://www.facebook.com/LauraYouth"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/laurayouthla/"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href=""><i class="fab fa-tiktok"></i></a>
-                </li>
-              </ul>
+            <!-- Mark Wilson -->
+            <div class="board-member">
+              <div class="text-center mb-4">
+                <div
+                  class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center"
+                >
+                  <i class="fas fa-user text-5xl text-gray-500"></i>
+                </div>
+                <h3 class="text-xl font-bold">Mark Wilson</h3>
+                <p class="text-orange-500 font-semibold">
+                  President & C.E.O.<br />Coalition for Responsible Community
+                  Development
+                </p>
+              </div>
+              <p class="text-gray-700">
+                Mark Anthony Wilson, Jr. co-founded the Coalition for
+                Responsible Community Development (CRCD) in 2005 and served as
+                CRCD's Executive Director for a decade and now serves as the
+                agency's President and CEO. Raised in South Los Angeles, Mark
+                previously served as the Director of the Youth Empowerment
+                Project with the Southern Christian Leadership Conference/Martin
+                Luther King Legacy Association, and the Director of Community
+                Development with the Dunbar Economic Development Corporation.
+              </p>
             </div>
 
-            <div class="footer-under-logo">
-              <p>
-                © L.A.U.R.A 501(c)(3) - 2025 . All rights reserved <br />Ending
-                The Cycle of Violence.
+            <!-- Daniel Healy -->
+            <div class="board-member">
+              <div class="text-center mb-4">
+                <div
+                  class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center"
+                >
+                  <i class="fas fa-user text-5xl text-gray-500"></i>
+                </div>
+                <h3 class="text-xl font-bold">Daniel Healy, M.P.H.</h3>
+                <p class="text-orange-500 font-semibold">
+                  Treasurer<br />Violence Prevention Coalition of Greater Los
+                  Angeles
+                </p>
+              </div>
+              <p class="text-gray-700 italic">
+                Biography information coming soon.
+              </p>
+            </div>
+
+            <!-- Dominik Onate -->
+            <div class="board-member">
+              <div class="text-center mb-4">
+                <div
+                  class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center"
+                >
+                  <i class="fas fa-user text-5xl text-gray-500"></i>
+                </div>
+                <h3 class="text-xl font-bold">Dominik Onate</h3>
+                <p class="text-orange-500 font-semibold">
+                  Pepperdine University School of Law
+                </p>
+              </div>
+              <p class="text-gray-700 italic">
+                Biography information coming soon.
+              </p>
+            </div>
+
+            <!-- Paul Jacoby -->
+            <div class="board-member">
+              <div class="text-center mb-4">
+                <div
+                  class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center"
+                >
+                  <i class="fas fa-user text-5xl text-gray-500"></i>
+                </div>
+                <h3 class="text-xl font-bold">Paul Jacoby</h3>
+                <p class="text-orange-500 font-semibold">Board Member</p>
+              </div>
+              <p class="text-gray-700 italic">
+                Biography information coming soon.
+              </p>
+            </div>
+
+            <!-- Olivia E. Fulton-Palma -->
+            <div class="board-member">
+              <div class="text-center mb-4">
+                <div
+                  class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center"
+                >
+                  <i class="fas fa-user text-5xl text-gray-500"></i>
+                </div>
+                <h3 class="text-xl font-bold">Olivia E. Fulton-Palma</h3>
+                <p class="text-orange-500 font-semibold">
+                  People Coordinated Services
+                </p>
+              </div>
+              <p class="text-gray-700 italic">
+                Biography information coming soon.
               </p>
             </div>
           </div>
 
-          <div class="col-two tab-1-3 mob-1-2 site-links">
-            <h4>Site Links</h4>
+          <div class="text-center mt-12">
+            <a
+              href="contact.html"
+              class="btn-primary inline-block px-8 py-3 rounded-full text-lg font-semibold"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- /Main Content -->
 
-            <ul>
-              <li><a href="about.html#process">About Us</a></li>
-              <li><a href="about.html#members">Board of Directors</a></li>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <!-- Logo and Social -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Follow Us!</h4>
+            <div class="flex space-x-4 mb-4">
+              <a
+                href="https://www.facebook.com/LauraYouth"
+                class="text-white hover:text-blue-400"
+              >
+                <i class="fab fa-facebook-f text-2xl"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/laurayouthla/"
+                class="text-white hover:text-pink-400"
+              >
+                <i class="fab fa-instagram text-2xl"></i>
+              </a>
+              <a href="#" class="text-white hover:text-gray-300">
+                <i class="fab fa-tiktok text-2xl"></i>
+              </a>
+            </div>
+            <p class="text-gray-400">
+              © L.A.U.R.A 501(c)(3) - 2025<br />All rights reserved<br />Ending
+              The Cycle of Violence.
+            </p>
+          </div>
+
+          <!-- Site Links -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Site Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="about.html#mission"
+                  class="text-gray-400 hover:text-white"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html#board-members"
+                  class="text-gray-400 hover:text-white"
+                  >Board of Directors</a
+                >
+              </li>
               <li>
                 <a
                   href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
                   target="_blank"
+                  class="text-gray-400 hover:text-white"
                   >Donate</a
                 >
               </li>
-              <li><a href="faq.html#faq">FAQ</a></li>
-              <li><a href="terms.html">Terms</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li>
+                <a href="faq.html#faq" class="text-gray-400 hover:text-white"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a href="terms.html" class="text-gray-400 hover:text-white"
+                  >Terms</a
+                >
+              </li>
+              <li>
+                <a href="privacy.html" class="text-gray-400 hover:text-white"
+                  >Privacy Policy</a
+                >
+              </li>
             </ul>
           </div>
-          <div class="col-two tab-1-3 mob-1-2 site-links">
-            <h4>Mailing Address</h4>
-            <p>
-              P.O Box 11681 <br />
+
+          <!-- Mailing Address -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Mailing Address</h4>
+            <p class="text-gray-400">
+              P.O Box 11681<br />
               Los Angeles, CA
             </p>
           </div>
 
-          <!-- Email Subscription-->
-          <div class="col-four tab-1-3 mob-full footer-subscribe">
-            <h4>Subscribe to our Newsletter</h4>
-            <p>Get notifications on our latest events & <br />announcements.</p>
-
-            <div class="subscribe-form">
-              <form id="subscribe-form">
-                <input
-                  type="email"
-                  name="dEmail"
-                  class="email"
-                  placeholder="Type email & hit enter"
-                  required
-                />
-                <input type="submit" value="Subscribe" />
-              </form>
-            </div>
+          <!-- Newsletter -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Subscribe to our Newsletter</h4>
+            <p class="text-gray-400 mb-4">
+              Get notifications on our latest events & announcements.
+            </p>
+            <form class="flex">
+              <input
+                type="email"
+                placeholder="Type email & hit enter"
+                class="bg-gray-700 text-white px-4 py-2 rounded-l w-full"
+              />
+              <button type="submit" class="bg-orange-500 px-4 py-2 rounded-r">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
-      </div>
 
-      <div class="footer-bottom">
-        <div class="row">
-          <div class="col-twelve">
-            <div class="copyright">
-              <span>© Copyright LAURALA.ORG 2025.</span>
-              <span
-                >Design by
-                <a href="https://github.com/d-velopr/">Dvelupmint</a></span
-              >
-            </div>
-
-            <div id="go-top" style="display: block">
-              <a class="smoothscroll" title="Back to Top" href="#top"
-                ><i class="icon ion-android-arrow-up"></i
-              ></a>
-            </div>
-          </div>
+        <div class="border-t border-gray-700 pt-8 text-center">
+          <p class="text-gray-400">
+            © Copyright LAURALA.ORG 2025. Design by
+            <a
+              href="https://github.com/d-velopr/"
+              class="text-orange-500 hover:text-orange-400"
+              >Dvelupmint</a
+            >
+          </p>
         </div>
       </div>
     </footer>
     <!-- /Footer -->
 
-    <div id="preloader">
-      <div id="loader"></div>
-    </div>
+    <!-- JavaScript for Mobile Menu and Smooth Scrolling -->
+    <script>
+      // Mobile Menu Toggle
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+          menu.classList.toggle("transform");
+          menu.classList.toggle("-translate-x-full");
 
-    <script src="js/popup.js"></script>
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/sub.js"></script>
+          // Toggle icon between hamburger and X
+          const icon = this.querySelector("i");
+          if (icon.classList.contains("fa-bars")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          }
+        });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const menu = document.getElementById("mobile-menu");
+        const toggle = document.getElementById("menu-toggle");
+
+        if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+          menu.classList.add("hidden", "transform", "-translate-x-full");
+          const icon = toggle.querySelector("i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        }
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.add("hidden", "transform", "-translate-x-full");
+          const icon = document.querySelector("#menu-toggle i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>

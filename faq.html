@@ -1,22 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
     <title>L.A.U.R.A | FAQ</title>
     <meta name="author" content="@Dvelupmint" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <meta
+      name="description"
+      content="Frequently Asked Questions about L.A.U.R.A's victim support, youth programs, and community services"
+    />
+    <meta
+      name="keywords"
+      content="L.A.U.R.A, FAQ, victim support, youth programs, South Central LA"
+    />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
-    <link rel="stylesheet" href="css/elementAEOC.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/vendor.css" />
-    <script src="js/modernizr.js"></script>
-    <!-- favicon -->
-    <link rel="icon" type="image/png" href="images/lauraLogo.png" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -29,278 +30,850 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <!-- Custom Styles -->
+    <style>
+      :root {
+        --laura-orange: #ed7014;
+        --laura-dark: #252525;
+        --laura-light: #efefef;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      #mobile-menu {
+        transition: transform 0.3s ease;
+      }
+
+      #mobile-menu.hidden {
+        transform: translateX(-100%);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+      }
+
+      .btn-primary {
+        background-color: var(--laura-orange);
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #d86212;
+        transform: translateY(-2px);
+      }
+
+      .faq-item {
+        transition: all 0.3s ease;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .faq-item:last-child {
+        border-bottom: none;
+      }
+
+      .faq-question {
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .faq-question:hover {
+        color: #ed7014;
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 1000px;
+      }
+
+      .faq-item.active .faq-question i {
+        transform: rotate(180deg);
+      }
+    </style>
   </head>
 
-  <body id="top">
-    <!-- Nav Bar -->
-    <header>
-      <div class="row">
-        <div class="logo">
-          <a href="index.html">LAURA-LOGO</a>
-        </div>
+  <body id="top" class="bg-gray-100">
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="index.html" class="text-2xl font-bold text-gray-800"
+              >LAURA</a
+            >
+          </div>
 
-        <nav id="main-nav-wrap" aria-label="Main Navigation">
-          <ul class="main-navigation">
-            <li class="dropdown">
-              <a href="about.html" class="smoothscroll">About Us</a>
-              <ul class="dropdown-content">
-                <li><a href="about.html">Mission / History</a></li>
-                <li><a href="about.html#testimonials">Our Strategy</a></li>
-                <li><a href="about.html#members">Board of Directors</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="impact.html" class="smoothscroll">Our Impact</a>
-              <ul class="dropdown-content">
-                <li>
-                  <a href="impact.html">L.A.U.R.A's Victim Support Program</a>
-                </li>
-                <li><a href="impact.html#youth">L.A.U.R.A Youth</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="index.html#announcements" class="smoothscroll">Events</a>
-              <ul class="dropdown-content">
-                <li><a href="events.html#resource-fair">Resource Fair</a></li>
-                <li><a href="events.html#gallery">Gallery</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="community.html" class="smoothscroll">Community</a>
-              <ul class="dropdown-content">
-                <li><a href="community.html#partners">Our Partners</a></li>
-                <li><a href="community.html#cta">Resources</a></li>
-                <li><a href="community.html#sponsors">Our Sponsors</a></li>
-              </ul>
-            </li>
-            <li>
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center space-x-6">
+            <div class="dropdown relative">
               <a
-                href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
-                target="_blank"
-                >Donate</a
+                href="about.html"
+                class="text-gray-700 hover:text-orange-500 font-medium"
+                >About Us</a
               >
-            </li>
-            <li class="highlight with-sep">
-              <a href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <a class="menu-toggle" href="#"><span>Menu</span></a>
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+              >
+                <a
+                  href="about.html"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Mission / History</a
+                >
+                <a
+                  href="about.html#our-strategy"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Our Strategy</a
+                >
+                <a
+                  href="about.html#board-members"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Board of Directors</a
+                >
+              </div>
+            </div>
+
+            <div class="dropdown relative">
+              <a
+                href="impact.html"
+                class="text-gray-700 hover:text-orange-500 font-medium"
+                >Our Impact</a
+              >
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+              >
+                <a
+                  href="impact.html"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >L.A.U.R.A's Victim Support Program</a
+                >
+                <a
+                  href="impact.html#youth"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >L.A.U.R.A Youth</a
+                >
+              </div>
+            </div>
+
+            <div class="dropdown relative">
+              <a
+                href="index.html#announcements"
+                class="text-gray-700 hover:text-orange-500 font-medium"
+                >Events</a
+              >
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+              >
+                <a
+                  href="events.html#resource-fair"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Resource Fair</a
+                >
+                <a
+                  href="events.html#gallery"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Gallery</a
+                >
+              </div>
+            </div>
+
+            <div class="dropdown relative">
+              <a
+                href="community.html"
+                class="text-gray-700 hover:text-orange-500 font-medium"
+                >Community</a
+              >
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+              >
+                <a
+                  href="community.html#partners"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Our Partners</a
+                >
+                <a
+                  href="community.html#resources"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Resources</a
+                >
+                <a
+                  href="community.html#sponsors"
+                  class="block py-2 px-4 hover:bg-gray-100 rounded"
+                  >Our Sponsors</a
+                >
+              </div>
+            </div>
+
+            <a
+              href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
+              target="_blank"
+              class="text-gray-700 hover:text-orange-500 font-medium"
+              >Donate</a
+            >
+
+            <a
+              href="contact.html"
+              class="bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-orange-600 transition"
+              >Contact</a
+            >
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button id="menu-toggle" class="md:hidden text-gray-700 text-xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div
+        id="mobile-menu"
+        class="md:hidden bg-white shadow-lg absolute w-full hidden transform -translate-x-full transition-transform"
+      >
+        <div class="container mx-auto px-4 py-6">
+          <a
+            href="about.html"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >About Us</a
+          >
+          <a
+            href="impact.html"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >Our Impact</a
+          >
+          <a
+            href="index.html#announcements"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >Events</a
+          >
+          <a
+            href="community.html"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >Community</a
+          >
+          <a
+            href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
+            target="_blank"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            >Donate</a
+          >
+          <a
+            href="contact.html"
+            class="block py-3 text-gray-700 hover:text-orange-500"
+            >Contact</a
+          >
+        </div>
       </div>
     </header>
-    <!-- /Nav Bar -->
+    <!-- /Navigation -->
 
-    <!-- FAQ's -->
-    <section id="faq">
-      <div class="row section-intro">
-        <div class="col-twelve with-bottom-line">
-          <h5>FAQ</h5>
-          <h1>Questions and Answers.</h1>
-
-          <p class="lead">
+    <!-- Main Content -->
+    <main class="pt-16">
+      <!-- Hero Section -->
+      <section
+        class="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white"
+      >
+        <div class="container mx-auto px-4 text-center">
+          <h5 class="text-xl font-semibold mb-2">FAQ</h5>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Questions and Answers
+          </h1>
+          <p class="text-xl md:text-2xl max-w-3xl mx-auto">
             FAQ page provides clear and concise answers to common questions
-            about life after uncivil ruthless acts, helping individuals navigate
-            their transition with confidence. It covers topics such as
-            healthcare access, mental wellness, and support resources to ensure
-            a smooth reintegration process.
+            about L.A.U.R.A's victim support programs, youth initiatives, and
+            community services to help individuals access resources with
+            confidence.
           </p>
         </div>
-      </div>
+      </section>
 
-      <div class="row faq-content">
-        <div class="q-and-a block-1-2 block-tab-full group">
-          <div class="bgrid">
-            <h3>What services does L.A.U.R.A provide?</h3>
-
-            <p>
-              Our collaborative provides a range of services aimed at supporting
-              individuals transitioning back into society after incarceration.
-              These services include health assessments, mental health
-              counseling, job readiness programs, legal advisory, and community
-              reintegration support. We focus on providing holistic care to
-              address both physical and emotional well-being during reentry.
-            </p>
-          </div>
-
-          <div class="bgrid">
-            <h3>Who is eligible for the programs and support services?</h3>
-
-            <p>
-              Our services are available to individuals who are reentering
-              society after incarceration, as well as their families. We support
-              people at any stage of the reentry process and work to ensure that
-              every person has the tools and resources they need to successfully
-              reintegrate.
-            </p>
-          </div>
-
-          <div class="bgrid">
-            <h3>
-              How do you help individuals transition back into society after
-              incarceration?
-            </h3>
-
-            <p>
-              We provide tailored support to meet the unique needs of each
-              individual. This includes offering mental health counseling, life
-              skills training, employment assistance, and guidance with housing
-              and legal matters. We collaborate with local organizations to
-              ensure a strong support network for successful reintegration into
-              the community.
-            </p>
-          </div>
-
-          <div class="bgrid">
-            <h3>Do you offer medical or mental health services?</h3>
-
-            <p>
-              Yes, we offer comprehensive health services, including mental
-              health counseling, addiction recovery support, and referrals to
-              medical professionals for physical health needs. Our goal is to
-              address both the physical and emotional challenges individuals may
-              face during reentry.
-            </p>
-          </div>
-
-          <div class="bgrid">
-            <h3>How can I get involved or support your mission?</h3>
-
-            <p>
-              There are many ways to get involved! You can volunteer your time,
-              donate to our cause, or partner with us if you're part of a local
-              organization. Every bit of support helps us continue providing
-              vital services to those in need.
-            </p>
-          </div>
-
-          <div class="bgrid">
-            <h3>Where are you located, and how can I access your services?</h3>
-
-            <p>
-              We are based in Los Angeles, and our services are available both
-              in-person and through remote consultations. To access our
-              services, you can visit our office, call us for an appointment, or
-              use our online platform to book consultations. For more details,
-              check out our "Contact Us" page for all the ways to get in touch.
-            </p>
+      <!-- FAQ Navigation -->
+      <section class="py-8 bg-white border-b border-gray-200">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="#general"
+              class="px-4 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition"
+              >General</a
+            >
+            <a
+              href="#support"
+              class="px-4 py-2 bg-gray-200 text-gray-800 rounded-full hover:bg-gray-300 transition"
+              >Victim Support</a
+            >
+            <a
+              href="#youth"
+              class="px-4 py-2 bg-gray-200 text-gray-800 rounded-full hover:bg-gray-300 transition"
+              >Youth Programs</a
+            >
+            <a
+              href="#volunteer"
+              class="px-4 py-2 bg-gray-200 text-gray-800 rounded-full hover:bg-gray-300 transition"
+              >Get Involved</a
+            >
           </div>
         </div>
-      </div>
-    </section>
-    <!-- /FAQ's -->
+      </section>
 
-    <!-- Footer -->
-    <footer>
-      <div class="footer-main" style="margin-top: 33px">
-        <div class="row">
-          <div class="col-four tab-full mob-full footer-info">
-            <div class="footer-logo"></div>
-            <div class="footer-icons">
-              <h4>Follow Us!</h4>
+      <!-- FAQ Content -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+          <!-- General Questions -->
+          <div id="general" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800 border-b pb-4">
+              General Questions
+            </h2>
+            <div class="space-y-6">
+              <!-- FAQ Item 1 -->
+              <div class="faq-item">
+                <div
+                  class="faq-question py-4 flex justify-between items-center"
+                >
+                  <h3 class="text-xl font-semibold">
+                    What services does L.A.U.R.A provide?
+                  </h3>
+                  <i class="fas fa-chevron-down text-orange-500"></i>
+                </div>
+                <div class="faq-answer">
+                  <p class="pb-4 text-gray-700">
+                    L.A.U.R.A provides comprehensive support services including
+                    victim support programs, youth leadership development,
+                    community resource fairs, crisis response, monthly support
+                    groups, funeral assistance, and guidance navigating legal
+                    and social service systems. We focus on holistic care to
+                    address both immediate needs and long-term healing.
+                  </p>
+                </div>
+              </div>
 
-              <ul>
-                <li>
-                  <a href="https://www.facebook.com/LauraYouth"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/laurayouthla/"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href=""><i class="fab fa-tiktok"></i></a>
-                </li>
-              </ul>
-            </div>
+              <!-- FAQ Item 2 -->
+              <div class="faq-item">
+                <div
+                  class="faq-question py-4 flex justify-between items-center"
+                >
+                  <h3 class="text-xl font-semibold">
+                    Who is eligible for L.A.U.R.A's programs?
+                  </h3>
+                  <i class="fas fa-chevron-down text-orange-500"></i>
+                </div>
+                <div class="faq-answer">
+                  <p class="pb-4 text-gray-700">
+                    Our services are available to anyone affected by violence in
+                    South Central Los Angeles, including victims' family
+                    members, youth ages 12-24, and community members seeking
+                    resources and support. We serve individuals at any stage of
+                    recovery and work to ensure everyone has access to the tools
+                    they need for healing and empowerment.
+                  </p>
+                </div>
+              </div>
 
-            <div class="footer-under-logo">
-              <p>
-                © L.A.U.R.A 501(c)(3) - 2025 . All rights reserved <br />Ending
-                The Cycle of Violence.
-              </p>
+              <!-- FAQ Item 3 -->
+              <div class="faq-item">
+                <div
+                  class="faq-question py-4 flex justify-between items-center"
+                >
+                  <h3 class="text-xl font-semibold">
+                    Where are you located, and how can I access your services?
+                  </h3>
+                  <i class="fas fa-chevron-down text-orange-500"></i>
+                </div>
+                <div class="faq-answer">
+                  <p class="pb-4 text-gray-700">
+                    We are based in South Central Los Angeles with our main
+                    operations at Fred Roberts Recreation Center (4701 S Central
+                    Ave, Los Angeles, CA 90011). Services are available through
+                    weekly meetings, scheduled appointments, and community
+                    events. You can visit us during office hours, call for
+                    assistance, or attend our monthly support groups and youth
+                    meetings.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="col-two tab-1-3 mob-1-2 site-links">
-            <h4>Site Links</h4>
+          <!-- Victim Support Questions -->
+          <div id="support" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800 border-b pb-4">
+              Victim Support Services
+            </h2>
+            <div class="space-y-6">
+              <!-- FAQ Item 1 -->
+              <div class="faq-item">
+                <div
+                  class="faq-question py-4 flex justify-between items-center"
+                >
+                  <h3 class="text-xl font-semibold">
+                    What support do you offer to families of homicide victims?
+                  </h3>
+                  <i class="fas fa-chevron-down text-orange-500"></i>
+                </div>
+                <div class="faq-answer">
+                  <p class="pb-4 text-gray-700">
+                    We provide comprehensive support including crisis response
+                    at crime scenes, emotional support groups, funeral
+                    assistance, guidance navigating victim compensation
+                    programs, legal system navigation help, and long-term
+                    emotional support. Our team walks alongside families
+                    throughout their healing journey.
+                  </p>
+                </div>
+              </div>
 
-            <ul>
-              <li><a href="about.html#process">About Us</a></li>
-              <li><a href="about.html#members">Board of Directors</a></li>
+              <!-- FAQ Item 2 -->
+              <div class="faq-item">
+                <div
+                  class="faq-question py-4 flex justify-between items-center"
+                >
+                  <h3 class="text-xl font-semibold">
+                    When are your support group meetings?
+                  </h3>
+                  <i class="fas fa-chevron-down text-orange-500"></i>
+                </div>
+                <div class="faq-answer">
+                  <p class="pb-4 text-gray-700">
+                    Our victim support groups meet every last Thursday of each
+                    month at 6:00 PM at 4701 S. Central Ave, Los Angeles, CA
+                    90011. These meetings provide a safe space for families to
+                    share, mourn, and support each other through their grief
+                    journey.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="faq-item">
+                <div
+                  class="faq-question py-4 flex justify-between items-center"
+                >
+                  <h3 class="text-xl font-semibold">
+                    Do you provide financial assistance?
+                  </h3>
+                  <i class="fas fa-chevron-down text-orange-500"></i>
+                </div>
+                <div class="faq-answer">
+                  <p class="pb-4 text-gray-700">
+                    Yes, we offer limited financial assistance for funeral
+                    costs, emergency needs, and essential expenses through our
+                    emergency fund. We also help families navigate the
+                    California Victims Compensation Program to access available
+                    state resources.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Youth Programs -->
+          <div id="youth" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800 border-b pb-4">
+              Youth Programs
+            </h2>
+            <div class="space-y-6">
+              <!-- FAQ Item 1 -->
+              <div class="faq-item">
+                <div
+                  class="faq-question py-4 flex justify-between items-center"
+                >
+                  <h3 class="text-xl font-semibold">
+                    What youth programs does L.A.U.R.A offer?
+                  </h3>
+                  <i class="fas fa-chevron-down text-orange-500"></i>
+                </div>
+                <div class="faq-answer">
+                  <p class="pb-4 text-gray-700">
+                    Our L.A.U.R.A Youth program includes weekly meetings,
+                    leadership development, college preparation, job readiness
+                    training, mental health support, summer camps, community
+                    service projects, sports activities, and creative arts
+                    programs. We focus on empowerment, education, and creating
+                    positive alternatives to violence.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="faq-item">
+                <div
+                  class="faq-question py-4 flex justify-between items-center"
+                >
+                  <h3 class="text-xl font-semibold">
+                    When are youth meetings held?
+                  </h3>
+                  <i class="fas fa-chevron-down text-orange-500"></i>
+                </div>
+                <div class="faq-answer">
+                  <p class="pb-4 text-gray-700">
+                    Youth meetings are held every Thursday at Fred Roberts
+                    Recreation Center. Community Civic Engagement meetings start
+                    at 5:00 PM, followed by general youth meetings at 6:30 PM.
+                    All youth ages 12-24 are welcome to participate.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="faq-item">
+                <div
+                  class="faq-question py-4 flex justify-between items-center"
+                >
+                  <h3 class="text-xl font-semibold">
+                    Can youth earn community service hours?
+                  </h3>
+                  <i class="fas fa-chevron-down text-orange-500"></i>
+                </div>
+                <div class="faq-answer">
+                  <p class="pb-4 text-gray-700">
+                    Yes, participants in our youth program can earn community
+                    service hours for school requirements through various
+                    activities including event volunteering, community
+                    clean-ups, peer support, and outreach initiatives.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Get Involved -->
+          <div id="volunteer" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800 border-b pb-4">
+              Getting Involved
+            </h2>
+            <div class="space-y-6">
+              <!-- FAQ Item 1 -->
+              <div class="faq-item">
+                <div
+                  class="faq-question py-4 flex justify-between items-center"
+                >
+                  <h3 class="text-xl font-semibold">
+                    How can I volunteer with L.A.U.R.A?
+                  </h3>
+                  <i class="fas fa-chevron-down text-orange-500"></i>
+                </div>
+                <div class="faq-answer">
+                  <p class="pb-4 text-gray-700">
+                    We welcome volunteers for event support, youth mentoring,
+                    administrative help, community outreach, and specialized
+                    skills. You can start by contacting us through our website,
+                    attending a volunteer orientation, or visiting during our
+                    weekly meetings to learn about current opportunities.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="faq-item">
+                <div
+                  class="faq-question py-4 flex justify-between items-center"
+                >
+                  <h3 class="text-xl font-semibold">
+                    What types of donations do you accept?
+                  </h3>
+                  <i class="fas fa-chevron-down text-orange-500"></i>
+                </div>
+                <div class="faq-answer">
+                  <p class="pb-4 text-gray-700">
+                    We accept monetary donations through our website, checks,
+                    and in-kind donations including school supplies,
+                    non-perishable food, gift cards, event supplies, and
+                    professional services. All donations support our programs
+                    and are tax-deductible.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="faq-item">
+                <div
+                  class="faq-question py-4 flex justify-between items-center"
+                >
+                  <h3 class="text-xl font-semibold">
+                    How can my organization partner with L.A.U.R.A?
+                  </h3>
+                  <i class="fas fa-chevron-down text-orange-500"></i>
+                </div>
+                <div class="faq-answer">
+                  <p class="pb-4 text-gray-700">
+                    We welcome partnerships with businesses, community
+                    organizations, and service providers. Partnership
+                    opportunities include event sponsorship, resource sharing,
+                    program collaboration, and joint community initiatives.
+                    Contact us to discuss how we can work together to serve
+                    South Central LA.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Still Have Questions -->
+          <div class="bg-orange-50 rounded-lg p-8 text-center">
+            <h3 class="text-2xl font-bold mb-4 text-gray-800">
+              Still have questions?
+            </h3>
+            <p class="text-gray-700 mb-6">
+              Can't find the answer you're looking for? Please reach out to us
+              directly.
+            </p>
+            <a
+              href="contact.html"
+              class="btn-primary inline-block px-8 py-3 rounded-full text-lg font-semibold"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Resources -->
+      <section
+        class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white"
+      >
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Quick Resources</h2>
+            <p class="text-xl max-w-2xl mx-auto">
+              Access important resources and contact information quickly.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div class="text-5xl mb-4">
+                <i class="fas fa-phone"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Emergency Contact</h3>
+              <p class="mb-4">For immediate crisis support</p>
+              <p class="font-semibold">Call 911 for emergencies</p>
+            </div>
+
+            <div class="text-center">
+              <div class="text-5xl mb-4">
+                <i class="fas fa-calendar-check"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Meeting Schedule</h3>
+              <p class="mb-4">Regular program meetings</p>
+              <p class="font-semibold">Thursdays at Fred Roberts Park</p>
+            </div>
+
+            <div class="text-center">
+              <div class="text-5xl mb-4">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Email Us</h3>
+              <p class="mb-4">General inquiries</p>
+              <p class="font-semibold">info@LauraLA.org</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- /Main Content -->
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <!-- Logo and Social -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Follow Us!</h4>
+            <div class="flex space-x-4 mb-4">
+              <a
+                href="https://www.facebook.com/LauraYouth"
+                class="text-white hover:text-blue-400"
+              >
+                <i class="fab fa-facebook-f text-2xl"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/laurayouthla/"
+                class="text-white hover:text-pink-400"
+              >
+                <i class="fab fa-instagram text-2xl"></i>
+              </a>
+              <a href="#" class="text-white hover:text-gray-300">
+                <i class="fab fa-tiktok text-2xl"></i>
+              </a>
+            </div>
+            <p class="text-gray-400">
+              © L.A.U.R.A 501(c)(3) - 2025<br />All rights reserved<br />Ending
+              The Cycle of Violence.
+            </p>
+          </div>
+
+          <!-- Site Links -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Site Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="about.html#mission"
+                  class="text-gray-400 hover:text-white"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html#board-members"
+                  class="text-gray-400 hover:text-white"
+                  >Board of Directors</a
+                >
+              </li>
               <li>
                 <a
                   href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
                   target="_blank"
+                  class="text-gray-400 hover:text-white"
                   >Donate</a
                 >
               </li>
-              <li><a href="faq.html#faq">FAQ</a></li>
-              <li><a href="terms.html">Terms</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li>
+                <a href="faq.html" class="text-gray-400 hover:text-white"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a href="terms.html" class="text-gray-400 hover:text-white"
+                  >Terms</a
+                >
+              </li>
+              <li>
+                <a href="privacy.html" class="text-gray-400 hover:text-white"
+                  >Privacy Policy</a
+                >
+              </li>
             </ul>
           </div>
-          <div class="col-two tab-1-3 mob-1-2 site-links">
-            <h4>Mailing Address</h4>
-            <p>
-              P.O Box 11681 <br />
+
+          <!-- Mailing Address -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Mailing Address</h4>
+            <p class="text-gray-400">
+              P.O Box 11681<br />
               Los Angeles, CA
             </p>
           </div>
 
-          <!-- Email Subscription-->
-          <div class="col-four tab-1-3 mob-full footer-subscribe">
-            <h4>Subscribe to our Newsletter</h4>
-            <p>Get notifications on our latest events & <br />announcements.</p>
-
-            <div class="subscribe-form">
-              <form id="subscribe-form">
-                <input
-                  type="email"
-                  name="dEmail"
-                  class="email"
-                  placeholder="Type email & hit enter"
-                  required
-                />
-                <input type="submit" value="Subscribe" />
-              </form>
-            </div>
+          <!-- Newsletter -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Subscribe to our Newsletter</h4>
+            <p class="text-gray-400 mb-4">
+              Get notifications on our latest events & announcements.
+            </p>
+            <form class="flex">
+              <input
+                type="email"
+                placeholder="Type email & hit enter"
+                class="bg-gray-700 text-white px-4 py-2 rounded-l w-full"
+              />
+              <button type="submit" class="bg-orange-500 px-4 py-2 rounded-r">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
-      </div>
 
-      <div class="footer-bottom">
-        <div class="row">
-          <div class="col-twelve">
-            <div class="copyright">
-              <span>© Copyright LAURALA.ORG 2025.</span>
-              <span
-                >Design by
-                <a href="https://github.com/d-velopr/">Dvelupmint</a></span
-              >
-            </div>
-
-            <div id="go-top" style="display: block">
-              <a class="smoothscroll" title="Back to Top" href="#top"
-                ><i class="icon ion-android-arrow-up"></i
-              ></a>
-            </div>
-          </div>
+        <div class="border-t border-gray-700 pt-8 text-center">
+          <p class="text-gray-400">
+            © Copyright LAURALA.ORG 2025. Design by
+            <a
+              href="https://github.com/d-velopr/"
+              class="text-orange-500 hover:text-orange-400"
+              >Dvelupmint</a
+            >
+          </p>
         </div>
       </div>
     </footer>
     <!-- /Footer -->
 
-    <div id="preloader">
-      <div id="loader"></div>
-    </div>
+    <!-- JavaScript for Mobile Menu and FAQ Toggle -->
+    <script>
+      // Mobile Menu Toggle
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+          menu.classList.toggle("transform");
+          menu.classList.toggle("-translate-x-full");
 
-    <script src="js/popup.js"></script>
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/sub.js"></script>
+          // Toggle icon between hamburger and X
+          const icon = this.querySelector("i");
+          if (icon.classList.contains("fa-bars")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          }
+        });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const menu = document.getElementById("mobile-menu");
+        const toggle = document.getElementById("menu-toggle");
+
+        if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+          menu.classList.add("hidden", "transform", "-translate-x-full");
+          const icon = toggle.querySelector("i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        }
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.add("hidden", "transform", "-translate-x-full");
+          const icon = document.querySelector("#menu-toggle i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // FAQ Toggle Functionality
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", function () {
+          const faqItem = this.parentElement;
+          faqItem.classList.toggle("active");
+        });
+      });
+    </script>
   </body>
 </html>
