@@ -88,11 +88,10 @@
           <!-- Logo -->
           <div class="logo">
             <a href="index.html">
-              <!-- If you only have one logo, use this: -->
               <img
                 src="images/logo.png"
                 alt="LAURA"
-                class="h-10 w-auto logo-image"
+                class="h-12 w-auto logo-image"
               />
             </a>
           </div>
@@ -113,19 +112,19 @@
               >
                 <a
                   href="about.html"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
                   Mission / History
                 </a>
                 <a
                   href="about.html#our-strategy"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
                   Our Strategy
                 </a>
                 <a
                   href="about.html#board-members"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
                   Board of Directors
                 </a>
@@ -147,13 +146,13 @@
               >
                 <a
                   href="impact.html"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
                   L.A.U.R.A's Victim Support Program
                 </a>
                 <a
                   href="impact.html#youth"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
                   L.A.U.R.A Youth
                 </a>
@@ -175,13 +174,13 @@
               >
                 <a
                   href="events.html#resource-fair"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
                   Resource Fair
                 </a>
                 <a
                   href="events.html#gallery"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
                   Gallery
                 </a>
@@ -203,19 +202,19 @@
               >
                 <a
                   href="community.html#partners"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
                   Our Partners
                 </a>
                 <a
                   href="community.html#resources"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
                   Resources
                 </a>
                 <a
                   href="community.html#sponsors"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
                   Our Sponsors
                 </a>
@@ -225,14 +224,14 @@
             <a
               href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
               target="_blank"
-              class="nav-link text-white hover:text- orange-500 font-medium transition-colors duration-300"
+              class="nav-link text-white hover:text-orange-500 font-medium transition-colors duration-300"
             >
               Donate
             </a>
 
             <a
               href="contact.html"
-              class="nav-contact bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg- orange-500 transition-all duration-300"
+              class="nav-contact bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-orange-500 transition-all duration-300"
             >
               Contact
             </a>
@@ -748,21 +747,29 @@
       </div>
     </footer>
     <!-- /Footer -->
-    <!-- JavaScript for Mobile Menu -->
     <script>
-      // Scroll effect for navigation
-      window.addEventListener("scroll", function () {
+      // Consolidated scroll handler - only one version
+      function handleScroll() {
         const header = document.getElementById("main-header");
         const scrollPosition = window.scrollY;
 
-        if (scrollPosition > 100) {
-          // Change 100 to adjust when it triggers
+        console.log("Scroll position:", scrollPosition); // Debug line
+
+        if (scrollPosition > 50) {
           header.classList.add("scrolled");
+          console.log("Header is now white"); // Debug line
         } else {
           header.classList.remove("scrolled");
+          console.log("Header is now transparent"); // Debug line
         }
-      });
-      // Mobile menu toggle (update existing)
+      }
+
+      // Add event listeners once
+      window.addEventListener("load", handleScroll);
+      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("resize", handleScroll);
+
+      // Mobile menu toggle
       document
         .getElementById("menu-toggle")
         .addEventListener("click", function () {
@@ -779,9 +786,8 @@
           if (icon.classList.contains("fa-bars")) {
             icon.classList.remove("fa-bars");
             icon.classList.add("fa-times");
-            // Ensure mobile menu has correct background when nav is transparent
             if (!isScrolled) {
-              menu.classList.add("bg-white");
+              menu.style.backgroundColor = "white";
             }
           } else {
             icon.classList.remove("fa-times");
@@ -831,5 +837,13 @@
         });
       });
     </script>
+    <style>
+      header.scrolled {
+        background: white !important;
+      }
+      header.scrolled .nav-link {
+        color: #374151 !important;
+      }
+    </style>
   </body>
 </html>

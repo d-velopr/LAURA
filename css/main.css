@@ -210,7 +210,6 @@ img {
     gap: 2rem;
     padding: 2rem;
 }
-/* Navigation Scroll Effect */
 header.scrolled {
     background: white !important;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -226,6 +225,11 @@ header.scrolled .nav-link:hover {
 
 header.scrolled #menu-toggle {
     color: #374151 !important;
+}
+
+/* Make logo darker when scrolled */
+header.scrolled .logo-image {
+    filter: brightness(0.3); /* Makes logo darker on white background */
 }
 
 /* Logo switching */
