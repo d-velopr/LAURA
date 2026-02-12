@@ -79,132 +79,167 @@
 
   <body class="bg-gray-100">
     <!-- Navigation -->
-    <header class="fixed w-full bg-white shadow-md z-50">
+    <header
+      id="main-header"
+      class="fixed w-full bg-transparent transition-all duration-300 z-50"
+    >
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center py-4">
           <!-- Logo -->
           <div class="logo">
-            <a href="index.html" class="text-2xl font-bold text-gray-800"
-              >LAURA</a
-            >
+            <a href="index.html">
+              <!-- If you only have one logo, use this: -->
+              <img
+                src="images/logo.png"
+                alt="LAURA"
+                class="h-10 w-auto logo-image"
+              />
+            </a>
           </div>
 
           <!-- Desktop Navigation -->
           <nav class="hidden md:flex items-center space-x-6">
-            <div class="dropdown relative">
-              <a
-                href="about.html"
-                class="text-gray-700 hover:text-orange-500 font-medium"
-                >About Us</a
-              >
+            <div class="dropdown relative group">
+              <div class="relative">
+                <a
+                  href="about.html"
+                  class="nav-link text-white hover:text-orange-500 font-medium transition-colors duration-300 py-2"
+                >
+                  About Us
+                </a>
+              </div>
               <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
               >
                 <a
                   href="about.html"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >Mission / History</a
+                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
                 >
+                  Mission / History
+                </a>
                 <a
                   href="about.html#our-strategy"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >Our Strategy</a
+                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
                 >
+                  Our Strategy
+                </a>
                 <a
                   href="about.html#board-members"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >Board of Directors</a
+                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
                 >
+                  Board of Directors
+                </a>
               </div>
             </div>
 
-            <div class="dropdown relative">
-              <a
-                href="impact.html"
-                class="text-gray-700 hover:text-orange-500 font-medium"
-                >Our Impact</a
-              >
+            <div class="dropdown relative group">
+              <div class="relative">
+                <a
+                  href="impact.html"
+                  class="nav-link text-white hover:text-orange-500 font-medium transition-colors duration-300 py-2"
+                >
+                  Our Impact
+                </a>
+              </div>
+
               <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
               >
                 <a
                   href="impact.html"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >L.A.U.R.A's Victim Support Program</a
+                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
                 >
+                  L.A.U.R.A's Victim Support Program
+                </a>
                 <a
                   href="impact.html#youth"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >L.A.U.R.A Youth</a
+                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
                 >
+                  L.A.U.R.A Youth
+                </a>
               </div>
             </div>
 
-            <div class="dropdown relative">
-              <a
-                href="index.html#announcements"
-                class="text-gray-700 hover:text-orange-500 font-medium"
-                >Events</a
-              >
+            <div class="dropdown relative group">
+              <div class="relative">
+                <a
+                  href="index.html#announcements"
+                  class="nav-link text-white hover:text-orange-500 font-medium transition-colors duration-300 py-2"
+                >
+                  Events
+                </a>
+              </div>
+
               <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
               >
                 <a
                   href="events.html#resource-fair"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >Resource Fair</a
+                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
                 >
+                  Resource Fair
+                </a>
                 <a
                   href="events.html#gallery"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >Gallery</a
+                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
                 >
+                  Gallery
+                </a>
               </div>
             </div>
 
-            <div class="dropdown relative">
-              <a
-                href="community.html"
-                class="text-gray-700 hover:text-orange-500 font-medium"
-                >Community</a
-              >
+            <div class="dropdown relative group">
+              <div class="relative">
+                <a
+                  href="community.html"
+                  class="nav-link text-white hover:text-orange-500 font-medium transition-colors duration-300 py-2"
+                >
+                  Community
+                </a>
+              </div>
+
               <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-10"
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
               >
                 <a
                   href="community.html#partners"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >Our Partners</a
+                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
                 >
+                  Our Partners
+                </a>
                 <a
                   href="community.html#resources"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >Resources</a
+                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
                 >
+                  Resources
+                </a>
                 <a
                   href="community.html#sponsors"
-                  class="block py-2 px-4 hover:bg-gray-100 rounded"
-                  >Our Sponsors</a
+                  class="block py-2 px-4 hover:bg-gray-100 rounded text-gray-700"
                 >
+                  Our Sponsors
+                </a>
               </div>
             </div>
 
             <a
               href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
               target="_blank"
-              class="text-gray-700 hover:text-orange-500 font-medium"
-              >Donate</a
+              class="nav-link text-white hover:text- orange-500 font-medium transition-colors duration-300"
             >
+              Donate
+            </a>
 
             <a
               href="contact.html"
-              class="bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-orange-600 transition"
-              >Contact</a
+              class="nav-contact bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg- orange-500 transition-all duration-300"
             >
+              Contact
+            </a>
           </nav>
 
           <!-- Mobile Menu Button -->
-          <button id="menu-toggle" class="md:hidden text-gray-700 text-xl">
+          <button id="menu-toggle" class="md:hidden text-white text-xl">
             <i class="fas fa-bars"></i>
           </button>
         </div>
@@ -219,34 +254,40 @@
           <a
             href="about.html"
             class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-            >About Us</a
           >
+            About Us
+          </a>
           <a
             href="impact.html"
             class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-            >Our Impact</a
           >
+            Our Impact
+          </a>
           <a
             href="index.html#announcements"
             class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-            >Events</a
           >
+            Events
+          </a>
           <a
             href="community.html"
             class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-            >Community</a
           >
+            Community
+          </a>
           <a
             href="https://www.paypal.com/donate?token=DMg4Bj_u_3EK9vNGymFwUiB8kYPUee7CJYlv0nLTu84BJiDx8oSuYH_ydW8wDTmH2xcjRNnw2i4vPrGg"
             target="_blank"
             class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-            >Donate</a
           >
+            Donate
+          </a>
           <a
             href="contact.html"
             class="block py-3 text-gray-700 hover:text-orange-500"
-            >Contact</a
           >
+            Contact
+          </a>
         </div>
       </div>
     </header>
@@ -267,11 +308,8 @@
         <div class="w-full md:w-1/2 mx-auto text-center">
           <div
             class="mb-8 flex flex-col items-center"
-            style="margin-top: 200px"
+            style="margin-top: 250px"
           >
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Follow Us!</h2>
-            <!-- Increased from text-2xl -->
-
             <!-- Larger Social Icons -->
             <div class="flex justify-center space-x-8">
               <!-- Increased gap from space-x-6 -->
@@ -315,7 +353,7 @@
     <!-- Main Content -->
     <main class="pt-16">
       <!-- Impact Section -->
-      <section id="impact-content" class="py-12 bg-gray-50">
+      <section id="impact-content" class="py-12 bg-none">
         <div class="container mx-auto px-4">
           <div class="flex flex-col md:flex-row items-center mb-12"></div>
 
@@ -328,7 +366,7 @@
                 class="rounded-lg shadow-lg w-full hover-lift"
               />
             </div>
-            <div class="w-full md:w-1/2 text-center md:text-left">
+            <div class="w-full md:w-1/2 text-center md:text-center">
               <div class="text-orange-500 text-5xl mb-4">
                 <i class="fas fa-people-group"></i>
               </div>
@@ -341,11 +379,13 @@
                 building, and collaborate with organizations that provide free
                 medical exams, immigration assistance, and more!
               </p>
-              <a
-                href="contact.html"
-                class="btn-primary inline-block px-6 py-2 rounded-full"
-                >Contact Us</a
-              >
+              <div class="text-center mt-12">
+                <a
+                  href="contact.html"
+                  class="btn-primary inline-block px-6 py-2 rounded-full"
+                  >Contact Us</a
+                >
+              </div>
             </div>
           </div>
 
@@ -353,12 +393,12 @@
           <div class="flex flex-col md:flex-row-reverse items-center">
             <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pl-8">
               <img
-                src="images/indexPg/community.png"
+                src="images/indexPg/together2.png"
                 alt="L.A.U.R.A community event - Community"
                 class="rounded-lg shadow-lg w-full hover-lift"
               />
             </div>
-            <div class="w-full md:w-1/2 text-center md:text-left">
+            <div class="w-full md:w-1/2 text-center md:text-center">
               <div class="text-orange-500 text-5xl mb-4">
                 <i class="fas fa-graduation-cap"></i>
               </div>
@@ -373,11 +413,13 @@
                 maintain our current activities while allowing us to bring in
                 new workshops, speakers and additional opportunities for growth.
               </p>
-              <a
-                href="impact.html#youth"
-                class="btn-primary inline-block px-6 py-2 rounded-full"
-                >Read More</a
-              >
+              <div class="text-center mt-12">
+                <a
+                  href="impact.html#youth"
+                  class="btn-primary inline-block px-6 py-2 rounded-full"
+                  >Read More</a
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -388,19 +430,22 @@
       <section
         id="main-content"
         class="py-12"
-        style="background-image: url(&quot;images/bg/bg0.png&quot;)"
+        style="background-image: url(&quot;css/images/bg.jpg&quot;)"
       >
         <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-center mb-8 underline">
+          <h2
+            class="text-3xl font-bold text-center mb-8 underline"
+            style="color: white"
+          >
             Our Community Event
           </h2>
 
-          <!-- 17th Annual Image -->
+          <!-- PEACE WALK Image -->
           <div class="mb-12">
             <img
               src="images/indexPg/laura17.png"
               alt="L.A.U.R.A community event"
-              class="rounded-lg shadow-lg w-full max-w-3xl mx-auto hover-lift"
+              class="rounded-lg shadow-lg w-full max-w-2xl mx-auto hover-lift"
             />
           </div>
 
@@ -410,7 +455,7 @@
           >
             <div class="w-full md:w-1/2 mb-6 md:mb-0 md:pr-8">
               <img
-                src="http://www.laurala.org/wp-content/uploads/2013/01/Team.jpg"
+                src="images/indexPg/community3.png"
                 alt="Team"
                 class="rounded-lg w-full hover-lift"
               />
@@ -436,7 +481,7 @@
       <!-- /Community Events Section -->
 
       <!-- Statistics Section -->
-      <section id="icon-boxes" class="py-12 bg-orange-50">
+      <section id="icon-boxes" class="py-12 bg-none" style="margin-top: -100px">
         <div class="container mx-auto px-4">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div
@@ -466,7 +511,11 @@
       <!-- /Statistics Section -->
 
       <!-- Announcements Section -->
-      <section id="announcements" class="py-12 bg-white">
+      <section
+        id="announcements"
+        class="py-12 bg-none"
+        style="margin-top: -60px; margin-bottom: 10px"
+      >
         <div class="container mx-auto px-4">
           <div class="text-center mb-8">
             <h2 class="text-3xl font-bold mb-2">
@@ -513,12 +562,24 @@
       <!-- /Announcements Section -->
 
       <!-- Community Partners Section -->
-      <section id="community" class="py-12 bg-blue-600 text-white">
+      <section
+        id="community"
+        class="py-12 bg-none text-black"
+        style="
+          margin-bottom: 30px;
+          background-image: url(&quot;images/indexPg/bg2.jpg&quot;);
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        "
+      >
         <div class="container mx-auto px-4">
           <div class="text-center mb-8">
             <i class="fas fa-globe text-orange-500 text-6xl mb-4"></i>
-            <h2 class="text-3xl font-bold mb-2">Our Community Partners</h2>
-            <p class="max-w-2xl mx-auto">
+            <h2 class="text-3xl text-white font-bold mb-2">
+              Our Community Partners
+            </h2>
+            <p class="max-w-2xl text-white mx-auto">
               We are proud to collaborate with various community organizations
               to enhance our impact and reach. Together, we strive to create a
               supportive network for those we serve.
@@ -570,7 +631,7 @@
     <!-- /Main Content -->
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-white text-orange-500 py-12">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <!-- Logo and Social -->
@@ -661,10 +722,13 @@
             <form class="flex">
               <input
                 type="email"
-                placeholder="Type email & hit enter"
+                placeholder="Type email here"
                 class="bg-gray-700 text-white px-4 py-2 rounded-l w-full"
               />
-              <button type="submit" class="bg-orange-500 px-4 py-2 rounded-r">
+              <button
+                type="submit"
+                class="bg-orange-500 text-white px-4 py-2 rounded-r"
+              >
                 Subscribe
               </button>
             </form>
@@ -676,7 +740,7 @@
             © Copyright LAURALA.ORG 2025. Design by
             <a
               href="https://github.com/d-velopr/"
-              class="text-orange-500 hover:text-orange-400"
+              class="text-orange-500 hover:text- orange-500"
               >Dvelupmint</a
             >
           </p>
@@ -684,23 +748,41 @@
       </div>
     </footer>
     <!-- /Footer -->
-
     <!-- JavaScript for Mobile Menu -->
     <script>
-      // Mobile Menu Toggle
+      // Scroll effect for navigation
+      window.addEventListener("scroll", function () {
+        const header = document.getElementById("main-header");
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 100) {
+          // Change 100 to adjust when it triggers
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+      // Mobile menu toggle (update existing)
       document
         .getElementById("menu-toggle")
         .addEventListener("click", function () {
           const menu = document.getElementById("mobile-menu");
+          const isScrolled = document
+            .getElementById("main-header")
+            .classList.contains("scrolled");
+
           menu.classList.toggle("hidden");
           menu.classList.toggle("transform");
           menu.classList.toggle("-translate-x-full");
 
-          // Toggle icon between hamburger and X
           const icon = this.querySelector("i");
           if (icon.classList.contains("fa-bars")) {
             icon.classList.remove("fa-bars");
             icon.classList.add("fa-times");
+            // Ensure mobile menu has correct background when nav is transparent
+            if (!isScrolled) {
+              menu.classList.add("bg-white");
+            }
           } else {
             icon.classList.remove("fa-times");
             icon.classList.add("fa-bars");
