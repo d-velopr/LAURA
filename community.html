@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <title>L.A.U.R.A | Our Community</title>
@@ -7,29 +7,26 @@
       name="description"
       content="Discover L.A.U.R.A's community partners, resources, and sponsors supporting South Central LA"
     />
-    <meta name="author" content="" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    <!-- Tailwind CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <!-- Custom Styles -->
+
     <style>
       :root {
         --laura-orange: #ed7014;
+        --laura-orange-dark: #d86212;
         --laura-dark: #252525;
         --laura-light: #efefef;
       }
@@ -38,196 +35,190 @@
         font-family: "Poppins", sans-serif;
       }
 
-      .dropdown:hover .dropdown-content {
-        display: block;
+      .header-scrolled {
+        background: #ffffff;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
       }
 
-      #mobile-menu {
-        transition: transform 0.3s ease;
+      .nav-link {
+        transition: color 0.3s ease;
       }
 
-      #mobile-menu.hidden {
-        transform: translateX(-100%);
+      .card-hover {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          background-color 0.3s ease;
       }
 
-      html {
-        scroll-behavior: smooth;
+      .card-hover:hover {
+        transform: translateY(-4px);
       }
 
-      .hover-lift:hover {
-        transform: translateY(-5px);
-        transition: transform 0.3s ease;
+      .partner-card:hover {
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+      }
+
+      .resource-card:hover {
+        background-color: var(--laura-orange-dark);
       }
 
       .btn-primary {
         background-color: var(--laura-orange);
-        color: white;
-        transition: all 0.3s ease;
+        color: #fff;
+        transition:
+          background-color 0.3s ease,
+          transform 0.3s ease;
       }
 
       .btn-primary:hover {
-        background-color: #d86212;
+        background-color: var(--laura-orange-dark);
         transform: translateY(-2px);
       }
 
-      .partner-card {
-        transition: all 0.3s ease;
+      .mobile-menu-open {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
       }
 
-      .partner-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      }
-
-      .resource-card {
-        transition: all 0.3s ease;
-      }
-
-      .resource-card:hover {
-        background-color: #f0f0f0;
-        transform: scale(1.02);
+      .mobile-menu-closed {
+        transform: translateX(-100%);
+        opacity: 0;
+        visibility: hidden;
       }
     </style>
   </head>
 
-  <body id="top" class="bg-gray-100">
-    <!-- Navigation -->
+  <body id="top" class="bg-gray-100 text-gray-800">
+    <!-- Header -->
     <header
       id="main-header"
-      class="fixed w-full bg-transparent transition-all duration-300 z-50"
+      class="fixed inset-x-0 top-0 z-50 w-full bg-transparent transition-all duration-300"
     >
       <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center py-4">
+        <div class="flex items-center justify-between py-4">
           <!-- Logo -->
-          <div class="logo">
-            <a href="index.html">
-              <img
-                src="images/logo.png"
-                alt="LAURA"
-                class="h-12 w-auto logo-image"
-              />
-            </a>
-          </div>
+          <a href="index.html" class="shrink-0">
+            <img
+              src="images/logo.png"
+              alt="L.A.U.R.A logo"
+              class="h-12 w-auto"
+            />
+          </a>
 
-          <!-- Desktop Navigation -->
-          <nav class="hidden md:flex items-center space-x-6">
-            <div class="dropdown relative group">
-              <div class="relative">
-                <a
-                  href="about.html"
-                  class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
-                >
-                  About Us
-                </a>
-              </div>
+          <!-- Desktop Nav -->
+          <nav class="hidden items-center space-x-6 md:flex">
+            <!-- About -->
+            <div class="group relative">
+              <a
+                href="about.html"
+                class="nav-link py-2 font-medium text-gray-800 hover:text-orange-500"
+              >
+                About Us
+              </a>
               <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
+                class="invisible absolute mt-2 min-w-max rounded-md bg-white p-4 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:opacity-100"
               >
                 <a
                   href="about.html"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
                 >
                   Mission / History
                 </a>
                 <a
                   href="about.html#our-strategy"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
                 >
                   Our Strategy
                 </a>
                 <a
                   href="about.html#board-members"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
                 >
                   Board of Directors
                 </a>
               </div>
             </div>
 
-            <div class="dropdown relative group">
-              <div class="relative">
-                <a
-                  href="impact.html"
-                  class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
-                >
-                  Our Impact
-                </a>
-              </div>
-
+            <!-- Impact -->
+            <div class="group relative">
+              <a
+                href="impact.html"
+                class="nav-link py-2 font-medium text-gray-800 hover:text-orange-500"
+              >
+                Our Impact
+              </a>
               <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
+                class="invisible absolute mt-2 min-w-max rounded-md bg-white p-4 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:opacity-100"
               >
                 <a
                   href="impact.html"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
                 >
                   L.A.U.R.A's Victim Support Program
                 </a>
                 <a
                   href="impact.html#youth"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
                 >
                   L.A.U.R.A Youth
                 </a>
               </div>
             </div>
 
-            <div class="dropdown relative group">
-              <div class="relative">
-                <a
-                  href="events.html"
-                  class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
-                >
-                  Events
-                </a>
-              </div>
-
+            <!-- Events -->
+            <div class="group relative">
+              <a
+                href="events.html"
+                class="nav-link py-2 font-medium text-gray-800 hover:text-orange-500"
+              >
+                Events
+              </a>
               <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
+                class="invisible absolute mt-2 min-w-max rounded-md bg-white p-4 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:opacity-100"
               >
                 <a
                   href="events.html#resource-fair"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
                 >
                   Resource Fair
                 </a>
                 <a
                   href="events.html#gallery"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
                 >
                   Gallery
                 </a>
               </div>
             </div>
 
-            <div class="dropdown relative group">
-              <div class="relative">
-                <a
-                  href="community.html"
-                  class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
-                >
-                  Community
-                </a>
-              </div>
-
+            <!-- Community -->
+            <div class="group relative">
+              <a
+                href="community.html"
+                class="nav-link py-2 font-medium text-gray-800 hover:text-orange-500"
+              >
+                Community
+              </a>
               <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
+                class="invisible absolute mt-2 min-w-max rounded-md bg-white p-4 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:opacity-100"
               >
                 <a
                   href="community.html#partners"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
                 >
                   Our Partners
                 </a>
                 <a
                   href="community.html#resources"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
                 >
                   Resources
                 </a>
                 <a
                   href="community.html#sponsors"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
                 >
                   Our Sponsors
                 </a>
@@ -237,60 +228,69 @@
             <a
               href="https://givebutter.com/LAURALA"
               target="_blank"
-              class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300"
+              rel="noopener noreferrer"
+              class="nav-link font-medium text-gray-800 hover:text-orange-500"
             >
               Donate
             </a>
 
             <a
               href="contact.html"
-              class="nav-contact bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-orange-500 transition-all duration-300"
+              class="rounded-full bg-orange-500 px-4 py-2 font-medium text-white transition-all duration-300 hover:bg-white hover:text-orange-500"
             >
               Contact
             </a>
           </nav>
 
-          <!-- Mobile Menu Button -->
-          <button id="menu-toggle" class="md:hidden text-white text-xl">
-            <i class="fas fa-bars" style="color: #ed7014"></i>
+          <!-- Mobile Toggle -->
+          <button
+            id="menu-toggle"
+            type="button"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            class="text-xl md:hidden"
+          >
+            <i id="menu-icon" class="fas fa-bars text-orange-500"></i>
           </button>
         </div>
       </div>
 
-      <!-- Mobile Navigation -->
+      <!-- Mobile Nav -->
       <div
         id="mobile-menu"
-        class="md:hidden bg-white shadow-lg absolute w-full hidden transform -translate-x-full transition-transform"
+        class="mobile-menu-closed absolute w-full bg-white shadow-lg transition-all duration-300 md:hidden"
       >
         <div class="container mx-auto px-4 py-6">
           <a
             href="about.html"
-            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            class="block border-b border-gray-200 py-3 text-gray-700 hover:text-orange-500"
           >
             About Us
           </a>
           <a
             href="impact.html"
-            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            class="block border-b border-gray-200 py-3 text-gray-700 hover:text-orange-500"
           >
             Our Impact
           </a>
           <a
             href="events.html"
-            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            class="block border-b border-gray-200 py-3 text-gray-700 hover:text-orange-500"
           >
             Events
           </a>
           <a
             href="community.html"
-            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            class="block border-b border-gray-200 py-3 text-gray-700 hover:text-orange-500"
           >
             Community
           </a>
           <a
             href="https://givebutter.com/LAURALA"
             target="_blank"
-            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+            rel="noopener noreferrer"
+            class="block border-b border-gray-200 py-3 text-gray-700 hover:text-orange-500"
           >
             Donate
           </a>
@@ -304,449 +304,428 @@
       </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Main -->
     <main class="pt-16">
-      <!-- Partners Section -->
-      <section id="partners" class="py-16 bg-white">
+      <!-- Partners -->
+      <section id="partners" class="bg-white py-16">
         <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold mb-4 text-gray-800">Our Partners</h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div class="mb-12 text-center">
+            <h1 class="mb-4 text-4xl font-bold text-gray-800">Our Partners</h1>
+            <p class="mx-auto max-w-3xl text-xl text-gray-600">
               L.A.U.R.A partners with many organizations dedicated to serving
               the South Central Los Angeles community.
             </p>
           </div>
 
           <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+            class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
           >
-            <!-- Project Cry No More -->
-            <div
-              class="partner-card bg-white rounded-lg shadow-md p-6 text-center"
-            >
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
               <a
                 href="http://projectcrynomore.yolasite.com/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="block"
               >
                 <img
                   src="images/pcnm.jpg"
                   alt="Project Cry No More"
-                  class="w-full h-48 object-cover rounded-md mb-4"
+                  class="mb-4 h-48 w-full rounded-md object-cover"
                 />
-                <h5 class="font-bold text-lg mb-2">Project Cry No More</h5>
+                <h2 class="text-lg font-bold">Project Cry No More</h2>
               </a>
             </div>
 
-            <!-- Youth Justice Coalition -->
-            <div
-              class="partner-card bg-white rounded-lg shadow-md p-6 text-center"
-            >
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
               <a
                 href="https://youthjusticela.org/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="block"
               >
                 <img
                   src="images/com/yjc.png"
                   alt="Youth Justice Coalition"
-                  class="w-full h-48 object-cover rounded-md mb-4"
+                  class="mb-4 h-48 w-full rounded-md object-cover"
                 />
-                <h5 class="font-bold text-lg mb-2">
-                  Y.J.C (Youth Justice Coalition)
-                </h5>
+                <h2 class="text-lg font-bold">Y.J.C (Youth Justice Coalition)</h2>
               </a>
             </div>
 
-            <!-- Southern California Cease Fire -->
-            <div
-              class="partner-card bg-white rounded-lg shadow-md p-6 text-center"
-            >
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
               <a
                 href="https://www.socalceasefire.org/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="block"
               >
                 <img
                   src="images/sccfc.jpg"
                   alt="Southern California Cease Fire"
-                  class="w-full h-48 object-cover rounded-md mb-4"
+                  class="mb-4 h-48 w-full rounded-md object-cover"
                 />
-                <h5 class="font-bold text-lg mb-2">
-                  Southern California Cease Fire
-                </h5>
+                <h2 class="text-lg font-bold">Southern California Cease Fire</h2>
               </a>
             </div>
 
-            <!-- Los Angeles District Attorney -->
-            <div
-              class="partner-card bg-white rounded-lg shadow-md p-6 text-center"
-            >
-              <a href="https://da.lacounty.gov/" target="_blank" class="block">
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
+              <a
+                href="https://da.lacounty.gov/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/9/92/Seal_of_the_District_Attorney_of_the_County_of_Los_Angeles.png"
                   alt="Los Angeles District Attorney"
-                  class="w-full h-48 object-cover rounded-md mb-4"
+                  class="mb-4 h-48 w-full rounded-md object-cover"
                 />
-                <h5 class="font-bold text-lg mb-2">
-                  Los Angeles District Attorney
-                </h5>
+                <h2 class="text-lg font-bold">Los Angeles District Attorney</h2>
               </a>
             </div>
 
-            <!-- 2nd Call -->
-            <div
-              class="partner-card bg-white rounded-lg shadow-md p-6 text-center"
-            >
-              <a href="https://www.2ndcall.org/" target="_blank" class="block">
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
+              <a
+                href="https://www.2ndcall.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
                 <img
                   src="images/com/second-call.png"
                   alt="2nd Call"
-                  class="w-full h-48 object-cover rounded-md mb-4"
+                  class="mb-4 h-48 w-full rounded-md object-cover"
                 />
-                <h5 class="font-bold text-lg mb-2">2nd Call</h5>
+                <h2 class="text-lg font-bold">2nd Call</h2>
               </a>
             </div>
 
-            <!-- Los Angeles Police Dept. -->
-            <div
-              class="partner-card bg-white rounded-lg shadow-md p-6 text-center"
-            >
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
               <a
                 href="https://www.lapdonline.org/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="block"
               >
                 <img
                   src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F65%2Fb4%2Fd9%2F65b4d925b5de48a7f9de1b9691a7e7d8.jpg&f=1&nofb=1&ipt=dd98f7fe9ee2c72f0c48e4a3aac858d7bdcece6924ca9eb2b525320f4c4bf8e9"
-                  alt="Los Angeles Police Dept."
-                  class="w-full h-48 object-cover rounded-md mb-4"
+                  alt="Los Angeles Police Department"
+                  class="mb-4 h-48 w-full rounded-md object-cover"
                 />
-                <h5 class="font-bold text-lg mb-2">Los Angeles Police Dept.</h5>
+                <h2 class="text-lg font-bold">Los Angeles Police Dept.</h2>
               </a>
             </div>
 
-            <!-- Los Angeles Council District 9 -->
-            <div
-              class="partner-card bg-white rounded-lg shadow-md p-6 text-center"
-            >
-              <a href="https://cd9.lacity.gov/" target="_blank" class="block">
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
+              <a
+                href="https://cd9.lacity.gov/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
                 <img
                   src="images/com/cd9.png"
                   alt="Los Angeles Council District 9"
-                  class="w-full h-48 object-cover rounded-md mb-4"
+                  class="mb-4 h-48 w-full rounded-md object-cover"
                 />
-                <h5 class="font-bold text-lg mb-2">
-                  Los Angeles Council District 9
-                </h5>
+                <h2 class="text-lg font-bold">Los Angeles Council District 9</h2>
               </a>
             </div>
 
-            <!-- City of Los Angeles Recreation & Parks Dept. -->
-            <div
-              class="partner-card bg-white rounded-lg shadow-md p-6 text-center"
-            >
-              <a href="https://www.laparks.org/" target="_blank" class="block">
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
+              <a
+                href="https://www.laparks.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
                 <img
                   src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.laparks.org%2Fsites%2Fdefault%2Ffiles%2Ffacility%2Fhollywood-recreation-center%2Fimages%2Fimg4176.jpg&f=1&nofb=1&ipt=8d93805dbc803c60d77f40602b3fc74021357d903de9eecf214b6921f0d44c54"
-                  alt="City of Los Angeles Recreation & Parks Dept."
-                  class="w-full h-48 object-cover rounded-md mb-4"
+                  alt="City of Los Angeles Recreation and Parks Department"
+                  class="mb-4 h-48 w-full rounded-md object-cover"
                 />
-                <h5 class="font-bold text-lg mb-2">
-                  City of Los Angeles Recreation & Parks Dept.
-                </h5>
+                <h2 class="text-lg font-bold">
+                  City of Los Angeles Recreation &amp; Parks Dept.
+                </h2>
               </a>
             </div>
 
-            <!-- S.E.A. (Soledad Enrichment Action) -->
-            <div
-              class="partner-card bg-white rounded-lg shadow-md p-6 text-center"
-            >
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
               <a
                 href="http://www.soledadenrichmentaction.com/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="block"
               >
                 <img
                   src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.googleusercontent.com%2FiJTKDqXqmyrFMkF7_zCklUFFJaoWvhf9lNTlcFoAUawpg060sj5j4gr8wlvp3UPMy4kvf9sZ1A%3Ds900-c-k-c0x00ffffff-no-rj&f=1&nofb=1&ipt=e70c9b24b04668ef6c6e3cb91f2521a1260d92cad7402d00684981c8fb131c94"
-                  alt="S.E.A. (Soledad Enrichment Action)"
-                  class="w-full h-48 object-cover rounded-md mb-4"
+                  alt="Soledad Enrichment Action"
+                  class="mb-4 h-48 w-full rounded-md object-cover"
                 />
-                <h5 class="font-bold text-lg mb-2">
+                <h2 class="text-lg font-bold">
                   S.E.A. (Soledad Enrichment Action)
-                </h5>
+                </h2>
               </a>
             </div>
 
-            <!-- Deco Familia Funeral Homes -->
-            <div
-              class="partner-card bg-white rounded-lg shadow-md p-6 text-center"
-            >
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
               <a
                 href="https://www.decofamilia.com/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="block"
               >
                 <img
                   src="images/deco.jpg"
                   alt="Deco Familia Funeral Homes"
-                  class="w-full h-48 object-cover rounded-md mb-4"
+                  class="mb-4 h-48 w-full rounded-md object-cover"
                 />
-                <h5 class="font-bold text-lg mb-2">
-                  Deco Familia Funeral Homes
-                </h5>
+                <h2 class="text-lg font-bold">Deco Familia Funeral Homes</h2>
               </a>
             </div>
 
-            <!-- CD Tech -->
-            <div
-              class="partner-card bg-white rounded-lg shadow-md p-6 text-center"
-            >
-              <a href="https://cdtech.org/" target="_blank" class="block">
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
+              <a
+                href="https://cdtech.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
                 <img
                   src="https://cdtech.org/wp-content/uploads/2022/12/cdtechlogo-for-web.jpg"
                   alt="CD Tech"
-                  class="w-full h-48 object-cover rounded-md mb-4"
+                  class="mb-4 h-48 w-full rounded-md object-cover"
                 />
-                <h5 class="font-bold text-lg mb-2">CD Tech</h5>
+                <h2 class="text-lg font-bold">CD Tech</h2>
               </a>
             </div>
 
-            <!-- K.A.G.R.O -->
-            <div
-              class="partner-card bg-white rounded-lg shadow-md p-6 text-center"
-            >
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
               <a
                 href="https://www.kagro.org/eng/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="block"
               >
                 <img
                   src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.walkintokorea.com%2Fnews%2Fphoto%2F202305%2F3698_8765_15.png&f=1&nofb=1&ipt=c00b46cc7a87e4b3e889186ffc21f24775ee4f6cc918cfdb63e2ca7a48bc1967"
-                  alt="K.A.G.R.O"
-                  class="w-full h-48 object-cover rounded-md mb-4"
+                  alt="Korean American Grocers Association"
+                  class="mb-4 h-48 w-full rounded-md object-cover"
                 />
-                <h5 class="font-bold text-lg mb-2">
+                <h2 class="text-lg font-bold">
                   K.A.G.R.O (Korean American Grocers Association)
-                </h5>
+                </h2>
               </a>
             </div>
 
-            <!-- C.R.C.D -->
-            <div
-              class="partner-card bg-white rounded-lg shadow-md p-6 text-center"
-            >
-              <a href="https://coalitionrcd.org/" target="_blank" class="block">
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
+              <a
+                href="https://coalitionrcd.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
                 <img
                   src="images/CRCD.jpg"
-                  alt="C.R.C.D"
-                  class="w-full h-48 object-cover rounded-md mb-4"
+                  alt="Coalition for Responsible Community Development"
+                  class="mb-4 h-48 w-full rounded-md object-cover"
                 />
-                <h5 class="font-bold text-lg mb-2">
+                <h2 class="text-lg font-bold">
                   C.R.C.D (Coalition for Responsible Community Development)
-                </h5>
+                </h2>
               </a>
             </div>
 
-            <!-- V.O.A -->
-            <div
-              class="partner-card bg-white rounded-lg shadow-md p-6 text-center"
-            >
-              <a href="https://voala.org/" target="_blank" class="block">
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
+              <a
+                href="https://voala.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
                 <img
                   src="https://voala.org/wp-content/uploads/2018/01/VOALAlogo-Stacked-2lines-CMYK2015.jpg"
-                  alt="V.O.A"
-                  class="w-full h-48 object-cover rounded-md mb-4"
+                  alt="Volunteers of America Los Angeles"
+                  class="mb-4 h-48 w-full rounded-md object-cover"
                 />
-                <h5 class="font-bold text-lg mb-2">
+                <h2 class="text-lg font-bold">
                   V.O.A (Volunteers of America Los Angeles)
-                </h5>
+                </h2>
               </a>
             </div>
 
-            <!-- All Peoples -->
-            <div
-              class="partner-card bg-white rounded-lg shadow-md p-6 text-center"
-            >
-              <a href="https://allpeoplescc.org/" target="_blank" class="block">
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
+              <a
+                href="https://allpeoplescc.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
                 <img
                   src="https://allpeoplescc.org/wp-content/uploads/2022/08/cropped-cropped-AllPeoplesLogo.png"
-                  alt="All Peoples"
-                  class="w-full h-48 object-cover rounded-md mb-4"
+                  alt="All Peoples Community Center"
+                  class="mb-4 h-48 w-full rounded-md object-cover"
                 />
-                <h5 class="font-bold text-lg mb-2">All Peoples</h5>
+                <h2 class="text-lg font-bold">All Peoples</h2>
               </a>
             </div>
 
-            <!-- G.R.Y.D -->
-            <div
-              class="partner-card bg-white rounded-lg shadow-md p-6 text-center"
-            >
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
               <a
                 href="https://www.legacyla.org/gryd"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="block"
               >
                 <img
                   src="https://images.squarespace-cdn.com/content/v1/6802dbb2be989a734d60edce/5b80d73b-4586-463e-a9a2-7dce6de75c57/vertical-rgb_1500x750_mudgreen-1.png.png"
-                  alt="G.R.Y.D"
-                  class="w-full h-48 object-cover rounded-md mb-4"
+                  alt="Gang Reduction and Youth Development"
+                  class="mb-4 h-48 w-full rounded-md object-cover"
                 />
-                <h5 class="font-bold text-lg mb-2">
+                <h2 class="text-lg font-bold">
                   G.R.Y.D (Gang Reduction and Youth Development)
-                </h5>
+                </h2>
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Resources Section -->
+      <!-- Resources -->
       <section
         id="resources"
-        class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white"
+        class="bg-gradient-to-r from-blue-600 to-blue-800 py-16 text-white"
       >
         <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <i class="fas fa-users text-6xl mb-6 text-orange-500"></i>
-            <h1 class="text-4xl font-bold mb-4">Resources</h1>
-            <p class="text-xl max-w-3xl mx-auto">
+          <div class="mb-12 text-center">
+            <i class="fas fa-users mb-6 text-6xl text-orange-500"></i>
+            <h1 class="mb-4 text-4xl font-bold">Resources</h1>
+            <p class="mx-auto max-w-3xl text-xl">
               L.A.U.R.A collaborates with multiple organizations to provide
-              resources to families who have been impacted
+              resources to families who have been impacted.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div class="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
             <a
               href="#"
-              class="resource-card bg-orange-500 rounded-lg p-6 text-center hover-lift group"
+              class="resource-card card-hover rounded-lg bg-orange-500 p-6 text-center"
             >
-              <div
-                class="text-white font-semibold text-lg group-hover:text-orange-500"
-              >
+              <span class="text-lg font-semibold text-white">
                 Victims Compensation Portal
-              </div>
+              </span>
             </a>
 
             <a
               href="#"
-              class="resource-card bg-orange-500 rounded-lg p-6 text-center hover-lift group"
+              class="resource-card card-hover rounded-lg bg-orange-500 p-6 text-center"
             >
-              <div
-                class="text-white font-semibold text-lg group-hover:text-orange-500"
-              >
+              <span class="text-lg font-semibold text-white">
                 L.A.U.R.A EMERGENCY FUND
-              </div>
+              </span>
             </a>
 
             <a
               href="https://coalitionrcd.org/get-involved/work-at-crcd/"
-              class="resource-card bg-orange-500 rounded-lg p-6 text-center hover-lift group"
+              class="resource-card card-hover rounded-lg bg-orange-500 p-6 text-center"
             >
-              <div
-                class="text-white font-semibold text-lg group-hover:text-orange-500"
-              >
+              <span class="text-lg font-semibold text-white">
                 C.R.C.D Job Resources
-              </div>
+              </span>
             </a>
 
             <a
               href="https://myla311.lacity.gov/s/who-to-call"
-              class="resource-card bg-orange-500 rounded-lg p-6 text-center hover-lift group"
+              class="resource-card card-hover rounded-lg bg-orange-500 p-6 text-center"
             >
-              <div
-                class="text-white font-semibold text-lg group-hover:text-orange-500"
-              >
+              <span class="text-lg font-semibold text-white">
                 Council District 9 website resources page
-              </div>
+              </span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- Sponsors Section -->
-      <section id="sponsors" class="py-16 bg-white">
+      <!-- Sponsors -->
+      <section id="sponsors" class="bg-white py-16">
         <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold mb-4 text-gray-800">Our Sponsors</h1>
+          <div class="mb-12 text-center">
+            <h1 class="mb-4 text-4xl font-bold text-gray-800">Our Sponsors</h1>
             <p class="text-xl text-gray-600">
               These organizations help make our work possible
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- LA County -->
-            <div class="bg-gray-50 rounded-lg p-6 text-center">
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div class="rounded-lg bg-gray-50 p-6 text-center">
               <img
                 src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.kindpng.com%2Fpicc%2Fm%2F370-3703709_seal-of-los-angeles-county-california-hd-png.png&f=1&nofb=1&ipt=2a71e83195d569286920403b295d24cfe48e7a47a1a3baf07401f1d930a0bb9c"
-                alt="LA County City Logo"
-                class="w-32 h-32 mx-auto mb-4 object-contain"
+                alt="LA County logo"
+                class="mx-auto mb-4 h-32 w-32 object-contain"
               />
               <p class="font-semibold">LA County</p>
             </div>
 
-            <!-- Amity Foundation -->
-            <div class="bg-gray-50 rounded-lg p-6 text-center">
+            <div class="rounded-lg bg-gray-50 p-6 text-center">
               <img
                 src="https://www.reentrykeys.com/logos/profile/limage-10168-465-photo.jpg"
                 alt="Amity Foundation"
-                class="w-32 h-32 mx-auto mb-4 object-contain"
+                class="mx-auto mb-4 h-32 w-32 object-contain"
               />
               <p class="font-semibold">Amity Foundation</p>
             </div>
 
-            <!-- Disney -->
-            <div class="bg-gray-50 rounded-lg p-6 text-center">
+            <div class="rounded-lg bg-gray-50 p-6 text-center">
               <img
                 src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogoeps.com%2Fwp-content%2Fuploads%2F2012%2F12%2Fdisney-logo-vector.png&f=1&nofb=1&ipt=200e00b6748dd88c955ef108b103f67f0245b54f875638d0ebd14c77c7147837"
                 alt="Disney"
-                class="w-32 h-32 mx-auto mb-4 object-contain"
+                class="mx-auto mb-4 h-32 w-32 object-contain"
               />
               <p class="font-semibold">Disney</p>
             </div>
 
-            <!-- CD9 -->
-            <div class="bg-gray-50 rounded-lg p-6 text-center">
+            <div class="rounded-lg bg-gray-50 p-6 text-center">
               <img
                 src="images/com/cd9.png"
                 alt="CD9"
-                class="w-32 h-32 mx-auto mb-4 object-contain"
+                class="mx-auto mb-4 h-32 w-32 object-contain"
               />
               <p class="font-semibold">CD-9 (L.A County District 9)</p>
             </div>
 
-            <!-- Crime Survivors -->
-            <div class="bg-gray-50 rounded-lg p-6 text-center">
+            <div class="rounded-lg bg-gray-50 p-6 text-center">
               <img
                 src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.explicit.bing.net%2Fth%2Fid%2FOIP.NEJHJgeevCvlid7-pyzUZgHaHa%3Fpid%3DApi&f=1&ipt=6c65f73c7a982c44c704de5c6367b68b89d571c46d66fbb63b33b9fe1dd9a144"
-                alt="Crime Survivors"
-                class="w-32 h-32 mx-auto mb-4 object-contain"
+                alt="Crime Survivors Speak"
+                class="mx-auto mb-4 h-32 w-32 object-contain"
               />
-              <p class="font-semibold">Crime Survivors</p>
+              <p class="font-semibold">Crime Survivors Speak</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Call to Action -->
-      <section class="py-16 bg-orange-500 text-white">
+      <!-- CTA -->
+      <section class="bg-orange-500 py-16 text-white">
         <div class="container mx-auto px-4 text-center">
-          <h2 class="text-3xl font-bold mb-6">Join Our Community Network</h2>
-          <p class="text-xl mb-8 max-w-2xl mx-auto">
+          <h2 class="mb-6 text-3xl font-bold">Join Our Community Network</h2>
+          <p class="mx-auto mb-8 max-w-2xl text-xl">
             Partner with us to create positive change in South Central Los
             Angeles
           </p>
-          <div class="flex flex-col sm:flex-row justify-center gap-4">
+
+          <div class="flex flex-col justify-center gap-4 sm:flex-row">
             <a
               href="contact.html"
-              class="bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+              class="rounded-full bg-white px-6 py-3 font-semibold text-orange-500 transition hover:bg-gray-100"
             >
               Become a Partner
             </a>
             <a
               href="https://givebutter.com/LAURALA"
               target="_blank"
-              class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-orange-500 transition"
+              rel="noopener noreferrer"
+              class="rounded-full border-2 border-white bg-transparent px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-orange-500"
             >
               Support Our Work
             </a>
@@ -754,102 +733,101 @@
         </div>
       </section>
     </main>
-    <!-- /Main Content -->
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-gray-800 py-12 text-white">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <!-- Logo and Social -->
+        <div class="mb-8 grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
-            <h4 class="text-xl font-bold mb-4">Follow Us!</h4>
-            <div class="flex space-x-4 mb-4">
+            <h3 class="mb-4 text-xl font-bold">Follow Us!</h3>
+            <div class="mb-4 flex space-x-4">
               <a
                 href="https://www.facebook.com/LauraYouth"
                 class="text-white hover:text-blue-400"
+                aria-label="Facebook"
               >
                 <i class="fab fa-facebook-f text-2xl"></i>
               </a>
               <a
                 href="https://www.instagram.com/laurayouthla/"
                 class="text-white hover:text-pink-400"
+                aria-label="Instagram"
               >
                 <i class="fab fa-instagram text-2xl"></i>
               </a>
-              <a href="#" class="text-white hover:text-gray-300">
+              <a href="#" class="text-white hover:text-gray-300" aria-label="TikTok">
                 <i class="fab fa-tiktok text-2xl"></i>
               </a>
             </div>
             <p class="text-gray-400">
-              © L.A.U.R.A 501(c)(3) - 2025<br />All rights reserved<br />Ending
-              The Cycle of Violence.
+              © L.A.U.R.A 501(c)(3) - 2025<br />
+              All rights reserved<br />
+              Ending The Cycle of Violence.
             </p>
           </div>
 
-          <!-- Site Links -->
           <div>
-            <h4 class="text-xl font-bold mb-4">Site Links</h4>
+            <h3 class="mb-4 text-xl font-bold">Site Links</h3>
             <ul class="space-y-2">
               <li>
-                <a
-                  href="about.html#mission"
-                  class="text-gray-400 hover:text-white"
-                  >About Us</a
-                >
+                <a href="about.html#mission" class="text-gray-400 hover:text-white">
+                  About Us
+                </a>
               </li>
               <li>
                 <a
                   href="about.html#board-members"
                   class="text-gray-400 hover:text-white"
-                  >Board of Directors</a
                 >
+                  Board of Directors
+                </a>
               </li>
               <li>
                 <a
                   href="https://givebutter.com/LAURALA"
                   target="_blank"
+                  rel="noopener noreferrer"
                   class="text-gray-400 hover:text-white"
-                  >Donate</a
                 >
+                  Donate
+                </a>
               </li>
               <li>
-                <a href="faq.html#faq" class="text-gray-400 hover:text-white"
-                  >FAQ</a
-                >
+                <a href="faq.html#faq" class="text-gray-400 hover:text-white">
+                  FAQ
+                </a>
               </li>
               <li>
-                <a href="terms.html" class="text-gray-400 hover:text-white"
-                  >Terms</a
-                >
+                <a href="terms.html" class="text-gray-400 hover:text-white">
+                  Terms
+                </a>
               </li>
               <li>
-                <a href="privacy.html" class="text-gray-400 hover:text-white"
-                  >Privacy Policy</a
-                >
+                <a href="privacy.html" class="text-gray-400 hover:text-white">
+                  Privacy Policy
+                </a>
               </li>
             </ul>
           </div>
 
-          <!-- Mailing Address -->
           <div>
-            <h4 class="text-xl font-bold mb-4">Mailing Address</h4>
+            <h3 class="mb-4 text-xl font-bold">Mailing Address</h3>
             <p class="text-gray-400">
               P.O Box 11681<br />
               Los Angeles, CA
             </p>
           </div>
 
-          <!-- Newsletter -->
           <div>
-            <h4 class="text-xl font-bold mb-4">Subscribe to our Newsletter</h4>
-            <p class="text-gray-400 mb-4">
-              Get notifications on our latest events & announcements.
+            <h3 class="mb-4 text-xl font-bold">Subscribe to our Newsletter</h3>
+            <p class="mb-4 text-gray-400">
+              Get notifications on our latest events &amp; announcements.
             </p>
             <form class="flex">
               <input
                 type="email"
                 placeholder="Type email & hit enter"
-                class="bg-gray-700 text-white px-4 py-2 rounded-l w-full"
+                class="w-full rounded-l bg-gray-700 px-4 py-2 text-white"
               />
               <button type="submit" class="bg-orange-500 px-4 py-2 rounded-r">
                 Subscribe
@@ -864,113 +842,91 @@
             <a
               href="https://github.com/d-velopr/"
               class="text-orange-500 hover:text-orange-400"
-              >Dvelupmint</a
             >
+              Dvelupmint
+            </a>
           </p>
         </div>
       </div>
     </footer>
-    <!-- /Footer -->
 
-    <!-- NavBar.js -->
     <script>
-      // Consolidated scroll handler - only one version
-      function handleScroll() {
-        const header = document.getElementById("main-header");
-        const scrollPosition = window.scrollY;
+      const header = document.getElementById("main-header");
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const mobileLinks = document.querySelectorAll("#mobile-menu a");
 
-        console.log("Scroll position:", scrollPosition); // Debug line
+      function updateHeaderOnScroll() {
+        const isScrolled = window.scrollY > 50;
+        header.classList.toggle("header-scrolled", isScrolled);
+      }
 
-        if (scrollPosition > 50) {
-          header.classList.add("scrolled");
-          console.log("Header is now white"); // Debug line
+      function openMobileMenu() {
+        mobileMenu.classList.remove("mobile-menu-closed");
+        mobileMenu.classList.add("mobile-menu-open");
+        menuIcon.classList.remove("fa-bars");
+        menuIcon.classList.add("fa-times");
+        menuToggle.setAttribute("aria-expanded", "true");
+      }
+
+      function closeMobileMenu() {
+        mobileMenu.classList.remove("mobile-menu-open");
+        mobileMenu.classList.add("mobile-menu-closed");
+        menuIcon.classList.remove("fa-times");
+        menuIcon.classList.add("fa-bars");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+
+      function toggleMobileMenu() {
+        const isOpen = mobileMenu.classList.contains("mobile-menu-open");
+        if (isOpen) {
+          closeMobileMenu();
         } else {
-          header.classList.remove("scrolled");
-          console.log("Header is now transparent"); // Debug line
+          openMobileMenu();
         }
       }
 
-      // Add event listeners once
-      window.addEventListener("load", handleScroll);
-      window.addEventListener("scroll", handleScroll);
-      window.addEventListener("resize", handleScroll);
+      function handleAnchorLinks() {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", (event) => {
+            const targetId = anchor.getAttribute("href");
 
-      // Mobile menu toggle
-      document
-        .getElementById("menu-toggle")
-        .addEventListener("click", function () {
-          const menu = document.getElementById("mobile-menu");
-          const isScrolled = document
-            .getElementById("main-header")
-            .classList.contains("scrolled");
+            if (!targetId || targetId === "#") return;
 
-          menu.classList.toggle("hidden");
-          menu.classList.toggle("transform");
-          menu.classList.toggle("-translate-x-full");
+            const targetElement = document.querySelector(targetId);
+            if (!targetElement) return;
 
-          const icon = this.querySelector("i");
-          if (icon.classList.contains("fa-bars")) {
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-times");
-            if (!isScrolled) {
-              menu.style.backgroundColor = "white";
-            }
-          } else {
-            icon.classList.remove("fa-times");
-            icon.classList.add("fa-bars");
-          }
-        });
+            event.preventDefault();
 
-      // Close mobile menu when clicking outside
-      document.addEventListener("click", function (event) {
-        const menu = document.getElementById("mobile-menu");
-        const toggle = document.getElementById("menu-toggle");
-
-        if (!menu.contains(event.target) && !toggle.contains(event.target)) {
-          menu.classList.add("hidden", "transform", "-translate-x-full");
-          const icon = toggle.querySelector("i");
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
-        }
-      });
-
-      // Close mobile menu when clicking a link
-      document.querySelectorAll("#mobile-menu a").forEach((link) => {
-        link.addEventListener("click", function () {
-          const menu = document.getElementById("mobile-menu");
-          menu.classList.add("hidden", "transform", "-translate-x-full");
-          const icon = document.querySelector("#menu-toggle i");
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
-        });
-      });
-
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          const targetId = this.getAttribute("href");
-          if (targetId === "#") return;
-
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
             window.scrollTo({
               top: targetElement.offsetTop - 80,
               behavior: "smooth",
             });
-          }
+          });
         });
+      }
+
+      menuToggle.addEventListener("click", toggleMobileMenu);
+
+      document.addEventListener("click", (event) => {
+        const clickedOutsideMenu =
+          !mobileMenu.contains(event.target) && !menuToggle.contains(event.target);
+
+        if (clickedOutsideMenu) {
+          closeMobileMenu();
+        }
       });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", closeMobileMenu);
+      });
+
+      window.addEventListener("load", updateHeaderOnScroll);
+      window.addEventListener("scroll", updateHeaderOnScroll);
+      window.addEventListener("resize", updateHeaderOnScroll);
+
+      handleAnchorLinks();
     </script>
-    <style>
-      header.scrolled {
-        background: white !important;
-      }
-      header.scrolled .nav-link {
-        color: #374151 !important;
-      }
-    </style>
-    <!-- /NavBar.js -->
   </body>
 </html>
