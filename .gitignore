@@ -40,6 +40,18 @@ yarn-error.log*
 *.local
 
 # =========================
+# Agent dev files
+# =========================
+AGENTS.md
+AGENT.md
+agents.md
+agent.md
+skills/
+.skills/
+.*
+!.gitignore
+
+# =========================
 # Logs
 # =========================
 logs/
