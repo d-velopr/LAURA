@@ -46,7 +46,6 @@
     body {
       font-family: "Poppins", sans-serif;
     }
-
     .dropdown:hover .dropdown-content {
       display: block;
     }
@@ -59,7 +58,7 @@
       transform: translateX(-100%);
     }
 
-    .hover-lift:hover {
+.hover-lift:hover {
       transform: translateY(-5px);
       transition: transform 0.3s ease;
     }
@@ -238,6 +237,7 @@
       opacity: 1;
     }
   </style>
+    <link rel="stylesheet" href="css/header-animations.css" />
 </head>
 
 <body id="top" class="bg-gray-100">
@@ -382,22 +382,33 @@
           </div>
 
           <a
-            href="https://givebutter.com/LAURALA"
-            target="_blank"
-            class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300"
-          >
-            Donate
-          </a>
-
-          <a
             href="contact.html"
             class="nav-contact bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-orange-500 transition-all duration-300"
           >
             Contact
           </a>
+
+        <a href="contact.html" class="block py-3 text-gray-700 hover:text-orange-500">
+          Contact
+        </a>
+
+            <a
+              href="https://givebutter.com/LAURALA"
+              target="_blank"
+              class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300"
+          >
+            Donate
+          </a>
         </nav>
 
-        <button id="menu-toggle" class="md:hidden text-white text-xl" aria-label="Toggle menu">
+        <button
+          id="menu-toggle"
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          class="md:hidden text-white text-xl"
+        >
           <i class="fas fa-bars" style="color: #ed7014;"></i>
         </button>
       </div>
@@ -432,15 +443,12 @@
         >
           Community
         </a>
-        <a
-          href="https://givebutter.com/LAURALA"
+          <a
+            href="https://givebutter.com/LAURALA"
           target="_blank"
           class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
         >
           Donate
-        </a>
-        <a href="contact.html" class="block py-3 text-gray-700 hover:text-orange-500">
-          Contact
         </a>
       </div>
     </div>
@@ -831,8 +839,8 @@
               </a>
             </li>
             <li>
-              <a
-                href="https://givebutter.com/LAURALA"
+          <a
+            href="https://givebutter.com/LAURALA"
                 target="_blank"
                 class="text-gray-400 hover:text-white"
               >
@@ -903,34 +911,32 @@
       }
     }
 
-    const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
-    const header = document.getElementById("main-header");
+    const menuToggle = document.getElementById("menu-toggle");
+
+    function openMobileMenu() {
+      mobileMenu.classList.remove("hidden", "transform", "-translate-x-full");
+      menuToggle.setAttribute("aria-expanded", "true");
+      const icon = menuToggle.querySelector("i");
+      icon.classList.remove("fa-bars");
+      icon.classList.add("fa-times");
+      mobileMenu.style.backgroundColor = "white";
+    }
 
     function closeMobileMenu() {
       mobileMenu.classList.add("hidden", "transform", "-translate-x-full");
+      menuToggle.setAttribute("aria-expanded", "false");
       const icon = menuToggle.querySelector("i");
       icon.classList.remove("fa-times");
       icon.classList.add("fa-bars");
     }
 
     menuToggle.addEventListener("click", function () {
-      const isScrolled = header.classList.contains("scrolled");
-
-      mobileMenu.classList.toggle("hidden");
-      mobileMenu.classList.toggle("transform");
-      mobileMenu.classList.toggle("-translate-x-full");
-
-      const icon = this.querySelector("i");
-      if (icon.classList.contains("fa-bars")) {
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-times");
-        if (!isScrolled) {
-          mobileMenu.style.backgroundColor = "white";
-        }
+      const isOpen = !mobileMenu.classList.contains("hidden");
+      if (isOpen) {
+        closeMobileMenu();
       } else {
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
+        openMobileMenu();
       }
     });
 

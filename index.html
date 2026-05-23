@@ -42,7 +42,6 @@
       body {
         font-family: "Poppins", sans-serif;
       }
-
       .dropdown:hover .dropdown-content {
         display: block;
       }
@@ -55,7 +54,7 @@
         transform: translateX(-100%);
       }
 
-      html {
+html {
         scroll-behavior: smooth;
       }
 
@@ -223,6 +222,7 @@
         color: #374151 !important;
       }
     </style>
+    <link rel="stylesheet" href="css/header-animations.css" />
   </head>
 
   <body class="bg-gray-100">
@@ -370,23 +370,30 @@
             </div>
 
             <a
+              href="contact.html"
+              class="nav-contact bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-orange-500 transition-all duration-300"
+            >
+              Contact
+            </a>
+
+            <a
               href="https://givebutter.com/LAURALA"
               target="_blank"
               class="nav-link text-white hover:text-orange-500 font-medium transition-colors duration-300"
             >
               Donate
             </a>
-
-            <a
-              href="contact.html"
-              class="nav-contact bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-orange-500 transition-all duration-300"
-            >
-              Contact
-            </a>
           </nav>
 
           <!-- Mobile Menu Button -->
-          <button id="menu-toggle" class="md:hidden text-white text-xl">
+          <button
+            id="menu-toggle"
+            type="button"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            class="md:hidden text-white text-xl"
+          >
             <i class="fas fa-bars text-orange-500"></i>
           </button>
         </div>
@@ -422,18 +429,19 @@
           >
             Community
           </a>
+
+          <a
+            href="contact.html"
+            class="block py-3 text-gray-700 hover:text-orange-500"
+          >
+            Contact
+          </a>
           <a
             href="https://givebutter.com/LAURALA"
             target="_blank"
             class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
           >
             Donate
-          </a>
-          <a
-            href="contact.html"
-            class="block py-3 text-gray-700 hover:text-orange-500"
-          >
-            Contact
           </a>
         </div>
       </div>
@@ -503,8 +511,8 @@
                 class="btn-primary inline-block px-8 py-3 rounded-full font-semibold"
                 >Get Support</a
               >
-              <a
-                href="https://givebutter.com/LAURALA"
+          <a
+            href="https://givebutter.com/LAURALA"
                 target="_blank"
                 class="btn-secondary inline-block px-8 py-3 rounded-full font-semibold"
                 >Donate</a
@@ -754,8 +762,8 @@
                     prevention efforts, youth programs, and community-centered
                     events.
                   </p>
-                  <a
-                    href="https://givebutter.com/LAURALA"
+          <a
+            href="https://givebutter.com/LAURALA"
                     target="_blank"
                     class="btn-secondary inline-block px-6 py-3 rounded-full font-semibold text-center"
                     >Donate</a
@@ -816,8 +824,8 @@
                 >
               </li>
               <li>
-                <a
-                  href="https://givebutter.com/LAURALA"
+          <a
+            href="https://givebutter.com/LAURALA"
                   target="_blank"
                   class="text-gray-600 hover:text-orange-500 transition-colors"
                   >Donate</a
@@ -905,53 +913,48 @@
       window.addEventListener("resize", handleScroll);
 
       // Mobile menu toggle
-      document
-        .getElementById("menu-toggle")
-        .addEventListener("click", function () {
-          const menu = document.getElementById("mobile-menu");
-          const isScrolled = document
-            .getElementById("main-header")
-            .classList.contains("scrolled");
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-          menu.classList.toggle("hidden");
-          menu.classList.toggle("transform");
-          menu.classList.toggle("-translate-x-full");
+      function openMobileMenu() {
+        mobileMenu.classList.remove("hidden", "transform", "-translate-x-full");
+        menuToggle.setAttribute("aria-expanded", "true");
+        const icon = menuToggle.querySelector("i");
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-times");
+        mobileMenu.style.backgroundColor = "white";
+      }
 
-          const icon = this.querySelector("i");
-          if (icon.classList.contains("fa-bars")) {
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-times");
-            if (!isScrolled) {
-              menu.style.backgroundColor = "white";
-            }
-          } else {
-            icon.classList.remove("fa-times");
-            icon.classList.add("fa-bars");
-          }
-        });
+      function closeMobileMenu() {
+        mobileMenu.classList.add("hidden", "transform", "-translate-x-full");
+        menuToggle.setAttribute("aria-expanded", "false");
+        const icon = menuToggle.querySelector("i");
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+      }
+
+      menuToggle.addEventListener("click", function () {
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        if (isOpen) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
+      });
 
       // Close mobile menu when clicking outside
       document.addEventListener("click", function (event) {
-        const menu = document.getElementById("mobile-menu");
-        const toggle = document.getElementById("menu-toggle");
-
-        if (!menu.contains(event.target) && !toggle.contains(event.target)) {
-          menu.classList.add("hidden", "transform", "-translate-x-full");
-          const icon = toggle.querySelector("i");
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
+        if (
+          !mobileMenu.contains(event.target) &&
+          !menuToggle.contains(event.target)
+        ) {
+          closeMobileMenu();
         }
       });
 
       // Close mobile menu when clicking a link
       document.querySelectorAll("#mobile-menu a").forEach((link) => {
-        link.addEventListener("click", function () {
-          const menu = document.getElementById("mobile-menu");
-          menu.classList.add("hidden", "transform", "-translate-x-full");
-          const icon = document.querySelector("#menu-toggle i");
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
-        });
+        link.addEventListener("click", closeMobileMenu);
       });
 
       // Smooth scrolling for anchor links
