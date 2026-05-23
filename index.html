@@ -93,6 +93,101 @@
         overflow: hidden;
       }
 
+      .branches-grid {
+        position: relative;
+      }
+
+      .branches-art {
+        position: relative;
+      }
+
+      @media (min-width: 768px) {
+        .branches-grid {
+          padding-top: 6rem;
+          align-items: start;
+        }
+
+        .branches-grid::before {
+          content: "";
+          position: absolute;
+          top: 3.05rem;
+          left: 8%;
+          right: 8%;
+          height: 0.22rem;
+          border-radius: 999px;
+          background: linear-gradient(
+            90deg,
+            rgba(17, 24, 39, 0),
+            rgba(17, 24, 39, 0.58) 12%,
+            rgba(17, 24, 39, 0.72) 50%,
+            rgba(17, 24, 39, 0.58) 88%,
+            rgba(17, 24, 39, 0)
+          );
+          box-shadow: 0 8px 18px rgba(17, 24, 39, 0.08);
+        }
+
+        .branches-grid::after {
+          content: "";
+          position: absolute;
+          top: 3.05rem;
+          left: 49.4%;
+          width: 1.2%;
+          height: 0.22rem;
+          border-radius: 999px;
+          background: rgba(17, 24, 39, 0.78);
+        }
+
+        .branch-node {
+          position: relative;
+        }
+
+        .branch-node::before {
+          content: "";
+          position: absolute;
+          top: calc(-1 * var(--branch-length, 2.75rem));
+          left: 50%;
+          width: 0.22rem;
+          height: var(--branch-length, 2.75rem);
+          border-radius: 999px;
+          transform: translateX(-50%);
+          transform-origin: top center;
+          background: rgba(17, 24, 39, 0.56);
+          box-shadow: 0 4px 12px rgba(17, 24, 39, 0.08);
+        }
+
+        .branch-node::after {
+          content: "";
+          position: absolute;
+          top: calc(-1 * var(--branch-length, 2.75rem) - 0.3rem);
+          left: 50%;
+          width: 0.78rem;
+          height: 0.78rem;
+          border-radius: 999px;
+          transform: translateX(-50%);
+          background: rgba(17, 24, 39, 0.68);
+          box-shadow: 0 2px 8px rgba(17, 24, 39, 0.12);
+        }
+
+        .branch-node:nth-child(1) {
+          margin-top: 2.4rem;
+          --branch-length: 3.7rem;
+        }
+
+        .branch-node:nth-child(2) {
+          margin-top: 0;
+          --branch-length: 2.85rem;
+        }
+
+        .branch-node:nth-child(3) {
+          margin-top: 3.35rem;
+          --branch-length: 4.2rem;
+        }
+
+        .branch-card {
+          border-top: 4px solid rgba(17, 24, 39, 0.72);
+        }
+      }
+
       .btn-primary {
         background-color: var(--laura-orange);
         color: white;
@@ -599,91 +694,74 @@
       </section>
       <!-- /Community Events Section -->
 
-      <!-- Statistics Section -->
-      <section id="icon-boxes" class="py-12 bg-white">
-        <div class="container mx-auto px-4">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div
-              class="content-card p-8 text-center hover-lift"
-            >
-              <i class="fas fa-donate text-orange-500 text-5xl mb-4"></i>
-              <h4 class="text-3xl font-bold mb-2">2003</h4>
-              <p class="text-gray-700">Serving Los Angeles Since 2003</p>
-            </div>
-            <div
-              class="content-card p-8 text-center hover-lift"
-            >
-              <i class="fas fa-users text-orange-500 text-5xl mb-4"></i>
-              <h4 class="text-3xl font-bold mb-2">100%</h4>
-              <p class="text-gray-700">Volunteer-led Nonprofit</p>
-            </div>
-            <div
-              class="content-card p-8 text-center hover-lift"
-            >
-              <i class="fas fa-heart text-orange-500 text-5xl mb-4"></i>
-              <h4 class="text-3xl font-bold mb-2">76+</h4>
-              <p class="text-gray-700">Assisted Over 76 Families</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /Statistics Section -->
-
       <!-- Get Involved Section -->
       <section id="get-involved" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-          <div class="max-w-4xl mx-auto text-center">
+          <div class="branches-art max-w-5xl mx-auto text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-              Get Involved!
+              Branches of Support
             </h2>
             <p class="text-lg text-gray-700 mb-10">
-              There are many ways to stand with L.A.U.R.A. and support peace in
-              our community:
+              Just as every branch strengthens a tree, every person who shows up
+              strengthens our community. Whether you attend an event, volunteer
+              your time, collaborate as a partner, or give financially, there
+              are many ways to stand with L.A.U.R.A. and support peace, healing,
+              and opportunity in South Central L.A.
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 text-left">
-              <div class="content-card p-5">
-                <h3 class="font-bold text-gray-800 mb-2">Families</h3>
-                <p class="text-gray-700">Access support and resources.</p>
+            <div class="branches-grid grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+              <div class="branch-node">
+                <div class="branch-card content-card p-6 flex flex-col h-full">
+                  <h3 class="text-2xl font-bold text-gray-800 mb-3">
+                    Community
+                  </h3>
+                  <p class="text-gray-700 mb-6 flex-1">
+                    Join community events, access support and resources for
+                    families, and choose how you want to show up &mdash; as a
+                    participant, volunteer, or advocate for positive change.
+                  </p>
+                  <a
+                    href="contact.html"
+                    class="btn-secondary inline-block px-6 py-3 rounded-full font-semibold text-center"
+                    >Join the Community</a
+                  >
+                </div>
               </div>
-              <div class="content-card p-5">
-                <h3 class="font-bold text-gray-800 mb-2">Donors</h3>
-                <p class="text-gray-700">
-                  Fund healing, prevention, and community programs.
-                </p>
-              </div>
-              <div class="content-card p-5">
-                <h3 class="font-bold text-gray-800 mb-2">
-                  Sponsors &amp; Vendors
-                </h3>
-                <p class="text-gray-700">
-                  Support the Peace Walk &amp; Resource Fair.
-                </p>
-              </div>
-              <div class="content-card p-5">
-                <h3 class="font-bold text-gray-800 mb-2">Volunteers</h3>
-                <p class="text-gray-700">Help us serve families and youth.</p>
-              </div>
-              <div class="content-card p-5">
-                <h3 class="font-bold text-gray-800 mb-2">Partners</h3>
-                <p class="text-gray-700">
-                  Collaborate to strengthen South Central L.A.
-                </p>
-              </div>
-            </div>
 
-            <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
-              <a
-                href="contact.html"
-                class="btn-primary inline-block px-8 py-3 rounded-full font-semibold"
-                >Contact Us</a
-              >
-              <a
-                href="https://givebutter.com/LAURALA"
-                target="_blank"
-                class="btn-secondary inline-block px-8 py-3 rounded-full font-semibold"
-                >Donate</a
-              >
+              <div class="branch-node">
+                <div class="branch-card content-card p-6 flex flex-col h-full">
+                  <h3 class="text-2xl font-bold text-gray-800 mb-3">
+                    Collaborate
+                  </h3>
+                  <p class="text-gray-700 mb-6 flex-1">
+                    We welcome nonprofits, vendors, sponsors, and community
+                    partners to collaborate in bringing resources, healing, and
+                    support to South Central L.A.
+                  </p>
+                  <a
+                    href="contact.html"
+                    class="btn-secondary inline-block px-6 py-3 rounded-full font-semibold text-center"
+                    >Collaborate</a
+                  >
+                </div>
+              </div>
+
+              <div class="branch-node">
+                <div class="branch-card content-card p-6 flex flex-col h-full">
+                  <h3 class="text-2xl font-bold text-gray-800 mb-3">Donate</h3>
+                  <p class="text-gray-700 mb-6 flex-1">
+                    Your donation helps fund healing initiatives, violence
+                    prevention efforts, youth programs, and community-centered
+                    events.
+                  </p>
+                  <a
+                    href="https://givebutter.com/LAURALA"
+                    target="_blank"
+                    class="btn-secondary inline-block px-6 py-3 rounded-full font-semibold text-center"
+                    >Donate</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>
