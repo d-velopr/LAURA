@@ -68,6 +68,16 @@ html {
         transition: all 0.3s ease;
       }
 
+      .card-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-4px);
+      }
+      .partner-card:hover {
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+      }
+
       .btn-primary:hover {
         background-color: #d86212;
         transform: translateY(-2px);
@@ -167,6 +177,12 @@ html {
                 >
                   Board of Directors
                 </a>
+                <a
+                  href="about.html#partners"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                >
+                  Our Partners
+                </a>
               </div>
             </div>
 
@@ -194,6 +210,12 @@ html {
                   class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
                   L.A.U.R.A Youth
+                </a>
+                <a
+                  href="impact.html#resources"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                >
+                  Resources
                 </a>
               </div>
             </div>
@@ -226,43 +248,9 @@ html {
               </div>
             </div>
 
-            <div class="dropdown relative group">
-              <div class="relative">
-                <a
-                  href="community.html"
-                  class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
-                >
-                  Community
-                </a>
-              </div>
-
-              <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
-              >
-                <a
-                  href="community.html#partners"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  Our Partners
-                </a>
-                <a
-                  href="community.html#resources"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  Resources
-                </a>
-                <a
-                  href="community.html#sponsors"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  Our Sponsors
-                </a>
-              </div>
-            </div>
-
             <a
               href="contact.html"
-              class="nav-contact bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-orange-500 transition-all duration-300"
+              class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300"
             >
               Contact
             </a>
@@ -270,7 +258,7 @@ html {
             <a
               href="https://givebutter.com/LAURALA"
               target="_blank"
-              class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300"
+              class="bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-orange-500 transition-all duration-300"
             >
               Donate
             </a>
@@ -313,12 +301,6 @@ html {
             class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
           >
             Events
-          </a>
-          <a
-            href="community.html"
-            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-          >
-            Community
           </a>
           <a
             href="contact.html"
@@ -436,7 +418,7 @@ html {
             </h3>
             <div class="bg-gray-50 p-6 rounded-lg">
               <h4 class="font-semibold text-lg mb-3">
-                No family should grieve alone.
+                Walking alongside the loved ones of murder victims.
               </h4>
               <p class="text-gray-700 mb-4">
                 We&rsquo;ve supported families through crisis and grief since
@@ -445,29 +427,21 @@ html {
                 the most difficult moments of their lives.
               </p>
 
-              <h5 class="font-semibold mb-3">We provide:</h5>
+              <h5 class="font-semibold mb-3">Offer Victims of Crime Assistance &amp; Referrals:</h5>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                    <li>
-                      Crisis response and emotional support for families of
-                      murder victims
-                    </li>
-                    <li>Victims of Crime assistance and referrals</li>
-                    <li>
-                      Guidance navigating legal, medical, and support systems
-                    </li>
+                    <li>Candle Vigils &amp; Referrals</li>
+                    <li>Funeral Assistance</li>
+                    <li>Navigating The System</li>
+                    <li>Transporting Out Of The Country (victim's remains)</li>
                   </ul>
                 </div>
                 <div>
                   <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                    <li>Funeral and memorial fundraising assistance</li>
-                    <li>Candlelight vigils and community remembrance</li>
+                    <li>Crisis response and emotional support</li>
+                    <li>Guidance navigating legal, medical, and support systems</li>
                     <li>Support groups for healing and connection</li>
-                    <li>
-                      Assistance with transporting loved ones out of the country
-                      when needed
-                    </li>
                   </ul>
                 </div>
               </div>
@@ -570,27 +544,26 @@ html {
                 <div>
                   <ul class="list-disc pl-5 text-gray-700 space-y-2">
                     <li>
-                      Building trust and communication between residents and law
-                      enforcement
-                    </li>
-                    <li>
                       Facilitating community collaboration and neighborhood
                       partnerships
                     </li>
                     <li>
                       Supporting city service access and City Council engagement
                     </li>
+                    <li>Community beautification and clean-up initiatives</li>
                   </ul>
                 </div>
                 <div>
                   <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                    <li>Community beautification and clean-up initiatives</li>
                     <li>
                       Advocacy for improved parks, infrastructure, and public
                       spaces
                     </li>
                     <li>
                       Supporting economic growth and attracting local businesses
+                    </li>
+                    <li>
+                      Continue building Law Enforcement / Community Relations
                     </li>
                   </ul>
                 </div>
@@ -777,6 +750,105 @@ html {
           </div>
         </div>
       </section>
+      <!-- Community Partners -->
+      <section id="partners" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4 text-gray-800">Our Partners</h1>
+            <p class="mx-auto max-w-3xl text-xl text-gray-600">
+              L.A.U.R.A partners with many organizations dedicated to serving
+              the South Central Los Angeles community.
+            </p>
+          </div>
+
+          <!-- Big Logos -->
+          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-10">
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
+              <a href="https://cd9.lacity.gov/" target="_blank" rel="noopener noreferrer" class="block">
+                <img src="images/com/cd9.png" alt="Los Angeles Council District 9" class="mb-4 h-36 w-full rounded-md object-contain" />
+                <h2 class="text-lg font-bold">Los Angeles Council District 9</h2>
+              </a>
+            </div>
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
+              <a href="https://www.kagro.org/eng/" target="_blank" rel="noopener noreferrer" class="block">
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.walkintokorea.com%2Fnews%2Fphoto%2F202305%2F3698_8765_15.png&f=1&nofb=1&ipt=c00b46cc7a87e4b3e889186ffc21f24775ee4f6cc918cfdb63e2ca7a48bc1967" alt="Korean American Grocers Association" class="mb-4 h-36 w-full rounded-md object-contain" />
+                <h2 class="text-lg font-bold">K.A.G.R.O (Korean American Grocers Association)</h2>
+              </a>
+            </div>
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
+              <a href="http://www.soledadenrichmentaction.com/" target="_blank" rel="noopener noreferrer" class="block">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.googleusercontent.com%2FiJTKDqXqmyrFMkF7_zCklUFFJaoWvhf9lNTlcFoAUawpg060sj5j4gr8wlvp3UPMy4kvf9sZ1A%3Ds900-c-k-c0x00ffffff-no-rj&f=1&nofb=1&ipt=e70c9b24b04668ef6c6e3cb91f2521a1260d92cad7402d00684981c8fb131c94" alt="Soledad Enrichment Action" class="mb-4 h-36 w-full rounded-md object-contain" />
+                <h2 class="text-lg font-bold">S.E.A. (Soledad Enrichment Action)</h2>
+              </a>
+            </div>
+            <div class="partner-card card-hover rounded-lg bg-white p-6 text-center shadow-md">
+              <a href="https://voala.org/" target="_blank" rel="noopener noreferrer" class="block">
+                <img src="https://voala.org/wp-content/uploads/2018/01/VOALAlogo-Stacked-2lines-CMYK2015.jpg" alt="Volunteers of America Los Angeles" class="mb-4 h-36 w-full rounded-md object-contain" />
+                <h2 class="text-lg font-bold">V.O.A (Volunteers of America Los Angeles)</h2>
+              </a>
+            </div>
+          </div>
+
+          <!-- Small Logos -->
+          <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+            <div class="partner-card card-hover rounded-lg bg-white p-4 text-center shadow-md">
+              <a href="https://www.2ndcall.org/" target="_blank" rel="noopener noreferrer" class="block">
+                <img src="images/com/second-call.png" alt="2nd Call" class="mb-3 h-16 w-full rounded-md object-contain" />
+                <h2 class="text-sm font-bold">2nd Call</h2>
+              </a>
+            </div>
+            <div class="partner-card card-hover rounded-lg bg-white p-4 text-center shadow-md">
+              <a href="https://youthjusticela.org/" target="_blank" rel="noopener noreferrer" class="block">
+                <img src="images/com/yjc.png" alt="Youth Justice Coalition" class="mb-3 h-16 w-full rounded-md object-contain" />
+                <h2 class="text-sm font-bold">Y.J.C (Youth Justice Coalition)</h2>
+              </a>
+            </div>
+            <div class="partner-card card-hover rounded-lg bg-white p-4 text-center shadow-md">
+              <a href="https://www.socalceasefire.org/" target="_blank" rel="noopener noreferrer" class="block">
+                <img src="images/sccfc.jpg" alt="Southern California Cease Fire" class="mb-3 h-16 w-full rounded-md object-contain" />
+                <h2 class="text-sm font-bold">SC Cease Fire</h2>
+              </a>
+            </div>
+            <div class="partner-card card-hover rounded-lg bg-white p-4 text-center shadow-md">
+              <a href="https://da.lacounty.gov/" target="_blank" rel="noopener noreferrer" class="block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Seal_of_the_District_Attorney_of_the_County_of_Los_Angeles.png" alt="Los Angeles District Attorney" class="mb-3 h-16 w-full rounded-md object-contain" />
+                <h2 class="text-sm font-bold">LA District Attorney</h2>
+              </a>
+            </div>
+            <div class="partner-card card-hover rounded-lg bg-white p-4 text-center shadow-md">
+              <a href="https://www.laparks.org/" target="_blank" rel="noopener noreferrer" class="block">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.laparks.org%2Fsites%2Fdefault%2Ffiles%2Ffacility%2Fhollywood-recreation-center%2Fimages%2Fimg4176.jpg&f=1&nofb=1&ipt=8d93805dbc803c60d77f40602b3fc74021357d903de9eecf214b6921f0d44c54" alt="LA Recreation and Parks" class="mb-3 h-16 w-full rounded-md object-contain" />
+                <h2 class="text-sm font-bold">LA Recs &amp; Parks</h2>
+              </a>
+            </div>
+            <div class="partner-card card-hover rounded-lg bg-white p-4 text-center shadow-md">
+              <a href="https://www.decofamilia.com/" target="_blank" rel="noopener noreferrer" class="block">
+                <img src="images/deco.jpg" alt="Deco Familia Funeral Homes" class="mb-3 h-16 w-full rounded-md object-contain" />
+                <h2 class="text-sm font-bold">DECO Familia</h2>
+              </a>
+            </div>
+            <div class="partner-card card-hover rounded-lg bg-white p-4 text-center shadow-md">
+              <a href="https://coalitionrcd.org/" target="_blank" rel="noopener noreferrer" class="block">
+                <img src="images/CRCD.jpg" alt="Coalition for Responsible Community Development" class="mb-3 h-16 w-full rounded-md object-contain" />
+                <h2 class="text-sm font-bold">C.R.C.D</h2>
+              </a>
+            </div>
+            <div class="partner-card card-hover rounded-lg bg-white p-4 text-center shadow-md">
+              <a href="https://allpeoplescc.org/" target="_blank" rel="noopener noreferrer" class="block">
+                <img src="https://allpeoplescc.org/wp-content/uploads/2022/08/cropped-cropped-AllPeoplesLogo.png" alt="All Peoples Community Center" class="mb-3 h-16 w-full rounded-md object-contain" />
+                <h2 class="text-sm font-bold">All Peoples Community Center</h2>
+              </a>
+            </div>
+            <div class="partner-card card-hover rounded-lg bg-white p-4 text-center shadow-md">
+              <a href="https://www.legacyla.org/gryd" target="_blank" rel="noopener noreferrer" class="block">
+                <img src="https://images.squarespace-cdn.com/content/v1/6802dbb2be989a734d60edce/5b80d73b-4586-463e-a9a2-7dce6de75c57/vertical-rgb_1500x750_mudgreen-1.png.png" alt="Gang Reduction and Youth Development" class="mb-3 h-16 w-full rounded-md object-contain" />
+                <h2 class="text-sm font-bold">G.R.Y.D</h2>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
     <!-- /Main Content -->
 
