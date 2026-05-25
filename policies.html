@@ -95,239 +95,84 @@ html {
   </head>
 
   <body id="top" class="bg-gray-100">
-    <!-- Navigation -->
-    <!-- Navigation -->
-    <header
-      id="main-header"
-      class="fixed w-full bg-transparent transition-all duration-300 z-50"
-    >
+    <!-- Navigation: keep menu labels in sync with docs/navigation.md -->
+    <header id="main-header" class="fixed w-full bg-white border-b-2 border-gray-200 transition-all duration-300 z-50">
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center py-4">
-          <!-- Logo -->
           <div class="logo">
             <a href="index.html">
-              <img
-                src="images/logo.png"
-                alt="LAURA"
-                class="h-12 w-auto logo-image"
-              />
+              <img src="images/logo.png" alt="LAURA" class="h-12 w-auto logo-image" />
             </a>
           </div>
 
-          <!-- Desktop Navigation -->
+          <!-- Desktop Nav -->
           <nav class="hidden md:flex items-center space-x-6">
             <div class="dropdown relative group">
               <div class="relative">
-                <a
-                  href="about.html"
-                  class="nav-link text-white hover:text-orange-500 font-medium transition-colors duration-300 py-2"
-                >
-                  About Us
-                </a>
+                <a href="about.html" class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2">About Us</a>
               </div>
-              <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
-              >
-                <a
-                  href="about.html"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  Our Story
-                </a>
-                <a
-                  href="about.html#our-strategy"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  Our Strategy
-                </a>
-                <a
-                  href="about.html#board-members"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  Our Leadership
-                </a>
+              <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200">
+                <a href="about.html" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Our Story</a>
+                <a href="about.html#our-strategy" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Our Strategy</a>
+                <a href="about.html#board-members" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Our Leadership</a>
+                <a href="about.html#partners" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Our Partners</a>
+                <a href="contact.html" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Contact</a>
               </div>
             </div>
 
             <div class="dropdown relative group">
               <div class="relative">
-                <a
-                  href="impact.html"
-                  class="nav-link text-white hover:text-orange-500 font-medium transition-colors duration-300 py-2"
-                >
-                  Get Support
-                </a>
+                <a href="impact.html" class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2">Get Support</a>
               </div>
-
-              <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
-              >
-                <a
-                  href="impact.html"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  L.A.U.R.A's Victim Support Program
-                </a>
-                <a
-                  href="impact.html#youth"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  L.A.U.R.A Youth
-                </a>
+              <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200">
+                <a href="impact.html" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Victim Support Program</a>
+                <a href="impact.html#resources" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Resources</a>
               </div>
             </div>
 
             <div class="dropdown relative group">
               <div class="relative">
-                <a
-                  href="community.html"
-                  class="nav-link text-white hover:text-orange-500 font-medium transition-colors duration-300 py-2"
-                >
-                  Community
-                </a>
+                <a href="get-involved.html" class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2">Get Involved</a>
               </div>
-
-              <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
-              >
-                <a
-                  href="community.html#partners"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  Our Partners
-                </a>
-                <a
-                  href="community.html#resources"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  Resources
-                </a>
-                <a
-                  href="community.html#sponsors"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  Our Sponsors
-                </a>
-              </div>
-            </div>
-
-            <div class="dropdown relative group">
-              <div class="relative">
-                <a
-                  href="get-involved.html"
-                  class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
-                >
-                  Get Involved
-                </a>
-              </div>
-              <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
-              >
+              <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200">
                 <a href="get-involved.html#youth" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Youth Program</a>
                 <a href="get-involved.html#volunteer" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Volunteer</a>
-                <a href="https://givebutter.com/LAURALA" target="_blank" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Donate</a>
               </div>
             </div>
-
-            <a
-              href="contact.html"
-              class="nav-contact bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-orange-500 transition-all duration-300"
-            >
-              Contact
-            </a>
 
             <div class="dropdown relative group">
               <div class="relative">
-                <a
-                  href="events.html"
-                  class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
-                >
-                  Events
-                </a>
+                <a href="events.html" class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2">Events</a>
               </div>
-              <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
-              >
-                <a href="events.html#resource-fair" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Resource Fair</a>
-                <a href="events.html#gallery" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Gallery</a>
+              <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200">
+                <a href="events.html#meetings" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Meetings &amp; Gatherings</a>
+                <a href="events.html#resource-fair" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Annual Resource Fair</a>
               </div>
             </div>
 
-            <a
-              href="https://givebutter.com/LAURALA"
-              target="_blank"
-              class="nav-link text-white hover:text-orange-500 font-medium transition-colors duration-300"
-            >
-              Donate
-            </a>
+            <a href="https://givebutter.com/LAURALA" target="_blank" class="bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-orange-500 transition-all duration-300">Donate</a>
           </nav>
 
           <!-- Mobile Menu Button -->
-          <button
-            id="menu-toggle"
-            type="button"
-            aria-label="Toggle menu"
-            aria-expanded="false"
-            aria-controls="mobile-menu"
-            class="md:hidden text-white text-xl"
-          >
+          <button id="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-white text-xl">
             <i class="fas fa-bars" style="color: #ed7014"></i>
           </button>
         </div>
       </div>
 
       <!-- Mobile Navigation -->
-      <div
-        id="mobile-menu"
-        class="md:hidden bg-white shadow-lg absolute w-full hidden transform -translate-x-full transition-transform"
-      >
+      <div id="mobile-menu" class="md:hidden bg-white shadow-lg absolute w-full hidden transform -translate-x-full transition-transform">
         <div class="container mx-auto px-4 py-6">
-          <a
-            href="about.html"
-            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-          >
-            About Us
-          </a>
-          <a
-            href="impact.html"
-            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-          >
-            Get Support
-          </a>
-          <a
-            href="community.html"
-            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-          >
-            Community
-          </a>
-          <a
-            href="get-involved.html"
-            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-          >
-            Get Involved
-          </a>
-          <a
-            href="contact.html"
-            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-          >
-            Contact
-          </a>
-          <a
-            href="events.html"
-            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-          >
-            Events
-          </a>
-          <a
-            href="https://givebutter.com/LAURALA"
-            target="_blank"
-            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-          >
-            Donate
-          </a>
+          <a href="about.html" class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500">About Us</a>
+          <a href="contact.html" class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500">Contact</a>
+          <a href="impact.html" class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500">Get Support</a>
+          <a href="get-involved.html" class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500">Get Involved</a>
+          <a href="events.html" class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500">Events</a>
+          <a href="https://givebutter.com/LAURALA" target="_blank" class="block py-3 text-gray-700 hover:text-orange-500">Donate</a>
         </div>
       </div>
     </header>
+    <!-- /Navigation -->
 
     <!-- Main Content -->
     <main class="pt-16">

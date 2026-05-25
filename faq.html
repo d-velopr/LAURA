@@ -34,12 +34,15 @@
     <style>
       :root {
         --laura-orange: #ed7014;
+        --laura-orange-dark: #d86212;
+        --laura-green: #2d4a24;
         --laura-dark: #252525;
         --laura-light: #efefef;
       }
 
       body {
         font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
       }
       .dropdown:hover .dropdown-content {
         display: block;
@@ -53,7 +56,7 @@
         transform: translateX(-100%);
       }
 
-html {
+      html {
         scroll-behavior: smooth;
       }
 
@@ -69,32 +72,86 @@ html {
       }
 
       .btn-primary:hover {
-        background-color: #d86212;
+        background-color: var(--laura-orange-dark);
         transform: translateY(-2px);
       }
 
-      .faq-item {
-        transition: all 0.3s ease;
-        border-bottom: 1px solid #e5e7eb;
+      .section-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--laura-orange);
       }
 
-      .faq-item:last-child {
-        border-bottom: none;
+      .faq-hero {
+        background: var(--laura-green);
+        min-height: 380px;
+        display: flex;
+        align-items: center;
+      }
+
+      .faq-nav-link {
+        border: 1px solid #e5e7eb;
+        background: white;
+        color: #374151;
+        transition:
+          background-color 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .faq-nav-link:hover {
+        border-color: var(--laura-orange);
+        color: var(--laura-orange);
+        transform: translateY(-1px);
+      }
+
+      .faq-item {
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-left: 4px solid var(--laura-orange);
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+        overflow: hidden;
+        transition:
+          border-color 0.25s ease,
+          box-shadow 0.25s ease,
+          transform 0.25s ease;
+      }
+
+      .faq-item:hover {
+        border-color: rgba(237,112,20,0.35);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        transform: translateY(-2px);
       }
 
       .faq-question {
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: color 0.25s ease;
       }
 
       .faq-question:hover {
         color: #ed7014;
       }
 
+      .faq-question:focus {
+        outline: 3px solid rgba(237,112,20,0.22);
+        outline-offset: -3px;
+      }
+
+      .faq-question i {
+        transition: transform 0.25s ease;
+      }
+
       .faq-answer {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease;
+        transition: max-height 0.35s ease;
       }
 
       .faq-item.active .faq-answer {
@@ -104,11 +161,18 @@ html {
       .faq-item.active .faq-question i {
         transform: rotate(180deg);
       }
+
+      .quick-resource-card {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.14);
+        border-radius: 1rem;
+        padding: 2rem;
+      }
     </style>
     <link rel="stylesheet" href="css/header-animations.css" />
   </head>
 
-  <body id="top" class="bg-gray-100">
+  <body id="top" class="bg-gray-50">
     <!-- Navigation -->
     <header
       id="main-header"
@@ -191,20 +255,9 @@ html {
                   href="impact.html"
                   class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
-                  L.A.U.R.A's Victim Support Program
+                  Victim Support Program
                 </a>
-                <a
-                  href="impact.html#youth"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  L.A.U.R.A Youth
-                </a>
-                <a
-                  href="impact.html#resources"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  Resources
-                </a>
+                <a href="impact.html#resources" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Resources</a>
               </div>
             </div>
 
@@ -248,7 +301,7 @@ html {
                   href="events.html#resource-fair"
                   class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
-                  Annual Community Resource Fair
+                  Annual Resource Fair
                 </a>
               </div>
             </div>
@@ -326,45 +379,48 @@ html {
     <!-- Main Content -->
     <main class="pt-16">
       <!-- Hero Section -->
-      <section
-        class="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white"
-      >
-        <div class="container mx-auto px-4 text-center">
-          <h5 class="text-xl font-semibold mb-2">FAQ</h5>
-          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+      <section class="faq-hero py-24 text-white">
+        <div class="container mx-auto px-4">
+          <div class="max-w-3xl">
+          <span class="section-kicker text-orange-400">
+            <i class="fas fa-question-circle"></i>
+            FAQ
+          </span>
+          <h1 class="mt-4 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
             Questions and Answers
           </h1>
-          <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+          <p class="mt-5 text-lg md:text-xl leading-relaxed text-gray-200 max-w-2xl">
             FAQ page provides clear and concise answers to common questions
             about L.A.U.R.A's victim support programs, youth initiatives, and
             community services to help individuals access resources with
             confidence.
           </p>
+          </div>
         </div>
       </section>
 
       <!-- FAQ Navigation -->
-      <section class="py-8 bg-white border-b border-gray-200">
+      <section class="py-6 bg-white border-b border-gray-200">
         <div class="container mx-auto px-4">
           <div class="flex flex-wrap justify-center gap-4">
             <a
               href="#general"
-              class="px-4 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition"
+              class="faq-nav-link px-5 py-2.5 rounded-full font-semibold text-sm"
               >General</a
             >
             <a
               href="#support"
-              class="px-4 py-2 bg-gray-200 text-gray-800 rounded-full hover:bg-gray-300 transition"
+              class="faq-nav-link px-5 py-2.5 rounded-full font-semibold text-sm"
               >Victim Support</a
             >
             <a
               href="#youth"
-              class="px-4 py-2 bg-gray-200 text-gray-800 rounded-full hover:bg-gray-300 transition"
+              class="faq-nav-link px-5 py-2.5 rounded-full font-semibold text-sm"
               >Youth Programs</a
             >
             <a
               href="#volunteer"
-              class="px-4 py-2 bg-gray-200 text-gray-800 rounded-full hover:bg-gray-300 transition"
+              class="faq-nav-link px-5 py-2.5 rounded-full font-semibold text-sm"
               >Get Involved</a
             >
           </div>
@@ -372,26 +428,26 @@ html {
       </section>
 
       <!-- FAQ Content -->
-      <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-5xl">
           <!-- General Questions -->
           <div id="general" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800 border-b pb-4">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-gray-900">
               General Questions
             </h2>
-            <div class="space-y-6">
+            <div class="space-y-4">
               <!-- FAQ Item 1 -->
               <div class="faq-item">
                 <div
-                  class="faq-question py-4 flex justify-between items-center"
+                  class="faq-question p-5 flex justify-between items-center gap-4"
                 >
-                  <h3 class="text-xl font-semibold">
+                  <h3 class="text-lg md:text-xl font-bold text-gray-900">
                     What services does L.A.U.R.A provide?
                   </h3>
                   <i class="fas fa-chevron-down text-orange-500"></i>
                 </div>
                 <div class="faq-answer">
-                  <p class="pb-4 text-gray-700">
+                  <p class="px-5 pb-5 text-gray-600 leading-relaxed">
                     L.A.U.R.A provides comprehensive support services including
                     victim support programs, youth leadership development,
                     community resource fairs, crisis response, monthly support
@@ -405,15 +461,15 @@ html {
               <!-- FAQ Item 2 -->
               <div class="faq-item">
                 <div
-                  class="faq-question py-4 flex justify-between items-center"
+                  class="faq-question p-5 flex justify-between items-center gap-4"
                 >
-                  <h3 class="text-xl font-semibold">
+                  <h3 class="text-lg md:text-xl font-bold text-gray-900">
                     Who is eligible for L.A.U.R.A's programs?
                   </h3>
                   <i class="fas fa-chevron-down text-orange-500"></i>
                 </div>
                 <div class="faq-answer">
-                  <p class="pb-4 text-gray-700">
+                  <p class="px-5 pb-5 text-gray-600 leading-relaxed">
                     Our services are available to anyone affected by violence in
                     South Central Los Angeles, including victims' family
                     members, youth ages 12-24, and community members seeking
@@ -427,18 +483,18 @@ html {
               <!-- FAQ Item 3 -->
               <div class="faq-item">
                 <div
-                  class="faq-question py-4 flex justify-between items-center"
+                  class="faq-question p-5 flex justify-between items-center gap-4"
                 >
-                  <h3 class="text-xl font-semibold">
+                  <h3 class="text-lg md:text-xl font-bold text-gray-900">
                     Where are you located, and how can I access your services?
                   </h3>
                   <i class="fas fa-chevron-down text-orange-500"></i>
                 </div>
                 <div class="faq-answer">
-                  <p class="pb-4 text-gray-700">
+                  <p class="px-5 pb-5 text-gray-600 leading-relaxed">
                     We are based in South Central Los Angeles with our main
-                    operations at Fred Roberts Recreation Center (4701 S Central
-                    Ave, Los Angeles, CA 90011). Services are available through
+                    operations at Fred Roberts Recreation Center (4700 Honduras
+                    St., Los Angeles, CA 90011). Services are available through
                     weekly meetings, scheduled appointments, and community
                     events. You can visit us during office hours, call for
                     assistance, or attend our monthly support groups and youth
@@ -451,22 +507,22 @@ html {
 
           <!-- Victim Support Questions -->
           <div id="support" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800 border-b pb-4">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-gray-900">
               Victim Support Services
             </h2>
-            <div class="space-y-6">
+            <div class="space-y-4">
               <!-- FAQ Item 1 -->
               <div class="faq-item">
                 <div
-                  class="faq-question py-4 flex justify-between items-center"
+                  class="faq-question p-5 flex justify-between items-center gap-4"
                 >
-                  <h3 class="text-xl font-semibold">
+                  <h3 class="text-lg md:text-xl font-bold text-gray-900">
                     What support do you offer to families of homicide victims?
                   </h3>
                   <i class="fas fa-chevron-down text-orange-500"></i>
                 </div>
                 <div class="faq-answer">
-                  <p class="pb-4 text-gray-700">
+                  <p class="px-5 pb-5 text-gray-600 leading-relaxed">
                     We provide comprehensive support including crisis response
                     at crime scenes, emotional support groups, funeral
                     assistance, guidance navigating victim compensation
@@ -480,15 +536,15 @@ html {
               <!-- FAQ Item 2 -->
               <div class="faq-item">
                 <div
-                  class="faq-question py-4 flex justify-between items-center"
+                  class="faq-question p-5 flex justify-between items-center gap-4"
                 >
-                  <h3 class="text-xl font-semibold">
+                  <h3 class="text-lg md:text-xl font-bold text-gray-900">
                     When are your support group meetings?
                   </h3>
                   <i class="fas fa-chevron-down text-orange-500"></i>
                 </div>
                 <div class="faq-answer">
-                  <p class="pb-4 text-gray-700">
+                  <p class="px-5 pb-5 text-gray-600 leading-relaxed">
                     Our victim support groups meet every last Thursday of each
                     month at 6:00 PM at 4701 S. Central Ave, Los Angeles, CA
                     90011. These meetings provide a safe space for families to
@@ -501,15 +557,15 @@ html {
               <!-- FAQ Item 3 -->
               <div class="faq-item">
                 <div
-                  class="faq-question py-4 flex justify-between items-center"
+                  class="faq-question p-5 flex justify-between items-center gap-4"
                 >
-                  <h3 class="text-xl font-semibold">
+                  <h3 class="text-lg md:text-xl font-bold text-gray-900">
                     Do you provide financial assistance?
                   </h3>
                   <i class="fas fa-chevron-down text-orange-500"></i>
                 </div>
                 <div class="faq-answer">
-                  <p class="pb-4 text-gray-700">
+                  <p class="px-5 pb-5 text-gray-600 leading-relaxed">
                     Yes, we offer limited financial assistance for funeral
                     costs, emergency needs, and essential expenses through our
                     emergency fund. We also help families navigate the
@@ -523,22 +579,22 @@ html {
 
           <!-- Youth Programs -->
           <div id="youth" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800 border-b pb-4">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-gray-900">
               Youth Programs
             </h2>
-            <div class="space-y-6">
+            <div class="space-y-4">
               <!-- FAQ Item 1 -->
               <div class="faq-item">
                 <div
-                  class="faq-question py-4 flex justify-between items-center"
+                  class="faq-question p-5 flex justify-between items-center gap-4"
                 >
-                  <h3 class="text-xl font-semibold">
+                  <h3 class="text-lg md:text-xl font-bold text-gray-900">
                     What youth programs does L.A.U.R.A offer?
                   </h3>
                   <i class="fas fa-chevron-down text-orange-500"></i>
                 </div>
                 <div class="faq-answer">
-                  <p class="pb-4 text-gray-700">
+                  <p class="px-5 pb-5 text-gray-600 leading-relaxed">
                     Our L.A.U.R.A Youth program includes weekly meetings,
                     leadership development, college preparation, job readiness
                     training, mental health support, summer camps, community
@@ -552,15 +608,15 @@ html {
               <!-- FAQ Item 2 -->
               <div class="faq-item">
                 <div
-                  class="faq-question py-4 flex justify-between items-center"
+                  class="faq-question p-5 flex justify-between items-center gap-4"
                 >
-                  <h3 class="text-xl font-semibold">
+                  <h3 class="text-lg md:text-xl font-bold text-gray-900">
                     When are youth meetings held?
                   </h3>
                   <i class="fas fa-chevron-down text-orange-500"></i>
                 </div>
                 <div class="faq-answer">
-                  <p class="pb-4 text-gray-700">
+                  <p class="px-5 pb-5 text-gray-600 leading-relaxed">
                     Youth meetings are held every Thursday at Fred Roberts
                     Recreation Center. Community Civic Engagement meetings start
                     at 5:00 PM, followed by general youth meetings at 6:30 PM.
@@ -572,15 +628,15 @@ html {
               <!-- FAQ Item 3 -->
               <div class="faq-item">
                 <div
-                  class="faq-question py-4 flex justify-between items-center"
+                  class="faq-question p-5 flex justify-between items-center gap-4"
                 >
-                  <h3 class="text-xl font-semibold">
+                  <h3 class="text-lg md:text-xl font-bold text-gray-900">
                     Can youth earn community service hours?
                   </h3>
                   <i class="fas fa-chevron-down text-orange-500"></i>
                 </div>
                 <div class="faq-answer">
-                  <p class="pb-4 text-gray-700">
+                  <p class="px-5 pb-5 text-gray-600 leading-relaxed">
                     Yes, participants in our youth program can earn community
                     service hours for school requirements through various
                     activities including event volunteering, community
@@ -593,22 +649,22 @@ html {
 
           <!-- Get Involved -->
           <div id="volunteer" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800 border-b pb-4">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-gray-900">
               Getting Involved
             </h2>
-            <div class="space-y-6">
+            <div class="space-y-4">
               <!-- FAQ Item 1 -->
               <div class="faq-item">
                 <div
-                  class="faq-question py-4 flex justify-between items-center"
+                  class="faq-question p-5 flex justify-between items-center gap-4"
                 >
-                  <h3 class="text-xl font-semibold">
+                  <h3 class="text-lg md:text-xl font-bold text-gray-900">
                     How can I volunteer with L.A.U.R.A?
                   </h3>
                   <i class="fas fa-chevron-down text-orange-500"></i>
                 </div>
                 <div class="faq-answer">
-                  <p class="pb-4 text-gray-700">
+                  <p class="px-5 pb-5 text-gray-600 leading-relaxed">
                     We welcome volunteers for event support, youth mentoring,
                     administrative help, community outreach, and specialized
                     skills. You can start by contacting us through our website,
@@ -621,15 +677,15 @@ html {
               <!-- FAQ Item 2 -->
               <div class="faq-item">
                 <div
-                  class="faq-question py-4 flex justify-between items-center"
+                  class="faq-question p-5 flex justify-between items-center gap-4"
                 >
-                  <h3 class="text-xl font-semibold">
+                  <h3 class="text-lg md:text-xl font-bold text-gray-900">
                     What types of donations do you accept?
                   </h3>
                   <i class="fas fa-chevron-down text-orange-500"></i>
                 </div>
                 <div class="faq-answer">
-                  <p class="pb-4 text-gray-700">
+                  <p class="px-5 pb-5 text-gray-600 leading-relaxed">
                     We accept monetary donations through our website, checks,
                     and in-kind donations including school supplies,
                     non-perishable food, gift cards, event supplies, and
@@ -642,15 +698,15 @@ html {
               <!-- FAQ Item 3 -->
               <div class="faq-item">
                 <div
-                  class="faq-question py-4 flex justify-between items-center"
+                  class="faq-question p-5 flex justify-between items-center gap-4"
                 >
-                  <h3 class="text-xl font-semibold">
+                  <h3 class="text-lg md:text-xl font-bold text-gray-900">
                     How can my organization partner with L.A.U.R.A?
                   </h3>
                   <i class="fas fa-chevron-down text-orange-500"></i>
                 </div>
                 <div class="faq-answer">
-                  <p class="pb-4 text-gray-700">
+                  <p class="px-5 pb-5 text-gray-600 leading-relaxed">
                     We welcome partnerships with businesses, community
                     organizations, and service providers. Partnership
                     opportunities include event sponsorship, resource sharing,
@@ -664,8 +720,11 @@ html {
           </div>
 
           <!-- Still Have Questions -->
-          <div class="bg-orange-50 rounded-lg p-8 text-center">
-            <h3 class="text-2xl font-bold mb-4 text-gray-800">
+          <div class="rounded-2xl p-8 text-center border border-orange-100 bg-white shadow-sm">
+            <div class="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full" style="background-color: rgba(237,112,20,0.1);">
+              <i class="fas fa-envelope-open-text text-2xl text-orange-500"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-gray-900">
               Still have questions?
             </h3>
             <p class="text-gray-700 mb-6">
@@ -683,42 +742,40 @@ html {
       </section>
 
       <!-- Quick Resources -->
-      <section
-        class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white"
-      >
+      <section class="py-16 text-white" style="background-color: var(--laura-green);">
         <div class="container mx-auto px-4">
           <div class="text-center mb-12">
             <h2 class="text-3xl font-bold mb-4">Quick Resources</h2>
-            <p class="text-xl max-w-2xl mx-auto">
+            <p class="text-lg max-w-2xl mx-auto" style="color: rgba(255,255,255,0.82);">
               Access important resources and contact information quickly.
             </p>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center">
-              <div class="text-5xl mb-4">
+            <div class="quick-resource-card text-center">
+              <div class="text-4xl mb-4 text-orange-300">
                 <i class="fas fa-phone"></i>
               </div>
               <h3 class="text-xl font-bold mb-2">Emergency Contact</h3>
-              <p class="mb-4">For immediate crisis support</p>
+              <p class="mb-4" style="color: rgba(255,255,255,0.78);">For immediate crisis support</p>
               <p class="font-semibold">Call 911 for emergencies</p>
             </div>
 
-            <div class="text-center">
-              <div class="text-5xl mb-4">
+            <div class="quick-resource-card text-center">
+              <div class="text-4xl mb-4 text-orange-300">
                 <i class="fas fa-calendar-check"></i>
               </div>
               <h3 class="text-xl font-bold mb-2">Meeting Schedule</h3>
-              <p class="mb-4">Regular program meetings</p>
+              <p class="mb-4" style="color: rgba(255,255,255,0.78);">Regular program meetings</p>
               <p class="font-semibold">Thursdays at Fred Roberts Park</p>
             </div>
 
-            <div class="text-center">
-              <div class="text-5xl mb-4">
+            <div class="quick-resource-card text-center">
+              <div class="text-4xl mb-4 text-orange-300">
                 <i class="fas fa-envelope"></i>
               </div>
               <h3 class="text-xl font-bold mb-2">Email Us</h3>
-              <p class="mb-4">General inquiries</p>
+              <p class="mb-4" style="color: rgba(255,255,255,0.78);">General inquiries</p>
               <p class="font-semibold">info@LauraLA.org</p>
             </div>
           </div>
@@ -906,6 +963,27 @@ html {
       // Close mobile menu when clicking a link
       document.querySelectorAll("#mobile-menu a").forEach((link) => {
         link.addEventListener("click", closeMobileMenu);
+      });
+
+      // FAQ accordion toggle
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.setAttribute("role", "button");
+        question.setAttribute("tabindex", "0");
+        question.setAttribute("aria-expanded", "false");
+
+        function toggleFaq() {
+          const item = question.closest(".faq-item");
+          const isActive = item.classList.toggle("active");
+          question.setAttribute("aria-expanded", String(isActive));
+        }
+
+        question.addEventListener("click", toggleFaq);
+        question.addEventListener("keydown", function (event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggleFaq();
+          }
+        });
       });
 
       // Smooth scrolling for anchor links

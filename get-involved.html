@@ -127,12 +127,45 @@
       }
       .btn-orange:hover { background-color: #d86212; transform: translateY(-2px); }
 
+      .btn-hero-outline {
+        color: white;
+      }
+      .btn-hero-outline:hover {
+        color: var(--laura-green);
+      }
+
       .volunteer-card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
       .volunteer-card:hover {
         transform: translateY(-4px);
         box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+      }
+
+      .award-photo-fade {
+        position: relative;
+        background: #111;
+      }
+
+      .award-photo-fade::before,
+      .award-photo-fade::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 32%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .award-photo-fade::before {
+        left: 0;
+        background: linear-gradient(to right, rgba(0,0,0,0.78), rgba(0,0,0,0));
+      }
+
+      .award-photo-fade::after {
+        right: 0;
+        background: linear-gradient(to left, rgba(0,0,0,0.78), rgba(0,0,0,0));
       }
 
       /* Marquee */
@@ -182,7 +215,7 @@
                 <a href="impact.html" class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2">Get Support</a>
               </div>
               <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200">
-                <a href="impact.html" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">L.A.U.R.A's Victim Support Program</a>
+                <a href="impact.html" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Victim Support Program</a>
                 <a href="impact.html#resources" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Resources</a>
               </div>
             </div>
@@ -203,7 +236,7 @@
               </div>
               <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200">
                 <a href="events.html#meetings" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Meetings &amp; Gatherings</a>
-                <a href="events.html#resource-fair" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Annual Community Resource Fair</a>
+                <a href="events.html#resource-fair" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Annual Resource Fair</a>
               </div>
             </div>
 
@@ -248,7 +281,7 @@
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
               <a href="#paths" class="btn-orange inline-block px-8 py-3 rounded-full font-semibold shadow-lg">Find Your Path</a>
-              <a href="contact.html" class="inline-block px-8 py-3 rounded-full font-semibold border-2 border-white text-white hover:bg-white transition-all duration-300" style="hover:color: var(--laura-green);">Talk to Us</a>
+              <a href="contact.html" class="btn-hero-outline inline-block px-8 py-3 rounded-full font-semibold border-2 border-white hover:bg-white transition-all duration-300">Talk to Us</a>
             </div>
           </div>
         </div>
@@ -297,7 +330,7 @@
             </a>
 
             <!-- Civic Engagement -->
-            <a href="events.html" class="path-card rounded-2xl p-8 flex flex-col items-start no-underline" style="background-color: #e8ebe6; border: 1px solid #d5d9d2;">
+            <a href="events.html#meetings" class="path-card rounded-2xl p-8 flex flex-col items-start no-underline" style="background-color: #e8ebe6; border: 1px solid #d5d9d2;">
               <div class="card-icon w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background-color: rgba(45,74,36,0.08);">
                 <i class="fas fa-users text-2xl" style="color: var(--laura-green);"></i>
               </div>
@@ -386,7 +419,7 @@
                 <div>
                   <p class="text-xs uppercase tracking-wide text-gray-400">Location</p>
                   <p class="text-sm font-semibold text-gray-800">Fred Roberts Recreation Center</p>
-                  <p class="text-xs text-gray-500">4700 S. Honduras St., Los Angeles, CA 90011</p>
+                  <p class="text-xs text-gray-500">4700 Honduras St., Los Angeles, CA 90011</p>
                 </div>
               </div>
             </div>
@@ -440,7 +473,7 @@
 
               <!-- Slide 3 -->
               <div class="youth-slide absolute inset-0 transition-opacity duration-700 opacity-0">
-                <img src="images/indexPg/laura-youth-community-drive.jpg" alt="Community Drive" class="w-full h-full object-contain" style="background: black;" />
+                <img src="images/indexPg/backpack-community-drive.png" alt="Community Drive" class="w-full h-full object-cover" />
                 <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(20,40,20,0.88) 0%, rgba(20,40,20,0.35) 55%, transparent 100%);"></div>
                 <div class="absolute bottom-0 left-0 p-10 text-white max-w-xl">
                   <span class="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style="background: rgba(237,112,20,0.85);">Civic</span>
@@ -498,6 +531,51 @@
               startAuto();
             })();
           </script>
+
+          <!-- Youth Awards -->
+          <div class="mt-16">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+              <h3 class="text-3xl font-bold text-gray-800">Youth Awards</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                <img
+                  src="images/indexPg/youth-scholarship-winners.jpg"
+                  alt="L.A.U.R.A. youth scholarship winners"
+                  class="w-full h-56 object-cover"
+                />
+                <div class="p-8">
+                  <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background-color: rgba(237,112,20,0.1);">
+                    <i class="fas fa-graduation-cap text-2xl" style="color: var(--laura-orange);"></i>
+                  </div>
+                  <h4 class="text-xl font-bold text-gray-800 mb-3">Scholarships</h4>
+                  <p class="text-gray-600 leading-relaxed">
+                    L.A.U.R.A. supports youth through scholarships that help students pursue their educational goals and future opportunities. By investing in students, L.A.U.R.A. helps create pathways to learning, growth, and future success.
+                  </p>
+                </div>
+              </article>
+
+              <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                <div class="award-photo-fade h-56 overflow-hidden">
+                  <img
+                    src="images/indexPg/youth-civic-engagement-awards.jpg"
+                    alt="L.A.U.R.A. Civic Engagement Recognition Award recipients"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="p-8">
+                  <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background-color: rgba(45,74,36,0.1);">
+                    <i class="fas fa-award text-2xl" style="color: var(--laura-green);"></i>
+                  </div>
+                  <h4 class="text-xl font-bold text-gray-800 mb-3">Civic Engagement Recognition Award</h4>
+                  <p class="text-gray-600 leading-relaxed">
+                    L.A.U.R.A. honors two youth leaders each year with the Civic Engagement Recognition Award at our annual March community fair, recognizing their leadership and positive impact within the community.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
 
         </div>
       </section>
