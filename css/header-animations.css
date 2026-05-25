@@ -1,0 +1,189 @@
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.35rem;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--laura-orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.dropdown:hover .nav-link::after,
+.dropdown:focus-within .nav-link::after,
+.group.relative:hover > .nav-link::after,
+.group.relative:focus-within > .nav-link::after {
+  transform: scaleX(1);
+}
+
+.dropdown-content,
+.group.relative > div[class*="absolute"] {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px) scale(0.98);
+  transform-origin: top center;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  box-shadow: 0 20px 45px rgba(17, 24, 39, 0.16);
+  /* delay hide so mouse can travel from trigger to submenu */
+  transition:
+    opacity 0.18s ease 0.35s,
+    transform 0.18s ease 0.35s,
+    visibility 0s ease 0.35s;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content,
+.group.relative:hover > div[class*="absolute"],
+.group.relative:focus-within > div[class*="absolute"] {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  /* show instantly — no delay on the way in */
+  transition:
+    opacity 0.22s ease 0s,
+    transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1) 0s,
+    visibility 0s ease 0s;
+}
+
+/* When moving between dropdowns, snap-close siblings immediately
+   so the old menu doesn't linger while the new one is open */
+.dropdown:hover ~ .dropdown .dropdown-content,
+.dropdown:has(~ .dropdown:hover) .dropdown-content {
+  transition: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(12px) scale(0.98) !important;
+}
+
+.dropdown-content a,
+.group.relative > div[class*="absolute"] a {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.dropdown-content a:hover,
+.dropdown-content a:focus-visible,
+.group.relative > div[class*="absolute"] a:hover,
+.group.relative > div[class*="absolute"] a:focus-visible {
+  background: rgba(237, 112, 20, 0.08);
+  transform: translateX(4px);
+}
+
+#menu-toggle i {
+  transition:
+    transform 0.28s ease,
+    opacity 0.2s ease;
+}
+
+#menu-toggle:hover i,
+#menu-toggle:focus-visible i {
+  transform: scale(1.08);
+}
+
+#mobile-menu {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  transform-origin: top;
+  border-top: 1px solid rgba(17, 24, 39, 0.08);
+  transition:
+    opacity 0.25s ease,
+    transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    visibility 0.25s ease;
+}
+
+#mobile-menu.hidden,
+#mobile-menu.mobile-menu-closed {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-14px);
+}
+
+#mobile-menu a {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+#mobile-menu a:hover,
+#mobile-menu a:focus-visible {
+  background: rgba(237, 112, 20, 0.08);
+  transform: translateX(6px);
+}
+
+#mobile-menu:not(.hidden):not(.mobile-menu-closed) a,
+#mobile-menu.mobile-menu-open a {
+  animation: mobileMenuItemIn 0.34s ease both;
+}
+
+#mobile-menu a:nth-child(2) {
+  animation-delay: 0.03s;
+}
+
+#mobile-menu a:nth-child(3) {
+  animation-delay: 0.06s;
+}
+
+#mobile-menu a:nth-child(4) {
+  animation-delay: 0.09s;
+}
+
+#mobile-menu a:nth-child(5) {
+  animation-delay: 0.12s;
+}
+
+#mobile-menu a:nth-child(6) {
+  animation-delay: 0.15s;
+}
+
+@keyframes mobileMenuItemIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link,
+  .nav-link::after,
+  .dropdown-content,
+  .dropdown-content a,
+  .group.relative > div[class*="absolute"],
+  .group.relative > div[class*="absolute"] a,
+  #menu-toggle i,
+  #mobile-menu,
+  #mobile-menu a {
+    animation: none !important;
+    transition: none !important;
+  }
+}

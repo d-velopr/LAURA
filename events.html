@@ -45,8 +45,8 @@
 
     body {
       font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
     }
-
     .dropdown:hover .dropdown-content {
       display: block;
     }
@@ -59,7 +59,7 @@
       transform: translateX(-100%);
     }
 
-    .hover-lift:hover {
+.hover-lift:hover {
       transform: translateY(-5px);
       transition: transform 0.3s ease;
     }
@@ -98,6 +98,9 @@
 
     header.scrolled .nav-link {
       color: #374151 !important;
+    }
+    header.scrolled .nav-link.text-orange-500 {
+      color: #ed7014 !important;
     }
 
     .event-copy {
@@ -217,6 +220,160 @@
       margin-top: 25px;
     }
 
+    .events-hero {
+      min-height: 540px;
+      background:
+        linear-gradient(90deg, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.68), rgba(17, 24, 39, 0.25)),
+        url("images/indexPg/laura-fair-peace-walk.jpg") center/cover;
+    }
+
+    .event-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: 999px;
+      background: rgba(237, 112, 20, 0.14);
+      color: #ed7014;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 0.45rem 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .event-section-title {
+      color: #111827;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .event-panel {
+      border: 1px solid rgba(17, 24, 39, 0.08);
+      border-radius: 0.75rem;
+      background: #fff;
+      box-shadow: 0 18px 45px rgba(17, 24, 39, 0.08);
+    }
+
+    .event-fact {
+      border-left: 4px solid var(--laura-orange);
+      background: #fff7ed;
+      padding: 1rem 1.1rem;
+    }
+
+    .monthly-carousel {
+      display: grid;
+      grid-auto-columns: calc((100% - 2rem) / 3);
+      grid-auto-flow: column;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      padding: 0.25rem 0 1rem;
+    }
+
+    .monthly-carousel::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .monthly-carousel::-webkit-scrollbar-thumb {
+      background: rgba(237, 112, 20, 0.55);
+      border-radius: 999px;
+    }
+
+    .month-card {
+      min-height: 430px;
+      overflow: hidden;
+      scroll-snap-align: start;
+      border: 1px solid rgba(17, 24, 39, 0.08);
+      border-radius: 0.75rem;
+      background: #fff;
+      box-shadow: 0 12px 30px rgba(17, 24, 39, 0.09);
+    }
+
+    .month-card img {
+      width: 100%;
+      height: 255px;
+      object-fit: cover;
+    }
+
+    .month-tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: #252525;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.35rem 0.7rem;
+    }
+
+    .icon-list li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      margin-bottom: 0.8rem;
+    }
+
+    .icon-list i {
+      color: var(--laura-orange);
+      margin-top: 0.2rem;
+      width: 1rem;
+    }
+
+    .cta-card {
+      border-radius: 0.75rem;
+      background: #fff;
+      border: 1px solid rgba(17, 24, 39, 0.08);
+      box-shadow: 0 12px 28px rgba(17, 24, 39, 0.08);
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .cta-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(17, 24, 39, 0.12);
+    }
+
+    @media (max-width: 900px) {
+      .monthly-carousel {
+        grid-auto-columns: calc((100% - 1rem) / 2);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .events-hero {
+        min-height: 620px;
+        background:
+          linear-gradient(180deg, rgba(17, 24, 39, 0.88), rgba(17, 24, 39, 0.62)),
+          url("images/indexPg/laura-fair-peace-walk.jpg") center/cover;
+      }
+
+      .monthly-carousel {
+        grid-auto-columns: 88%;
+      }
+
+      .month-card {
+        min-height: 400px;
+      }
+
+      .month-card img {
+        height: 220px;
+      }
+
+      .events-hero h1 {
+        font-size: 2.75rem;
+        overflow-wrap: anywhere;
+      }
+
+      .events-hero p {
+        overflow-wrap: anywhere;
+      }
+    }
+
     .logo-box {
       width: 180px;
       height: 90px;
@@ -238,12 +395,13 @@
       opacity: 1;
     }
   </style>
+    <link rel="stylesheet" href="css/header-animations.css" />
 </head>
 
 <body id="top" class="bg-gray-100">
   <header
     id="main-header"
-    class="fixed w-full bg-transparent transition-all duration-300 z-50"
+    class="fixed w-full bg-white border-b-2 border-gray-200 transition-all duration-300 z-50"
   >
     <div class="container mx-auto px-4">
       <div class="flex justify-between items-center py-4">
@@ -274,7 +432,7 @@
                 href="about.html"
                 class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
               >
-                Mission / History
+                Our Story
               </a>
               <a
                 href="about.html#our-strategy"
@@ -286,7 +444,19 @@
                 href="about.html#board-members"
                 class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
               >
-                Board of Directors
+                Our Leadership
+              </a>
+              <a
+                href="about.html#partners"
+                class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+              >
+                Our Partners
+              </a>
+              <a
+                href="contact.html"
+                class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+              >
+                Contact
               </a>
             </div>
           </div>
@@ -297,7 +467,7 @@
                 href="impact.html"
                 class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
               >
-                Our Impact
+                Get Support
               </a>
             </div>
 
@@ -308,14 +478,26 @@
                 href="impact.html"
                 class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
               >
-                L.A.U.R.A's Victim Support Program
+                Victim Support Program
               </a>
+                <a href="impact.html#resources" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Resources</a>
+            </div>
+          </div>
+
+          <div class="dropdown relative group">
+            <div class="relative">
               <a
-                href="impact.html#youth"
-                class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                href="get-involved.html"
+                class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
               >
-                L.A.U.R.A Youth
+                Get Involved
               </a>
+            </div>
+            <div
+              class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
+            >
+              <a href="get-involved.html#youth" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Youth Program</a>
+              <a href="get-involved.html#volunteer" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Volunteer</a>
             </div>
           </div>
 
@@ -323,7 +505,7 @@
             <div class="relative">
               <a
                 href="events.html"
-                class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
+                class="nav-link text-orange-500 font-medium transition-colors duration-300 py-2"
               >
                 Events
               </a>
@@ -333,71 +515,37 @@
               class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
             >
               <a
+                href="events.html#meetings"
+                class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+              >
+                Meetings &amp; Gatherings
+              </a>
+              <a
                 href="events.html#resource-fair"
                 class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
               >
-                Resource Fair
-              </a>
-              <a
-                href="events.html#gallery"
-                class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-              >
-                Gallery
+                Annual Resource Fair
               </a>
             </div>
           </div>
 
-          <div class="dropdown relative group">
-            <div class="relative">
-              <a
-                href="community.html"
-                class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
-              >
-                Community
-              </a>
-            </div>
-
-            <div
-              class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
-            >
-              <a
-                href="community.html#partners"
-                class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-              >
-                Our Partners
-              </a>
-              <a
-                href="community.html#resources"
-                class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-              >
-                Resources
-              </a>
-              <a
-                href="community.html#sponsors"
-                class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-              >
-                Our Sponsors
-              </a>
-            </div>
-          </div>
-
-          <a
-            href="https://givebutter.com/LAURALA"
-            target="_blank"
-            class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300"
+            <a
+              href="https://givebutter.com/LAURALA"
+              target="_blank"
+              class="bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-orange-500 transition-all duration-300"
           >
             Donate
           </a>
-
-          <a
-            href="contact.html"
-            class="nav-contact bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-orange-500 transition-all duration-300"
-          >
-            Contact
-          </a>
         </nav>
 
-        <button id="menu-toggle" class="md:hidden text-white text-xl" aria-label="Toggle menu">
+        <button
+          id="menu-toggle"
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          class="md:hidden text-white text-xl"
+        >
           <i class="fas fa-bars" style="color: #ed7014;"></i>
         </button>
       </div>
@@ -415,350 +563,549 @@
           About Us
         </a>
         <a
+          href="contact.html"
+          class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+        >
+          Contact
+        </a>
+        <a
           href="impact.html"
           class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
         >
-          Our Impact
+          Get Support
+        </a>
+        <a
+          href="get-involved.html"
+          class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+        >
+          Get Involved
         </a>
         <a
           href="events.html"
-          class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+          class="block py-3 border-b border-gray-200 text-orange-500 font-semibold hover:text-orange-600"
         >
           Events
         </a>
-        <a
-          href="community.html"
-          class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-        >
-          Community
-        </a>
-        <a
-          href="https://givebutter.com/LAURALA"
+          <a
+            href="https://givebutter.com/LAURALA"
           target="_blank"
           class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
         >
           Donate
-        </a>
-        <a href="contact.html" class="block py-3 text-gray-700 hover:text-orange-500">
-          Contact
         </a>
       </div>
     </div>
   </header>
 
   <main class="pt-16">
-    <section id="resource-fair" class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-          <h1 class="text-4xl font-bold mb-4 text-gray-800">
-            L.A.U.R.A's Annual Peace Walk & Community Resource Fair
+    <section class="events-hero flex items-center text-white">
+      <div class="container mx-auto px-4 py-20">
+        <div class="max-w-3xl">
+          <span class="event-kicker bg-white/15 text-white">
+            <i class="fas fa-people-group"></i>
+            L.A.U.R.A Events
+          </span>
+          <h1 class="mt-6 text-5xl md:text-7xl font-extrabold leading-tight">
+            Bringing Healing, Resources, and Community Together
           </h1>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            We invite you to join us for the 19th Annual Peace Walk & Community
-            Resource Fair on Saturday, March 21, 2026 at Fred Roberts Park:
-            4700 Honduras St, Los Angeles, CA 9001 | 10AM-4PM.
+          <p class="mt-6 text-lg md:text-xl text-gray-100 leading-relaxed">
+            L.A.U.R.A. events create safe, welcoming spaces where families can
+            heal, youth can thrive, and residents can connect to the resources
+            they need.
           </p>
-        </div>
-
-        <div class="mb-12">
-          <img
-            src="images/laura2026AunualFairFlyerEnglish.png"
-            alt="L.A.U.R.A Resource Fair"
-            class="w-full max-w-4xl mx-auto rounded-lg shadow-lg hover-lift"
-          />
-        </div>
-
-        <div class="max-w-4xl mx-auto">
-          <div class="space-y-6 text-gray-700">
-            <section class="event-copy">
-              <p>
-                This annual gathering brings together families, youth, community
-                leaders, and local organizations for a day centered on
-                remembrance, healing, unity, and access to vital community
-                resources.
-              </p>
-
-              <h2>A Day of Remembrance, Unity, and Community Support</h2>
-
-              <p>
-                The day begins with a <strong>moment of remembrance</strong>,
-                honoring and commemorating the lives of homicide and murder
-                victims whose loss continues to impact families and our
-                community. This time of reflection allows loved ones to be seen,
-                heard, and supported while reminding us why the work to end
-                violence matters.
-              </p>
-
-              <p>
-                Following the commemoration, participants will join together for
-                the <strong>Peace Walk</strong>, marching through the
-                neighborhood in a powerful show of unity and solidarity.
-                Together we walk with one message: Stop Violence. Practice Peace
-                and Love.
-              </p>
-
-              <p>
-                The walk symbolizes our collective commitment to ending violence
-                and building a safer future for South Central Los Angeles.
-              </p>
-
-              <h2>Community Resource Fair & Family Celebration</h2>
-
-              <p class="tight">
-                After the walk, participants return to the park for the
-                <strong>Community Resource Fair</strong>, where families can
-                connect with organizations providing valuable services and
-                opportunities, including:
-              </p>
-
-              <ul>
-                <li>Job and career resources</li>
-                <li>Medical screenings and health services</li>
-                <li>College and educational information</li>
-                <li>Legal aid and community support programs</li>
-                <li>Family services and youth opportunities</li>
-              </ul>
-
-              <p class="tight">
-                In addition to these resources, the event also creates space for
-                <strong>community celebration</strong> and connection through a
-                fun-filled afternoon that includes:
-              </p>
-
-              <ul class="tight">
-                <li>Live entertainment and music</li>
-                <li>Family-friendly games and activities</li>
-                <li>Food</li>
-                <li>Raffle prizes and giveaways</li>
-              </ul>
-
-              <p>
-                This year’s live music performances will feature
-                <strong>The Soto Band</strong> and
-                <strong>Milanés Brothers</strong>, bringing energy and
-                celebration to a day rooted in resilience and hope.
-              </p>
-
-              <div class="music-photo-row">
-                <div class="photo-container">
-                  <img src="images/SotoBand1.png" alt="The Soto Band" />
-                  <div class="tooltip">The Soto Band</div>
-                </div>
-
-                <div class="photo-container">
-                  <img
-                    src="images/milanesBrothers.jpeg"
-                    alt="Milanés Brothers"
-                  />
-                  <div class="tooltip">Milanés Brothers</div>
-                </div>
-              </div>
-
-              <h3 class="music-credit-title">Music Provided By:</h3>
-
-              <div class="dj-logo-wrap">
-                <img
-                  src="images/draws-logo-black.png"
-                  alt="Event DJ"
-                  class="dj-logo"
-                />
-              </div>
-
-              <h2>Why This Event Matters</h2>
-
-              <p>
-                Since 2007, L.A.U.R.A. has worked to support families impacted
-                by violence while building stronger relationships between
-                residents, community organizations, and local leadership.
-              </p>
-
-              <p>
-                At the heart of this work is a simple but powerful mission: to
-                put an end to violence by listening to the concerns of our
-                community, providing support, promoting healing, and building
-                relationships with our local law enforcement.
-              </p>
-
-              <p>
-                Over the years, L.A.U.R.A. has become a safety net for victims
-                of crime and the loved ones of homicide victims, offering
-                guidance, resources, and compassionate support during some of
-                the most difficult moments families may face.
-              </p>
-
-              <p>
-                The organization works to bring needed resources and
-                opportunities to mothers, fathers, and children living in
-                communities that have too often been overlooked in Los Angeles,
-                while creating pathways toward healing, leadership, and hope.
-              </p>
-
-              <p class="tight">
-                The Peace Walk & Community Resource Fair reflects this mission
-                by:
-              </p>
-
-              <ul class="tight">
-                <li>Supporting families and loved ones impacted by violence</li>
-                <li>Connecting residents to critical resources and services</li>
-                <li>
-                  Empowering youth through positive engagement and opportunity
-                </li>
-                <li>
-                  Strengthening community collaboration and civic participation
-                </li>
-              </ul>
-
-              <p>
-                Each year, 1,000 children, youth, and adults attend this free
-                community event, making it one of the largest gatherings
-                dedicated to peace, healing, and empowerment in South Central
-                Los Angeles.
-              </p>
-
-              <h2>Support the Event</h2>
-
-              <p>
-                This event is free to the public thanks to the generosity of
-                supporters, donors, and community partners.
-              </p>
-
-              <p class="tight">
-                We welcome contributions that help make this day possible,
-                including:
-              </p>
-
-              <ul class="tight">
-                <li>Event sponsorships</li>
-                <li>Financial donations</li>
-                <li>Raffle prizes</li>
-                <li>Store gift cards or giveaway items</li>
-              </ul>
-
-              <p>
-                All net proceeds directly support L.A.U.R.A.’s programs and
-                services throughout the year, helping us continue to provide
-                resources, support, and opportunities to families across South
-                Central Los Angeles.
-              </p>
-
-              <p>
-                If you would like to sponsor the event, donate, or contribute
-                raffle prizes, please contact us at:
-                <a href="mailto:info@LauraLA.org">
-                  <strong style="color: #ed7014;">info@LauraLA.org</strong>
-                </a>
-              </p>
-
-              <h2>Thank You to Our Sponsors</h2>
-
-              <p>
-                Together, we honor lives lost, uplift families, and work toward
-                a future where every member of our community has the opportunity
-                to live in safety, dignity, and peace. We'd like to thank our
-                2026 event sponsors for their support in our mission.
-              </p>
-
-              <div class="sponsor-logos">
-                <div class="logo-box">
-                  <img src="images/VOA-LOGO.jpg" alt="Volunteers of America" />
-                </div>
-                <div class="logo-box">
-                  <img
-                    src="images/SEA_Logo.png"
-                    alt="Soledad Enrichment Action"
-                  />
-                </div>
-                <div class="logo-box">
-                  <img
-                    src="images/PMLB-logo-4pms.png"
-                    alt="Parks Make Life Better"
-                  />
-                </div>
-                <div class="logo-box">
-                  <img
-                    src="images/JusticeforMChildren.jpg"
-                    alt="Justice for Murdered Children"
-                  />
-                </div>
-                <div class="logo-box">
-                  <img
-                    src="images/cd9_new_logo.png"
-                    alt="Curren Price Jr Los Angeles City Council"
-                  />
-                </div>
-              </div>
-            </section>
-          </div>
-
-          <div
-            class="bg-orange-50 rounded-lg p-8 mb-8 text-center"
-            style="margin-top: 36px; margin-bottom: -36px;"
-          >
-            <h2 class="text-2xl font-bold mb-4">
-              19th Annual Peace Walk & Community Resource Fair
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 justify-items-center">
-              <div>
-                <p class="font-semibold">
-                  Date:
-                  <span class="font-normal">Saturday, March 21, 2026</span>
-                </p>
-                <p class="font-semibold">
-                  Location:
-                  <span class="font-normal">
-                    Fred Roberts Park: 4700 Honduras St, Los Angeles, CA 9001
-                  </span>
-                </p>
-              </div>
-              <div>
-                <p class="font-semibold">
-                  Time: <span class="font-normal">10AM - 4PM</span>
-                </p>
-                <p class="font-semibold">
-                  Cost: <span class="font-normal">Free to the Public</span>
-                </p>
-              </div>
-            </div>
-
-            <a
-              href="https://forms.gle/YGSiPH1E7o3H68g38"
-              target="_blank"
-              class="btn-primary inline-block px-6 py-3 rounded-full"
-            >
-              Low Rider Registration
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="#meetings" class="btn-primary inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold">
+              Meetings & Gatherings
+            </a>
+            <a href="#resource-fair" class="inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold border-2 border-white text-white hover:bg-white hover:text-gray-900 transition-all">
+              Peace Walk & Fair
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="gallery" class="py-16 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-          <h1 class="text-4xl font-bold mb-4 text-gray-800">Gallery</h1>
-          <p class="text-xl text-gray-600">
-            Memories from our past events and community activities
-          </p>
-        </div>
-
-        <div class="text-center">
-          <a
-            href="https://www.facebook.com/LauraYouth/photos"
-            target="_blank"
-            class="btn-primary inline-block px-8 py-3 rounded-full text-lg"
-          >
-            View All Photos on Facebook
-          </a>
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-10 items-center">
+          <div>
+            <h2 class="event-section-title">
+              WHY WE GATHER
+            </h2>
+          </div>
+          <div class="text-lg leading-relaxed text-gray-700">
+            <p class="mb-5">
+              At L.A.U.R.A. (Life After Uncivil Ruthless Acts), community
+              events are a vital part of our mission to enhance the quality of
+              life in South Central Los Angeles.
+            </p>
+            <p>
+              Through weekly meetings, monthly gatherings, and annual events, we
+              empower youth, support victim-survivors and families, and
+              strengthen community collaboration because lasting change happens
+              when communities come together.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="py-16 bg-gradient-to-r from-orange-500 to-orange-600 text-white">
+    <section id="meetings" class="py-16 bg-gray-200">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mb-10">
+          <h2 class="event-section-title">MEETINGS</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <article class="event-panel p-7">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
+                <i class="fas fa-handshake-angle text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-gray-900">
+                  Community Support & Civic Engagement Meetings
+                </h3>
+                <p class="mt-4 text-gray-700 leading-relaxed">
+                  L.A.U.R.A. hosts regular community meetings that provide
+                  space for healing, dialogue, and action. These gatherings
+                  offer residents an opportunity to share concerns, learn about
+                  available resources, and engage in efforts that improve safety
+                  and quality of life in the community.
+                </p>
+                <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="event-fact">
+                    <p class="text-sm font-bold uppercase text-gray-500">When</p>
+                    <p class="text-gray-900 font-semibold">Last Thursday of each month</p>
+                    <p class="text-gray-700">6:00 PM</p>
+                  </div>
+                  <div class="event-fact">
+                    <p class="text-sm font-bold uppercase text-gray-500">Where</p>
+                    <p class="text-gray-900 font-semibold">4701 S. Central Ave.</p>
+                    <p class="text-gray-700">Los Angeles, CA 90011</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="event-panel p-7">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
+                <i class="fas fa-seedling text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-gray-900">
+                  Youth Civic Engagement & Support Meetings
+                </h3>
+                <p class="mt-4 text-gray-700 leading-relaxed">
+                  Weekly youth gatherings focus on leadership development,
+                  prevention, and healing. Through guided discussion, peer
+                  support, and educational activities, youth are encouraged to
+                  express themselves, build confidence, and develop the skills
+                  needed to make positive choices.
+                </p>
+                <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="event-fact">
+                    <p class="text-sm font-bold uppercase text-gray-500">When</p>
+                    <p class="text-gray-900 font-semibold">Thursdays</p>
+                    <p class="text-gray-700">5:00 PM - Youth Civic Engagement</p>
+                    <p class="text-gray-700">6:30 PM - Youth Support Group</p>
+                  </div>
+                  <div class="event-fact">
+                    <p class="text-sm font-bold uppercase text-gray-500">Where</p>
+                    <p class="text-gray-900 font-semibold">Fred Roberts Recreation Center</p>
+                    <p class="text-gray-700">4700 Honduras St.</p>
+                    <p class="text-gray-700">Los Angeles, CA 90011</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="monthly-events" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
+          <div class="max-w-3xl">
+            <h2 class="event-section-title">MONTHLY GATHERINGS</h2>
+            <p class="mt-4 text-gray-700 text-lg">
+              L.A.U.R.A. hosts recurring gatherings throughout the year that
+              bring families, youth, and community partners together.
+            </p>
+          </div>
+          <div class="flex gap-3">
+            <button
+              type="button"
+              class="carousel-prev w-11 h-11 rounded-full border border-gray-300 text-gray-700 hover:border-orange-500 hover:text-orange-500"
+              aria-label="Previous event"
+            >
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button
+              type="button"
+              class="carousel-next w-11 h-11 rounded-full border border-gray-300 text-gray-700 hover:border-orange-500 hover:text-orange-500"
+              aria-label="Next event"
+            >
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="monthly-carousel" aria-label="Monthly event carousel">
+          <article class="month-card">
+            <img src="images/indexPg/laura-fair-peace-walk.jpg" alt="Community members participating in L.A.U.R.A.'s Peace Walk" />
+            <div class="p-5">
+              <span class="month-tag">March</span>
+              <h3 class="mt-4 text-xl font-bold text-gray-900">Annual Community Peace Walk & Resource Fair</h3>
+            </div>
+          </article>
+          <article class="month-card">
+            <img
+              src="images/events/april-survivors-speak.jpeg"
+              alt="L.A.U.R.A. community members attending Survivors Speak California"
+              style="object-position: center 58%;"
+            />
+            <div class="p-5">
+              <span class="month-tag">April</span>
+              <h3 class="mt-4 text-xl font-bold text-gray-900">Survivors Speak California</h3>
+            </div>
+          </article>
+          <article class="month-card">
+            <img
+              src="images/events/may-mothers-day.jpg"
+              alt="Mother's Day celebration with L.A.U.R.A. families"
+              style="object-position: center 27%;"
+            />
+            <div class="p-5">
+              <span class="month-tag">May</span>
+              <h3 class="mt-4 text-xl font-bold text-gray-900">Mother's Day Celebration</h3>
+            </div>
+          </article>
+          <article class="month-card">
+            <img
+              src="images/events/june-fathers-day.jpeg"
+              alt="Father's Day celebration hosted by L.A.U.R.A."
+              style="object-position: center 18%;"
+            />
+            <div class="p-5">
+              <span class="month-tag">June</span>
+              <h3 class="mt-4 text-xl font-bold text-gray-900">Father's Day Celebration</h3>
+            </div>
+          </article>
+          <article class="month-card">
+            <img src="images/events/july-family-camping-bonfire.jpeg" alt="L.A.U.R.A. youth and families at a camping bonfire" />
+            <div class="p-5">
+              <span class="month-tag">July</span>
+              <h3 class="mt-4 text-xl font-bold text-gray-900">Family Camping Trip</h3>
+            </div>
+          </article>
+          <article class="month-card">
+            <img src="images/events/august-backpack-giveaway.jpeg" alt="Backpacks prepared for L.A.U.R.A.'s back to school giveaway" />
+            <div class="p-5">
+              <span class="month-tag">August</span>
+              <h3 class="mt-4 text-xl font-bold text-gray-900">Back To School Backpack Give-Away</h3>
+            </div>
+          </article>
+          <article class="month-card">
+            <img src="images/events/september-appreciation-awards.jpg" alt="Youth awards and appreciation gathering" />
+            <div class="p-5">
+              <span class="month-tag">September</span>
+              <h3 class="mt-4 text-xl font-bold text-gray-900">Appreciation Month</h3>
+            </div>
+          </article>
+          <article class="month-card">
+            <img src="images/events/october-halloween-festival.jpeg" alt="Halloween festival with L.A.U.R.A. youth and families" />
+            <div class="p-5">
+              <span class="month-tag">October</span>
+              <h3 class="mt-4 text-xl font-bold text-gray-900">Halloween Festival</h3>
+            </div>
+          </article>
+          <article class="month-card">
+            <div class="grid grid-cols-2">
+              <img src="images/events/november-dia-de-los-muertos.jpg" alt="Dia De Los Muertos community altar and celebration" />
+              <img src="images/events/november-thanksgiving-dinner.jpg" alt="Community Thanksgiving dinner gathering" />
+            </div>
+            <div class="p-5">
+              <span class="month-tag">November</span>
+              <h3 class="mt-4 text-xl font-bold text-gray-900">Dia De Los Muertos & Community Thanksgiving Dinner</h3>
+            </div>
+          </article>
+          <article class="month-card">
+            <img src="images/events/december-toy-drive.jpg" alt="Toy drive gifts and holiday support for families" />
+            <div class="p-5">
+              <span class="month-tag">December</span>
+              <h3 class="mt-4 text-xl font-bold text-gray-900">Toy-Drive</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="resource-fair" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-10 items-center">
+          <div>
+            <h2 class="event-section-title">
+              Annual Peace Walk & Community Resource Fair
+            </h2>
+            <p class="mt-5 text-2xl font-semibold text-orange-600">
+              Walk for Peace. Rally for Change. Build Community.
+            </p>
+            <p class="mt-5 text-lg text-gray-700 leading-relaxed">
+              Each March, L.A.U.R.A. brings South Central Los Angeles together
+              for its signature event, the Annual Peace Walk & Community
+              Resource Fair. This free, family-centered gathering honors lives
+              lost to violence while mobilizing our community around healing,
+              prevention, and hope.
+            </p>
+          </div>
+
+          <div class="overflow-hidden rounded-xl shadow-2xl">
+            <img
+              src="images/indexPg/laura-fair-remembrance.jpg"
+              alt="Families and community members gathered in remembrance at a L.A.U.R.A. event"
+              class="w-full h-[360px] object-cover"
+            />
+          </div>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="event-fact">
+            <p class="text-sm font-bold uppercase text-gray-500">Location</p>
+            <p class="text-gray-900 font-semibold">Fred Roberts Park</p>
+            <p class="text-gray-700">South Central Los Angeles</p>
+          </div>
+          <div class="event-fact">
+            <p class="text-sm font-bold uppercase text-gray-500">When</p>
+            <p class="text-gray-900 font-semibold">Annually in March</p>
+          </div>
+          <div class="event-fact">
+            <p class="text-sm font-bold uppercase text-gray-500">Cost</p>
+            <p class="text-gray-900 font-semibold">Free and open to the public</p>
+          </div>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <article class="border-t-4 border-orange-500 pt-6">
+            <h3 class="text-3xl font-bold text-gray-900">Peace Walk</h3>
+            <h4 class="mt-4 text-2xl font-bold text-gray-900">
+              Grief becomes action. Remembrance becomes resilience.
+            </h4>
+            <p class="mt-5 text-gray-700 leading-relaxed">
+              The Peace Walk begins our day together, uniting families,
+              survivors, youth, and community members in one collective voice to
+              say: End Violence. Choose Peace.
+            </p>
+            <p class="mt-4 text-gray-700 leading-relaxed">
+              We walk alongside families whose loved ones have been murdered,
+              honoring their lives while affirming our shared commitment to
+              creating safer, healthier communities.
+            </p>
+            <p class="mt-4 text-gray-700 leading-relaxed">
+              L.A.U.R.A.'s long-term vision is to grow the Peace Walk into a
+              Community 5K for Peace.
+            </p>
+            <img
+              src="images/indexPg/laura-peace-walk.jpg"
+              alt="Community members walking together at the Peace Walk"
+              class="mt-6 mx-auto block w-full rounded-xl object-cover object-[center_70%] max-h-64"
+            />
+          </article>
+
+          <article class="border-t-4 border-orange-500 pt-6">
+            <h3 class="text-3xl font-bold text-gray-900">The Community Resource Fair</h3>
+            <p class="mt-5 text-gray-700 leading-relaxed">
+              After the walk, Fred Roberts Park becomes a vibrant hub of
+              connection, culture, and care.
+            </p>
+            <ul class="icon-list mt-5 text-gray-700">
+              <li><i class="fas fa-circle-plus"></i><span>Health, wellness, and social service resources</span></li>
+              <li><i class="fas fa-circle-plus"></i><span>Community-based organizations and local vendors</span></li>
+              <li><i class="fas fa-circle-plus"></i><span>Youth activities and family-friendly programming</span></li>
+              <li><i class="fas fa-circle-plus"></i><span>Live entertainment and special guest appearances</span></li>
+              <li><i class="fas fa-circle-plus"></i><span>Food, raffles, prizes, and giveaways</span></li>
+            </ul>
+            <img
+              src="images/indexPg/laura-community-resource-fair.jpg"
+              alt="Families and community members at the Community Resource Fair"
+              class="mt-6 w-full rounded-xl object-cover max-h-64"
+            />
+          </article>
+        </div>
+
+        <div class="mt-12 border-t border-gray-200 pt-8">
+          <h3 class="text-2xl font-bold text-gray-900">Event Impact</h3>
+          <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-gray-700">
+            <div class="flex items-start gap-3">
+              <i class="fas fa-calendar-check text-orange-500 text-xl mt-0.5"></i>
+              <p class="font-semibold">17+ years of community impact</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-users text-orange-500 text-xl mt-0.5"></i>
+              <p class="font-semibold">1,000+ attendees annually</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-handshake text-orange-500 text-xl mt-0.5"></i>
+              <p class="font-semibold">Dozens of community partners and resource providers</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-heart text-orange-500 text-xl mt-0.5"></i>
+              <p class="font-semibold">Hundreds of families supported each year</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="get-involved" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl text-center mx-auto mb-10">
+          <span class="event-kicker">
+            <i class="fas fa-hands-helping"></i>
+            Get Involved
+          </span>
+          <h2 class="event-section-title mt-4">Help make the fair possible.</h2>
+          <p class="mt-4 text-gray-700 text-lg">
+            Vendors, performers, sponsors, donors, and community partners all
+            help bring vital resources directly to families and residents.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article class="cta-card p-7">
+            <i class="fas fa-store text-3xl text-orange-500"></i>
+            <h3 class="mt-5 text-2xl font-bold text-gray-900">Vendors & Resource Organizations</h3>
+            <p class="mt-4 text-gray-700">
+              Community organizations, small businesses, service providers,
+              health and wellness providers, social service organizations, food
+              vendors, and local entrepreneurs are welcome.
+            </p>
+            <a href="mailto:info@LauraLA.org?subject=Peace%20Walk%20Vendor%20Inquiry" class="mt-6 inline-block font-semibold text-orange-600 hover:text-orange-700">
+              Apply to Be a Vendor
+            </a>
+          </article>
+
+          <article class="cta-card p-7">
+            <i class="fas fa-music text-3xl text-orange-500"></i>
+            <h3 class="mt-5 text-2xl font-bold text-gray-900">Entertainers & Performers</h3>
+            <p class="mt-4 text-gray-700">
+              Musicians, DJs, dance groups, cultural performers, youth
+              performance groups, and interactive family-friendly entertainers
+              help create a joyful, welcoming atmosphere.
+            </p>
+            <a href="mailto:info@LauraLA.org?subject=Peace%20Walk%20Performer%20Inquiry" class="mt-6 inline-block font-semibold text-orange-600 hover:text-orange-700">
+              Apply to Perform
+            </a>
+          </article>
+
+          <article class="cta-card p-7">
+            <i class="fas fa-gift text-3xl text-orange-500"></i>
+            <h3 class="mt-5 text-2xl font-bold text-gray-900">Sponsors & Donors</h3>
+            <p class="mt-4 text-gray-700">
+              Monetary donations, corporate and community sponsorships, raffle
+              prizes, giveaways, store gift cards, and certificates help keep
+              this event free for the public.
+            </p>
+            <div class="mt-6 flex flex-col gap-2">
+              <a href="mailto:info@LauraLA.org?subject=Peace%20Walk%20Sponsorship%20Inquiry" class="font-semibold text-orange-600 hover:text-orange-700">
+                Sponsor the Event
+              </a>
+              <a href="https://givebutter.com/LAURALA" target="_blank" class="font-semibold text-orange-600 hover:text-orange-700">
+                Donate to Support the Fair
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="event-panel mt-10 p-7 lg:p-9">
+          <div class="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8">
+            <div>
+              <h3 class="text-3xl font-bold text-gray-900">Contact Us About the Event</h3>
+              <p class="mt-4 text-gray-700">
+                Have questions or want to get involved? We’d love to hear from
+                you.
+              </p>
+              <p class="mt-4 text-gray-700">
+                For vendors, entertainers, sponsorships, and donations, email
+                <a href="mailto:info@LauraLA.org" class="font-bold text-orange-600 hover:text-orange-700">info@LauraLA.org</a>.
+                Donation pick-up is available upon request.
+              </p>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-900">Please include:</p>
+              <ul class="icon-list mt-3 text-gray-700">
+                <li><i class="fas fa-check"></i><span>Your organization or business name</span></li>
+                <li><i class="fas fa-check"></i><span>Type of involvement: vendor, performer, sponsor, or donation</span></li>
+                <li><i class="fas fa-check"></i><span>Contact information</span></li>
+              </ul>
+              <p class="mt-4 text-gray-700">A member of our team will follow up with you.</p>
+            </div>
+          </div>
+        </div>
+
+        <section class="mt-14 rounded-xl bg-white p-7 shadow-xl ring-1 ring-gray-200 lg:p-10">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
+            <div>
+              <p class="text-sm font-bold uppercase tracking-widest text-orange-600">
+                2026 Event Sponsors
+              </p>
+              <h2 class="mt-3 text-3xl font-extrabold leading-tight text-gray-900 md:text-4xl">
+                Thank You to Our Sponsors
+              </h2>
+              <p class="mt-5 text-gray-700 leading-relaxed">
+                Together, we honor lives lost, uplift families, and work toward
+                a future where every member of our community has the opportunity
+                to live in safety, dignity, and peace. We'd like to thank our
+                2026 event sponsors for their support in our mission.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+              <div class="flex min-h-28 items-center justify-center p-4">
+                <img src="https://voala.org/wp-content/uploads/2018/01/VOALAlogo-Stacked-2lines-CMYK2015.jpg" alt="Volunteers of America" class="max-h-20 w-full object-contain" />
+              </div>
+              <div class="flex min-h-28 items-center justify-center p-4">
+                <img
+                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.googleusercontent.com%2FiJTKDqXqmyrFMkF7_zCklUFFJaoWvhf9lNTlcFoAUawpg060sj5j4gr8wlvp3UPMy4kvf9sZ1A%3Ds900-c-k-c0x00ffffff-no-rj&f=1&nofb=1&ipt=e70c9b24b04668ef6c6e3cb91f2521a1260d92cad7402d00684981c8fb131c94"
+                  alt="Soledad Enrichment Action"
+                  class="max-h-20 w-full object-contain"
+                />
+              </div>
+              <div class="flex min-h-28 items-center justify-center p-4">
+                <img
+                  src="images/PMLB-logo-4pms.png"
+                  alt="Parks Make Life Better"
+                  class="max-h-20 w-full object-contain"
+                />
+              </div>
+              <div class="flex min-h-28 items-center justify-center p-4">
+                <img
+                  src="images/JusticeforMChildren.jpg"
+                  alt="Justice for Murdered Children"
+                  class="max-h-20 w-full object-contain"
+                />
+              </div>
+              <div class="flex min-h-28 items-center justify-center p-4 sm:col-span-3 lg:col-span-1">
+                <img
+                  src="images/cd9_new_logo.png"
+                  alt="Curren Price Jr Los Angeles City Council"
+                  class="max-h-20 w-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+
+<section class="py-16 bg-[#ed7014] text-white">
       <div class="container mx-auto px-4 text-center">
         <h2 class="text-3xl font-bold mb-6">Stay Updated on Our Events</h2>
-        <p class="text-xl mb-8 max-w-2xl mx-auto">
+        <p class="text-xl mb-8 max-w-2xl mx-auto text-gray-100">
           Follow us on social media to stay informed about upcoming community
           events, workshops, and activities.
         </p>
@@ -767,6 +1114,7 @@
             href="https://www.facebook.com/LauraYouth"
             target="_blank"
             class="text-3xl hover:text-blue-300"
+            aria-label="Follow L.A.U.R.A. Youth on Facebook"
           >
             <i class="fab fa-facebook-f"></i>
           </a>
@@ -774,18 +1122,16 @@
             href="https://www.instagram.com/laurayouthla/"
             target="_blank"
             class="text-3xl hover:text-pink-300"
+            aria-label="Follow L.A.U.R.A. Youth on Instagram"
           >
             <i class="fab fa-instagram"></i>
-          </a>
-          <a href="#" class="text-3xl hover:text-gray-300">
-            <i class="fab fa-tiktok"></i>
           </a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-gray-800 text-white py-12">
+  <footer class="bg-[#2d4a24] text-white py-12">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
         <div>
@@ -802,9 +1148,6 @@
               class="text-white hover:text-pink-400"
             >
               <i class="fab fa-instagram text-2xl"></i>
-            </a>
-            <a href="#" class="text-white hover:text-gray-300">
-              <i class="fab fa-tiktok text-2xl"></i>
             </a>
           </div>
           <p class="text-gray-400">
@@ -827,12 +1170,12 @@
                 href="about.html#board-members"
                 class="text-gray-400 hover:text-white"
               >
-                Board of Directors
+                Our Leadership
               </a>
             </li>
             <li>
-              <a
-                href="https://givebutter.com/LAURALA"
+          <a
+            href="https://givebutter.com/LAURALA"
                 target="_blank"
                 class="text-gray-400 hover:text-white"
               >
@@ -903,34 +1246,32 @@
       }
     }
 
-    const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
-    const header = document.getElementById("main-header");
+    const menuToggle = document.getElementById("menu-toggle");
+
+    function openMobileMenu() {
+      mobileMenu.classList.remove("hidden", "transform", "-translate-x-full");
+      menuToggle.setAttribute("aria-expanded", "true");
+      const icon = menuToggle.querySelector("i");
+      icon.classList.remove("fa-bars");
+      icon.classList.add("fa-times");
+      mobileMenu.style.backgroundColor = "white";
+    }
 
     function closeMobileMenu() {
       mobileMenu.classList.add("hidden", "transform", "-translate-x-full");
+      menuToggle.setAttribute("aria-expanded", "false");
       const icon = menuToggle.querySelector("i");
       icon.classList.remove("fa-times");
       icon.classList.add("fa-bars");
     }
 
     menuToggle.addEventListener("click", function () {
-      const isScrolled = header.classList.contains("scrolled");
-
-      mobileMenu.classList.toggle("hidden");
-      mobileMenu.classList.toggle("transform");
-      mobileMenu.classList.toggle("-translate-x-full");
-
-      const icon = this.querySelector("i");
-      if (icon.classList.contains("fa-bars")) {
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-times");
-        if (!isScrolled) {
-          mobileMenu.style.backgroundColor = "white";
-        }
+      const isOpen = !mobileMenu.classList.contains("hidden");
+      if (isOpen) {
+        closeMobileMenu();
       } else {
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
+        openMobileMenu();
       }
     });
 
@@ -959,6 +1300,25 @@
         });
       });
     });
+
+    const carousel = document.querySelector(".monthly-carousel");
+    const nextButton = document.querySelector(".carousel-next");
+    const prevButton = document.querySelector(".carousel-prev");
+
+    function scrollMonthlyCarousel(direction) {
+      if (!carousel) return;
+      const firstCard = carousel.querySelector(".month-card");
+      const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : 320;
+      carousel.scrollBy({
+        left: direction * (cardWidth + 16),
+        behavior: "smooth",
+      });
+    }
+
+    if (nextButton && prevButton) {
+      nextButton.addEventListener("click", () => scrollMonthlyCarousel(1));
+      prevButton.addEventListener("click", () => scrollMonthlyCarousel(-1));
+    }
 
     window.addEventListener("load", handleScroll);
     window.addEventListener("scroll", handleScroll);

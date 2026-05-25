@@ -43,8 +43,7 @@
       .nav-link {
         transition: color 0.3s ease;
       }
-
-      .card-hover {
+.card-hover {
         transition:
           transform 0.3s ease,
           box-shadow 0.3s ease,
@@ -87,14 +86,15 @@
         opacity: 0;
         visibility: hidden;
       }
-    </style>
+</style>
+    <link rel="stylesheet" href="css/header-animations.css" />
   </head>
 
   <body id="top" class="bg-gray-100 text-gray-800">
     <!-- Header -->
     <header
       id="main-header"
-      class="fixed inset-x-0 top-0 z-50 w-full bg-transparent transition-all duration-300"
+      class="fixed inset-x-0 top-0 z-50 w-full bg-white border-b-2 border-gray-200 transition-all duration-300"
     >
       <div class="container mx-auto px-4">
         <div class="flex items-center justify-between py-4">
@@ -124,7 +124,7 @@
                   href="about.html"
                   class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
                 >
-                  Mission / History
+                  Our Story
                 </a>
                 <a
                   href="about.html#our-strategy"
@@ -136,7 +136,19 @@
                   href="about.html#board-members"
                   class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
                 >
-                  Board of Directors
+                  Our Leadership
+                </a>
+                <a
+                  href="about.html#partners"
+                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
+                >
+                  Our Partners
+                </a>
+                <a
+                  href="contact.html"
+                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
+                >
+                  Contact
                 </a>
               </div>
             </div>
@@ -147,7 +159,7 @@
                 href="impact.html"
                 class="nav-link py-2 font-medium text-gray-800 hover:text-orange-500"
               >
-                Our Impact
+                Get Support
               </a>
               <div
                 class="invisible absolute mt-2 min-w-max rounded-md bg-white p-4 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:opacity-100"
@@ -156,14 +168,31 @@
                   href="impact.html"
                   class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
                 >
-                  L.A.U.R.A's Victim Support Program
+                  Victim Support Program
                 </a>
                 <a
-                  href="impact.html#youth"
+                  href="impact.html#resources"
                   class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
                 >
-                  L.A.U.R.A Youth
+                  Resources
                 </a>
+              </div>
+            </div>
+
+            <div class="dropdown relative group">
+              <div class="relative">
+                <a
+                  href="get-involved.html"
+                  class="nav-link font-medium text-gray-800 hover:text-orange-500 py-2"
+                >
+                  Get Involved
+                </a>
+              </div>
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
+              >
+                <a href="get-involved.html#youth" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Youth Program</a>
+                <a href="get-involved.html#volunteer" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Volunteer</a>
               </div>
             </div>
 
@@ -179,48 +208,16 @@
                 class="invisible absolute mt-2 min-w-max rounded-md bg-white p-4 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:opacity-100"
               >
                 <a
+                  href="events.html#meetings"
+                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
+                >
+                  Meetings &amp; Gatherings
+                </a>
+                <a
                   href="events.html#resource-fair"
                   class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
                 >
-                  Resource Fair
-                </a>
-                <a
-                  href="events.html#gallery"
-                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
-                >
-                  Gallery
-                </a>
-              </div>
-            </div>
-
-            <!-- Community -->
-            <div class="group relative">
-              <a
-                href="community.html"
-                class="nav-link py-2 font-medium text-gray-800 hover:text-orange-500"
-              >
-                Community
-              </a>
-              <div
-                class="invisible absolute mt-2 min-w-max rounded-md bg-white p-4 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:opacity-100"
-              >
-                <a
-                  href="community.html#partners"
-                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
-                >
-                  Our Partners
-                </a>
-                <a
-                  href="community.html#resources"
-                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
-                >
-                  Resources
-                </a>
-                <a
-                  href="community.html#sponsors"
-                  class="block rounded px-4 py-2 text-gray-700 hover:text-orange-500"
-                >
-                  Our Sponsors
+                  Annual Resource Fair
                 </a>
               </div>
             </div>
@@ -229,16 +226,9 @@
               href="https://givebutter.com/LAURALA"
               target="_blank"
               rel="noopener noreferrer"
-              class="nav-link font-medium text-gray-800 hover:text-orange-500"
-            >
-              Donate
-            </a>
-
-            <a
-              href="contact.html"
               class="rounded-full bg-orange-500 px-4 py-2 font-medium text-white transition-all duration-300 hover:bg-white hover:text-orange-500"
             >
-              Contact
+              Donate
             </a>
           </nav>
 
@@ -269,10 +259,22 @@
             About Us
           </a>
           <a
+            href="contact.html"
+            class="block border-b border-gray-200 py-3 text-gray-700 hover:text-orange-500"
+          >
+            Contact
+          </a>
+          <a
             href="impact.html"
             class="block border-b border-gray-200 py-3 text-gray-700 hover:text-orange-500"
           >
-            Our Impact
+            Get Support
+          </a>
+          <a
+            href="get-involved.html"
+            class="block border-b border-gray-200 py-3 text-gray-700 hover:text-orange-500"
+          >
+            Get Involved
           </a>
           <a
             href="events.html"
@@ -281,24 +283,12 @@
             Events
           </a>
           <a
-            href="community.html"
-            class="block border-b border-gray-200 py-3 text-gray-700 hover:text-orange-500"
-          >
-            Community
-          </a>
-          <a
             href="https://givebutter.com/LAURALA"
             target="_blank"
             rel="noopener noreferrer"
             class="block border-b border-gray-200 py-3 text-gray-700 hover:text-orange-500"
           >
             Donate
-          </a>
-          <a
-            href="contact.html"
-            class="block py-3 text-gray-700 hover:text-orange-500"
-          >
-            Contact
           </a>
         </div>
       </div>
@@ -721,8 +711,8 @@
             >
               Become a Partner
             </a>
-            <a
-              href="https://givebutter.com/LAURALA"
+          <a
+            href="https://givebutter.com/LAURALA"
               target="_blank"
               rel="noopener noreferrer"
               class="rounded-full border-2 border-white bg-transparent px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-orange-500"
@@ -735,7 +725,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 py-12 text-white">
+    <footer class="bg-[#2d4a24] py-12 text-white">
       <div class="container mx-auto px-4">
         <div class="mb-8 grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
@@ -754,9 +744,6 @@
                 aria-label="Instagram"
               >
                 <i class="fab fa-instagram text-2xl"></i>
-              </a>
-              <a href="#" class="text-white hover:text-gray-300" aria-label="TikTok">
-                <i class="fab fa-tiktok text-2xl"></i>
               </a>
             </div>
             <p class="text-gray-400">
@@ -779,12 +766,12 @@
                   href="about.html#board-members"
                   class="text-gray-400 hover:text-white"
                 >
-                  Board of Directors
+                  Our Leadership
                 </a>
               </li>
               <li>
-                <a
-                  href="https://givebutter.com/LAURALA"
+          <a
+            href="https://givebutter.com/LAURALA"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="text-gray-400 hover:text-white"
@@ -813,8 +800,8 @@
           <div>
             <h3 class="mb-4 text-xl font-bold">Mailing Address</h3>
             <p class="text-gray-400">
-              P.O Box 11681<br />
-              Los Angeles, CA
+              4701 S Central Ave<br />
+              Los Angeles, CA 90011
             </p>
           </div>
 

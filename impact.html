@@ -41,7 +41,6 @@
       body {
         font-family: "Poppins", sans-serif;
       }
-
       .dropdown:hover .dropdown-content {
         display: block;
       }
@@ -54,7 +53,7 @@
         transform: translateX(-100%);
       }
 
-      html {
+html {
         scroll-behavior: smooth;
       }
 
@@ -83,14 +82,47 @@
         transform: translateY(-5px);
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
       }
+
+      .card-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-4px);
+      }
+
+      .partner-card:hover {
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+      }
+
+      .resource-card:hover {
+        background-color: #d86212;
+      }
+
+      .resource-card:hover h3,
+      .resource-card:hover span,
+      .resource-card:hover p,
+      .resource-card:hover a,
+      .resource-card:hover i {
+        color: white !important;
+      }
+
+      .resource-card:hover p {
+        color: rgba(255, 255, 255, 0.86) !important;
+      }
+
+      .resource-card:hover div {
+        background-color: rgba(255, 255, 255, 0.16) !important;
+      }
     </style>
+    <link rel="stylesheet" href="css/header-animations.css" />
   </head>
 
-  <body id="top" class="bg-gray-100">
+  <body id="top" class="bg-white">
     <!-- Navigation -->
     <header
       id="main-header"
-      class="fixed w-full bg-transparent transition-all duration-300 z-50"
+      class="fixed w-full bg-white border-b-2 border-gray-200 transition-all duration-300 z-50"
     >
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center py-4">
@@ -123,7 +155,7 @@
                   href="about.html"
                   class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
-                  Mission / History
+                  Our Story
                 </a>
                 <a
                   href="about.html#our-strategy"
@@ -135,7 +167,19 @@
                   href="about.html#board-members"
                   class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
-                  Board of Directors
+                  Our Leadership
+                </a>
+                <a
+                  href="about.html#partners"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                >
+                  Our Partners
+                </a>
+                <a
+                  href="contact.html"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                >
+                  Contact
                 </a>
               </div>
             </div>
@@ -144,9 +188,9 @@
               <div class="relative">
                 <a
                   href="impact.html"
-                  class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
+                  class="nav-link text-orange-500 font-medium transition-colors duration-300 py-2"
                 >
-                  Our Impact
+                  Get Support
                 </a>
               </div>
 
@@ -157,14 +201,26 @@
                   href="impact.html"
                   class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
-                  L.A.U.R.A's Victim Support Program
+                  Victim Support Program
                 </a>
+                <a href="impact.html#resources" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Resources</a>
+              </div>
+            </div>
+
+            <div class="dropdown relative group">
+              <div class="relative">
                 <a
-                  href="impact.html#youth"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                  href="get-involved.html"
+                  class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
                 >
-                  L.A.U.R.A Youth
+                  Get Involved
                 </a>
+              </div>
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
+              >
+                <a href="get-involved.html#youth" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Youth Program</a>
+                <a href="get-involved.html#volunteer" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Volunteer</a>
               </div>
             </div>
 
@@ -182,50 +238,16 @@
                 class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
               >
                 <a
+                  href="events.html#meetings"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                >
+                  Meetings &amp; Gatherings
+                </a>
+                <a
                   href="events.html#resource-fair"
                   class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
-                  Resource Fair
-                </a>
-                <a
-                  href="events.html#gallery"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  Gallery
-                </a>
-              </div>
-            </div>
-
-            <div class="dropdown relative group">
-              <div class="relative">
-                <a
-                  href="community.html"
-                  class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
-                >
-                  Community
-                </a>
-              </div>
-
-              <div
-                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
-              >
-                <a
-                  href="community.html#partners"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  Our Partners
-                </a>
-                <a
-                  href="community.html#resources"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  Resources
-                </a>
-                <a
-                  href="community.html#sponsors"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  Our Sponsors
+                  Annual Resource Fair
                 </a>
               </div>
             </div>
@@ -233,21 +255,21 @@
             <a
               href="https://givebutter.com/LAURALA"
               target="_blank"
-              class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300"
+              class="bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-orange-500 transition-all duration-300"
             >
               Donate
-            </a>
-
-            <a
-              href="contact.html"
-              class="nav-contact bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-orange-500 transition-all duration-300"
-            >
-              Contact
             </a>
           </nav>
 
           <!-- Mobile Menu Button -->
-          <button id="menu-toggle" class="md:hidden text-white text-xl">
+          <button
+            id="menu-toggle"
+            type="button"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            class="md:hidden text-white text-xl"
+          >
             <i class="fas fa-bars" style="color: #ed7014"></i>
           </button>
         </div>
@@ -266,10 +288,22 @@
             About Us
           </a>
           <a
-            href="impact.html"
+            href="contact.html"
             class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
           >
-            Our Impact
+            Contact
+          </a>
+          <a
+            href="impact.html"
+            class="block py-3 border-b border-gray-200 text-orange-500 font-semibold hover:text-orange-600"
+          >
+            Get Support
+          </a>
+          <a
+            href="get-involved.html"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+          >
+            Get Involved
           </a>
           <a
             href="events.html"
@@ -278,23 +312,11 @@
             Events
           </a>
           <a
-            href="community.html"
-            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
-          >
-            Community
-          </a>
-          <a
             href="https://givebutter.com/LAURALA"
             target="_blank"
             class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
           >
             Donate
-          </a>
-          <a
-            href="contact.html"
-            class="block py-3 text-gray-700 hover:text-orange-500"
-          >
-            Contact
           </a>
         </div>
       </div>
@@ -302,343 +324,332 @@
 
     <!-- Main Content -->
     <main class="pt-16">
+
+      <!-- Who We Are + Our Impact Intro -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col lg:flex-row items-center gap-12">
+
+            <!-- Image column -->
+            <div class="w-full lg:w-1/2">
+              <!-- Swap src with your own photo when ready -->
+              <div class="relative rounded-2xl shadow-lg overflow-hidden" style="max-height: 480px;">
+                <img
+                  src="images/impactPg/la-mayor-awards-laura.jpg"
+                  alt="LA Mayor Awards LAURA"
+                  class="w-full object-cover"
+                  style="max-height: 480px;"
+                />
+                <div class="absolute inset-0 rounded-2xl" style="background: linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.65) 100%);"></div>
+              </div>
+            </div>
+
+            <!-- Text column -->
+            <div class="w-full lg:w-1/2">
+              <h1 class="text-4xl font-bold mb-4 text-gray-800">Who We Are</h1>
+              <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                Born from the impact of violence in South Central Los Angeles,
+                L.A.U.R.A. (Life After Uncivil Ruthless Acts) was created to
+                transform loss into action. Grounded in lived experience and
+                compassion, we walk alongside families through grief, empower youth
+                toward safer futures, and bring vital resources directly to the
+                community.
+              </p>
+
+              <h2 class="text-xl font-bold mb-4 text-gray-800 uppercase tracking-wide" style="color: #2d4a24;">Our Impact</h2>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mt-1 mr-3 text-lg flex-shrink-0" style="color: #2d4a24;"></i>
+                  <span class="text-gray-700">Supporting families through crisis and grief since 2007</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mt-1 mr-3 text-lg flex-shrink-0" style="color: #2d4a24;"></i>
+                  <span class="text-gray-700">Engaging youth in prevention and empowerment programs</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mt-1 mr-3 text-lg flex-shrink-0" style="color: #2d4a24;"></i>
+                  <span class="text-gray-700">Connecting thousands of residents to vital resources each year</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mt-1 mr-3 text-lg flex-shrink-0" style="color: #2d4a24;"></i>
+                  <span class="text-gray-700">Mobilizing a community committed to peace, healing, and hope</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <!-- Victim Support Program Section -->
       <section
         id="victim-support"
-        class="py-16 bg-gradient-to-r from-blue-800 to-blue-600 text-white"
+        class="py-16 text-white" style="background-color: #252525;"
       >
         <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h5 class="text-xl font-semibold mb-2">Our Impact</h5>
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">
-              LAURA'S Victim Support Program
-            </h1>
+
+          <!-- Two-column intro — text left, image right -->
+          <div class="flex flex-col lg:flex-row items-center gap-12 mb-16">
+
+            <!-- Text column -->
+            <div class="w-full lg:w-1/2">
+              <span class="uppercase tracking-widest text-sm font-semibold text-orange-400 mb-3 block">Our Programs</span>
+              <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                LAURA's Victim<br>Support Program
+              </h1>
+              <p class="text-lg leading-relaxed" style="color: rgba(255,255,255,0.85);">
+                The Victims Support Program aims to create strength out of
+                tragedy, and unity out of pain. We act as a bridge between
+                families who have suffered devastating loss and existing
+                resources. We take a holistic approach — offering support to
+                the family of the victim <em>and</em> the family of the
+                perpetrator, connecting suffering families to concrete help and
+                creating stronger, healthier communities.
+              </p>
+            </div>
+
+            <!-- Image column -->
+            <div class="w-full lg:w-1/2">
+              <!-- Swap src with your own photo when ready -->
+              <div class="relative">
+                <img
+                  src="images/indexPg/crisis-response-family-healing.jpg"
+                  alt="Crisis response family healing"
+                  class="rounded-2xl w-full object-cover shadow-2xl"
+                  style="max-height: 460px;"
+                />
+                <!-- Decorative orange accent corner -->
+                <div class="absolute -bottom-4 -right-4 w-24 h-24 rounded-2xl -z-10" style="background-color: #ed7014; opacity: 0.6;"></div>
+              </div>
+            </div>
+
           </div>
 
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
-          >
-            <!-- Guidance -->
-            <div class="program-feature bg-white bg-opacity-20 p-6 rounded-lg">
-              <div class="text-center mb-4">
-                <i class="fas fa-share text-4xl mb-4 text-orange-500"></i>
-                <h3 class="text-xl font-bold mb-3">Guidance</h3>
-                <p class="text-white">
-                  We offer guidance in navigating the system to get them the
-                  resources that are available.
-                </p>
-              </div>
+          <!-- Meeting info strip -->
+          <div class="rounded-2xl mb-12 px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-6" style="background-color: rgba(237,112,20,0.15); border: 1px solid rgba(237,112,20,0.35);">
+            <div>
+              <h3 class="text-xl font-bold text-orange-400 mb-1">Community Support &amp; Civic Engagement Meetings</h3>
+              <p class="text-sm" style="color: rgba(255,255,255,0.7);">Join us — all community members welcome.</p>
             </div>
-
-            <!-- Emotional Support -->
-            <div class="program-feature bg-white bg-opacity-20 p-6 rounded-lg">
-              <div class="text-center mb-4">
-                <i class="fas fa-heart text-4xl mb-4 text-orange-500"></i>
-                <h3 class="text-xl font-bold mb-3">Emotional Support</h3>
-                <p class="text-white">
-                  We offer a space where victims family member can cry and share
-                  without judgment.
-                </p>
+            <div class="flex flex-col sm:flex-row gap-6 text-white flex-shrink-0">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: rgba(237,112,20,0.25);">
+                  <i class="fas fa-calendar-alt text-orange-400 text-sm"></i>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-wide" style="color: rgba(255,255,255,0.55);">When</p>
+                  <p class="text-sm font-semibold">Last Thursday of each month</p>
+                </div>
               </div>
-            </div>
-
-            <!-- Financial Support -->
-            <div class="program-feature bg-white bg-opacity-20 p-6 rounded-lg">
-              <div class="text-center mb-4">
-                <i
-                  class="fas fa-check-circle text-4xl mb-4 text-orange-500"
-                ></i>
-                <h3 class="text-xl font-bold mb-3">Financial Support</h3>
-                <p class="text-white">
-                  We ask for help from the family, community, and our contacts.
-                </p>
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: rgba(237,112,20,0.25);">
+                  <i class="fas fa-clock text-orange-400 text-sm"></i>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-wide" style="color: rgba(255,255,255,0.55);">Time</p>
+                  <p class="text-sm font-semibold">6:00 PM</p>
+                </div>
               </div>
-            </div>
-
-            <!-- Crisis Responders -->
-            <div class="program-feature bg-white bg-opacity-20 p-6 rounded-lg">
-              <div class="text-center mb-4">
-                <i class="far fa-bell text-4xl mb-4 text-orange-500"></i>
-                <h3 class="text-xl font-bold mb-3">Crisis Responders</h3>
-                <p class="text-white">
-                  We are there at the crime scene offering support to family
-                  members, assuring they have the most essential needs, a safe
-                  space, water, clothing, meds. We also works as a liaison with
-                  law enforcement.
-                </p>
-              </div>
-            </div>
-
-            <!-- Monthly Support Groups -->
-            <div class="program-feature bg-white bg-opacity-20 p-6 rounded-lg">
-              <div class="text-center mb-4">
-                <i class="fas fa-calendar text-4xl mb-4 text-orange-500"></i>
-                <h3 class="text-xl font-bold mb-3">Monthly Support Groups</h3>
-                <p class="text-white">
-                  We offer victims family members and loved ones a safe space
-                  where they can come and talk, celebrate, morn and deal with
-                  grief for their loved one, with other people who are
-                  experiencing the pain of having a loved one murdered.
-                </p>
-              </div>
-            </div>
-
-            <!-- Youth Group -->
-            <div class="program-feature bg-white bg-opacity-20 p-6 rounded-lg">
-              <div class="text-center mb-4">
-                <i class="fas fa-users text-4xl mb-4 text-orange-500"></i>
-                <h3 class="text-xl font-bold mb-3">Youth Group</h3>
-                <p class="text-white">
-                  We offer family members the opportunity for their youth to
-                  participate in our youth group. Youth learn to deal with their
-                  own pain, and we assist them in laying down the burden of a
-                  having a loved one murdered or going to prison.
-                </p>
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: rgba(237,112,20,0.25);">
+                  <i class="fas fa-map-marker-alt text-orange-400 text-sm"></i>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-wide" style="color: rgba(255,255,255,0.55);">Location</p>
+                  <p class="text-sm font-semibold">4701 S. Central Ave.<br>Los Angeles, CA 90011</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="bg-white bg-opacity-20 p-8 rounded-lg">
-            <p class="text-xl text-center">
-              The Victims Support Program aims to create strength out of
-              tragedy, and unity out of pain. We act as a bridge between
-              families who had suffered devastating loss and access existing
-              resources. We are unique in that we take a holistic approach to
-              victim support services; we offer support and resources to the
-              family of the victim and the family of the perpetrator. We provide
-              a venue to connect suffering families to concrete resources to
-              create stronger families, and in turn create healthier
-              communities.
-            </p>
+          <!-- Service cards — left-border accent style, 2-column on md, 3-column on lg -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+            <div class="flex gap-4 p-5 rounded-xl border-l-4 border-orange-500" style="background-color: rgba(255,255,255,0.08);">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background-color: rgba(237,112,20,0.2);">
+                  <i class="fas fa-compass text-orange-400"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-1">Guidance</h3>
+                <p class="text-sm" style="color: rgba(255,255,255,0.75);">
+                  We offer guidance in navigating the system to get families the resources that are available.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 p-5 rounded-xl border-l-4 border-orange-500" style="background-color: rgba(255,255,255,0.08);">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background-color: rgba(237,112,20,0.2);">
+                  <i class="fas fa-heart text-orange-400"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-1">Emotional Support</h3>
+                <p class="text-sm" style="color: rgba(255,255,255,0.75);">
+                  We offer a space where victims' family members can share and grieve without judgment.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 p-5 rounded-xl border-l-4 border-orange-500" style="background-color: rgba(255,255,255,0.08);">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background-color: rgba(237,112,20,0.2);">
+                  <i class="fas fa-hand-holding-usd text-orange-400"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-1">Financial Support</h3>
+                <p class="text-sm" style="color: rgba(255,255,255,0.75);">
+                  We mobilize help from family, community, and our network of contacts.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 p-5 rounded-xl border-l-4 border-orange-500" style="background-color: rgba(255,255,255,0.08);">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background-color: rgba(237,112,20,0.2);">
+                  <i class="fas fa-shield-alt text-orange-400"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-1">Crisis Responders</h3>
+                <p class="text-sm" style="color: rgba(255,255,255,0.75);">
+                  We show up at the scene offering essential needs — safe space, water, clothing, meds — and serve as liaison with law enforcement.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 p-5 rounded-xl border-l-4 border-orange-500" style="background-color: rgba(255,255,255,0.08);">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background-color: rgba(237,112,20,0.2);">
+                  <i class="fas fa-users text-orange-400"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-1">Monthly Support Groups</h3>
+                <p class="text-sm" style="color: rgba(255,255,255,0.75);">
+                  A safe space for loved ones to talk, celebrate, mourn, and heal alongside others who understand the same pain.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 p-5 rounded-xl border-l-4 border-orange-500" style="background-color: rgba(255,255,255,0.08);">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background-color: rgba(237,112,20,0.2);">
+                  <i class="fas fa-child text-orange-400"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-1">Youth Program</h3>
+                <p class="text-sm" style="color: rgba(255,255,255,0.75);">
+                  We help youth in affected families process pain and lay down the burden of having a loved one murdered or incarcerated.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      <!-- Youth Program Section -->
+      <!-- Youth Program Teaser -->
       <section id="youth" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold mb-6 text-gray-800">
-              L.A.U.R.A Youth Program
-            </h1>
-            <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-              L.A.U.R.A (Life After Uncivil Ruthless Acts) - Dedicated to
-              enhancing the quality of life of the residents in South Central
-              Los Angeles, CA.
+          <div class="flex flex-col lg:flex-row items-center gap-10 rounded-2xl overflow-hidden shadow-md border border-gray-100">
+            <div class="w-full lg:w-1/2 relative" style="min-height: 300px;">
+              <img
+                src="images/indexPg/community3.png"
+                alt="L.A.U.R.A Youth Program"
+                class="w-full h-full object-cover"
+                style="min-height: 300px;"
+              />
+              <div class="absolute inset-0" style="background: linear-gradient(to right, transparent 60%, white 100%);"></div>
+            </div>
+            <div class="w-full lg:w-1/2 px-8 py-10">
+              <span class="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style="background-color: rgba(237,112,20,0.1); color: #ed7014;">Youth Program</span>
+              <h2 class="text-3xl font-bold mb-4 text-gray-800">L.A.U.R.A Youth Program</h2>
+              <p class="mb-6 leading-relaxed text-gray-600">
+                A positive organization that rose out of the streets of South Central L.A. — bringing youth together through workshops, trips, and civic engagement every Thursday at 5 PM.
+              </p>
+              <a
+                href="get-involved.html#youth"
+                class="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold transition-all hover:-translate-y-1"
+                style="background-color: #ed7014; color: white;"
+              >
+                Learn More &amp; Get Involved <i class="fas fa-arrow-right text-sm"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resources -->
+      <section id="resources" class="py-16" style="background-color: #f7f6f3;">
+        <div class="container mx-auto px-4">
+          <div class="mb-12 text-center">
+            <span class="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style="background-color: rgba(237,112,20,0.1); color: #ed7014;">Community Resources</span>
+            <h1 class="mb-4 text-4xl font-bold text-gray-800">Resources</h1>
+            <p class="mx-auto max-w-3xl text-lg text-gray-500">
+              L.A.U.R.A collaborates with multiple organizations to provide
+              resources to families who have been impacted.
             </p>
           </div>
 
-          <div class="flex flex-col lg:flex-row items-center gap-12 mb-12">
-            <div class="lg:w-1/2">
-              <img
-                src="images/impactPg/IMG_8275.jpeg"
-                alt="Youth Logo"
-                class="rounded-lg shadow-lg w-full"
-              />
-            </div>
-            <div class="lg:w-1/2">
-              <p class="text-gray-700 mb-6">
-                L.A.U.R.A. Youth; a positive organization that rose out of
-                negative acts from the streets of South Central L.A. It's
-                mission is to bring the youth of the community together through
-                compelling workshops in which they lead, trips they plan and
-                execute, and create community events they find will help bring
-                unity, civic awareness, and empowerment for the people.
+          <div class="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
+            <div class="resource-card card-hover rounded-xl border-l-4 border-orange-500 p-6 bg-white shadow-sm">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">Victims Compensation Portal</h3>
+              <p class="text-sm text-gray-500 mb-4">Apply for victims compensation assistance through the state portal.</p>
+              <a href="https://victims.ca.gov" target="_blank" rel="noopener noreferrer" class="inline-block font-semibold px-4 py-2 rounded-full text-sm transition mb-3 text-white hover:opacity-90" style="background-color: #ed7014;">
+                Apply at victims.ca.gov
+              </a>
+              <p class="text-sm text-gray-500">
+                For more info or to submit a filled-out application, contact:
+                <a href="mailto:cvila@da.lacounty.gov" class="underline hover:text-orange-500" style="color: #2d4a24;">cvila@da.lacounty.gov</a>
               </p>
-
-              <div class="bg-orange-50 p-6 rounded-lg mb-6">
-                <h3 class="text-xl font-bold mb-4">Weekly Meetings</h3>
-                <p class="text-gray-700 font-semibold">
-                  Join us every Thursday at 5pm at Fred Roberts Park! Take
-                  action! Let your voice be heard at our weekly discussions
-                  about creating change in our communities. Engage in creating
-                  long-term solutions in the Newton GRYD area.
-                </p>
-              </div>
-
-              <div class="bg-gray-50 p-6 rounded-lg">
-                <h3 class="text-xl font-bold mb-4">Get Involved</h3>
-                <p class="text-gray-700 mb-4">
-                  Are you confused about what classes you should take in high
-                  school? Join us and we can help you stay focused! Need
-                  community volunteer hours for high school? Join our youth
-                  program! Become involved in our outreach, collaboration, and
-                  much more.
-                </p>
-                <a
-                  href="contact.html"
-                  class="btn-primary inline-block px-6 py-2 rounded-full"
-                  >Join Our Youth Program</a
-                >
-              </div>
             </div>
-          </div>
 
-          <!-- Youth Experiences & Activities -->
-          <div class="bg-gray-50 rounded-lg p-8">
-            <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">
-              Youth Experiences & Activities
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <ul class="space-y-3">
-                  <li class="flex items-start">
-                    <i
-                      class="fas fa-check-circle text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <span class="text-gray-700"
-                      >Peace Jam – met 7 Nobel Prize Award Recipients</span
-                    >
-                  </li>
-                  <li class="flex items-start">
-                    <i
-                      class="fas fa-check-circle text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <span class="text-gray-700">5K Run/Walk</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i
-                      class="fas fa-check-circle text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <span class="text-gray-700">Victim walks</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i
-                      class="fas fa-check-circle text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <span class="text-gray-700">Support group</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i
-                      class="fas fa-check-circle text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <span class="text-gray-700"
-                      >Advocating for peace and youth issues</span
-                    >
-                  </li>
-                  <li class="flex items-start">
-                    <i
-                      class="fas fa-check-circle text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <span class="text-gray-700">Soccer games</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i
-                      class="fas fa-check-circle text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <span class="text-gray-700">Movie nights</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i
-                      class="fas fa-check-circle text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <span class="text-gray-700">Summer Weekend Camp</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i
-                      class="fas fa-check-circle text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <span class="text-gray-700">Fitness Competitions</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <ul class="space-y-3">
-                  <li class="flex items-start">
-                    <i
-                      class="fas fa-check-circle text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <span class="text-gray-700"
-                      >Learn to cook healthy meals</span
-                    >
-                  </li>
-                  <li class="flex items-start">
-                    <i
-                      class="fas fa-check-circle text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <span class="text-gray-700"
-                      >Los Angeles Sparks Basketball Games</span
-                    >
-                  </li>
-                  <li class="flex items-start">
-                    <i
-                      class="fas fa-check-circle text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <span class="text-gray-700"
-                      >Holiday Celebrations/Community Activities – Pass out
-                      Turkeys to community during Thanksgiving and host annual
-                      toy drive during Christmas</span
-                    >
-                  </li>
-                  <li class="flex items-start">
-                    <i
-                      class="fas fa-check-circle text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <span class="text-gray-700">Feed the Homeless</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i
-                      class="fas fa-check-circle text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <span class="text-gray-700"
-                      >Summer Bonfires at the beach</span
-                    >
-                  </li>
-                  <li class="flex items-start">
-                    <i
-                      class="fas fa-check-circle text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <span class="text-gray-700"
-                      >Nature Hikes to Waterfalls on weekend mornings</span
-                    >
-                  </li>
-                  <li class="flex items-start">
-                    <i
-                      class="fas fa-check-circle text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <span class="text-gray-700"
-                      >Host and Plan Annual Community Resource Fair</span
-                    >
-                  </li>
-                </ul>
-              </div>
+            <div class="resource-card card-hover rounded-xl border-l-4 border-orange-500 p-6 bg-white shadow-sm">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">L.A.U.R.A. Emergency Fund</h3>
+              <p class="text-sm text-gray-500 mb-4">Download and complete the emergency fund application, then submit to us directly.</p>
+              <a href="files/laura-emergency-fund-application.pdf" download class="inline-block font-semibold px-4 py-2 rounded-full text-sm transition mb-3 text-white hover:opacity-90" style="background-color: #ed7014;">
+                Download Application
+              </a>
+              <p class="text-sm text-gray-500">
+                Submit completed application to:
+                <a href="mailto:Info@laurala.org" class="underline hover:text-orange-500" style="color: #2d4a24;">Info@laurala.org</a>
+              </p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Call to Action Section -->
-      <section class="py-16 bg-orange-500 text-white">
-        <div class="container mx-auto px-4 text-center">
-          <h2 class="text-3xl font-bold mb-6">Make a Difference Today</h2>
-          <p class="text-xl mb-8 max-w-2xl mx-auto">
-            Your support helps us continue providing vital services to victims
-            and empowering youth in South Central LA.
-          </p>
-          <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="https://givebutter.com/LAURALA"
-              target="_blank"
-              class="bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
-            >
-              Donate Now
+            <a href="https://coalitionrcd.org/get-involved/work-at-crcd/" target="_blank" rel="noopener noreferrer" class="resource-card card-hover rounded-xl border-l-4 border-gray-200 p-6 bg-white shadow-sm flex items-center gap-4 hover:border-orange-400 transition-colors">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: rgba(237,112,20,0.1);">
+                <i class="fas fa-briefcase text-orange-500"></i>
+              </div>
+              <span class="text-base font-semibold text-gray-800">C.R.C.D Job Resources</span>
             </a>
-            <a
-              href="contact.html"
-              class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-orange-500 transition"
-            >
-              Volunteer
+
+            <a href="https://cd9.lacity.gov/" target="_blank" rel="noopener noreferrer" class="resource-card card-hover rounded-xl border-l-4 border-gray-200 p-6 bg-white shadow-sm flex items-center gap-4 hover:border-orange-400 transition-colors">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: rgba(237,112,20,0.1);">
+                <i class="fas fa-landmark text-orange-500"></i>
+              </div>
+              <span class="text-base font-semibold text-gray-800">Council District 9 Resource Page</span>
+            </a>
+
+            <a href="https://www.2ndcall.org/" target="_blank" rel="noopener noreferrer" class="resource-card card-hover rounded-xl border-l-4 border-gray-200 p-6 bg-white shadow-sm flex items-center gap-4 md:col-span-2 hover:border-orange-400 transition-colors">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: rgba(237,112,20,0.1);">
+                <i class="fas fa-phone-alt text-orange-500"></i>
+              </div>
+              <span class="text-base font-semibold text-gray-800">Jobs — 2nd Call</span>
             </a>
           </div>
         </div>
       </section>
+
     </main>
     <!-- /Main Content -->
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-[#2d4a24] text-white py-12">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <!-- Logo and Social -->
@@ -656,9 +667,6 @@
                 class="text-white hover:text-pink-400"
               >
                 <i class="fab fa-instagram text-2xl"></i>
-              </a>
-              <a href="#" class="text-white hover:text-gray-300">
-                <i class="fab fa-tiktok text-2xl"></i>
               </a>
             </div>
             <p class="text-gray-400">
@@ -682,12 +690,12 @@
                 <a
                   href="about.html#board-members"
                   class="text-gray-400 hover:text-white"
-                  >Board of Directors</a
+                  >Our Leadership</a
                 >
               </li>
               <li>
-                <a
-                  href="https://givebutter.com/LAURALA"
+          <a
+            href="https://givebutter.com/LAURALA"
                   target="_blank"
                   class="text-gray-400 hover:text-white"
                   >Donate</a
@@ -715,8 +723,8 @@
           <div>
             <h4 class="text-xl font-bold mb-4">Mailing Address</h4>
             <p class="text-gray-400">
-              P.O Box 11681<br />
-              Los Angeles, CA
+              4701 S Central Ave<br />
+              Los Angeles, CA 90011
             </p>
           </div>
 
@@ -777,53 +785,48 @@
       window.addEventListener("resize", handleScroll);
 
       // Mobile menu toggle
-      document
-        .getElementById("menu-toggle")
-        .addEventListener("click", function () {
-          const menu = document.getElementById("mobile-menu");
-          const isScrolled = document
-            .getElementById("main-header")
-            .classList.contains("scrolled");
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-          menu.classList.toggle("hidden");
-          menu.classList.toggle("transform");
-          menu.classList.toggle("-translate-x-full");
+      function openMobileMenu() {
+        mobileMenu.classList.remove("hidden", "transform", "-translate-x-full");
+        menuToggle.setAttribute("aria-expanded", "true");
+        const icon = menuToggle.querySelector("i");
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-times");
+        mobileMenu.style.backgroundColor = "white";
+      }
 
-          const icon = this.querySelector("i");
-          if (icon.classList.contains("fa-bars")) {
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-times");
-            if (!isScrolled) {
-              menu.style.backgroundColor = "white";
-            }
-          } else {
-            icon.classList.remove("fa-times");
-            icon.classList.add("fa-bars");
-          }
-        });
+      function closeMobileMenu() {
+        mobileMenu.classList.add("hidden", "transform", "-translate-x-full");
+        menuToggle.setAttribute("aria-expanded", "false");
+        const icon = menuToggle.querySelector("i");
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+      }
+
+      menuToggle.addEventListener("click", function () {
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        if (isOpen) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
+      });
 
       // Close mobile menu when clicking outside
       document.addEventListener("click", function (event) {
-        const menu = document.getElementById("mobile-menu");
-        const toggle = document.getElementById("menu-toggle");
-
-        if (!menu.contains(event.target) && !toggle.contains(event.target)) {
-          menu.classList.add("hidden", "transform", "-translate-x-full");
-          const icon = toggle.querySelector("i");
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
+        if (
+          !mobileMenu.contains(event.target) &&
+          !menuToggle.contains(event.target)
+        ) {
+          closeMobileMenu();
         }
       });
 
       // Close mobile menu when clicking a link
       document.querySelectorAll("#mobile-menu a").forEach((link) => {
-        link.addEventListener("click", function () {
-          const menu = document.getElementById("mobile-menu");
-          menu.classList.add("hidden", "transform", "-translate-x-full");
-          const icon = document.querySelector("#menu-toggle i");
-          icon.classList.remove("fa-times");
-          icon.classList.add("fa-bars");
-        });
+        link.addEventListener("click", closeMobileMenu);
       });
 
       // Smooth scrolling for anchor links
@@ -850,6 +853,9 @@
       }
       header.scrolled .nav-link {
         color: #374151 !important;
+      }
+      header.scrolled .nav-link.text-orange-500 {
+        color: #ed7014 !important;
       }
     </style>
     <!-- /NavBar.js -->

@@ -40,6 +40,20 @@ yarn-error.log*
 *.local
 
 # =========================
+# Agent dev files
+# =========================
+AGENTS.md
+AGENT.md
+agents.md
+agent.md
+CLAUDE.md
+claude.md
+skills/
+.skills/
+.*
+!.gitignore
+
+# =========================
 # Logs
 # =========================
 logs/
@@ -49,3 +63,8 @@ logs/
 # Misc
 # =========================
 Thumbs.db
+
+# =========================
+# Internal docs
+# =========================
+docs/
