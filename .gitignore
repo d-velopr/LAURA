@@ -68,3 +68,9 @@ Thumbs.db
 # Internal docs
 # =========================
 docs/
+
+# =========================
+# Tailwind build
+# =========================
+css/tailwind.src.css
+package-lock.json
