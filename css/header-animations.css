@@ -40,10 +40,11 @@
   transform-origin: top center;
   border: 1px solid rgba(17, 24, 39, 0.08);
   box-shadow: 0 20px 45px rgba(17, 24, 39, 0.16);
+  /* delay hide so mouse can travel from trigger to submenu */
   transition:
-    opacity 0.22s ease,
-    transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
-    visibility 0.22s ease;
+    opacity 0.18s ease 0.35s,
+    transform 0.18s ease 0.35s,
+    visibility 0s ease 0.35s;
 }
 
 .dropdown:hover .dropdown-content,
@@ -54,6 +55,22 @@
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0) scale(1);
+  /* show instantly — no delay on the way in */
+  transition:
+    opacity 0.22s ease 0s,
+    transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1) 0s,
+    visibility 0s ease 0s;
+}
+
+/* When moving between dropdowns, snap-close siblings immediately
+   so the old menu doesn't linger while the new one is open */
+.dropdown:hover ~ .dropdown .dropdown-content,
+.dropdown:has(~ .dropdown:hover) .dropdown-content {
+  transition: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(12px) scale(0.98) !important;
 }
 
 .dropdown-content a,

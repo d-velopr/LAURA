@@ -102,11 +102,11 @@ html {
     <link rel="stylesheet" href="css/header-animations.css" />
   </head>
 
-  <body id="top" class="bg-gray-100">
+  <body id="top" class="bg-white">
     <!-- Navigation -->
     <header
       id="main-header"
-      class="fixed w-full bg-transparent transition-all duration-300 z-50"
+      class="fixed w-full bg-white border-b-2 border-gray-200 transition-all duration-300 z-50"
     >
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center py-4">
@@ -159,6 +159,12 @@ html {
                 >
                   Our Partners
                 </a>
+                <a
+                  href="contact.html"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                >
+                  Contact
+                </a>
               </div>
             </div>
 
@@ -166,9 +172,9 @@ html {
               <div class="relative">
                 <a
                   href="impact.html"
-                  class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
+                  class="nav-link text-orange-500 font-medium transition-colors duration-300 py-2"
                 >
-                  Our Impact
+                  Get Support
                 </a>
               </div>
 
@@ -199,6 +205,23 @@ html {
             <div class="dropdown relative group">
               <div class="relative">
                 <a
+                  href="get-involved.html"
+                  class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
+                >
+                  Get Involved
+                </a>
+              </div>
+              <div
+                class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
+              >
+                <a href="get-involved.html#youth" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Youth Program</a>
+                <a href="get-involved.html#volunteer" class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700">Volunteer</a>
+              </div>
+            </div>
+
+            <div class="dropdown relative group">
+              <div class="relative">
+                <a
                   href="events.html"
                   class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300 py-2"
                 >
@@ -210,26 +233,19 @@ html {
                 class="dropdown-content absolute hidden bg-white shadow-lg rounded-md mt-2 p-4 min-w-max z-20 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-200"
               >
                 <a
+                  href="events.html#meetings"
+                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
+                >
+                  Meetings &amp; Gatherings
+                </a>
+                <a
                   href="events.html#resource-fair"
                   class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
                 >
-                  Resource Fair
-                </a>
-                <a
-                  href="events.html#gallery"
-                  class="block py-2 px-4 hover:text-orange-500 rounded text-gray-700"
-                >
-                  Gallery
+                  Annual Community Resource Fair
                 </a>
               </div>
             </div>
-
-            <a
-              href="contact.html"
-              class="nav-link text-gray-800 hover:text-orange-500 font-medium transition-colors duration-300"
-            >
-              Contact
-            </a>
 
             <a
               href="https://givebutter.com/LAURALA"
@@ -267,22 +283,28 @@ html {
             About Us
           </a>
           <a
-            href="impact.html"
+            href="contact.html"
             class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
           >
-            Our Impact
+            Contact
+          </a>
+          <a
+            href="impact.html"
+            class="block py-3 border-b border-gray-200 text-orange-500 font-semibold hover:text-orange-600"
+          >
+            Get Support
+          </a>
+          <a
+            href="get-involved.html"
+            class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
+          >
+            Get Involved
           </a>
           <a
             href="events.html"
             class="block py-3 border-b border-gray-200 text-gray-700 hover:text-orange-500"
           >
             Events
-          </a>
-          <a
-            href="contact.html"
-            class="block py-3 text-gray-700 hover:text-orange-500"
-          >
-            Contact
           </a>
           <a
             href="https://givebutter.com/LAURALA"
@@ -306,12 +328,15 @@ html {
             <!-- Image column -->
             <div class="w-full lg:w-1/2">
               <!-- Swap src with your own photo when ready -->
-              <img
-                src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80"
-                alt="Community members coming together"
-                class="rounded-2xl shadow-lg w-full object-cover"
-                style="max-height: 480px;"
-              />
+              <div class="relative rounded-2xl shadow-lg overflow-hidden" style="max-height: 480px;">
+                <img
+                  src="images/impactPg/la-mayor-awards-laura.jpg"
+                  alt="LA Mayor Awards LAURA"
+                  class="w-full object-cover"
+                  style="max-height: 480px;"
+                />
+                <div class="absolute inset-0 rounded-2xl" style="background: linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.65) 100%);"></div>
+              </div>
             </div>
 
             <!-- Text column -->
@@ -354,7 +379,7 @@ html {
       <!-- Victim Support Program Section -->
       <section
         id="victim-support"
-        class="py-16 text-white" style="background-color: #2d4a24;"
+        class="py-16 text-white" style="background-color: #252525;"
       >
         <div class="container mx-auto px-4">
 
@@ -383,8 +408,8 @@ html {
               <!-- Swap src with your own photo when ready -->
               <div class="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?auto=format&fit=crop&w=800&q=80"
-                  alt="Support counselor with family"
+                  src="images/indexPg/crisis-response-family-healing.jpg"
+                  alt="Crisis response family healing"
                   class="rounded-2xl w-full object-cover shadow-2xl"
                   style="max-height: 460px;"
                 />
@@ -523,110 +548,31 @@ html {
         </div>
       </section>
 
-      <!-- Youth Program Section -->
+      <!-- Youth Program Teaser -->
       <section id="youth" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-
-          <!-- Two-column intro: image left, text right -->
-          <div class="flex flex-col lg:flex-row items-center gap-12 mb-16">
-            <!-- Image -->
-            <div class="w-full lg:w-1/2 relative">
+          <div class="flex flex-col lg:flex-row items-center gap-10 rounded-2xl overflow-hidden shadow-md border border-gray-100">
+            <div class="w-full lg:w-1/2 relative" style="min-height: 300px;">
               <img
                 src="images/indexPg/community3.png"
                 alt="L.A.U.R.A Youth Program"
-                class="rounded-2xl shadow-xl w-full object-cover"
-                style="max-height: 460px;"
+                class="w-full h-full object-cover"
+                style="min-height: 300px;"
               />
-              <!-- Green accent corner -->
-              <div class="absolute -bottom-4 -left-4 w-24 h-24 rounded-2xl -z-10" style="background-color: #2d4a24;"></div>
+              <div class="absolute inset-0" style="background: linear-gradient(to right, transparent 60%, white 100%);"></div>
             </div>
-
-            <!-- Text -->
-            <div class="w-full lg:w-1/2">
-              <h1 class="text-4xl font-bold mb-4 text-gray-800">L.A.U.R.A Youth Program</h1>
-              <p class="text-gray-600 mb-6 text-lg leading-relaxed">
-                A positive organization that rose out of negative acts from the streets of South Central L.A.
-                Our mission is to bring youth of the community together through compelling workshops they lead,
-                trips they plan and execute, and community events that foster unity, civic awareness, and empowerment.
-              </p>
-              <p class="text-gray-600 mb-8 leading-relaxed">
-                Confused about what classes to take in high school? Need community volunteer hours?
-                Join us and we'll help you stay focused, build your future, and become an active voice
-                for change in the Newton GRYD area.
+            <div class="w-full lg:w-1/2 px-8 py-10">
+              <span class="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style="background-color: rgba(237,112,20,0.1); color: #ed7014;">Youth Program</span>
+              <h2 class="text-3xl font-bold mb-4 text-gray-800">L.A.U.R.A Youth Program</h2>
+              <p class="mb-6 leading-relaxed text-gray-600">
+                A positive organization that rose out of the streets of South Central L.A. — bringing youth together through workshops, trips, and civic engagement every Thursday at 5 PM.
               </p>
               <a
-                href="contact.html"
-                class="inline-block px-8 py-3 rounded-full font-semibold text-white shadow-md transition-transform hover:-translate-y-1"
-                style="background-color: #2d4a24;"
-              >Join Our Youth Program</a>
-            </div>
-          </div>
-
-          <!-- Meeting info strip -->
-          <div class="rounded-2xl mb-16 px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-6" style="background-color: rgba(45,74,36,0.07); border: 1px solid rgba(45,74,36,0.25);">
-            <div>
-              <h3 class="text-xl font-bold mb-1" style="color: #2d4a24;">Youth Civic Engagement &amp; Support Meetings</h3>
-              <p class="text-sm text-gray-500">Join us — all youth welcome.</p>
-            </div>
-            <div class="flex flex-col sm:flex-row gap-6 flex-shrink-0">
-              <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: rgba(45,74,36,0.12);">
-                  <i class="fas fa-calendar-alt text-sm" style="color: #2d4a24;"></i>
-                </div>
-                <div>
-                  <p class="text-xs uppercase tracking-wide text-gray-400">When</p>
-                  <p class="text-sm font-semibold text-gray-800">Every Thursday</p>
-                </div>
-              </div>
-              <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: rgba(45,74,36,0.12);">
-                  <i class="fas fa-clock text-sm" style="color: #2d4a24;"></i>
-                </div>
-                <div>
-                  <p class="text-xs uppercase tracking-wide text-gray-400">Time</p>
-                  <p class="text-sm font-semibold text-gray-800">5:00 PM</p>
-                </div>
-              </div>
-              <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: rgba(45,74,36,0.12);">
-                  <i class="fas fa-map-marker-alt text-sm" style="color: #2d4a24;"></i>
-                </div>
-                <div>
-                  <p class="text-xs uppercase tracking-wide text-gray-400">Location</p>
-                  <p class="text-sm font-semibold text-gray-800">Fred Roberts Recreation Center</p>
-                  <p class="text-xs text-gray-500">4700 S. Honduras St., Los Angeles, CA 90011</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Youth Experiences & Activities -->
-          <div class="rounded-2xl px-10 py-10 text-center" style="background-color: rgba(45,74,36,0.05); border: 1px solid rgba(45,74,36,0.15);">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">Youth Experiences &amp; Activities</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-              From meeting Nobel Prize recipients at Peace Jam to beach bonfires, nature hikes, community resource fairs, and holiday drives —
-              our youth experience a wide range of events throughout the year. Follow us on social media to see what we're up to.
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="https://www.instagram.com/laurayouthla/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-white shadow-md transition-transform hover:-translate-y-1"
-                style="background-color: #2d4a24;"
+                href="get-involved.html#youth"
+                class="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold transition-all hover:-translate-y-1"
+                style="background-color: #ed7014; color: white;"
               >
-                <i class="fab fa-instagram text-lg"></i>
-                Follow on Instagram
-              </a>
-              <a
-                href="https://www.facebook.com/LauraYouth"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold transition-transform hover:-translate-y-1"
-                style="border: 2px solid #2d4a24; color: #2d4a24;"
-              >
-                <i class="fab fa-facebook text-lg"></i>
-                Follow on Facebook
+                Learn More &amp; Get Involved <i class="fas fa-arrow-right text-sm"></i>
               </a>
             </div>
           </div>
@@ -634,55 +580,61 @@ html {
       </section>
 
       <!-- Resources -->
-      <section id="resources" class="py-16 text-white" style="background-color: #2d4a24;">
+      <section id="resources" class="py-16" style="background-color: #f7f6f3;">
         <div class="container mx-auto px-4">
           <div class="mb-12 text-center">
-            <i class="fas fa-hands-helping mb-6 text-6xl text-white opacity-80"></i>
-            <h1 class="mb-4 text-4xl font-bold">Resources</h1>
-            <p class="mx-auto max-w-3xl text-xl">
+            <span class="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style="background-color: rgba(237,112,20,0.1); color: #ed7014;">Community Resources</span>
+            <h1 class="mb-4 text-4xl font-bold text-gray-800">Resources</h1>
+            <p class="mx-auto max-w-3xl text-lg text-gray-500">
               L.A.U.R.A collaborates with multiple organizations to provide
               resources to families who have been impacted.
             </p>
           </div>
 
           <div class="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
-            <div class="resource-card card-hover rounded-xl border-l-4 border-orange-500 p-6" style="background-color: rgba(255,255,255,0.08);">
-              <h3 class="text-lg font-bold text-white mb-2">Victims Compensation Portal</h3>
-              <p class="text-sm mb-4" style="color: rgba(255,255,255,0.75);">Apply for victims compensation assistance through the state portal.</p>
-              <a href="https://victims.ca.gov" target="_blank" rel="noopener noreferrer" class="inline-block bg-white font-semibold px-4 py-2 rounded-full text-sm hover:bg-gray-100 transition mb-3" style="color: #2d4a24;">
+            <div class="resource-card card-hover rounded-xl border-l-4 border-orange-500 p-6 bg-white shadow-sm">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">Victims Compensation Portal</h3>
+              <p class="text-sm text-gray-500 mb-4">Apply for victims compensation assistance through the state portal.</p>
+              <a href="https://victims.ca.gov" target="_blank" rel="noopener noreferrer" class="inline-block font-semibold px-4 py-2 rounded-full text-sm transition mb-3 text-white hover:opacity-90" style="background-color: #ed7014;">
                 Apply at victims.ca.gov
               </a>
-              <p class="text-sm" style="color: rgba(255,255,255,0.75);">
+              <p class="text-sm text-gray-500">
                 For more info or to submit a filled-out application, contact:
-                <a href="mailto:cvila@da.lacounty.gov" class="underline text-white hover:opacity-75">cvila@da.lacounty.gov</a>
+                <a href="mailto:cvila@da.lacounty.gov" class="underline hover:text-orange-500" style="color: #2d4a24;">cvila@da.lacounty.gov</a>
               </p>
             </div>
 
-            <div class="resource-card card-hover rounded-xl border-l-4 border-orange-500 p-6" style="background-color: rgba(255,255,255,0.08);">
-              <h3 class="text-lg font-bold text-white mb-2">L.A.U.R.A. Emergency Fund</h3>
-              <p class="text-sm mb-4" style="color: rgba(255,255,255,0.75);">Download and complete the emergency fund application, then submit to us directly.</p>
-              <a href="files/laura-emergency-fund-application.pdf" download class="inline-block bg-white font-semibold px-4 py-2 rounded-full text-sm hover:bg-gray-100 transition mb-3" style="color: #2d4a24;">
+            <div class="resource-card card-hover rounded-xl border-l-4 border-orange-500 p-6 bg-white shadow-sm">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">L.A.U.R.A. Emergency Fund</h3>
+              <p class="text-sm text-gray-500 mb-4">Download and complete the emergency fund application, then submit to us directly.</p>
+              <a href="files/laura-emergency-fund-application.pdf" download class="inline-block font-semibold px-4 py-2 rounded-full text-sm transition mb-3 text-white hover:opacity-90" style="background-color: #ed7014;">
                 Download Application
               </a>
-              <p class="text-sm" style="color: rgba(255,255,255,0.75);">
+              <p class="text-sm text-gray-500">
                 Submit completed application to:
-                <a href="mailto:Info@laurala.org" class="underline text-white hover:opacity-75">Info@laurala.org</a>
+                <a href="mailto:Info@laurala.org" class="underline hover:text-orange-500" style="color: #2d4a24;">Info@laurala.org</a>
               </p>
             </div>
 
-            <a href="https://coalitionrcd.org/get-involved/work-at-crcd/" target="_blank" rel="noopener noreferrer" class="resource-card card-hover rounded-xl border-l-4 border-white p-6 flex items-center gap-3" style="background-color: rgba(255,255,255,0.08);">
-              <i class="fas fa-briefcase text-white text-xl flex-shrink-0"></i>
-              <span class="text-lg font-semibold text-white">C.R.C.D Job Resources</span>
+            <a href="https://coalitionrcd.org/get-involved/work-at-crcd/" target="_blank" rel="noopener noreferrer" class="resource-card card-hover rounded-xl border-l-4 border-gray-200 p-6 bg-white shadow-sm flex items-center gap-4 hover:border-orange-400 transition-colors">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: rgba(237,112,20,0.1);">
+                <i class="fas fa-briefcase text-orange-500"></i>
+              </div>
+              <span class="text-base font-semibold text-gray-800">C.R.C.D Job Resources</span>
             </a>
 
-            <a href="https://cd9.lacity.gov/" target="_blank" rel="noopener noreferrer" class="resource-card card-hover rounded-xl border-l-4 border-white p-6 flex items-center gap-3" style="background-color: rgba(255,255,255,0.08);">
-              <i class="fas fa-landmark text-white text-xl flex-shrink-0"></i>
-              <span class="text-lg font-semibold text-white">Council District 9 Resource Page</span>
+            <a href="https://cd9.lacity.gov/" target="_blank" rel="noopener noreferrer" class="resource-card card-hover rounded-xl border-l-4 border-gray-200 p-6 bg-white shadow-sm flex items-center gap-4 hover:border-orange-400 transition-colors">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: rgba(237,112,20,0.1);">
+                <i class="fas fa-landmark text-orange-500"></i>
+              </div>
+              <span class="text-base font-semibold text-gray-800">Council District 9 Resource Page</span>
             </a>
 
-            <a href="https://www.2ndcall.org/" target="_blank" rel="noopener noreferrer" class="resource-card card-hover rounded-xl border-l-4 border-white p-6 flex items-center gap-3 md:col-span-2" style="background-color: rgba(255,255,255,0.08);">
-              <i class="fas fa-phone-alt text-white text-xl flex-shrink-0"></i>
-              <span class="text-lg font-semibold text-white">Jobs — 2nd Call</span>
+            <a href="https://www.2ndcall.org/" target="_blank" rel="noopener noreferrer" class="resource-card card-hover rounded-xl border-l-4 border-gray-200 p-6 bg-white shadow-sm flex items-center gap-4 md:col-span-2 hover:border-orange-400 transition-colors">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: rgba(237,112,20,0.1);">
+                <i class="fas fa-phone-alt text-orange-500"></i>
+              </div>
+              <span class="text-base font-semibold text-gray-800">Jobs — 2nd Call</span>
             </a>
           </div>
         </div>
@@ -692,7 +644,7 @@ html {
     <!-- /Main Content -->
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-[#2d4a24] text-white py-12">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <!-- Logo and Social -->
@@ -899,6 +851,9 @@ html {
       }
       header.scrolled .nav-link {
         color: #374151 !important;
+      }
+      header.scrolled .nav-link.text-orange-500 {
+        color: #ed7014 !important;
       }
     </style>
     <!-- /NavBar.js -->
