@@ -215,6 +215,20 @@ html {
         color: white;
         transform: translateY(-2px);
       }
+
+      .btn-green {
+        background-color: #2d6a4f;
+        color: white;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .btn-green:hover {
+        background-color: #1b4332;
+        transform: translateY(-2px);
+      }
       header.scrolled {
         background: white !important;
       }
@@ -360,12 +374,6 @@ html {
             </div>
 
             <a
-              href="get-involved.html"
-              class="bg-green-600 text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-green-600 transition-all duration-300"
-            >
-              Get Involved
-            </a>
-            <a
               href="https://givebutter.com/LAURALA"
               target="_blank"
               class="bg-orange-500 text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-orange-500 transition-all duration-300"
@@ -484,8 +492,13 @@ html {
                 class="btn-primary inline-block px-8 py-3 rounded-full font-semibold"
                 >Get Support</a
               >
-          <a
-            href="https://givebutter.com/LAURALA"
+              <a
+                href="get-involved.html"
+                class="btn-green inline-block px-8 py-3 rounded-full font-semibold"
+                >Get Involved</a
+              >
+              <a
+                href="https://givebutter.com/LAURALA"
                 target="_blank"
                 class="btn-secondary inline-block px-8 py-3 rounded-full font-semibold"
                 >Donate</a
