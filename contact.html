@@ -30,64 +30,90 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <!-- Custom Styles -->
     <style>
       :root {
         --laura-orange: #ed7014;
+        --laura-orange-dark: #d86212;
+        --laura-green: #2d4a24;
         --laura-dark: #252525;
         --laura-light: #efefef;
       }
 
-      body {
-        font-family: "Poppins", sans-serif;
-      }
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
+      html { scroll-behavior: smooth; }
+      body { font-family: "Poppins", sans-serif; overflow-x: hidden; }
 
-      #mobile-menu {
-        transition: transform 0.3s ease;
-      }
-
-      #mobile-menu.hidden {
-        transform: translateX(-100%);
-      }
-
-html {
-        scroll-behavior: smooth;
-      }
-
-      .hover-lift:hover {
-        transform: translateY(-5px);
-        transition: transform 0.3s ease;
-      }
+      .dropdown:hover .dropdown-content { display: block; }
+      #mobile-menu { transition: transform 0.3s ease; }
+      #mobile-menu.hidden { transform: translateX(-100%); }
 
       .btn-primary {
         background-color: var(--laura-orange);
         color: white;
-        transition: all 0.3s ease;
+        transition: background-color 0.3s ease, transform 0.2s ease;
       }
-
       .btn-primary:hover {
-        background-color: #d86212;
+        background-color: var(--laura-orange-dark);
         transform: translateY(-2px);
       }
 
-      .contact-card {
-        transition: all 0.3s ease;
-        border-radius: 10px;
+      .section-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--laura-orange);
       }
 
-      .contact-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      .contact-hero {
+        position: relative;
+        background: var(--laura-green);
+        min-height: 360px;
+        display: flex;
+        align-items: center;
+      }
+
+      .info-card {
+        background: white;
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+        border-top: 4px solid var(--laura-orange);
+        text-align: center;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .info-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+      }
+
+      .action-card {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 1rem;
+        padding: 2rem;
+        text-align: center;
+        transition: background 0.25s ease, transform 0.25s ease;
+      }
+      .action-card:hover {
+        background: rgba(255,255,255,0.14);
+        transform: translateY(-3px);
+      }
+
+      .faq-item {
+        background: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        border-left: 4px solid var(--laura-orange);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       }
 
       .form-input {
         transition: all 0.3s ease;
         border: 2px solid #e5e7eb;
       }
-
       .form-input:focus {
         border-color: #ed7014;
         box-shadow: 0 0 0 3px rgba(237, 112, 20, 0.1);
@@ -312,227 +338,288 @@ html {
       </div>
     </header>
 
-    <!-- Main Content -->
     <main class="pt-16">
-      <!-- Hero Section -->
-      <section
-        class="py-20 bg-gradient-to-r from-orange-500 to-orange-600 text-white"
-      >
-        <div class="container mx-auto px-4 text-center">
-          <h1 class="text-4xl md:text--5xl font-bold mb-6">
-            Contact L.A.U.R.A
-          </h1>
-          <p class="text-xl md:text-2xl max-w-3xl mx-auto">
-            Get in touch with us to learn more about our programs, volunteer
-            opportunities, or how you can support our mission.
-          </p>
+
+      <!-- Hero -->
+      <section class="contact-hero py-24">
+        <div class="container mx-auto px-4">
+          <div class="max-w-2xl">
+            <span class="section-kicker text-orange-400">
+              <i class="fas fa-envelope"></i>
+              Reach Out
+            </span>
+            <h1 class="mt-4 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
+              Contact L.A.U.R.A.
+            </h1>
+            <p class="mt-5 text-lg text-gray-200 leading-relaxed max-w-xl">
+              Get in touch to learn more about our programs, volunteer opportunities, or how you can support our mission in South Central Los Angeles.
+            </p>
+            <a href="mailto:info@LauraLA.org" class="btn-primary inline-block mt-8 px-7 py-3 rounded-full font-semibold text-lg">
+              <i class="fas fa-envelope mr-2"></i>info@LauraLA.org
+            </a>
+          </div>
         </div>
       </section>
 
-      <!-- Contact Information -->
+      <!-- Contact Info Cards -->
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Contact Card 1 -->
-            <div class="contact-card bg-gray-50 p-8 text-center">
-              <div class="text-orange-500 text-5xl mb-4">
-                <i class="fas fa-map-marker-alt"></i>
+            <div class="info-card">
+              <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-5">
+                <i class="fas fa-map-marker-alt text-2xl text-orange-500"></i>
               </div>
-              <h3 class="text-xl font-bold mb-4">Mailing Address</h3>
-              <p class="text-gray-700">
-                P.O Box 11681<br />
-                Los Angeles, CA 90011
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Mailing Address</h3>
+              <p class="text-gray-600 leading-relaxed">
+                4701 S Central Ave<br />Los Angeles, CA 90011
               </p>
             </div>
 
-            <!-- Contact Card 2 -->
-            <div class="contact-card bg-gray-50 p-8 text-center">
-              <div class="text-orange-500 text-5xl mb-4">
-                <i class="fas fa-envelope"></i>
+            <div class="info-card">
+              <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-5">
+                <i class="fas fa-envelope text-2xl text-orange-500"></i>
               </div>
-              <h3 class="text-xl font-bold mb-4">Email Us</h3>
-              <p class="text-gray-700">
-                <a
-                  href="mailto:info@LauraLA.org"
-                  class="text-orange-500 hover:underline"
-                  >info@LauraLA.org</a
-                >
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Email Us</h3>
+              <p class="text-gray-600">
+                <a href="mailto:info@LauraLA.org" class="text-orange-500 font-semibold hover:underline">info@LauraLA.org</a>
               </p>
             </div>
 
-            <!-- Contact Card 3 -->
-            <div class="contact-card bg-gray-50 p-8 text-center">
-              <div class="text-orange-500 text-5xl mb-4">
-                <i class="fas fa-calendar-alt"></i>
+            <div class="info-card">
+              <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-5">
+                <i class="fas fa-calendar-alt text-2xl text-orange-500"></i>
               </div>
-              <h3 class="text-xl font-bold mb-4">Meeting Schedule</h3>
-              <p class="text-gray-700">
-                Victim Support: Last Thursday each month<br />
-                Youth Meetings: Thursdays at 5pm
-              </p>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Meeting Schedule</h3>
+              <p class="text-gray-600">See our full meeting schedule below — we meet at two locations throughout the week.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Contact Form & Location -->
+      <!-- Meeting Schedule -->
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <!-- Contact Form -->
-            <div>
-              <h2 class="text-3xl font-bold mb-6 text-gray-800">
-                Send Us a Message
-              </h2>
-              <form class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="text-center max-w-xl mx-auto mb-12">
+            <span class="section-kicker">
+              <i class="fas fa-calendar-alt"></i>
+              When &amp; Where
+            </span>
+            <h2 class="mt-4 text-3xl font-extrabold text-gray-900">Meeting Schedule</h2>
+            <p class="mt-3 text-gray-600">We hold regular meetings at two locations. All are welcome.</p>
+          </div>
+
+          <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Office Meetings -->
+            <div class="bg-white rounded-2xl shadow-sm overflow-hidden border-t-4 border-orange-500">
+              <div class="bg-orange-500 px-6 py-4">
+                <div class="flex items-center gap-3">
+                  <i class="fas fa-building text-white text-xl"></i>
                   <div>
-                    <label for="firstName" class="block text-gray-700 mb-2"
-                      >First Name</label
-                    >
-                    <input
-                      type="text"
-                      id="firstName"
-                      class="form-input w-full px-4 py-3 rounded-lg"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label for="lastName" class="block text-gray-700 mb-2"
-                      >Last Name</label
-                    >
-                    <input
-                      type="text"
-                      id="lastName"
-                      class="form-input w-full px-4 py-3 rounded-lg"
-                      required
-                    />
+                    <h3 class="text-lg font-bold text-white">Office Meetings</h3>
                   </div>
                 </div>
-
-                <div>
-                  <label for="email" class="block text-gray-700 mb-2"
-                    >Email Address</label
-                  >
-                  <input
-                    type="email"
-                    id="email"
-                    class="form-input w-full px-4 py-3 rounded-lg"
-                    required
-                  />
+              </div>
+              <div class="px-6 py-5">
+                <div class="flex items-start gap-3 mb-4">
+                  <i class="fas fa-map-marker-alt text-orange-500 mt-1 flex-shrink-0"></i>
+                  <p class="text-gray-700 font-medium">4701 S Central Ave<br />Los Angeles, CA 90011</p>
                 </div>
-
-                <div>
-                  <label for="phone" class="block text-gray-700 mb-2"
-                    >Phone Number</label
-                  >
-                  <input
-                    type="tel"
-                    id="phone"
-                    class="form-input w-full px-4 py-3 rounded-lg"
-                  />
+                <div class="space-y-4 mt-5">
+                  <div class="rounded-xl border-l-4 border-orange-400 bg-orange-50 p-4">
+                    <p class="text-xs font-bold uppercase tracking-widest text-orange-500 mb-1">Meeting 1 — Youth</p>
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-full bg-orange-200 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-star text-orange-600 text-sm"></i>
+                      </div>
+                      <div>
+                        <p class="font-bold text-gray-900">Youth Support Group (Ages 14+)</p>
+                        <p class="text-gray-600 text-sm mt-0.5"><i class="fas fa-clock mr-1 text-orange-400"></i>Tuesdays at 5:00 PM</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rounded-xl border-l-4 border-orange-600 bg-orange-50 p-4">
+                    <p class="text-xs font-bold uppercase tracking-widest text-orange-600 mb-1">Meeting 2 — Adult</p>
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-full bg-orange-200 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-hands-holding-heart text-orange-600 text-sm"></i>
+                      </div>
+                      <div>
+                        <p class="font-bold text-gray-900">Adult Victim Support</p>
+                        <p class="text-gray-600 text-sm mt-0.5"><i class="fas fa-clock mr-1 text-orange-400"></i>Last Thursdays of each month at 6:00 PM</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-                <div>
-                  <label for="subject" class="block text-gray-700 mb-2"
-                    >Subject</label
-                  >
-                  <select
-                    id="subject"
-                    class="form-input w-full px-4 py-3 rounded-lg"
-                  >
-                    <option value="">Select a topic</option>
-                    <option value="volunteer">Volunteer Opportunity</option>
-                    <option value="donation">Donation Inquiry</option>
-                    <option value="support">Victim Support</option>
-                    <option value="youth">Youth Program</option>
-                    <option value="partnership">Partnership</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label for="message" class="block text-gray-700 mb-2"
-                    >Message</label
-                  >
-                  <textarea
-                    id="message"
-                    rows="6"
-                    class="form-input w-full px-4 py-3 rounded-lg"
-                    required
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  class="btn-primary px-8 py-3 rounded-full text-lg font-semibold w-full"
-                >
-                  Send Message
-                </button>
-              </form>
+              </div>
             </div>
 
-            <!-- Location & Additional Info -->
-            <div>
-              <h2 class="text-3xl font-bold mb-6 text-gray-800">Visit Us</h2>
-
-              <!-- Map Placeholder -->
-              <div class="bg-gray-200 rounded-lg p-8 mb-8 text-center">
-                <div class="text-orange-500 text-6xl mb-4">
-                  <i class="fas fa-map"></i>
+            <!-- Park Meetings -->
+            <div class="bg-white rounded-2xl shadow-sm overflow-hidden border-t-4 border-[#2d4a24]">
+              <div class="bg-[#2d4a24] px-6 py-4">
+                <div class="flex items-center gap-3">
+                  <i class="fas fa-tree text-white text-xl"></i>
+                  <div>
+                    <h3 class="text-lg font-bold text-white">Park Meetings</h3>
+                  </div>
                 </div>
-                <h3 class="text-xl font-bold mb-2">
-                  Fred Roberts Recreation Center
-                </h3>
-                <p class="text-gray-700 mb-4">
-                  4701 S Central Ave<br />
-                  Los Angeles, CA 90011
-                </p>
-                <p class="text-gray-600">
-                  Our main meeting location for community events and youth
-                  programs
-                </p>
+              </div>
+              <div class="px-6 py-5">
+                <div class="flex items-start gap-3 mb-4">
+                  <i class="fas fa-map-marker-alt text-[#2d4a24] mt-1 flex-shrink-0"></i>
+                  <p class="text-gray-700 font-medium">Fred Roberts Recreation Center<br />4700 Honduras St., Los Angeles, CA 90011</p>
+                </div>
+                <div class="space-y-4 mt-5">
+                  <div class="flex items-start gap-4 bg-green-50 rounded-xl p-4">
+                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                      <i class="fas fa-child text-[#2d4a24] text-sm"></i>
+                    </div>
+                    <div>
+                      <p class="font-bold text-gray-900">Youth Support Group (Ages 6–13)</p>
+                      <p class="text-gray-600 text-sm mt-0.5"><i class="fas fa-clock mr-1 text-green-600"></i>Thursdays at 5:00 PM</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4 bg-green-50 rounded-xl p-4">
+                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                      <i class="fas fa-landmark text-[#2d4a24] text-sm"></i>
+                    </div>
+                    <div>
+                      <p class="font-bold text-gray-900">Youth Civic Engagement</p>
+                      <p class="text-gray-600 text-sm mt-0.5"><i class="fas fa-clock mr-1 text-green-600"></i>Thursdays at 6:30 PM</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form — temporarily hidden, restore if needed -->
+      <!--
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-10">
+              <span class="section-kicker"><i class="fas fa-paper-plane"></i> Send a Message</span>
+              <h2 class="mt-4 text-3xl font-extrabold text-gray-900">Send Us a Message</h2>
+            </div>
+            <form class="space-y-6 bg-white rounded-2xl p-8 shadow-lg">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="firstName" class="block text-gray-700 mb-2 font-medium">First Name</label>
+                  <input type="text" id="firstName" class="form-input w-full px-4 py-3 rounded-lg" required />
+                </div>
+                <div>
+                  <label for="lastName" class="block text-gray-700 mb-2 font-medium">Last Name</label>
+                  <input type="text" id="lastName" class="form-input w-full px-4 py-3 rounded-lg" required />
+                </div>
+              </div>
+              <div>
+                <label for="email" class="block text-gray-700 mb-2 font-medium">Email Address</label>
+                <input type="email" id="email" class="form-input w-full px-4 py-3 rounded-lg" required />
+              </div>
+              <div>
+                <label for="phone" class="block text-gray-700 mb-2 font-medium">Phone Number</label>
+                <input type="tel" id="phone" class="form-input w-full px-4 py-3 rounded-lg" />
+              </div>
+              <div>
+                <label for="subject" class="block text-gray-700 mb-2 font-medium">Subject</label>
+                <select id="subject" class="form-input w-full px-4 py-3 rounded-lg">
+                  <option value="">Select a topic</option>
+                  <option value="volunteer">Volunteer Opportunity</option>
+                  <option value="donation">Donation Inquiry</option>
+                  <option value="support">Victim Support</option>
+                  <option value="youth">Youth Program</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="message" class="block text-gray-700 mb-2 font-medium">Message</label>
+                <textarea id="message" rows="6" class="form-input w-full px-4 py-3 rounded-lg" required></textarea>
+              </div>
+              <button type="submit" class="btn-primary px-8 py-3 rounded-full text-lg font-semibold w-full">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      -->
+
+      <!-- Visit Us -->
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center max-w-xl mx-auto mb-12">
+            <span class="section-kicker">
+              <i class="fas fa-map-marker-alt"></i>
+              Location
+            </span>
+            <h2 class="mt-4 text-3xl font-extrabold text-gray-900">Visit Us</h2>
+            <p class="mt-3 text-gray-600">Our main meeting location for community events and youth programs.</p>
+          </div>
+
+          <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            <!-- Map -->
+            <div class="rounded-2xl overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.3!2d-118.2588!3d33.9943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2cb7a8e1bb8c9%3A0x1!2sFred+Roberts+Recreation+Center%2C+4701+S+Central+Ave%2C+Los+Angeles%2C+CA+90011!5e0!3m2!1sen!2sus!4v1"
+                width="100%"
+                height="300"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Fred Roberts Recreation Center map"
+              ></iframe>
+              <div class="bg-white p-5">
+                <h3 class="text-lg font-bold text-gray-900">Fred Roberts Recreation Center</h3>
+                <p class="text-gray-600 mt-1">4700 Honduras St., Los Angeles, CA 90011</p>
+                <a
+                  href="https://maps.google.com/?q=Fred+Roberts+Recreation+Center+4700+Honduras+St+Los+Angeles+CA+90011"
+                  target="_blank"
+                  class="inline-block mt-3 text-sm font-semibold text-orange-500 hover:underline"
+                >
+                  <i class="fas fa-directions mr-1"></i>Get Directions
+                </a>
+              </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="space-y-5">
+              <div class="bg-white rounded-xl p-5 shadow-sm flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-clock text-orange-500"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-900">Office Hours</h4>
+                  <p class="text-gray-600 mt-1">Monday – Friday: 9:00 AM – 5:00 PM</p>
+                </div>
               </div>
 
-              <!-- Additional Information -->
-              <div class="bg-white rounded-lg p-6">
-                <h3 class="text-xl font-bold mb-4 text-gray-800">
-                  Additional Information
-                </h3>
-                <div class="space-y-4">
-                  <div class="flex items-start">
-                    <i class="fas fa-clock text-orange-500 mt-1 mr-3"></i>
-                    <div>
-                      <h4 class="font-semibold">Office Hours</h4>
-                      <p class="text-gray-700">
-                        Monday-Friday: 9:00 AM - 5:00 PM
-                      </p>
-                    </div>
-                  </div>
+              <div class="bg-white rounded-xl p-5 shadow-sm flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-users text-orange-500"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-900">Volunteer Opportunities</h4>
+                  <p class="text-gray-600 mt-1">We're always looking for dedicated volunteers to help with events, youth programs, and community outreach.</p>
+                  <a href="get-involved.html#volunteer" class="btn-primary inline-block mt-4 px-6 py-2 rounded-full font-semibold text-sm">
+                    Get Involved
+                  </a>
+                </div>
+              </div>
 
-                  <div class="flex items-start">
-                    <i class="fas fa-users text-orange-500 mt-1 mr-3"></i>
-                    <div>
-                      <h4 class="font-semibold">Volunteer Opportunities</h4>
-                      <p class="text-gray-700">
-                        We're always looking for dedicated volunteers to help
-                        with events, youth programs, and community outreach.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="flex items-start">
-                    <i
-                      class="fas fa-hand-holding-heart text-orange-500 mt-1 mr-3"
-                    ></i>
-                    <div>
-                      <h4 class="font-semibold">Donations</h4>
-                      <p class="text-gray-700">
-                        Your support helps us continue our vital work in the
-                        South Central LA community.
-                      </p>
-                    </div>
-                  </div>
+              <div class="bg-white rounded-xl p-5 shadow-sm flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-hand-holding-heart text-orange-500"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-900">Donations</h4>
+                  <p class="text-gray-600 mt-1">Your support helps us continue our vital work in the South Central LA community.</p>
+                  <a href="https://givebutter.com/LAURALA" target="_blank" class="btn-primary inline-block mt-4 px-6 py-2 rounded-full font-semibold text-sm">
+                    Donate Now
+                  </a>
                 </div>
               </div>
             </div>
@@ -540,133 +627,92 @@ html {
         </div>
       </section>
 
-      <!-- Quick Actions -->
-      <section
-        class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white"
-      >
+      <!-- Get Involved -->
+      <section class="py-16 bg-[#2d4a24] text-white">
         <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold mb-4">Get Involved Today</h2>
-            <p class="text-xl max-w-2xl mx-auto">
-              There are many ways you can support L.A.U.R.A's mission to create
-              positive change in South Central Los Angeles.
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="section-kicker text-orange-400">
+              <i class="fas fa-heart"></i>
+              Take Action
+            </span>
+            <h2 class="mt-4 text-3xl md:text-4xl font-extrabold">Get Involved Today</h2>
+            <p class="mt-4 text-gray-200 text-lg">
+              There are many ways to support L.A.U.R.A.'s mission and create positive change in South Central Los Angeles.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center">
-              <div class="text-5xl mb-4">
-                <i class="fas fa-hands-helping text-orange-500"></i>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="action-card">
+              <div class="w-14 h-14 rounded-full bg-orange-500 bg-opacity-20 flex items-center justify-center mx-auto mb-5">
+                <i class="fas fa-hands-helping text-2xl text-orange-300"></i>
               </div>
-              <h3 class="text-xl font-bold mb-4">Volunteer</h3>
-              <p class="mb-4">
-                Join our team of dedicated volunteers and make a direct impact
-                in the community.
-              </p>
-              <a
-                href="#volunteer"
-                class="btn-primary inline-block px-6 py-2 rounded-full"
-                >Learn More</a
-              >
+              <h3 class="text-xl font-bold mb-3">Volunteer</h3>
+              <p class="text-gray-300 mb-6 leading-relaxed">Join our team of dedicated volunteers and make a direct impact in the community.</p>
+              <a href="get-involved.html#volunteer" class="btn-primary inline-block px-6 py-2 rounded-full font-semibold">Learn More</a>
             </div>
 
-            <div class="text-center">
-              <div class="text-5xl mb-4">
-                <i class="fas fa-donate text-orange-500"></i>
+            <div class="action-card">
+              <div class="w-14 h-14 rounded-full bg-orange-500 bg-opacity-20 flex items-center justify-center mx-auto mb-5">
+                <i class="fas fa-donate text-2xl text-orange-300"></i>
               </div>
-              <h3 class="text-xl font-bold mb-4">Donate</h3>
-              <p class="mb-4">
-                Your financial support helps us continue our programs and expand
-                our reach.
-              </p>
-          <a
-            href="https://givebutter.com/LAURALA"
-                target="_blank"
-                class="btn-primary inline-block px-6 py-2 rounded-full"
-                >Donate Now</a
-              >
+              <h3 class="text-xl font-bold mb-3">Donate</h3>
+              <p class="text-gray-300 mb-6 leading-relaxed">Your financial support helps us continue our programs and expand our reach.</p>
+              <a href="https://givebutter.com/LAURALA" target="_blank" class="btn-primary inline-block px-6 py-2 rounded-full font-semibold">Donate Now</a>
             </div>
 
-            <div class="text-center">
-              <div class="text-5xl mb-4">
-                <i class="fas fa-handshake text-orange-500"></i>
+            <div class="action-card">
+              <div class="w-14 h-14 rounded-full bg-orange-500 bg-opacity-20 flex items-center justify-center mx-auto mb-5">
+                <i class="fas fa-handshake text-2xl text-orange-300"></i>
               </div>
-              <h3 class="text-xl font-bold mb-4">Partner</h3>
-              <p class="mb-4">
-                Become a community partner and collaborate with us on projects
-                and events.
-              </p>
-              <a
-                href="#partner"
-                class="btn-primary inline-block px-6 py-2 rounded-full"
-                >Partner With Us</a
-              >
+              <h3 class="text-xl font-bold mb-3">Partner</h3>
+              <p class="text-gray-300 mb-6 leading-relaxed">Become a community partner and collaborate with us on projects and events.</p>
+              <a href="mailto:info@LauraLA.org?subject=Partnership%20Inquiry" class="btn-primary inline-block px-6 py-2 rounded-full font-semibold">Partner With Us</a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- FAQ Section -->
+      <!-- FAQ -->
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold mb-4 text-gray-800">
-              Frequently Asked Questions
-            </h2>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-              Find quick answers to common questions about L.A.U.R.A and our
-              programs.
-            </p>
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="section-kicker">
+              <i class="fas fa-question-circle"></i>
+              Common Questions
+            </span>
+            <h2 class="mt-4 text-3xl font-extrabold text-gray-900">Frequently Asked Questions</h2>
+            <p class="mt-4 text-gray-600 text-lg">Quick answers about L.A.U.R.A. and our programs.</p>
           </div>
 
-          <div class="max-w-3xl mx-auto space-y-6">
-            <div class="bg-gray-50 rounded-lg p-6">
-              <h3 class="text-xl font-bold mb-2 text-gray-800">
-                How can I volunteer with L.A.U.R.A?
-              </h3>
-              <p class="text-gray-700">
-                We welcome volunteers for various roles including event support,
-                youth mentoring, administrative tasks, and community outreach.
-                Please contact us to discuss how your skills and interests align
-                with our needs.
+          <div class="max-w-3xl mx-auto space-y-5">
+            <div class="faq-item">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">How can I volunteer with L.A.U.R.A?</h3>
+              <p class="text-gray-600 leading-relaxed">
+                We welcome volunteers for event support, youth mentoring, administrative tasks, and community outreach. Contact us to discuss how your skills align with our needs.
               </p>
             </div>
 
-            <div class="bg-gray-50 rounded-lg p-6">
-              <h3 class="text-xl font-bold mb-2 text-gray-800">
-                What types of donations does L.A.U.R.A accept?
-              </h3>
-              <p class="text-gray-700">
-                We accept monetary donations through our website, as well as
-                in-kind donations such as school supplies, food items for
-                events, and gift cards for families in need. All donations are
-                tax-deductible.
+            <div class="faq-item">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">What types of donations does L.A.U.R.A accept?</h3>
+              <p class="text-gray-600 leading-relaxed">
+                We accept monetary donations through our website, as well as in-kind donations such as school supplies, food items for events, and gift cards for families in need. All donations are tax-deductible.
               </p>
             </div>
 
-            <div class="bg-gray-50 rounded-lg p-6">
-              <h3 class="text-xl font-bold mb-2 text-gray-800">
-                How can my organization partner with L.A.U.R.A?
-              </h3>
-              <p class="text-gray-700">
-                We collaborate with businesses, community organizations, and
-                service providers. Partnership opportunities include event
-                sponsorship, resource sharing, and program collaboration.
-                Contact us to discuss potential partnerships.
+            <div class="faq-item">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">How can my organization partner with L.A.U.R.A?</h3>
+              <p class="text-gray-600 leading-relaxed">
+                We collaborate with businesses, community organizations, and service providers. Partnership opportunities include event sponsorship, resource sharing, and program collaboration. Contact us to get started.
               </p>
             </div>
 
-            <div class="text-center mt-8">
-              <a
-                href="faq.html"
-                class="btn-primary inline-block px-6 py-3 rounded-full"
-              >
-                View All FAQs
-              </a>
+            <div class="text-center mt-10">
+              <a href="faq.html" class="btn-primary inline-block px-8 py-3 rounded-full font-semibold text-lg">View All FAQs</a>
             </div>
           </div>
         </div>
       </section>
+
     </main>
     <!-- /Main Content -->
 
@@ -689,9 +735,6 @@ html {
                 class="text-white hover:text-pink-400"
               >
                 <i class="fab fa-instagram text-2xl"></i>
-              </a>
-              <a href="#" class="text-white hover:text-gray-300">
-                <i class="fab fa-tiktok text-2xl"></i>
               </a>
             </div>
             <p class="text-gray-400">
@@ -788,19 +831,12 @@ html {
 
     <!-- NavBar.js -->
     <script>
-      // Consolidated scroll handler - only one version
       function handleScroll() {
         const header = document.getElementById("main-header");
-        const scrollPosition = window.scrollY;
-
-        console.log("Scroll position:", scrollPosition); // Debug line
-
-        if (scrollPosition > 50) {
+        if (window.scrollY > 50) {
           header.classList.add("scrolled");
-          console.log("Header is now white"); // Debug line
         } else {
           header.classList.remove("scrolled");
-          console.log("Header is now transparent"); // Debug line
         }
       }
 

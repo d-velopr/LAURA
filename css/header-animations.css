@@ -13,12 +13,12 @@
   left: 0;
   right: 0;
   bottom: -0.35rem;
-  height: 2px;
+  height: 3px;
   border-radius: 999px;
   background: var(--laura-orange);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .nav-link:hover::after,
